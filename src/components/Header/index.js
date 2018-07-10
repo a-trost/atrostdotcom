@@ -202,6 +202,9 @@ export default class Header extends Component {
               <li>
                 <Link to="/projects">Projects</Link>
               </li>
+              <li>
+                <a href="mailto:alexrtrost@gmail.com">Contact Me</Link>
+              </li>
             </ul>
           </MainNav>
           </TopContainer>
