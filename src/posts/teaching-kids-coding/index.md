@@ -1,0 +1,88 @@
+---
+title: Teaching Kids Coding for the First Time
+cover: cover.jpg
+date: "2018-04-06"
+---
+
+Filling students with the excitement of coding has been a dream of mine ever since I began to learn coding myself. I've been looking for opportunities to bring my enthusiasm to the students at my school, but wasn't quite sure just how to do it.
+
+<img src="color_logo_transparent.png" width="400px" alt="CodeSmash Logo" />Luckily, I was introduced to Kati of <a href="http://codesmashlab.com/" target="_blank">CodeSmash</a>, a new startup bringing afterschool coding programs to the New Haven area. They already had so much planned and just needed the lesson plan fine tuned. I saw an excellent opportunity to create curriculum and teach students coding in <a href="https://scratch.mit.edu/" target="_blank">Scratch</a>.
+
+I’ve worked with Scratch as part of the <a href="https://cs50.yale.edu/" target="_blank">CS50</a> course I took online, but quickly moved past it to languages more useful for me.  Still, I saw the potential in the language and loved seeing the creative output of the Scratch community. 
+
+CodeSmash is all about combining coding with concepts like emotional intelligence and [growth mindset](/growth-mindset/). I've taught those concepts for a few years now, so for this trial lesson I wasn't going to focus on them as heavily. I just wanted to get the kinks out of the coding instruction, which was completely new to me.
+
+## Preparation
+If you're looking to teach scratch, you definitely don’t want to try and just wing it. There’s a decent amount of setup you’ll want to see to beforehand. 
+
+I checked the computers ahead of time to make sure they were free to run Flash and access the scratch.mit.edu site. 
+
+I signed up for a Scratch <a href="https://scratch.mit.edu/educators/" target="_blank">Educator Account</a> and made a class. It took about a day for the Scratch people to approve me, so once again, do the prep work ahead of time.
+
+<img src="signup.png" style="max-width:800px;" alt="Student Sign Up Link Button" />
+
+I grabbed my “Student Sign-up Link” which was a huge string of letters and numbers, not something you’d have anyone type in. I made a tiny.cc short URL so that my kids could easily sign up for their account in my classroom. It makes it super simple, taking a link from something like:
+
+`http://scratch.mit.edu/classes/31320/register/286cef83k1n0a3134a5d80521031e43343e`
+
+to something like:
+
+`tiny.cc/teachername`
+
+I let a few kids know ahead of time and scheduled it out with their parents to keep them after school for a bit longer than they might normally stay. Parents and kids alike were enthusiastic. 
+
+Most importantly, I dug into scratch and made my own version of the project, just seeing what kinds of things I could make and trying to predict what the students might want to know how to do. 
+
+## Time to Code
+> No plan survives first contact with the student  
+ -A butchering of a [19th century war marshal](https://en.wikiquote.org/wiki/Helmuth_von_Moltke_the_Elder)’s quote
+ 
+When the day came I went to get a few kids from our after school program. Unfortunately, the day I was to teach coding collided with the day that another teacher runs a ballet class, so there was not a single girl in the after school program for me to teach.
+
+Part of CodeSmash’s mission is to get more girls interested in tech, so starting out with 6 boys was already a glitch in the plan. 
+
+Still, I had a great group of 3rd graders. I had no problem with getting them excited for the idea of coding. None of them truly knew what coding _was_, they just had a general sense that it was something you could do with computers, and they were excited.
+
+## What Went Great
+It took no effort to motivate the students to put their personalities into their projects. As soon as they saw the potential, they began to bring their interests to life. I know these kids well, and I soon had projects themed with fairy tales, sports, superheroes and hip-hop, all from their respective creators. 
+
+It felt like these kids had been waiting for a medium to pick up and run with. They kept diving back in and experimenting, and they really fed off of each other. One student would figure out how to do something, the others would ask how he did it, and they soon all were experimenting with that idea. By the end of the (already over-time) session, I had to practically pry the computers from their hands. 
+
+Scratch did a great job making it easy to create a class and make signup easy. That was a potential bottleneck avoided.  They all had no problem coming up with usernames and passwords. They were familiar with the concept from other apps and services like *musical.ly*.
+
+## What I’d Do Different
+I knew that teaching coding for the first time, planning too much was folly, and I really wanted to get a sense of where the kids would take it if guided. I also wanted to feel out potential pitfalls for other educators if I was to share what I’d learned later. 
+
+With any lesson, there’s always room for improvement. These are the things I’m going to do differently the next time around.
+
+### Find Out What They Know
+I didn’t probe their existing knowledge enough at the beginning of the lesson, I really just had them dive in pretty quickly. Next time I’d like to ask them what coding is, using something like a [KWL chart](https://www.facinghistory.org/resource-library/teaching-strategies/k-w-l-charts) to start the session out. It should be something very low-pressure, not a writing prompt, as I don’t want to make students feel like they _need_ to know anything about coding before entering this course. Everyone needs to feel like they belong.
+
+### Make a Menu of Common Requests
+I got a lot of questions of “How do I get it to do _________ ?” and it would have been great if I had a handout or web-based reference for small recipes that would help get them started with the most common use cases. Most of the kids wanted to make their sprite move, so I think they could benefit from a sheet that gives them the recipe for making an object:
+
+* slide to the right
+* move to a specific spot
+* rotate
+* follow your mouse
+* make a sound
+* show a speech bubble
+* change color
+* change costume
+
+### Watch Out for Sounds
+In their discovery process, they found that they could record their own sounds and soon became obsessed with funny sounds and stopped bothering with code for a bit. I moved them away from the recording with a challenge to get more code into their project.
+
+### Set Criteria for Success
+While I wanted to keep the project open for their creativity and interpretation, going forward I want to task them with some open-ended requirements for the name project. These requirements would allow them to experiment and give them some idea of what they should be building into their piece. A blank canvas and few rules is too overwhelming for most. Some ideas for requirements: 
+* Each sprite has to have some sort of code block attached
+* Need to use at least 1 loop in their code
+* Have at least 1 sprite with ‘on click’ functionality
+* At least 1 thing moves when the Green Flag is clicked
+
+### Get Better With Scratch
+I’m good with Scratch, but some of the things my kids wanted to do I just didn’t know how to do. Now, this was good in the sense that I was able to learn with them and show them how we can solve problems in Scratch. That’s an excellent teaching opportunity whenever it happens. 
+
+Thinking aloud is key here. Never just grab the mouse and silently click until you’ve figured it out. Say things like “Hmm, well we want it to _move_, so I’m thinking we might want to look under “Motion” for this.”
+
+Some things we just weren’t able to figure out, and I think that’s alright. I don’t want kids to get the impression that coding is something you get right the first time. Like any discipline, it takes time and practice, and I think that’s one of the big takeaways my students got out of this session.
