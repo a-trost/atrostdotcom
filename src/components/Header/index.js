@@ -22,25 +22,33 @@ const HeaderContainer = styled.div`
   z-index: 2;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr minmax(50%, 1000px) 1fr;
+
+  grid-template-columns: auto;
   grid-gap: 10px;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "site-name "
+    "intro-text"
+    "nav";
+
+    @media all and (min-width:800px) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      grid-template-rows: 1fr 4fr;
+      grid-template-areas:
+        "site-name nav"
+        "intro-text intro-text";
+    }
 `;
 
-const TopContainer = styled.div`
-  grid-column: 1/4;
-  grid-row: 1;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-`;
 const NamePictureContainer = styled.div`
+  flex-flow: row nowrap;
   display: flex;
+  grid-area: site-name;
 `;
 
 const HeaderPortrait = styled.div`
-  vertical-align: middle;
+
   img {
     height: 50px;
     width: 50px;
@@ -48,20 +56,21 @@ const HeaderPortrait = styled.div`
   }
   @media all and (min-width: 600px) {
     img {
-      height: 75px;
-      width: 75px;
+      height: 80px;
+      width: 80px;
     }
   }
 `;
 
 const HeaderName = styled.div`
+  padding-top:8px;
   .name {
-    display: inline-block;
+    display: flex;
     color: white;
-    font-family: Rubik;
+    font-family: "Rubik", sans-serif;
     padding-left: 13px;
-    font-weight: 400;
-    font-size: 2rem;
+    font-weight: 500;
+    font-size: 1.8rem;
     line-height: 2rem;
     margin: 0;
   }
@@ -70,14 +79,15 @@ const HeaderName = styled.div`
   }
   @media all and (min-width: 600px) {
     .name {
-      font-size: 2.5rem;
-      line-height: 2.5rem;
+      font-size: 2.2rem;
+      line-height: 2.2rem;
     }
     .title {
-      color: white;
-      font-family: Rubik;
+      display: flex;
+      color: rgb(255, 255, 255, 80%);
+      font-family: "Rubik", sans-serif;
       padding-left: 13px;
-      font-weight: 300;
+      font-weight: 400;
       font-size: 1rem;
       line-height: 1rem;
       margin: 0;
@@ -86,12 +96,15 @@ const HeaderName = styled.div`
 `;
 
 const MainNav = styled.nav`
+  padding-top:8px;
+  grid-area: nav;
+  justify-self: end;
   ul {
     list-style: none;
     display: flex;
-    font-family: Rubik;
+    font-family: "Rubik", sans-serif;
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 400;
     li {
       a {
         color: white;
@@ -106,22 +119,22 @@ const MainNav = styled.nav`
 `;
 
 const IntroText = styled.div`
+  display: block;
+  grid-area: intro-text;
   animation: fadeAndScale 0.7s ease-in;
-  grid-column: 2 / 4;
-  grid-row: 2;
   font-size: 4rem;
   line-height: 4rem;
   color: white;
-  font-family: Rubik;
+  font-family: "Rubik", sans-serif;
   font-weight: 500;
-  place-self: center stretch;
+  place-self: center;
   .rwd-line {
     display: block;
   }
   .subheader {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 300;
-    line-height: 3rem;
+    line-height: 2rem;
   }
 
   /* Medium screens */
@@ -159,7 +172,6 @@ const IntroText = styled.div`
 
 export default class Header extends Component {
   componentDidUpdate = (prevProps, prevState) => {
-    
     const { location } = this.props;
     if (location.pathname !== prevProps.location.pathname) {
       if (this.props.location.pathname === "/") {
@@ -192,35 +204,33 @@ export default class Header extends Component {
           }}
         >
           <HeaderContainer>
-            <TopContainer>
               <Link to="/">
-                <NamePictureContainer>
-                  <HeaderPortrait>
-                    <img src={portrait} alt="Alex Trost Portrait" />
-                  </HeaderPortrait>
-                  <HeaderName>
-                    <p className="name">Alex Trost</p>
-                    <p className="title">Front-End Web Developer</p>
-                  </HeaderName>
-                </NamePictureContainer>
+            <NamePictureContainer>
+                <HeaderPortrait>
+                  <img src={portrait} alt="Alex Trost Portrait" />
+                </HeaderPortrait>
+                <HeaderName>
+                  <p className="name">Alex Trost</p>
+                  <p className="title">Front-End Web Developer</p>
+                </HeaderName>
+            </NamePictureContainer>
               </Link>
-                <MainNav>
-                  <ul>
-                    <li>
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                      <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                      <Link to="/projects">Projects</Link>
-                    </li>
-                    <li>
-                    <Link to="/contact">Contact</Link>
-                    </li>
-                  </ul>
-                </MainNav>
-            </TopContainer>
+            <MainNav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/projects">Projects</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contact</Link>
+                </li>
+              </ul>
+            </MainNav>
             {isHome && (
               <IntroText>
                 <p>

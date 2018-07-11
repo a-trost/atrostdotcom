@@ -31,9 +31,11 @@ const FooterContainer = styled.footer`
 		justify-content: space-between;
 		ul {
 			list-style: none;
-			display: flex;
+      display: flex;
+      flex-direction:column;
 			li {
-					padding: 8px 15px;
+        text-align:center;
+        padding: 1px 10px;
 			}
 		}
 		
@@ -51,6 +53,13 @@ const FooterContainer = styled.footer`
     grid-template-areas:
       "logo site-map social-links"
       ". copyright .";
+    .site-map{
+      ul{
+        flex-direction:row;
+        li {
+          padding: 8px 10px;
+        }
+    }
 	}
 `;
 
