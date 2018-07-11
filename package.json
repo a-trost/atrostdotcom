@@ -8,6 +8,7 @@
     "gatsby-image": "^1.0.54",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-google-analytics": "^1.0.31",
+    "gatsby-plugin-netlify-cms": "^2.0.1",
     "gatsby-plugin-offline": "^1.0.18",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-react-next": "^1.0.11",
@@ -18,6 +19,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "gatsby-transformer-sharp": "^1.6.27",
+    "netlify-cms": "^1.9.3",
     "prismjs": "^1.15.0",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.3.3"

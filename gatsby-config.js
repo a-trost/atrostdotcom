@@ -8,6 +8,7 @@ module.exports = {
     "gatsby-plugin-react-next",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-netlify-cms",
     {
       resolve: "gatsby-source-filesystem",
       options: {
