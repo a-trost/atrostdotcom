@@ -3,6 +3,7 @@ backend:
   repo: a-trost/atrostdotcom
 
 media_folder: static/assets
+public_folder: /assets
 
 collections: 
   - name: post

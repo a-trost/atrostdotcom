@@ -1,12 +1,14 @@
 ---
 title: Teaching Kids Coding for the First Time
-cover: cover.jpg
+cover: /assets/teaching-kids-coding-cover.jpg
 date: "2018-04-06"
 ---
 
 Filling students with the excitement of coding has been a dream of mine ever since I began to learn coding myself. I've been looking for opportunities to bring my enthusiasm to the students at my school, but wasn't quite sure just how to do it.
 
-<img src="color_logo_transparent.png" width="400px" alt="CodeSmash Logo" />Luckily, I was introduced to Kati of <a href="http://codesmashlab.com/" target="_blank">CodeSmash</a>, a new startup bringing afterschool coding programs to the New Haven area. They already had so much planned and just needed the lesson plan fine tuned. I saw an excellent opportunity to create curriculum and teach students coding in <a href="https://scratch.mit.edu/" target="_blank">Scratch</a>.
+<img src="/assets/teaching-kids-coding-codesmash-logo.png" width="400px" alt="CodeSmash Logo" />
+
+Luckily, I was introduced to Kati of <a href="http://codesmashlab.com/" target="_blank">CodeSmash</a>, a new startup bringing afterschool coding programs to the New Haven area. They already had so much planned and just needed the lesson plan fine tuned. I saw an excellent opportunity to create curriculum and teach students coding in <a href="https://scratch.mit.edu/" target="_blank">Scratch</a>.
 
 I’ve worked with Scratch as part of the <a href="https://cs50.yale.edu/" target="_blank">CS50</a> course I took online, but quickly moved past it to languages more useful for me.  Still, I saw the potential in the language and loved seeing the creative output of the Scratch community. 
 
@@ -19,7 +21,7 @@ I checked the computers ahead of time to make sure they were free to run Flash a
 
 I signed up for a Scratch <a href="https://scratch.mit.edu/educators/" target="_blank">Educator Account</a> and made a class. It took about a day for the Scratch people to approve me, so once again, do the prep work ahead of time.
 
-<img src="signup.png" style="max-width:800px;" alt="Student Sign Up Link Button" />
+<img src="/assets/teaching-kids-coding-signup.png" style="max-width:800px;" alt="Student Sign Up Link Button" />
 
 I grabbed my “Student Sign-up Link” which was a huge string of letters and numbers, not something you’d have anyone type in. I made a tiny.cc short URL so that my kids could easily sign up for their account in my classroom. It makes it super simple, taking a link from something like:
 
@@ -39,7 +41,7 @@ Most importantly, I dug into scratch and made my own version of the project, jus
  
 When the day came I went to get a few kids from our after school program. Unfortunately, the day I was to teach coding collided with the day that another teacher runs a ballet class, so there was not a single girl in the after school program for me to teach.
 
-Part of CodeSmash’s mission is to get more girls interested in tech, so starting out with 6 boys was already a glitch in the plan. 
+Part of CodeSmash’s mission is to get more girls interested in tech, so starting out with 6 boys was already a glitch in the plan.
 
 Still, I had a great group of 3rd graders. I had no problem with getting them excited for the idea of coding. None of them truly knew what coding _was_, they just had a general sense that it was something you could do with computers, and they were excited.
 

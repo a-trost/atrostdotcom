@@ -1,10 +1,10 @@
 ---
-title: Making a JavaScript Arcade Clone
+title: Making a Javascript Arcade Clone
 category: "Programming"
-cover: cover.png
+cover: /assets/making-dogger-cover.png
 date: "2018-04-21"
 ---
-![game-screenshots](game-screenshots.png)
+![game-screenshots](/assets/making-dogger-game-screenshots.png)
 
 For my Udacity course work I was tasked with making an “arcade game clone” in the form of Frogger. They provided a general game engine as well as some stock image resources. [Here’s their repo.](https://github.com/udacity/frontend-nanodegree-arcade-game)
 
@@ -13,7 +13,7 @@ I saw a lot of potential in this project to make something beyond [the example t
 ## Inspiration
 I drew inspiration from games like [Crossy Road](https://en.wikipedia.org/wiki/Crossy_Road) and [Lara Croft Go](https://en.wikipedia.org/wiki/Lara_Croft_Go) with its isometric perspective and space-by-space movement style. Plus their happy embrace of polygons reminded me of the new treasure trove that is [Google Poly](https://poly.google.com/).
 
-![LaraCroft](./LaraCroft.jpg)
+![LaraCroft](/assets/making-dogger-LaraCroft.jpg)
 
 ## Features to Add
 I wanted a few more features than the game needed to pass requirements. Some additions were fun music, high scores, designed levels, touchscreen input, and the home-baked image assets.
@@ -72,7 +72,8 @@ Quick thanks to:
 - 3d models made by [Google Poly](https://poly.google.com/).
 - Music by [A.A. Aalto](http://freemusicarchive.org/music/A_A_Aalto/Bright_Corners/) used under CC License.
 - And big thanks to my dog Milo for inspiration:
-![Milo-copy](./Milo.jpg)
+
+![Milo-copy](/assets/making-dogger-Milo.jpg)
 
 ------------
 [Play the Game](https://a-trost.github.io/dogger/)  |  [Check the Repo](https://github.com/a-trost/dogger)

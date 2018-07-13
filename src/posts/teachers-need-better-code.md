@@ -1,6 +1,6 @@
 ---
 title: Two Ways to Make Teaching Better With Code
-cover: cover.jpg
+cover: /assets/teachers-need-better-code-cover.jpg
 date: "2018-03-31"
 ---
 I've been a teacher for 4 years and have tried dozens of software solutions aimed at teachers and classrooms. It’s painfully clear that teachers are in need of better computer support. We need to move past code that just does flash card review or attendance taking, but software that actually makes the job of the teacher better.
@@ -42,11 +42,13 @@ This kind of deep dive is tough and time consuming to be done by hand for each s
 ## 2. Make Practice Apps Smarter
 
 Computer practice adds a great layer of immediate feedback over the pencil and paper work that has been the standard for decades. However, we've had immediate feedback since the days of Number Munchers, and modern math apps should be doing so much more.
-![Number Munchers Screenshot](/content/images/2018/03/number_munchers.gif) 
+
+![Number Munchers Screenshot](/assets/teachers-need-better-code-number-munchers.gif) 
+
 ### Misconception Correction
 If a student is adding incorrectly, it is the teacher’s job to determine not just that the problem is wrong, but why it is wrong. 
 
-What's the misconception that the student has about solving this kind of problem? Do they not understand place value? Are they subtracting instead of adding? 
+What's the misconception that the student has about solving this kind of problem? Do they not understand place value? Are they subtracting instead of adding?
 
 Teachers use this information to correct the misconception, targeting that specific error and clearing it away. 
 
