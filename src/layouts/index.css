@@ -4,6 +4,17 @@ html {
   font-family: 'Roboto', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+@media screen and (min-width: 900px) {
+  html {
+  font-size: 18px;
+  }
+}
+  @media screen and (min-width: 1200px) {
+    html {
+    font-size: 20px;
+  }
 }
 body {
   margin: 0;
@@ -211,6 +222,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  line-height: 2rem;
 }
 img {
   max-width: 100%;
