@@ -11,7 +11,10 @@ const HeaderWrapper = styled.header`
   margin-bottom: 1.45rem;
   overflow: hidden;
   position: relative;
-  height: ${({ isHome }) => (isHome ? "80vh" : "20vh")};
+  height: 100vh;
+  @media all and (min-width: 800px) {
+    height: ${({ isHome }) => (isHome ? "80vh" : "20vh")};
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -98,14 +101,17 @@ const HeaderName = styled.div`
 const MainNav = styled.nav`
   padding-top:8px;
   grid-area: nav;
-  justify-self: end;
-  ul {
+  justify-self: center;
+    align-self:end;
+    ul {
     list-style: none;
     display: flex;
+    flex-direction: column;
     font-family: "Rubik", sans-serif;
     font-size: 1.3rem;
     font-weight: 400;
     li {
+      text-align:center;
       a {
         color: white;
         padding: 8px 15px;
@@ -116,12 +122,21 @@ const MainNav = styled.nav`
       }
     }
   }
+  @media all and (min-width: 600px) {
+    ul {
+    flex-direction: row;
+  }
+}
+  @media all and (min-width: 800px) {
+    justify-self: end;
+    align-self:start;
+  }
 `;
 
 const IntroText = styled.div`
   display: block;
   grid-area: intro-text;
-  animation: fadeAndScale 0.7s ease-in;
+  animation: fadeAndScale 2s ease-in;
   font-size: 4rem;
   line-height: 4rem;
   color: white;
