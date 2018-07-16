@@ -15,3 +15,13 @@ collections:
       - {name: date, label: Create At, widget: date }
       - {name: image, label: Image, widget: image}
       - {name: body, label: Post, widget: markdown}
+
+  - name: project
+    label: Projects
+    folder: src/projects
+    create: true
+    fields: 
+      - {name: title, label: Title}
+      - {name: image, label: Image, widget: image}
+      - {name: body, label: Details, widget: markdown}
+
