@@ -11,7 +11,7 @@ const HeaderWrapper = styled.header`
   margin-bottom: 1.45rem;
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  height: ${({ isHome }) => (isHome ? "100vh" : "20vh")};
   @media all and (min-width: 800px) {
     height: ${({ isHome }) => (isHome ? "80vh" : "20vh")};
   }
