@@ -3,18 +3,24 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 
 import Header from "../components/Header";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 require("prismjs/themes/prism-coy.css");
 import "./index.css";
-
 
 const Layout = ({ children, data, location }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: "description", content: "Alex Trost - Front-End Web Developer and Graphic Designer" },
-        { name: "keywords", content: "frontend, developer, front, end, javascript, graphic design, graphic, react, python, web" },
+        {
+          name: "description",
+          content: "Alex Trost - Front-End Web Developer and Graphic Designer",
+        },
+        {
+          name: "keywords",
+          content:
+            "frontend, developer, front, end, javascript, graphic design, graphic, react, python, web",
+        },
       ]}
     />
     <Header

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import logo from "../../images/TrostLogo.png"
+import logo from "../../images/TrostLogo.png";
 
 const FooterContainer = styled.footer`
 	padding: 40px 20px;
@@ -67,15 +67,25 @@ export default class Footer extends Component {
   render() {
     return (
       <FooterContainer>
-        <div class="logo"><img src={logo} /></div>
+        <div class="logo">
+          <img src={logo} />
+        </div>
         <div class="site-map">
-				<ul>
-					<li><Link to="/">Home</Link></li>
-					<li><Link to="/about">About</Link></li>
-					<li><Link to="/posts">Blog</Link></li>
-					<li><Link to="/contact">Contact</Link></li>
-				</ul>
-				</div>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/posts">Blog</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
         <div class="social-links">Social Links</div>
         <div class="copyright">© 2018 Alex Trost</div>
       </FooterContainer>

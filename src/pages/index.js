@@ -4,12 +4,12 @@ import PostListing from "../components/Posts/PostListing";
 
 const IndexPage = ({ data }) => (
   <React.Fragment>
-  <div>
-    <h2>Recent Articles</h2>
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <PostListing key={node.id} post={node} />
-    ))}
-  </div>
+    <div>
+      <h2>Recent Articles</h2>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <PostListing key={node.id} post={node} />
+      ))}
+    </div>
   </React.Fragment>
 );
 

@@ -34,14 +34,14 @@ const HeaderContainer = styled.div`
     "intro-text"
     "nav";
 
-    @media all and (min-width:800px) {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 10px;
-      grid-template-rows: 1fr 4fr;
-      grid-template-areas:
-        "site-name nav"
-        "intro-text intro-text";
-    }
+  @media all and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+      "site-name nav"
+      "intro-text intro-text";
+  }
 `;
 
 const NamePictureContainer = styled.div`
@@ -51,7 +51,6 @@ const NamePictureContainer = styled.div`
 `;
 
 const HeaderPortrait = styled.div`
-
   img {
     height: 50px;
     width: 50px;
@@ -66,7 +65,7 @@ const HeaderPortrait = styled.div`
 `;
 
 const HeaderName = styled.div`
-  padding-top:8px;
+  padding-top: 8px;
   .name {
     display: flex;
     color: white;
@@ -99,11 +98,11 @@ const HeaderName = styled.div`
 `;
 
 const MainNav = styled.nav`
-  padding-top:8px;
+  padding-top: 8px;
   grid-area: nav;
   justify-self: center;
-    align-self:end;
-    ul {
+  align-self: end;
+  ul {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -111,7 +110,7 @@ const MainNav = styled.nav`
     font-size: 1.3rem;
     font-weight: 400;
     li {
-      text-align:center;
+      text-align: center;
       a {
         color: white;
         padding: 8px 15px;
@@ -124,12 +123,12 @@ const MainNav = styled.nav`
   }
   @media all and (min-width: 600px) {
     ul {
-    flex-direction: row;
+      flex-direction: row;
+    }
   }
-}
   @media all and (min-width: 800px) {
     justify-self: end;
-    align-self:start;
+    align-self: start;
   }
 `;
 
@@ -219,8 +218,8 @@ export default class Header extends Component {
           }}
         >
           <HeaderContainer>
-              <Link to="/">
-            <NamePictureContainer>
+            <Link to="/">
+              <NamePictureContainer>
                 <HeaderPortrait>
                   <img src={portrait} alt="Alex Trost Portrait" />
                 </HeaderPortrait>
@@ -228,8 +227,8 @@ export default class Header extends Component {
                   <p className="name">Alex Trost</p>
                   <p className="title">Front-End Web Developer</p>
                 </HeaderName>
-            </NamePictureContainer>
-              </Link>
+              </NamePictureContainer>
+            </Link>
             <MainNav>
               <ul>
                 <li>
