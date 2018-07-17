@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import Menu from "../Menu";
 
 import portrait from "../../images/AlexPortrait.jpg";
 
@@ -11,9 +12,11 @@ const HeaderWrapper = styled.header`
   margin-bottom: 1.45rem;
   overflow: hidden;
   position: relative;
-  height: ${({ isHome }) => (isHome ? "100vh" : "20vh")};
+  height: ${({ isHome, menuOpen }) =>
+    isHome ? "100vh" : menuOpen ? "80vh" : "20vh"};
   @media all and (min-width: 800px) {
-    height: ${({ isHome }) => (isHome ? "80vh" : "20vh")};
+    height: ${({ isHome, menuOpen }) =>
+      isHome ? "80vh" : menuOpen ? "80vh" : "20vh"};
   }
 `;
 
@@ -26,22 +29,17 @@ const HeaderContainer = styled.div`
   position: relative;
   display: grid;
 
-  grid-template-columns: auto;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 10px;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: 1fr 4fr;
   grid-template-areas:
-    "site-name "
-    "intro-text"
-    "nav";
+    "site-name nav"
+    "intro-text intro-text";
 
   @media all and (min-width: 800px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 10px;
     grid-template-rows: 1fr 4fr;
-    grid-template-areas:
-      "site-name nav"
-      "intro-text intro-text";
-  }
 `;
 
 const NamePictureContainer = styled.div`
@@ -55,8 +53,16 @@ const HeaderPortrait = styled.div`
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    display: none;
   }
-  @media all and (min-width: 600px) {
+  @media all and (min-width: 500px) {
+    img {
+      height: 50px;
+      width: 50px;
+      display: flex;
+    }
+  }
+  @media all and (min-width: 700px) {
     img {
       height: 80px;
       width: 80px;
@@ -72,8 +78,8 @@ const HeaderName = styled.div`
     font-family: "Rubik", sans-serif;
     padding-left: 13px;
     font-weight: 500;
-    font-size: 1.8rem;
-    line-height: 2rem;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
     margin: 0;
   }
   .title {
@@ -81,8 +87,8 @@ const HeaderName = styled.div`
   }
   @media all and (min-width: 600px) {
     .name {
-      font-size: 2.2rem;
-      line-height: 2.2rem;
+      font-size: 2rem;
+      line-height: 2rem;
     }
     .title {
       display: flex;
@@ -94,41 +100,6 @@ const HeaderName = styled.div`
       line-height: 1rem;
       margin: 0;
     }
-  }
-`;
-
-const MainNav = styled.nav`
-  padding-top: 8px;
-  grid-area: nav;
-  justify-self: center;
-  align-self: end;
-  ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    font-family: "Rubik", sans-serif;
-    font-size: 1.3rem;
-    font-weight: 400;
-    li {
-      text-align: center;
-      a {
-        color: white;
-        padding: 8px 15px;
-        border-radius: 6px;
-        &:hover {
-          background: #ffffff33;
-        }
-      }
-    }
-  }
-  @media all and (min-width: 600px) {
-    ul {
-      flex-direction: row;
-    }
-  }
-  @media all and (min-width: 800px) {
-    justify-self: end;
-    align-self: start;
   }
 `;
 
@@ -185,6 +156,17 @@ const IntroText = styled.div`
 `;
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { menuOpen: false };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const menuOpen = !this.state.menuOpen;
+    this.setState({ menuOpen });
+  }
+
   componentDidUpdate = (prevProps, prevState) => {
     const { location } = this.props;
     if (location.pathname !== prevProps.location.pathname) {
@@ -213,38 +195,29 @@ export default class Header extends Component {
       <React.Fragment>
         <HeaderWrapper
           isHome={isHome}
+          menuOpen={this.state.menuOpen}
           ref={wrapper => {
             this.wrapper = ReactDOM.findDOMNode(wrapper);
           }}
         >
           <HeaderContainer>
-            <Link to="/">
-              <NamePictureContainer>
-                <HeaderPortrait>
+            <NamePictureContainer>
+              <HeaderPortrait>
+                <Link to="/">
                   <img src={portrait} alt="Alex Trost Portrait" />
-                </HeaderPortrait>
-                <HeaderName>
+                </Link>
+              </HeaderPortrait>
+              <HeaderName>
+                <Link to="/">
                   <p className="name">Alex Trost</p>
                   <p className="title">Front-End Web Developer</p>
-                </HeaderName>
-              </NamePictureContainer>
-            </Link>
-            <MainNav>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/projects">Projects</Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contact</Link>
-                </li>
-              </ul>
-            </MainNav>
+                </Link>
+              </HeaderName>
+            </NamePictureContainer>
+            <Menu
+              handleClick={this.handleClick}
+              menuOpen={this.state.menuOpen}
+            />
             {isHome && (
               <IntroText>
                 <p>
