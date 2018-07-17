@@ -29,10 +29,11 @@ const FooterContainer = styled.footer`
     list-style: none;
     display: flex;
     flex-direction:column;
+    margin:0;
     li {
       text-align:center;
-      padding: 1px 10px;
-    }
+      padding: 1px 5px;
+  }
   }
 	.logo{
 		grid-area: logo;
@@ -42,11 +43,16 @@ const FooterContainer = styled.footer`
 		grid-area: site-map;
 		display:flex;
 		justify-content: space-between;
-		
-		
   }
   .social-links{
     grid-area: social-links;
+    ul {
+    flex-direction:row;
+    margin:0;
+    li {
+      padding: 1px 15px;
+    }
+    }
   }
   .copyright{
     grid-area: copyright;
@@ -68,18 +74,20 @@ const FooterContainer = styled.footer`
 `;
 
 const SocialIcon = styled.img`
-    padding: 5px
+  padding: 5px
     :hover {
-      padding:3px;
-    }
-`
+    padding: 3px;
+  }
+`;
 
 export default class Footer extends Component {
   render() {
     return (
       <FooterContainer>
         <div class="logo">
-        <Link to="/"><img src={logo} /></Link>
+          <Link to="/">
+            <img src={logo} />
+          </Link>
         </div>
         <div class="site-map">
           <ul>
@@ -101,29 +109,17 @@ export default class Footer extends Component {
           <ul>
             <li>
               <a href="https://www.linkedin.com/in/mrtrost/">
-                <SocialIcon
-                  height="40"
-                  width="40"
-                  src={linkedInLogo}
-                />
+                <SocialIcon height="40" width="40" src={linkedInLogo} />
               </a>
             </li>
             <li>
               <a href="https://www.github.com/a-trost">
-                <SocialIcon
-                  height="40"
-                  width="40"
-                  src={githubLogo}
-                />
+                <SocialIcon height="40" width="40" src={githubLogo} />
               </a>
             </li>
             <li>
               <a href="https://twitter.com/MisterTrost">
-                <SocialIcon
-                  height="40"
-                  width="40"
-                  src={twitterLogo}
-                />
+                <SocialIcon height="40" width="40" src={twitterLogo} />
               </a>
             </li>
           </ul>
