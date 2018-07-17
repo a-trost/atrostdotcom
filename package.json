@@ -40,5 +40,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/a-trost/atrostdotcom"
+  },
+  "guppy": {
+    "id": "alex-trost-personal-site",
+    "name": "alex-trost-personal-site",
+    "type": "gatsby",
+    "color": "#4919b7",
+    "icon": null,
+    "createdAt": 1531846653270
   }
 }
