@@ -1,6 +1,6 @@
 ---
 title: Teaching Kids Coding for the First Time
-cover: /assets/teaching-kids-coding-cover.jpg
+image: /assets/teaching-kids-coding-cover.jpg
 date: "2018-04-06"
 ---
 
