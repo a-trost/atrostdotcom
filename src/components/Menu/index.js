@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
-import menuClose from "../../images/menuClose.svg";
-import menuOpen from "../../images/menuOpen.svg";
+import menuClose from "../../images/x.svg";
+import menuOpen from "../../images/burger.svg";
 
 const Nav = styled.div`
   padding-top: 8px;
@@ -67,7 +67,7 @@ const Nav = styled.div`
   }
 `;
 
-export default class index extends Component {
+export default class Menu extends Component {
   render() {
     let listClass = this.props.menuOpen ? "open" : "";
     let menuText = this.props.menuOpen ? menuClose : menuOpen;
