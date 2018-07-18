@@ -4,7 +4,10 @@ import Helmet from "react-helmet";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-require("prismjs/themes/prism-coy.css");
+import favicon16 from "../images/favicon16.png"
+import favicon32 from "../images/favicon32.png"
+import favicon64 from "../images/favicon64.png"
+import "prismjs/themes/prism-coy.css";
 import "./index.css";
 
 const Layout = ({ children, data, location }) => (
@@ -22,6 +25,11 @@ const Layout = ({ children, data, location }) => (
             "frontend, developer, front, end, javascript, graphic design, graphic, react, python, web",
         },
       ]}
+      link={[
+        { rel: 'icon', type: 'image/png', sizes: "16x16", href: `${favicon16}` },
+        { rel: 'icon', type: 'image/png', sizes: "32x32", href: `${favicon32}` },
+        { rel: 'shortcut icon', type: 'image/png', href: `${favicon64}` },
+    ]}
     />
     <Header
       data={data}
