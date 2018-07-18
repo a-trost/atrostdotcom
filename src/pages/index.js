@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "gatsby-link";
 import PostListing from "../components/Posts/PostListing";
+import Resume from "../components/Resume";
 
 const IndexPage = ({ data }) => (
   <React.Fragment>
+    <Resume />
     <div>
       <h2>Recent Articles</h2>
       {data.allMarkdownRemark.edges.map(({ node }) => (
