@@ -42,6 +42,18 @@ module.exports = {
         ]
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Alex Trost - Front-End Web Developer",
+        short_name: "Alex Trost",
+        start_url: "/",
+        background_color: "#F4F4F4",
+        theme_color: "#15B3EA",
+        display: "minimal-ui",
+        icon: "src/images/base-icon.png",
+      },
+    },
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -49,5 +61,13 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#15B3EA`,
+        showSpinner: false,
+      },
+    },
+    `gatsby-plugin-netlify`,
   ],
 };
