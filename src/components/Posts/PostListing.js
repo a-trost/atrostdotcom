@@ -14,25 +14,31 @@ const CoverImage = styled.img`
   position: relative;
   height: auto;
   width: auto;
+  border-radius: .5rem .5rem 0 0;
 `;
 
 const Card = styled.article`
-  -moz-box-shadow: 0px 2px 5px #aaa;
-  -webkit-box-shadow: 0px 2px 5px #aaa;
-  box-shadow: 0px 2px 5px #aaa;
+  -moz-box-shadow: 5px 5px 25px 0 rgba(46,61,73,.3);
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(46,61,73,.3);
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.3);
+  border-radius: .5rem;
+  transition: all .4s ease;
+  :hover {
+    -moz-box-shadow: 2px 2px 25px 0 rgba(46,61,73,.2);
+    -webkit-box-shadow: 2px 2px 25px 0 rgba(46,61,73,.2);
+    box-shadow: 2px 2px 25px 0 rgba(46,61,73,.2);
+  }
 `;
 
 const TextContainer = styled.div`
-  padding: 10px;
+  padding: 1.2rem;
+  line-height: 1.25rem;
 `;
 
 const PostTitle = styled.h2`
-  margin-bottom: 5px;
+  margin-bottom: .5rem;
 `;
 
-const Excerpt = styled.p`
-  line-height: 1rem;
-`;
 
 const PostListing = ({ post }) => {
   return (
@@ -46,9 +52,9 @@ const PostListing = ({ post }) => {
         <Link to={post.fields.slug}>
           <PostTitle>{post.frontmatter.title}</PostTitle>
         </Link>
-        <Excerpt>
+        <p>
           {post.excerpt} <Link to={post.fields.slug} />
-        </Excerpt>
+        </p>
       </TextContainer>
     </Card>
   );
