@@ -29,6 +29,7 @@ const Nav = styled.div`
       color: white;
       padding: 8px 15px;
       border-radius: 6px;
+      transition: all .4s ease;
       :hover {
         background: #ffffff33;
       }
