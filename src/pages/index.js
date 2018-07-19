@@ -1,16 +1,32 @@
 import React from "react";
 import Link from "gatsby-link";
+import styled from "styled-components";
 import PostListing from "../components/Posts/PostListing";
 import Resume from "../components/Resume";
+
+const PostContainer = styled.div`
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-gap: 35px;
+  justify-items: stretch;
+  margin-bottom: 40px;
+
+  @media all and (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
 
 const IndexPage = ({ data }) => (
   <React.Fragment>
     <Resume />
     <div>
-      <h2>Recent Articles</h2>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <PostListing key={node.id} post={node} />
-      ))}
+      <h1>Recent Articles</h1>
+      <PostContainer>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <PostListing key={node.id} post={node} />
+        ))}
+      </PostContainer>
     </div>
   </React.Fragment>
 );
@@ -35,6 +51,7 @@ export const query = graphql`
           frontmatter {
             title
             date
+            image
           }
           html
           excerpt(pruneLength: 280)
