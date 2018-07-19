@@ -92,7 +92,7 @@ const HeaderName = styled.div`
     }
     .title {
       display: flex;
-      color: rgb(255, 255, 255, 80%);
+      color: #eee;
       font-family: "Rubik", sans-serif;
       padding-left: 13px;
       font-weight: 400;
