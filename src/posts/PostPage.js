@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 
 const BlogHeader = styled.h1`
   margin:40px 20px;
@@ -26,9 +27,11 @@ const BlogDate = styled.p`
 export default class PostPage extends Component {
   render() {
     const { data } = this.props;
+    const siteTitle = "Alex Trost - Frontend Web Developer"
     if (!data) return null;
     return (
       <div>
+                <Helmet title={`${data.markdownRemark.frontmatter.title} | ${siteTitle}`} />
         <BlogHeader>{data.markdownRemark.frontmatter.title}</BlogHeader>
 
         <BlogCoverImage src={data.markdownRemark.frontmatter.image} />
