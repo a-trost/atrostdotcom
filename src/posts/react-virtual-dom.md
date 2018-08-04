@@ -1,0 +1,148 @@
+---
+title: Understanding React's Virtual DOM
+category: "Programming"
+image: /assets/react-virtual-dom-cover.png
+date: "2018-08-04"
+---
+
+I recently was asked to describe React's Virtual DOM in an interview and I really stumbled through my explanation. It's these kinds of core concepts that we sometimes take for granted and understand only in a broad sense that might come back to haunt us in things like interviews. Watch the video below to get the full rundown about React's Virtual DOM.
+
+<iframe width="100%" height="450px" src="https://www.youtube.com/embed/hnQcDtXZC6g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+The Virtual DOM is a big concept in React, and it’s part of why React is so fast at updating a site. While you don’t need to worry about it too much, as it’s really abstracted away, it’s good to know how it works and why we do some of the things we do in React.
+
+Every dynamic javascript framework needs some way to update the DOM, or Document Object Model. If the user changes their name, scores some points, or deletes an item from a list, you need to update the screen.
+
+The problem is that screen repaints are expensive and slow.
+
+If we tell the DOM to update everything, then it needs to calculate my CSS and layouts and lots of other stuff each time.
+
+This might not be bad if you only need to change something once, but what if you have something like a timer? Do we want to rerender the entire DOM every second just to change one number?
+
+You don’t want to rerender things if they didn’t change, that’s a waste of our resources. So what do we do?
+
+Yeah. The Virtual DOM.
+
+The Virtual DOM is React’s copy of the DOM, built in JS for speed.
+
+The actual DOM is pretty slow to work with, which is why React does comparisons on the Virtual DOM behind the scenes instead.
+
+### Reconciliation
+React’s way of seeing what’s different with new renders is called *Reconciliation*. To be as fast as possible, React makes two assumptions:
+
+1. Two elements of different types will produce different trees.
+
+This is generally good, because if React sees that a nav element is now a header element, it’s not going to waste time digging into that element to see if there are further changes inside. It just destroys the tree and starts the render from there.
+
+Like this code here:
+```html
+<nav>
+	<ul>
+		<li>Home</li>
+	<ul>
+</nav>
+
+
+<header>
+	<h1>Blog Post</h1>
+</header>
+```
+This works most of the time because these different semantic elements most likely aren't holding the same data.
+
+If, for some reason, your code does something like this: 
+```html
+<div>
+	<ol>
+		<li>Item 1</li>
+		<li>Item 2</li>
+	</ol>
+</div> 
+
+
+<article>
+	<ol>
+		<li>Item 1</li>
+		<li>Item 2</li>
+	</ol>
+</article> 
+```
+React isn't going to dig in and see if those items have changed, it's just going to burn the tree down as soon as it sees that the `<div>` has been replaced by `<article>`. So if you change the node at the top of a tree, don't expect the rest of the tree to hang around.
+
+Now that’s the first assumption React makes with reconciliation. The second assumption is:
+2. The developer can hint at which child elements may be stable across different renders with a key prop.
+
+Here I've got a list where the child elements, the `<li>` don't have that key prop. 
+
+No Keys:
+```html
+<div>
+	<ol>
+		<li>Dogs</li>
+		<li>Cats</li>
+		<li>Rabbits</li>
+	</ol>
+</div> 
+```
+
+This will run in React, but you'll get a warning in your console mentioning the unique key.
+
+The problem comes in if React needs to start adding to, deleting from, or reordering this list. If we add a new `<li>` to the end of the list, it's able to tell that there was one change to the list, and it only changes the one new `<li>` node.
+
+But what if we do this:
+```html
+<div>
+	<ol>
+		<li>Birds</li>
+		<li>Dogs</li>
+		<li>Cats</li>
+		<li>Rabbits</li>
+	</ol>
+</div> 
+```
+
+We put that new item at the *top* of the list, which makes React unable to recognize all the following elements. So even though nothing else changed, it destroys all the `<li>` nodes and renders them all from scratch. It had no good way of knowing that the "Dogs", "Cats", and "Rabbits" items were just moved down. No good.
+
+Now, with keys:
+```html
+<div>
+	<ol>
+		<li key="Dogs">Dogs</li>
+		<li key="Cats">Cats</li>
+		<li key="Rabbits">Rabbits</li>
+	</ol>
+</div> 
+```
+Without keys, React was unable to tell which elements were stable, or weren't actually changing, between renders. Keys tell React "This `Dogs` element is gonna be the same no matter where I put it, so no need to destroy and create it each time, just shift it around."
+
+So if we do this:
+```html
+<div>
+	<ol>
+		<li key="Birds">Birds</li>
+		<li key="Dogs">Dogs</li>
+		<li key="Cats">Cats</li>
+		<li key="Rabbits">Rabbits</li>
+	</ol>
+</div> 
+```
+Guess how many nodes it needs to render?
+
+Just "Birds." The rest is recognized and shifted. Nothing is destroyed, we're happy.
+
+
+Granted, this was a simple example. If you're getting into real data, you're definitely going to use a unique ID (What if I add Rabbits twice? Those keys are no longer unique). There are plenty of UUID libraries out there to help you with it if your object doesn't have an inherently unique ID already.
+
+
+
+I tossed together a little playground so you can see the rendering in action. Check it out [here](https://playground.atrost.com/virtualdom), or get the code [here](https://github.com/a-trost/react-playground/blob/master/src/VirtualDom.js). It's not great code, it just allows us to see some of the concepts in action.
+
+We've got some text, headers, as well as some buttons and a counter for that button. The static text is never going to rerender. React's smarter than that.
+
+With the playground up, open your browser's Dev Tools (CMD-Option-I in Chrome), start changing stuff around and watch what flashes. If it's flashing, that's Chrome letting you know that it's being rendered. Notice the difference between the list with key props and the list without.
+
+I go through the playground a bit more in the second half of the [video](https://www.youtube.com/watch?v=hnQcDtXZC6g).
+
+So just to wrap it up, the Virtual DOM is how React quickly figures out what has changed and keeps your app running quick for cheap. Hope this helped, if you have any questions, hit me up on [Twitter](https://twitter.com/MisterTrost). Thanks!
+
+### Further Reading
+As always, check out the [React Documentation](https://reactjs.org/docs/faq-internals.html).
