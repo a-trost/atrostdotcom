@@ -199,7 +199,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45em 'Roboto', sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
