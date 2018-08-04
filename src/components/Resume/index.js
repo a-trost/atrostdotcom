@@ -109,7 +109,7 @@ export default class Resume extends Component {
   render() {
     return (
       <React.Fragment>
-        <h2>Resume</h2>
+        <h1>Resume</h1>
         <Container>
           <CategoryContainer>
             <CategoryName>
@@ -175,8 +175,7 @@ export default class Resume extends Component {
               </ResumeItem>
               <ResumeItem>
                 <ItemInfo>
-                  <Organization>Freelance</Organization>
-                  <Title>Graphic Designer</Title>
+                  <Organization>Freelance Graphic Designer</Organization>
                   <Description>
                     <ul>
                       <li>
@@ -190,6 +189,7 @@ export default class Resume extends Component {
               </ResumeItem>
             </CategoryItems>
           </CategoryContainer>
+          <SectionDivider />
           <CategoryContainer>
             <CategoryName>
               <h3>Projects</h3>
@@ -203,18 +203,132 @@ export default class Resume extends Component {
                     rhymes.
                   </Title>
                   <Description>
-                    <p>
-                      Map based progressive web app that generates parody
-                      reviews based on user-given locations.
-                    </p>
-
-                    <p>
-                      <span>Technologies:</span> React, Redux, JavaScript,
-                      Google Maps API, Foursquare API
-                    </p>
+                    <ul>
+                      <li>
+                        Map based progressive web app that generates parody
+                        reviews based on user-given locations.
+                      </li>
+                      <li>
+                        <span>Technologies:</span> React, Redux, JavaScript,
+                        Google Maps API, Foursquare API, React-Router
+                      </li>
+                      <li>
+                        <a
+                          href="https://bestreviews.atrost.com/"
+                          target="_blank"
+                        >
+                          > View Project
+                        </a>
+                      </li>
+                    </ul>
                   </Description>
                 </ItemInfo>
-                <Dates>June 2018</Dates>
+                <Dates>Jun 2018</Dates>
+              </ResumeItem>
+              <ResumeItem>
+                <ItemInfo>
+                  <Organization>Alexandria</Organization>
+                  <Title>React Book tracking app with search</Title>
+                  <Description>
+                    <ul>
+                      <li>
+                        Progressive web app that uses a book API to search, and
+                        allows users to track books "read", "want to read" and
+                        "reading."
+                      </li>
+                      <li>
+                        <span>Technologies: </span> React, JavaScript,
+                        Material-UI, React-Router
+                      </li>
+                      <li>
+                        <a
+                          href="https://alexandria.atrost.com/"
+                          target="_blank"
+                        >
+                          > View Project
+                        </a>
+                      </li>
+                    </ul>
+                  </Description>
+                </ItemInfo>
+                <Dates>Apr 2018</Dates>
+              </ResumeItem>
+              <ResumeItem>
+                <ItemInfo>
+                  <Organization>Newton</Organization>
+                  <Title>EdTech app for teachers and students.</Title>
+                  <Description>
+                    <ul>
+                      <li>
+                        Full Stack web app that makes teachers more efficient
+                        and motivates kids to learn.
+                      </li>
+                      <li>
+                        Makes test data actionable for both teachers and
+                        students. Gives teachers insight on their data, and
+                        helps them to differentiate instruction so every student
+                        grows. Gamifies the learning process so that students
+                        unlock stickers, badges and avatars for hard work and
+                        growth.
+                      </li>
+                      <li>
+                        In first year, students reached the ninety-ninth
+                        percentile for growth on their year-end Math assessment.
+                      </li>
+                      <li>
+                        <span>Technologies: </span>
+                        Python, Django, Foundation, Webscraping, Mailgun,
+                        Posgresql, Nginx, Selenium, Illustrator, Photoshop
+                      </li>
+                    </ul>
+                  </Description>
+                </ItemInfo>
+                <Dates>2015-2018</Dates>
+              </ResumeItem>
+            </CategoryItems>
+          </CategoryContainer>
+          <CategoryContainer>
+            <CategoryName>
+              <h3>Education</h3>
+            </CategoryName>
+            <CategoryItems>
+              <ResumeItem>
+                <ItemInfo>
+                  <Organization>Frontend Web Developer Nanodegree</Organization>
+                  <Title>Udacity</Title>
+                  <Description>
+                    <ul>
+                      <li>Google Developer Challenge Scholarship Recipient</li>
+                      <li>
+                        <a
+                          href="https://confirm.udacity.com/XLDCHTKA"
+                          target="_blank"
+                        >
+                          > View Certificate
+                        </a>
+                      </li>
+                    </ul>
+                  </Description>
+                </ItemInfo>
+                <Dates>Jul 2018</Dates>
+              </ResumeItem>
+              <ResumeItem>
+                <ItemInfo>
+                  <Organization>
+                    Bachelor of Science in Early Childhood Education
+                  </Organization>
+                  <Title>Temple University, Philadelphia, PA</Title>
+                </ItemInfo>
+                <Dates>Dec 2014</Dates>
+              </ResumeItem>
+              <ResumeItem>
+                <ItemInfo>
+                  <Organization>
+                    Associate of Arts in Graphic Design
+                  </Organization>
+                  <Title>Bucks County Community College, Newtown, PA</Title>
+                </ItemInfo>
+                <Dates>Jan 2009</Dates>
               </ResumeItem>
             </CategoryItems>
           </CategoryContainer>
