@@ -38,17 +38,13 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    'gatsby-remark-copy-linked-files',
-    'gatsby-remark-smartypants',
-    `gatsby-plugin-feed`,
+    "gatsby-remark-copy-linked-files",
+    "gatsby-remark-smartypants",
     {
       resolve: "gatsby-transformer-remark",
       options: {
         excerpt_separator: `<!-- end -->`,
-        plugins: [
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-        ]
+        plugins: [`gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files`],
       },
     },
     {
