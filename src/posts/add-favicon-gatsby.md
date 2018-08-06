@@ -3,6 +3,7 @@ title: How to Add a Favicon to your Gatsby Site
 category: "Programming"
 image: /assets/add-favicon-gatsby-cover.png
 date: "2018-07-18"
+type: "blog"
 ---
 
 Putting together this site I had to do a bit of digging to find the best way to add a favicon. There's a [great Gatsby plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/) for setting up the manifest.webmanifest, which gives you icons and theme colors for users on mobile. It's great, because you just need to point it towards a large source image and it generates all the different icon sizes. However, it stops short of making the favicon images.

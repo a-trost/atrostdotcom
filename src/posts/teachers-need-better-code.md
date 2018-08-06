@@ -1,7 +1,9 @@
 ---
 title: Two Ways to Make Teaching Better With Code
+category: "EdTech"
 image: /assets/teachers-need-better-code-cover.jpg
 date: "2018-03-31"
+type: "blog"
 ---
 I've been a teacher for 4 years and have tried dozens of software solutions aimed at teachers and classrooms. It’s painfully clear that teachers are in need of better computer support. We need to move past code that just does flash card review or attendance taking, but software that actually makes the job of the teacher better.
 

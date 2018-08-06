@@ -3,6 +3,7 @@ title: Making a Javascript Arcade Clone
 category: "Programming"
 image: /assets/making-dogger-cover.png
 date: "2018-04-21"
+type: "blog"
 ---
 ![game-screenshots](/assets/making-dogger-game-screenshots.png)
 

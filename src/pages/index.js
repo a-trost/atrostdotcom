@@ -41,7 +41,11 @@ export const query = graphql`
         desc
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { type: { eq: "blog" } } }
+    ) {
       edges {
         node {
           id

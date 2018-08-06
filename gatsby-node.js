@@ -7,18 +7,22 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     const slug = createFilePath({
       node,
       getNode,
-      basePath: "posts"
+      // basePath: "posts",
     });
     createNodeField({
       node,
       name: "slug",
-      value: `/posts${slug}`
+      value: `${slug}`,
     });
   }
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
+  const pagePaths = {
+    blog: "./src/posts/PostPage.js",
+    project: "./src/projects/ProjectPage.js",
+  };
   return new Promise((resolve, reject) => {
     graphql(`
       {
@@ -28,6 +32,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               fields {
                 slug
               }
+              frontmatter {
+                type
+              }
             }
           }
         }
@@ -36,10 +43,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
-          component: path.resolve("./src/posts/PostPage.js"),
+          component: path.resolve(pagePaths[node.frontmatter.type]),
           context: {
-            slug: node.fields.slug
-          }
+            slug: node.fields.slug,
+          },
         });
       });
       resolve();

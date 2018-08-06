@@ -12,10 +12,6 @@ const ProjectHeader = styled.h1`
   text-align:center
 `;
 
-const ProjectCoverImage = styled.img`
-  border-radius: 10px;
-`;
-
 export default class ProjectPage extends Component {
   render() {
     const { data } = this.props;
@@ -23,7 +19,6 @@ export default class ProjectPage extends Component {
     return (
       <div>
         <ProjectHeader>{data.markdownRemark.frontmatter.title}</ProjectHeader>
-        <ProjectCoverImage src={data.markdownRemark.frontmatter.image} />
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </div>
     );

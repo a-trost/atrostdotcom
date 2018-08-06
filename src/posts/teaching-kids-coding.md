@@ -2,6 +2,7 @@
 title: Teaching Kids Coding for the First Time
 image: /assets/teaching-kids-coding-cover.jpg
 date: "2018-04-06"
+type: "blog"
 ---
 
 Filling students with the excitement of coding has been a dream of mine ever since I began to learn coding myself. I've been looking for opportunities to bring my enthusiasm to the students at my school, but wasn't quite sure just how to do it.
