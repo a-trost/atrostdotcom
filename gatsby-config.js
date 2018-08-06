@@ -10,6 +10,12 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-netlify-cms",
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "src",
@@ -32,6 +38,9 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    'gatsby-remark-copy-linked-files',
+    'gatsby-remark-smartypants',
+    `gatsby-plugin-feed`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
