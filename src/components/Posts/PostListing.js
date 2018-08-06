@@ -14,19 +14,20 @@ const CoverImage = styled.img`
   position: relative;
   height: auto;
   width: auto;
-  border-radius: .5rem .5rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
 `;
 
 const Card = styled.article`
-  -moz-box-shadow: 5px 5px 25px 0 rgba(46,61,73,.3);
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(46,61,73,.3);
-  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.3);
-  border-radius: .5rem;
-  transition: all .4s ease;
+  background-image: linear-gradient(to top, #fafafa 0, #fdfdfd 20%, #fff 60%);
+  -moz-box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
+  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
+  border-radius: 0.5rem;
+  transition: all 0.4s ease;
   :hover {
-    -moz-box-shadow: 2px 2px 25px 0 rgba(46,61,73,.2);
-    -webkit-box-shadow: 2px 2px 25px 0 rgba(46,61,73,.2);
-    box-shadow: 2px 2px 25px 0 rgba(46,61,73,.2);
+    -moz-box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.2);
+    -webkit-box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.2);
+    box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.2);
   }
 `;
 
@@ -36,9 +37,8 @@ const TextContainer = styled.div`
 `;
 
 const PostTitle = styled.h2`
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 `;
-
 
 const PostListing = ({ post }) => {
   return (

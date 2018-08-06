@@ -5,9 +5,9 @@ import styled from "styled-components";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import favicon16 from "../images/favicon16.png"
-import favicon32 from "../images/favicon32.png"
-import favicon64 from "../images/favicon64.png"
+import favicon16 from "../images/favicon16.png";
+import favicon32 from "../images/favicon32.png";
+import favicon64 from "../images/favicon64.png";
 import "prismjs/themes/prism-coy.css";
 import "./index.css";
 
@@ -33,28 +33,38 @@ const Layout = ({ children, data, location }) => (
         },
       ]}
       link={[
-        { rel: 'icon', type: 'image/png', sizes: "16x16", href: `${favicon16}` },
-        { rel: 'icon', type: 'image/png', sizes: "32x32", href: `${favicon32}` },
-        { rel: 'shortcut icon', type: 'image/png', href: `${favicon64}` },
-    ]}
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: `${favicon16}`,
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: `${favicon32}`,
+        },
+        { rel: "shortcut icon", type: "image/png", href: `${favicon64}` },
+      ]}
     />
     <Container>
-    <Header
-      data={data}
-      siteTitle={data.site.siteMetadata.title}
-      location={location}
-    />
-    <div
-      style={{
-        margin: "0 auto",
-        maxWidth: 960,
-        padding: "0px 1.0875rem 1.45rem",
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-    <Footer />
+      <Header
+        data={data}
+        siteTitle={data.site.siteMetadata.title}
+        location={location}
+      />
+      <div
+        style={{
+          margin: "0 auto",
+          maxWidth: 960,
+          padding: "0px 1.0875rem 1.45rem",
+          paddingTop: 0,
+        }}
+      >
+        {children()}
+      </div>
+      <Footer />
     </Container>
   </React.Fragment>
 );
