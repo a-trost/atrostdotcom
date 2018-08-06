@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import styled from "styled-components";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -10,8 +11,14 @@ import favicon64 from "../images/favicon64.png"
 import "prismjs/themes/prism-coy.css";
 import "./index.css";
 
+const Container = styled.div`
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+`;
+
 const Layout = ({ children, data, location }) => (
-  <div>
+  <React.Fragment>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -31,6 +38,7 @@ const Layout = ({ children, data, location }) => (
         { rel: 'shortcut icon', type: 'image/png', href: `${favicon64}` },
     ]}
     />
+    <Container>
     <Header
       data={data}
       siteTitle={data.site.siteMetadata.title}
@@ -47,7 +55,8 @@ const Layout = ({ children, data, location }) => (
       {children()}
     </div>
     <Footer />
-  </div>
+    </Container>
+  </React.Fragment>
 );
 
 Layout.propTypes = {
