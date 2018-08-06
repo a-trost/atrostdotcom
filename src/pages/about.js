@@ -4,7 +4,7 @@ export default class About extends Component {
   render() {
     return (
       <div>
-        <h1>About</h1>
+        <h2>About</h2>
         <p>
           Hey, I’m Alex Trost, a Front-end Developer from Philadelphia, now
           living in New Haven. I like solving problems and eliminating
