@@ -119,6 +119,24 @@ export default class Resume extends Component {
               <ResumeItem>
                 <ItemInfo>
                   <Organization>
+                    GoNation
+                  </Organization>
+                  <Title>
+                    Junior Front-end Web Developer (2018-Present)
+                  </Title>
+                  {/* <Description>
+                    <ul>
+                      <li>
+                        
+                      </li>
+                    </ul>
+                  </Description> */}
+                </ItemInfo>
+                <Dates>2018-Present</Dates>
+              </ResumeItem>
+              <ResumeItem>
+                <ItemInfo>
+                  <Organization>
                     CodeSmash - Coding Education for Kids
                   </Organization>
                   <Title>

@@ -25,7 +25,7 @@ export default class About extends Component {
           learning further, so I got a Google Developer Challenge Scholarship to
           help me learn front end languages like JavaScript and frameworks like
           React. I've graduated with my <a href="">Udacity Nanodegree</a> and
-          now I do freelance web development and graphic design.{" "}
+          now I work at GoNation as a Front-End Web Developer.{" "}
         </p>
       </div>
     );
