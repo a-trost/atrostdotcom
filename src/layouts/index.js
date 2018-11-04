@@ -13,9 +13,20 @@ import "./index.css";
 
 const Container = styled.div`
   min-height: 100%;
+  width: 100%;
   display: grid;
   grid-template-rows: 1fr auto auto;
 `;
+
+const ChildWrapper = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 95vw;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+    padding-top: 0;
+`
 
 const Layout = ({ children, data, location }) => (
   <React.Fragment>
@@ -54,16 +65,9 @@ const Layout = ({ children, data, location }) => (
         siteTitle={data.site.siteMetadata.title}
         location={location}
       />
-      <div
-        style={{
-          margin: "0 auto",
-          maxWidth: 960,
-          padding: "0px 1.0875rem 1.45rem",
-          paddingTop: 0,
-        }}
-      >
+      <ChildWrapper>
         {children()}
-      </div>
+      </ChildWrapper>
       <Footer />
     </Container>
   </React.Fragment>

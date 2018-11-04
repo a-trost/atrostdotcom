@@ -10,7 +10,7 @@ const BlogHeader = styled.h1`
   font-size: 3rem;
   line-height: 1
   text-rendering: optimizeLegibility;
-  text-align:center
+  text-align:center;
 `;
 
 const BlogCoverImage = styled.img`
@@ -24,18 +24,27 @@ const BlogDate = styled.p`
   text-transform: uppercase;
 `;
 
+const BlogWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+`;
 export default class PostPage extends Component {
   render() {
     const { data } = this.props;
-    const siteTitle = "Alex Trost - Frontend Web Developer"
+    const siteTitle = "Alex Trost - Frontend Web Developer";
     if (!data) return null;
     return (
       <div>
-                <Helmet title={`${data.markdownRemark.frontmatter.title} | ${siteTitle}`} />
+        <Helmet
+          title={`${data.markdownRemark.frontmatter.title} | ${siteTitle}`}
+        />
         <BlogHeader>{data.markdownRemark.frontmatter.title}</BlogHeader>
 
         <BlogCoverImage src={data.markdownRemark.frontmatter.image} />
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        <BlogWrapper
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
         <BlogDate>{data.markdownRemark.frontmatter.date}</BlogDate>
       </div>
     );
