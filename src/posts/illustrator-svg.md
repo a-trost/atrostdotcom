@@ -1,0 +1,109 @@
+---
+title: Copy and paste SVG code with Adobe Illustrator
+category: "Design"
+image: /assets/illustrator-svg-cover.png
+date: "2018-11-04"
+type: "blog"
+---
+
+My coworker stumbled on a pretty neat trick that allows for quickly getting any vector in Adobe Illustrator into an SVG code output, and vice versa. It's dead simple, so I'll just give you the TLDR:
+
+**Copy any vector from Illustrator and paste it into any text area. Or copy any SVG code and paste it into Illustrator.**
+
+That's really it. It's a neat trick for quick prototyping for a website, or for getting an SVG into Illustrator without having to save files and drag them onto your artboard.
+
+## SVG to Illustrator
+
+I often find myself wanting to take an svg I find online into Illustrator for some tweaking before bringing it into the site I'm working on. I used to save the file, bring it into Illustrator, edit it, save over the file, then bring that new version into VS Code for use on the site.
+
+We can clean up this workflow substantially and leave my downloads folder nice and tidy just by copying and pasting.
+
+### Get your SVG
+
+For this example, I'll be getting a logo from this fantastic [SVG Logo repo](https://github.com/gilbarbara/logos). I'll be grabbing the Treehouse logo partly because it's simple and has little SVG code to it. [Find it here](https://github.com/gilbarbara/logos/blob/master/logos/treehouse.svg) and click *Raw* to see [just the code](https://raw.githubusercontent.com/gilbarbara/logos/master/logos/treehouse.svg).
+
+### Paste into Illustrator
+
+Select all => Copy => Paste into your Illustrator document and you've quickly got a vector object to work with.
+
+![Vector Logo in Illustrator](/assets/illustrator-svg-1.png "Vector Logo in Illustrator")
+
+Just for fun, I'll put the logo inside a circle and subtract the logo from the circle.
+
+First draw the circle a bit bigger than the logo and make sure it's got a fill color. I'm using `#2670bd`.
+
+![Vector Logo in Illustrator](/assets/illustrator-svg-2.png "Vector Logo in Illustrator")
+
+Then select both the logo and circle and click the Align panel. Choose `Horizontal Align Center` and `Vertical Align Center`. 
+
+![Vector Logo in Illustrator](/assets/illustrator-svg-3.png "Vector Logo in Illustrator")
+
+Then bring up the Pathfinder window (Window => Pathfinder) and choose "Exclude" to cut out the logo from the circle. 
+
+![Vector Logo in Illustrator](/assets/illustrator-svg-4.png "Vector Logo in Illustrator")
+
+Now you should have this inner-gear looking creation. It's worse than the original, but hey, we're just having fun, right?
+
+![Vector Logo in Illustrator](/assets/illustrator-svg-5.png "Vector Logo in Illustrator")
+
+Select your new logo, and here's what I get when I copy and paste mine from Illustrator:
+
+```svg
+<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="311px"
+	 height="311px" viewBox="0 0 311 311" style="enable-background:new 0 0 311 311;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#2670BD;}
+</style>
+<defs>
+</defs>
+<path class="st0" d="M155.5,0C69.6,0,0,69.6,0,155.5S69.6,311,155.5,311S311,241.4,311,155.5S241.4,0,155.5,0z M269.8,231.9L170,289
+	c-7.7,4.3-19.6,4.3-27.3,0L41.2,232.7c-7.7-4.3-13.7-13.7-13.7-22.2V101.3c0-8.5,6-19.6,13.7-23.9L141.8,22c7.7-4.3,19.6-4.3,27.3,0
+	l14.5,8.5c7.7,5.1,8.5,18.8,0.9,31.6c-7.7,11.9-13.7,23-13.7,23c-6,11.9-21.3,22.2-34.1,24.7l-3.4,0.9c-12.8,2.6-28.2-0.9-34.1-0.9
+	c-3.4,0-6.8,0.9-11.1,3.4c-6.8,5.1-8.5,14.5-3.4,22.2c6,6.8,16.2,8.5,23,5.1c1.7-0.9,2.6-2.6,3.4-3.4c1.7-2.6,10.2-3.4,17.1-4.3h5.1
+	l22.2-11.9l-24.7,17.9c-0.9,0.9-2.6,2.6-4.3,3.4c-9.4,6-25.6,16.2-29.9,17.1c-2.6,0-5.1,1.7-7.7,3.4c-7.7,6-9.4,16.2-3.4,23.9
+	s17.9,9.4,25.6,2.6c1.7-1.7,3.4-3.4,4.3-6c1.7-3.4,5.1-9.4,9.4-12.8c1.7-1.7,6.8-6,9.4-7.7c5.1-3.4,6.8-3.4,8.5,0.9l10.2-21.3
+	l-10.2,35.8c-0.9,0-0.9,0.9-0.9,1.7c0,0-1.7,5.1-3.4,11.1c-2.6,6-4.3,11.9-5.1,11.9s-0.9,0.9-1.7,0.9c-10.2,5.1-13.7,17.1-8.5,27.3
+	c5.1,10.2,17.9,13.7,28.2,8.5s13.7-17.1,8.5-27.3c0,0-0.9-0.9-0.9-1.7c-0.9-0.9,1.7-11.1,5.1-23.9v-0.9
+	c3.4-11.9,15.4-24.7,21.3-17.9c6,5.1,7.7,11.9,6.8,16.2c0,2.6,0,5.1,0.9,7.7c3.4,9.4,13.7,15.4,23,12.8
+	c10.2-2.6,15.4-11.9,12.8-22.2c-0.9-2.6-2.6-6-4.3-7.7c-2.6-3.4-12.8-12.8-20.5-23.9l-0.9-0.9c-7.7-11.1-8.5-23.9-2.6-35.8
+	l16.2-27.3c9.4-14.5,23.9-23,33.3-17.9c8.5,5.1,16.2,8.5,19.6,10.2c7.7,4.3,13.7,13.7,13.7,22.2v108.4
+	C283.5,218.2,277.5,227.6,269.8,231.9z"/>
+</svg>
+```
+
+### Optimizing the SVG
+
+Now I could go ahead and paste that inline into a site, or in my code editor create a new file called treehouse.svg and paste that as the contents, and it'll work just fine. Thing is, I could shave off about 30% of the file size if I optimize it, and Jake Archibald's excellent [SVGOMG](https://jakearchibald.github.io/svgomg/) makes it super easy.
+
+And yeah, we can copy-paste.
+
+![Vector Logo in Illustrator](/assets/illustrator-svg-6.png "Vector Logo in Illustrator")
+
+
+When you open [SVGOMG](https://jakearchibald.github.io/svgomg/) you'll see the option to "Paste markup". Go ahead and copy what you've got from Illustrator, click "Paste markup" and paste it right into the textbox that appears. Instantly your SVG shows up in the browser.
+
+SVGOMG optimizes your images by removing extra vector points and taking out extra code like the Adobe Illustrator comment that we get when we paste directly from Illustrator. You can customize everything over on the right hand panel, but I find the defaults are always good for me.
+
+I generally find a "Precision" of 1 or 2 to be indistinguishable from the original and usually reduces the size of the file to around 70% of the original.
+
+![Vector Logo in Illustrator](/assets/illustrator-svg-7.png "Vector Logo in Illustrator")
+
+
+I've chosen the default Precision of 1 and clicking "MARKUP" at the top gives me access to my cleaned code. Now I can copy and paste it anywhere I want.
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" width="311" height="311"><path d="M155.5 0a155.5 155.5 0 1 0 0 311 155.5 155.5 0 0 0 0-311zm114.3 231.9L170 289a30.5 30.5 0 0 1-27.3 0L41.2 232.7a27.5 27.5 0 0 1-13.7-22.2V101.3c0-8.5 6-19.6 13.7-23.9L141.8 22a30.5 30.5 0 0 1 27.3 0l14.5 8.5c7.7 5.1 8.5 18.8.9 31.6-7.7 11.9-13.7 23-13.7 23a53.1 53.1 0 0 1-34.1 24.7l-3.4.9c-12.8 2.6-28.2-.9-34.1-.9-3.4 0-6.8.9-11.1 3.4a16.1 16.1 0 0 0-3.4 22.2c6 6.8 16.2 8.5 23 5.1 1.7-.9 2.6-2.6 3.4-3.4 1.7-2.6 10.2-3.4 17.1-4.3h5.1l22.2-11.9-24.7 17.9c-.9.9-2.6 2.6-4.3 3.4-9.4 6-25.6 16.2-29.9 17.1-2.6 0-5.1 1.7-7.7 3.4-7.7 6-9.4 16.2-3.4 23.9s17.9 9.4 25.6 2.6c1.7-1.7 3.4-3.4 4.3-6 1.7-3.4 5.1-9.4 9.4-12.8 1.7-1.7 6.8-6 9.4-7.7 5.1-3.4 6.8-3.4 8.5.9l10.2-21.3-10.2 35.8c-.9 0-.9.9-.9 1.7 0 0-1.7 5.1-3.4 11.1-2.6 6-4.3 11.9-5.1 11.9s-.9.9-1.7.9a19.8 19.8 0 0 0-8.5 27.3c5.1 10.2 17.9 13.7 28.2 8.5s13.7-17.1 8.5-27.3c0 0-.9-.9-.9-1.7-.9-.9 1.7-11.1 5.1-23.9v-.9c3.4-11.9 15.4-24.7 21.3-17.9 6 5.1 7.7 11.9 6.8 16.2 0 2.6 0 5.1.9 7.7 3.4 9.4 13.7 15.4 23 12.8 10.2-2.6 15.4-11.9 12.8-22.2a23 23 0 0 0-4.3-7.7c-2.6-3.4-12.8-12.8-20.5-23.9l-.9-.9a34 34 0 0 1-2.6-35.8l16.2-27.3c9.4-14.5 23.9-23 33.3-17.9 8.5 5.1 16.2 8.5 19.6 10.2a27.5 27.5 0 0 1 13.7 22.2v108.4c.2 8.6-5.8 18-13.5 22.3z" fill="#2670bd"/></svg>
+```
+
+## The big takeaway
+
+SVGs are just markup. That's it. It's nice knowing that programs like Illustrator have embraced easy ways for importing and exporting them to make your work flow silky smooth. If you haven't been using SVGs already, hopefully this gave you a reason to give them a shot in your next project.
+
+Also, you don't need to start with an SVG file for this to work. Any vector shape in Illustrator can be copied and pasted as an SVG, so any AI or EPS file that has vector elements is yours to quickly SVG-ize. If you want type, just select it, then in the menu choose Type => Create Outlines. Copy your vectorized type and paste it anywhere. 
+
+Have fun!
+
+### Thanks
+
+Thanks to Ankit for showing me the trick in the first place. Thanks to Jake Archibald for making SVGOMG. Thanks to Treehouse for the great logo (and for starting me on my coding journey).
