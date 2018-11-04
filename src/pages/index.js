@@ -19,15 +19,15 @@ const PostContainer = styled.div`
 
 const IndexPage = ({ data }) => (
   <React.Fragment>
-    <Resume />
     <div>
       <h1>Recent Articles</h1>
       <PostContainer>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostListing key={node.id} post={node} />
-        ))}
+          ))}
       </PostContainer>
     </div>
+          <Resume />
   </React.Fragment>
 );
 
