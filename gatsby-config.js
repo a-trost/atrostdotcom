@@ -37,16 +37,28 @@ module.exports = {
       },
     },
     "gatsby-transformer-sharp",
+      {
+        resolve: "gatsby-transformer-remark",
+        options: {
+          excerpt_separator: `<!-- end -->`,
+          plugins: [
+            `gatsby-remark-prismjs`,
+            `gatsby-remark-copy-linked-files`,
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: 600,
+                showCaptions: true,
+                withWebp: true,
+                wrapperStyle: "div"
+              },
+            },
+          ],
+        },
+      },
     "gatsby-plugin-sharp",
     "gatsby-remark-copy-linked-files",
     "gatsby-remark-smartypants",
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        excerpt_separator: `<!-- end -->`,
-        plugins: [`gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files`],
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
