@@ -1,13 +1,13 @@
 ---
-title: Lessons Learned From My First Interviews
+title: What I Learned from Developer Interviews
 image: /assets/developer-interviews.png
 date: "2018-11-19"
 type: "blog"
 ---
 
-# Lessons Learned From My First Interviews
+Once I felt I was ready to shift from teaching to become a front end developer, I went out on a few interviews and really loved the experience.
 
-Once I felt I was ready to shift from teaching to become a front end developer, I went out on a few interviews and really loved the experience. I made sure to use each one as a learning experience that will make me a better developer and interviewee. Hopefully this can be useful to you, whether you’re coming from another industry, or you’re an industry veteran looking to move to the next opportunity.
+I made sure to use each one as a learning experience that will make me a better developer and interviewee. Hopefully this can be useful to you, whether you’re coming from another industry, or you’re an industry veteran looking to move to the next opportunity.
 
 ## It’s more than programming experience
 
