@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Helmet from "react-helmet";
+import Layout from "../components/Layout";
 
 const BlogHeader = styled.h1`
   margin:40px 20px;
@@ -29,13 +30,14 @@ const BlogWrapper = styled.div`
   width: 100%;
   flex-flow: column nowrap;
 `;
+
 export default class PostPage extends Component {
   render() {
-    const { data } = this.props;
+    const { data, location, history, match } = this.props;
     const siteTitle = "Alex Trost - Frontend Web Developer";
     if (!data) return null;
     return (
-      <div>
+      <Layout location={location} history={history} match={match}>
         <Helmet
           title={`${data.markdownRemark.frontmatter.title} | ${siteTitle}`}
         />
@@ -46,7 +48,7 @@ export default class PostPage extends Component {
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
         <BlogDate>{data.markdownRemark.frontmatter.date}</BlogDate>
-      </div>
+      </Layout>
     );
   }
 }
