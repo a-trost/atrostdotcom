@@ -3,12 +3,12 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import Icon from "./icons";
 
-const CoverImage = styled.img`
-  position: relative;
-  height: auto;
-  width: auto;
-  border-radius: 0.5rem 0.5rem 0 0;
-`;
+// const CoverImage = styled.img`
+//   position: relative;
+//   height: auto;
+//   width: auto;
+//   border-radius: 0.5rem 0.5rem 0 0;
+// `;
 
 const Card = styled.div`
   border-top: 5px solid ${props => props.color};
@@ -122,14 +122,22 @@ const ProjectListing = ({ project }) => (
         </ButtonContainer>
         {project.frontmatter.demo && (
           <ButtonContainer>
-            <a href={project.frontmatter.demo} target="_blank">
+            <a
+              href={project.frontmatter.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button color={project.frontmatter.color}>Demo</Button>
             </a>
           </ButtonContainer>
         )}
         {project.frontmatter.repo && (
           <ButtonContainer>
-            <a href={project.frontmatter.repo} target="_blank">
+            <a
+              href={project.frontmatter.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button color={project.frontmatter.color}>Repo</Button>
             </a>
           </ButtonContainer>

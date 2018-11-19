@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import ContactForm from "../components/Contact";
+import Layout from "../components/Layout";
 
-export default class Contact extends Component {
-  render() {
-    return (
-      <div>
-        <ContactForm />
-      </div>
-    );
-  }
-}
+const Contact = ({ data, location, history, match }) => (
+  <Layout location={location} history={history} match={match}>
+    <ContactForm />
+  </Layout>
+);
+
+export default Contact;

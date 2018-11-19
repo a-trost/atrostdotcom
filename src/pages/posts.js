@@ -1,9 +1,9 @@
 import React from "react";
-import ProjectsListing from "../components/Projects/ProjectListing";
 import styled from "styled-components";
+import PostListing from "../components/Posts/PostListing";
 import Layout from "../components/Layout";
 
-const ProjectContainer = styled.div`
+const PostContainer = styled.div`
   display: grid;
   height: 100%;
   grid-template-columns: 1fr;
@@ -16,23 +16,23 @@ const ProjectContainer = styled.div`
   }
 `;
 
-const Projects = ({ data, location, history, match }) => (
+const IndexPage = ({ data, location, history, match }) => (
   <Layout location={location} history={history} match={match}>
-    <h1>Projects</h1>
-    <ProjectContainer>
-      {data.allMarkdownRemark
-        ? data.allMarkdownRemark.edges.map(({ node }) => (
-            <ProjectsListing key={node.id} project={node} />
-          ))
-        : "Couldn't find any Projects."}
-    </ProjectContainer>
+    <div>
+      <h1>Recent Articles</h1>
+      <PostContainer>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <PostListing key={node.id} post={node} />
+        ))}
+      </PostContainer>
+    </div>
   </Layout>
 );
 
-export default Projects;
+export default IndexPage;
 
 export const query = graphql`
-  query ProjectMeta {
+  query BlogData {
     site {
       siteMetadata {
         title
@@ -42,7 +42,7 @@ export const query = graphql`
 
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { type: { eq: "project" } } }
+      filter: { frontmatter: { type: { eq: "blog" } } }
     ) {
       edges {
         node {
@@ -54,11 +54,6 @@ export const query = graphql`
             title
             date
             image
-            tech
-            demo
-            repo
-            color
-            blurb
           }
           html
           excerpt(pruneLength: 280)

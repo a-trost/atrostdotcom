@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Link from "gatsby-link";
 import styled from "styled-components";
-import Img from "gatsby-image";
 import Menu from "../Menu";
+import { Link } from "gatsby";
 
 import portrait from "../../images/AlexPortrait.jpg";
 
@@ -40,6 +39,7 @@ const HeaderContainer = styled.div`
     grid-template-columns: 2fr 1fr;
     grid-gap: 10px;
     grid-template-rows: 1fr 4fr;
+  }
 `;
 
 const NamePictureContainer = styled.div`
@@ -188,11 +188,11 @@ export default class Header extends Component {
     }
   };
 
-  render() {
-    const { data, location } = this.props;
+  render(props) {
+    const { data, location, children } = this.props;
     const isHome = location.pathname === "/";
     return (
-      <React.Fragment>
+      <>
         <HeaderWrapper
           isHome={isHome}
           menuOpen={this.state.menuOpen}
@@ -226,19 +226,10 @@ export default class Header extends Component {
                 <p className="subheader">Developer, Designer, Teacher.</p>
               </IntroText>
             )}
+            {children}
           </HeaderContainer>
-          <Img
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-            }}
-            sizes={data.background.sizes}
-          />
         </HeaderWrapper>
-      </React.Fragment>
+      </>
     );
   }
 }

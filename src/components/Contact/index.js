@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { navigateTo } from "gatsby-link";
+import { navigate } from "gatsby";
 
 const FormContainer = styled.div`
   display: flex;
@@ -123,7 +123,7 @@ export default class Contact extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => navigateTo(form.getAttribute("action")))
+      .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error));
   };
 

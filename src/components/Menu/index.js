@@ -29,7 +29,7 @@ const Nav = styled.div`
       color: white;
       padding: 8px 15px;
       border-radius: 6px;
-      transition: all .4s ease;
+      transition: all 0.4s ease;
       :hover {
         background: #ffffff33;
       }
@@ -76,19 +76,28 @@ export default class Menu extends Component {
       <Nav>
         <ul className={listClass}>
           <li className="mobile-toggle">
-            <a href="#" onClick={this.props.handleClick}>
-              <img width="25px" height="25px" src={menuText} />
+            <a href="" onClick={this.props.handleClick}>
+              <img
+                width="25px"
+                height="25px"
+                src={menuText}
+                alt="Mobile navigation toggle"
+              />
             </a>
           </li>
           <li onClick={this.props.handleClick}>
             <Link to="/">Home</Link>
           </li>
           <li onClick={this.props.handleClick}>
-            <Link to="/about">About</Link>
+            <Link to="/posts">Blog</Link>
           </li>
           <li onClick={this.props.handleClick}>
             <Link to="/projects">Projects</Link>
           </li>
+          <li onClick={this.props.handleClick}>
+            <Link to="/about">About</Link>
+          </li>
+
           <li onClick={this.props.handleClick}>
             <Link to="/contact">Contact</Link>
           </li>

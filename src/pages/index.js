@@ -1,8 +1,8 @@
 import React from "react";
-import Link from "gatsby-link";
 import styled from "styled-components";
 import PostListing from "../components/Posts/PostListing";
 import Resume from "../components/Resume";
+import Layout from "../components/Layout";
 
 const PostContainer = styled.div`
   display: grid;
@@ -17,18 +17,18 @@ const PostContainer = styled.div`
   }
 `;
 
-const IndexPage = ({ data }) => (
-  <React.Fragment>
+const IndexPage = ({ data, location, history, match }) => (
+  <Layout location={location} history={history} match={match}>
     <div>
       <h1>Recent Articles</h1>
       <PostContainer>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostListing key={node.id} post={node} />
-          ))}
+        ))}
       </PostContainer>
     </div>
-          <Resume />
-  </React.Fragment>
+    <Resume />
+  </Layout>
 );
 
 export default IndexPage;

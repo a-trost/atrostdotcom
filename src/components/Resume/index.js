@@ -118,12 +118,8 @@ export default class Resume extends Component {
             <CategoryItems>
               <ResumeItem>
                 <ItemInfo>
-                  <Organization>
-                    GoNation
-                  </Organization>
-                  <Title>
-                    Junior Front-end Web Developer (2018-Present)
-                  </Title>
+                  <Organization>GoNation</Organization>
+                  <Title>Junior Front-end Web Developer (2018-Present)</Title>
                   {/* <Description>
                     <ul>
                       <li>
@@ -234,6 +230,7 @@ export default class Resume extends Component {
                         <a
                           href="https://bestreviews.atrost.com/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           > View Project
                         </a>
@@ -262,6 +259,7 @@ export default class Resume extends Component {
                         <a
                           href="https://alexandria.atrost.com/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           > View Project
                         </a>
@@ -321,6 +319,7 @@ export default class Resume extends Component {
                         <a
                           href="https://confirm.udacity.com/XLDCHTKA"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           > View Certificate
                         </a>
