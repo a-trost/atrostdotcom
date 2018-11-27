@@ -1,0 +1,55 @@
+---
+title: Just Start Already
+category: "Productivity"
+image: /assets/start-already.png
+date: "2018-11-27"
+type: "blog"
+---
+
+I’ve always had ideas about how to make the next big thing. Some huge idea that would take months and months of work to achieve, and in my mind would be the absolute best of its kind. I, like everyone else, come up with these ideas all the time, and I used to actually go after them when I was younger.
+
+As a teenager I made a basketball website that was all about teaching other kids how to play basketball. FreeBasketballSkills.com (Go ahead, check it on the Wayback Machine and laugh) was my main source of output for a long time. I got a few friends involved for writing articles and taking pictures. This was all back on dial up and early broadband, so videos were out of our purview.
+
+Still, I wanted to make this big site that taught kids about basketball, and I started pretty small. I wrote articles more consistently than I handed in homework. With books from the city library, I’d research proper technique so I could turn around and teach it. I knew all of my competitors were adults and were probably actually good at basketball while I got cut from tryouts every year. Still, I consistently worked to make the site better.
+
+## Meaningless Action
+
+Other times in my life I wasn’t so productive. I have been known for talking up huge projects that I could point up to and tell people how great it was going to be. They’d agree and I’d start on it a little bit, usually focusing on stuff like the graphics or the name. I mean, anything good has to have the perfect name, right?
+
+Honestly, I’d waste so much time on the small details that by the time I got around to the real stuff, it was hard and I lost the motivation to do it. I realized that working on the fluff stuff up front was my way of feeling like I was moving forward on the project, but really was a way to procrastinate and avoid the difficult parts.
+
+The problem is, the difficult parts are what make anything worth doing. Anyone can come up with a name. There are probably a million apps that have been successfully named and conceptualized without any code being written for them.
+
+The difference between these projects and FreeBasketballSkills is that I was happy with “good enough”, and I just kept working at it. My articles were short, digital photography was tough back then, and I had to teach myself everything about running a website.
+
+## But first…
+
+So much of my life I’ve wanted to do something great but convinced myself that before I do B I must do A. I want to start a youtube channel, but first I need to get a better camera. I want to start a podcast, but first I need some decent audio equipment. I want to start a blog, but first I need to take some writing classes. I want to do standup, but first I need to be funny.
+
+The list goes on. So many things I wanted to do in my life were blocked by the “but first!” wall. The “but first!” wall is garbage. It exists only in your head and keeps you from ever doing anything productive. It’s your brain’s way of keeping you safe. Saving energy and protecting your emotions is part of your brain’s job, so it’ll throw any idea or excuse at you to keep you in the exact same place you’ve been for years.
+
+You can’t possibly join the gym because you don’t have any cool workout gear. You shouldn’t buy any workout gear because you’re planning on losing weight and it wouldn’t fit you soon anyway. So you’ll just stay here. Netflix has very low walls.
+
+It’s this kind of thinking that stops people from doing something, ANYTHING, rather than just getting started right now. Today. Today is the perfect time to start.
+
+Just get started now.
+
+For so many things there is practically no wall to get started. Exercise? Do you have feet and a door to outside? Great! Go run. You’re locked in a room? Pushups and body-weight squats are your friend. No excuses.
+
+Blogging? So many companies make it incredibly simple to start blogging. You can be up and running on Wix, Squarespace, Blogger, Wordpress, Tumblr, and a million other sites in less than 2 minutes.
+
+You don’t need great photos, you don’t need a logo, you don’t need proofreaders or to take writing lessons. You’ll get better over time.
+
+## Get your reps in
+
+The simple truth is that it’s going to take a long time for your work to bear fruit. It’ll take months of work at the gym and in your kitchen for you and others to notice the results of your diet and exercise. It might take years of writing daily for you to become a great writer. Learning to draw well takes years of continuous effort.
+
+When it comes to improving at something, small and frequent repetitions are much more effective than longer and less frequent ones. If you spent 10 minutes every morning drawing, you’d have spent 60 hours and 50 minutes drawing after a full year.
+
+You’ll only improve with practice, and it’s going to take a lot of practice, so **start today**. Start now. I won’t be offended if you close my site mid sentence to go start doing the thing you plan on doing “someday”. Take one small step forward right now. Go put your shoes on and take a walk around the block.
+
+Go write for 5 minutes about **anything**. Not the perfect blog post idea. Just anything. Put out mediocre things to start and improve. In a year of blog posts you’ll look back at your first ones with a sharp cringe and hopefully a laugh.
+
+I still do that whenever I check out FreeBasketballSkills.com from back then. I was a kid, and I wasn’t supposed to be good at what I was doing, but I did it. I put myself out there, I busted my butt to get the tiny sliver of internet traffic that I got, and I learned a lot about how to run a site. It was a great experience and I’m glad I did it.
+
+So yeah, this is basically the long-form, toned down version of [Shia LaBeouf's “Just Do It”](https://www.youtube.com/watch?v=ZXsQAXx_ao0). Go take that first step.
