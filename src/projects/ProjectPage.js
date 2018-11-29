@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Helmet from "react-helmet";
+import Layout from "../components/Layout";
 
 const ProjectHeader = styled.h1`
   margin:20px;
@@ -13,14 +15,18 @@ const ProjectHeader = styled.h1`
 `;
 
 export default class ProjectPage extends Component {
-  render() {
-    const { data } = this.props;
+  render(props) {
+    const { data, location, history, match } = this.props;
+    const siteTitle = "Alex Trost - Frontend Web Developer";
     if (!data) return null;
     return (
-      <div>
+      <Layout location={location} history={history} match={match}>
+        <Helmet
+          title={`${data.markdownRemark.frontmatter.title} | ${siteTitle}`}
+        />
         <ProjectHeader>{data.markdownRemark.frontmatter.title}</ProjectHeader>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-      </div>
+      </Layout>
     );
   }
 }
