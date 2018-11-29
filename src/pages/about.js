@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 const About = ({ data, location, history, match }) => (
   <Layout location={location} history={history} match={match}>
     <div>
-      <h2>About</h2>
+      <h1>About</h1>
       <p>
         Hey, I’m Alex Trost, a Front-end Developer from Philadelphia, now living
         in New Haven. I like solving problems and eliminating repetitive tasks

@@ -20,7 +20,7 @@ const PostContainer = styled.div`
 const IndexPage = ({ data, location, history, match }) => (
   <Layout location={location} history={history} match={match}>
     <div>
-      <h1>Recent Articles</h1>
+      <h2>Recent Articles</h2>
       <PostContainer>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostListing key={node.id} post={node} />
