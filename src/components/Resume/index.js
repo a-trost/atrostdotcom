@@ -119,7 +119,7 @@ export default class Resume extends Component {
               <ResumeItem>
                 <ItemInfo>
                   <Organization>GoNation</Organization>
-                  <Title>Junior Front-end Web Developer (2018-Present)</Title>
+                  <Title>Junior Front-End Web Developer</Title>
                   {/* <Description>
                     <ul>
                       <li>
@@ -128,16 +128,14 @@ export default class Resume extends Component {
                     </ul>
                   </Description> */}
                 </ItemInfo>
-                <Dates>2018-Present</Dates>
+                <Dates>Aug 2018-Present</Dates>
               </ResumeItem>
               <ResumeItem>
                 <ItemInfo>
                   <Organization>
                     CodeSmash - Coding Education for Kids
                   </Organization>
-                  <Title>
-                    Programming Teacher, Curriculum Designer (2018-Present)
-                  </Title>
+                  <Title>Programming Teacher, Curriculum Designer</Title>
                   <Description>
                     <ul>
                       <li>
@@ -156,7 +154,7 @@ export default class Resume extends Component {
                     </ul>
                   </Description>
                 </ItemInfo>
-                <Dates>2018-Present</Dates>
+                <Dates>Mar-Aug 2018</Dates>
               </ResumeItem>
               <ResumeItem>
                 <ItemInfo>
