@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Layout from "../components/Layout";
+import TechIcons from "../components/TechIcons";
 
 const ProjectHeader = styled.h1`
   margin:20px;
@@ -11,7 +12,7 @@ const ProjectHeader = styled.h1`
   font-size: 3rem;
   line-height: 1
   text-rendering: optimizeLegibility;
-  text-align:center
+  text-align:center;
 `;
 
 export default class ProjectPage extends Component {
@@ -25,6 +26,10 @@ export default class ProjectPage extends Component {
           title={`${data.markdownRemark.frontmatter.title} | ${siteTitle}`}
         />
         <ProjectHeader>{data.markdownRemark.frontmatter.title}</ProjectHeader>
+        <TechIcons
+          tech={data.markdownRemark.frontmatter.tech}
+          color={data.markdownRemark.frontmatter.color}
+        />
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Layout>
     );
@@ -37,7 +42,13 @@ export const query = graphql`
       html
       frontmatter {
         title
+        tech
         image
+        repo
+        demo
+        color
+        date
+        blurb
       }
     }
   }

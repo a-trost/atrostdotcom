@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import Icon from "./icons";
+import TechIcons from "../TechIcons";
 
 // const CoverImage = styled.img`
 //   position: relative;
@@ -35,26 +35,6 @@ const ProjectTitle = styled.h2`
   margin: 0.5rem 0 1rem;
   color: ${props => props.color};
   a {
-  }
-`;
-
-const TechUsed = styled.h5`
-  margin: 2rem inherit 0 inherit;
-`;
-
-const TechList = styled.div`
-  display: flex;
-  align-items: space-between;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  ul {
-    list-style: none;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    li {
-      padding: 0 10px;
-    }
   }
 `;
 
@@ -102,18 +82,10 @@ const ProjectListing = ({ project }) => (
         </ProjectTitle>
       </Link>
       <p>{project.frontmatter.blurb}</p>
-      <div>
-        <TechUsed>Tech Used</TechUsed>
-        <TechList>
-          <ul>
-            {project.frontmatter.tech.map(tech => (
-              <li>
-                <Icon string={tech} fill={project.frontmatter.color} />
-              </li>
-            ))}
-          </ul>
-        </TechList>
-      </div>
+      <TechIcons
+        tech={project.frontmatter.tech}
+        color={project.frontmatter.color}
+      />
       <ButtonList>
         <ButtonContainer>
           <Link to={project.fields.slug}>
