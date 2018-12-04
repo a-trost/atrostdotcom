@@ -4,14 +4,17 @@ import Helmet from "react-helmet";
 import Layout from "../components/Layout";
 
 const BlogHeader = styled.h1`
-  margin:40px 20px;
+  margin:20px 5px;
   padding:0;
-  color: #333;
+  color: #444;
   border:0;
   font-size: 3rem;
   line-height: 1
   text-rendering: optimizeLegibility;
   text-align:center;
+  @media all and (max-width:500px){
+    font-size: 2.4rem;
+  }
 `;
 
 const BlogCoverImage = styled.img`
@@ -19,10 +22,11 @@ const BlogCoverImage = styled.img`
 `;
 
 const BlogDate = styled.p`
-  line-height: 2rem;
+  line-height: 0.9rem;
   color: #aaa;
   font-size: 0.9rem;
   text-transform: uppercase;
+  text-align: center;
 `;
 
 const BlogWrapper = styled.div`
@@ -42,12 +46,12 @@ export default class PostPage extends Component {
           title={`${data.markdownRemark.frontmatter.title} | ${siteTitle}`}
         />
         <BlogHeader>{data.markdownRemark.frontmatter.title}</BlogHeader>
+        <BlogDate>{data.markdownRemark.frontmatter.date}</BlogDate>
 
         <BlogCoverImage src={data.markdownRemark.frontmatter.image} />
         <BlogWrapper
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
-        <BlogDate>{data.markdownRemark.frontmatter.date}</BlogDate>
       </Layout>
     );
   }
