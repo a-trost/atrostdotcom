@@ -6,7 +6,6 @@ const ImageContainer = styled.div`
   display: block;
   position: relative;
   overflow: hidden;
-  height: 280px;
   display: block;
 `;
 
@@ -15,9 +14,12 @@ const CoverImage = styled.img`
   height: auto;
   width: auto;
   border-radius: 0.5rem 0.5rem 0 0;
+  margin-bottom: 0;
 `;
 
 const Card = styled.article`
+  display: flex;
+  flex-flow: column nowrap;
   background-image: linear-gradient(to top, #fafafa 0, #fdfdfd 20%, #fff 60%);
   -moz-box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
   -webkit-box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
@@ -43,11 +45,11 @@ const PostTitle = styled.h2`
 const PostListing = ({ post }) => {
   return (
     <Card>
-      <ImageContainer>
-        <Link to={post.fields.slug}>
+      <Link to={post.fields.slug}>
+        <ImageContainer>
           <CoverImage src={post.frontmatter.image} />
-        </Link>
-      </ImageContainer>
+        </ImageContainer>
+      </Link>
       <TextContainer>
         <Link to={post.fields.slug}>
           <PostTitle>{post.frontmatter.title}</PostTitle>
