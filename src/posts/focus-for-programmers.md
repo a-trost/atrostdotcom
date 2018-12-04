@@ -1,0 +1,139 @@
+---
+title: Focus for Programmers
+category: "Meta Skills"
+image: /assets/focus-for-programmers.png
+date: "2018-12-03"
+type: "blog"
+---
+
+I have a bad habit of hitting a tough problem and searching for an escape.
+
+I’ll try to talk to a coworker to avoid the struggle I’m facing. Either that, or my fingers start to move themselves to open a time-killing site like Reddit or Facebook. If I don’t catch myself as I’m doing it, I not only lose time, but I lose any progress my mind was making on that problem.
+
+Focus is huge when it comes to the tricky problems that programmers face. We deal with some pretty complex systems, and if you can’t sustain focus for long periods of time, you’ll struggle with challenging projects.
+
+## Focus is hard and rare
+
+Our culture is designed to steal your focus away from what you should be doing. It’s why every app you install tries to send you notifications. It’s why every service sends you a daily email. It’s why sites now scroll on forever, giving you more distractions with each swipe.
+
+Text messages, emails, notifications, websites, and coworkers are all vying for your attention. They pull you in too many directions and leave you with little accomplished at the end of the work day.
+
+In this type of environment, if you’re able to block out even 2-3 hours of dedicated focus each day, you’ll be much more productive than your peers. If you get your work done quickly and efficiently, you’ll have more free time and the quality of your code will improve.
+
+Let’s dive into some tips and strategies to hone your focus.
+
+## The multitasking myth
+
+I’ve always heard that multitasking is great for productivity. What’s better than doing one task at a time? Doing three tasks at a time!
+
+It turns out, that’s just not the case.
+
+[Studies show](https://www.independent.co.uk/life-style/multitasking-productivity-levels-research-psychology-david-meyer-a8254416.html) that multitasking actually makes you worse at the tasks you’re combining. Consistent multitasking actually reduces the density of gray-matter in the brain. While it seems harmless to play phone games while watching TV, it’s actually hurting your brain’s ability to focus on anything.
+
+Granted, there are some tasks like driving a car and holding a conversation, that you can do at the same time and perform rather well. These are tasks you’ve practiced so often you can perform them automatically. You’ve shifted much of this decision making to automatic systems in your brain.
+
+Even with “automatic” tasks, you’d perform better if you gave them your undivided attention. Recognize when tasks need 100% focus and give them what they deserve.
+
+## Plan and schedule
+
+In the morning, figure out the tasks you’ll be completing today. It can be in a journal, a To-Do list, or an app like Trello. Writing it down allows you to see your day at a glance and pick tasks to focus on.
+
+If you have a big task like “Create a website,” you’ll want to break that up into smaller sub tasks.
+
+Keep subtasks small and actionable. Make it easy to get started and clear when the task is complete.
+
+“Register domain for TrostBoast.com” is a good task. “Make website better” is not a good task.
+
+When it’s time to work, pick _one_ thing from the list. Work only on that one thing. When it’s done check it off.
+
+Big projects can feel overwhelming. Sub tasks will make sure you’re feeling progress every day. It’s a great way to stay motivated during long sprints.
+
+## Short sprints and breaks
+
+The truth is, you can’t focus all day. Your eight-hour work day is too long to give 100%. One great way to focus in concentrated sprints is what’s called the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique). I’ll give you a brief rundown.
+
+Pomodoro steps:
+
+1. Pick the one task you’ll work on. Make it specific.
+2. Set a timer for 25 minutes. There are plenty of great [timers online](https://tomato-timer.com/) made for this purpose.
+3. Work solely on that task the entire time.
+4. When the timer ends, stop work.
+5. Take a 5 minute break. Walk around. Check that thing you want to check. Relax.
+6. If this is your fourth pomodoro, take a longer, ~15 minute break.
+7. Repeat!
+
+The Pomodoro Technique is wonderful for giving yourself specific focus blocks throughout the day. There are plenty of articles and books about it, so I won’t get deep into it here.
+
+The key to Pomodoro, and any focus practice, is _rest_. You /must/ take breaks. There is no way to power through without diminishing your output.
+
+The brain is like a muscle. At the gym you take a rest between sets of exercise. Do the same for your mental work and you’ll come back reenergized.
+
+## Be realistic
+
+You might think that your eight-hour work day equals 16 daily Pomodoro. But Pomodoro sessions are for 100% focus, so it’s just not realistic. Even getting 8 pomodoro done throughout the work day is going to feel exhausting when just starting out.
+
+Try 4 pomodoro each day for your first week. Remember, these are sessions of intense focus. Headphones are on. Phone is set to silent. Stay in the zone. Then spend the rest of your day working normally.
+
+That’s 2 hours a day of _full effort_.
+
+From 4 pomodoro a day, you can work up, but do it slowly. You’ll feel mental fatigue if you’re fully focused.
+
+I recommend doing this in the morning, when your energy reserves are at their highest. Your brain burns glucose for its energy source, so for a midday refuel, pack some fruit for lunch.
+
+## Batching
+
+I love to get things done faster by batching tasks. Meal prep is a great example. To avoid cooking for an hour each night, I’ll cook one big meal on Sunday. Now I’ve got meals for the week with minimum time spent.
+
+I try to batch my web development whenever possible. I start with the bare HTML needed to create functionality, like buttons or text boxes. Then, I like to work in Javascript for as long as I can, only building out a new HTML element when needed.
+
+I don’t style the type, elements, or layout of the site just yet. I do my best to save CSS for last. It can sometimes be tough to work for a while on an ugly, unstyled site. However, I find I move slower if I’m context switching between markup and programming.
+
+Focusing on the functionality without breaking focus to go tweak a font color improves my work. I’m faster and leave fewer functions half-finished.
+
+## Block distractions
+
+Don’t trust that your willpower will win out when it comes time to focus. Make failure impossible ahead of time by blocking out distractions.
+
+### Websites and apps
+
+There’s an excellent app for Windows and Mac that blocks your most distracting websites and apps. [Cold Turkey Blocker](https://getcoldturkey.com/) has a free version, but the paid version is well worth the one time purchase. The app is near impossible to turn off in the middle of a block, so you won’t be cheating your way back to Facebook during your work periods.
+
+You can set it to automatically come on during scheduled times. I have mine set to block my worst websites from 5AM (before I wake up) to 7PM (When I’m home and relaxing). This keeps me working when I should be working.
+
+Cold Turkey also allows you to block-off just the next hour or two. That’s great for when you need a focus period and want to nuke any chance of temptation.
+
+### DND
+
+Even if your phone is on vibrate, that buzz will be distracting. I highly recommend using the Do Not Disturb features that most smart phones and computer operating systems now have.
+
+When I sit down to work I set my iPhone and MacBook to Do Not Disturb, so that my attention isn’t pulled away by notifications. This popups from Slack, iMessage, email and everything else.
+
+I focus on the task at hand for the length of my pomodoro, and only check alerts when the time is up. On my break I check my company’s Slack channel and my wife’s text messages. I’ve never had an issue so severe it couldn’t wait 20 minutes.
+
+### Headphones
+
+In most open workplaces, wearing over-ear headphones is a sign that you’re in a focused state. I think it’s a good investment to get a pair of headphones that are also comfortable and block sound well. You’ll be wearing them for hours as a focus-shield, so you don’t want them getting uncomfortable.
+
+I love my [Bose SoundLink around-ear wireless headphones II](https://amazon.com/gp/product/B0117RGG8E/) and recommend them for comfort and quality.
+
+You might feel rude putting on headphones, but you’d be surprised how many of your coworkers really want to have a culture of focus and productivity. By closing yourself in for periods of focus, you allow them to do the same. You’ll slowly build a culture of focus at your workplace.
+
+## Take a walk
+
+You need to know when to walk away from a problem. I sometimes head outside to walk around the building while I think. If the weather is bad, I just pace around the open spots of the office. Changing the scenery, moving, and talking out loud gets my ideas flowing.
+
+Make sure you know _why_ you’re taking a walk. This isn’t a procrastination walk. If you’re fuzzy from thinking on something too long, it’s time to move. Walks have a way of making the solution suddenly clear.
+
+## Strengthen your focus muscle
+
+I’ve mentioned that doing a bunch of things at once can actually reduce your gray matter, and make you worse at focusing. So let’s do the opposite. Build focus by intentionally doing one thing at a time.
+
+If you watch Netflix and swipe on phone apps, choose one or the other. Simple. If you find it hard to only watch a tv show without another form of entertainment, that’s a red flag. Either the show isn’t that good, or your mind has way too high of an entertainment threshold.
+
+If that’s the case, spend some time intentionally being bored. The next time you’re in line for something, don’t pull out your phone. Just be in line. Be okay with boredom and you’re building your focus and your willpower at the same time. Two interconnected and important skills to have.
+
+## Stay sharp!
+
+No matter where you work, no matter what type of programming or design you do, you’ll benefit from longer and stronger sessions of focus. For the best book on focused work, pick up [Cal Newport’s Deep Work](http://calnewport.com/books/deep-work/). He details how to use extended focus sessions to perform difficult, high-intensity thought work.
+
+If you have any tips for better ways to focus, let me know! I’m always working to improve my own practice, so hopefully this is a good platform for you to launch from. Best of luck!
