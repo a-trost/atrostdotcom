@@ -189,7 +189,7 @@ export default class Header extends Component {
   };
 
   render(props) {
-    const { data, location, children } = this.props;
+    const { location, children } = this.props;
     const isHome = location.pathname === "/";
     return (
       <>
