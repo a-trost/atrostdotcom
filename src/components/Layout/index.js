@@ -43,7 +43,7 @@ const Layout = ({ children, location, match }) => (
         file(relativePath: { regex: "/herobg/" }) {
           childImageSharp {
             fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
