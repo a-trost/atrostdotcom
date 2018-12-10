@@ -1,0 +1,55 @@
+---
+title: Put Design First
+category: "Programming"
+image: /assets/put-design-first.png
+date: "2018-12-10"
+type: "blog"
+---
+
+Getting a new website can be a lot like getting a new car. So much of it is wrapped up in how new and shiny it is. Is it fun and curvy or sleek and sharp? Is it a nice color or a classy monochrome?
+
+People get caught up in these visual details of cars and websites, completely forgetting that at their core, both are tools.
+
+If you have the most beautiful car but it doesn’t get you anywhere, it’s not much of a car. Or if it only starts some of the time, that’s almost as bad, and you might be looking for other options.
+
+A sports car is way more stylish than a school bus, but if your goal is to get 50 students to school, a Ferrari is the wrong tool for the job.
+
+## Make it fast and easy
+
+The users of a website will do the same if it’s all shiny sliders, high-res pictures and stylish menus, yet doesn’t help them to achieve their goals.
+
+That cool image slider that you want to add doesn’t help with SEO, and it adds unnecessary JavaScript and extra images to your site’s load time. High resolution images look great but (without adapting for mobile with something like [srcset](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes)]) will make loading on mobile slow and expensive. Really ask yourself if it’s worth it before you add anything that’s non-essential.
+
+Your users are on your site for a reason, to solve their problem. If your website doesn’t do that for them (and do it quickly) they’re going back to Google to click on the next result in the list.
+
+## Design vs Style
+
+Don’t get me wrong, stylish, good looking sites help you in a lot of ways. They can set you apart from your competitors and make your brand appear more credible and established.
+
+Note that I’m saying “stylish” here, as opposed to “well designed.” I want to separate them and clearly lay out some definitions for the sake of this discussion.
+
+Design is problem solving. The developer of a well designed site has identified the problem the site needs to solve, conducted research on the problem, and is guiding users to solve the problem with minimal effort. They routinely check against the metric of “Does this site solve the problem?”
+
+Style is how something looks. The developer with style as their top priority gets a feel for the mood of a project, researches other cool looking sites, and sets out to make the biggest “wow” experience for user eyeballs. They routinely check against the metric of “Does this site look really great?”
+
+Style can backfire. Big images, too many fonts, overusing animations. These can all get in the way of a user carrying out the desired action. Making a site look good doesn’t mean it’s going to sell products for your clients. That’s because attractive and usable are two different things entirely.
+
+## Does it do its job?
+
+Just because the client likes it today, doesn’t mean they’ll still love the way it looks a month, two months, a year from now. What matter is: does the site convert? Does it do what’s intended?
+
+If it’s a site to sell, do visitors buy the product?
+
+If it’s an informational site, are visitors learning?
+
+If it’s a site to entertain, are the visitors coming back for more and more entertainment?
+
+Once you find out what the goal is, make sure you can find a reliable metric to measure against to see if the site is successful.
+
+For a restaurant website, you might see if online ordering goes up, and track if people are clicking the call button. Compare those numbers against the number of total visitors and tweak the site to see those numbers rise.
+
+## Style is important
+
+Now I’m not advocating for ugly websites. I’m saying you need to use style as a tool to help you achieve your design goals. Is the goal of the website to sell clothing? First make sure it’s dead simple for people to buy, and then craft the appearance to make the brand feel high quality and make the products more alluring.
+
+Remember, don’t make style the focus that drives your decisions. Style needs to be used in service of design, not the other way around. Never do something for style’s sake that could make it more difficult for people to solve their problems.
