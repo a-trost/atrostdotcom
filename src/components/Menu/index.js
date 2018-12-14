@@ -34,7 +34,7 @@ const Nav = styled.div`
         background: #ffffff33;
       }
     }
-    .mobile-toggle a {
+    .mobile-toggle div {
       justify-self: start;
       position: absolute;
       left: -99999em;
@@ -55,12 +55,12 @@ const Nav = styled.div`
         left: -99999em;
       }
       &.open {
-        a {
+        div {
           position: static;
         }
       }
       .mobile-toggle {
-        a {
+        div {
           position: static;
         }
       }
