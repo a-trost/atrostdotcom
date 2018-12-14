@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
+import Resume from "../components/Resume";
 
 const About = ({ data, location, history, match }) => (
   <Layout location={location} history={history} match={match}>
@@ -29,6 +30,7 @@ const About = ({ data, location, history, match }) => (
         and now I work at GoNation as a Front-End Web Developer.
       </p>
     </div>
+    <Resume />
   </Layout>
 );
 

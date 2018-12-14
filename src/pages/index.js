@@ -27,7 +27,6 @@ const IndexPage = ({ data, location, history, match }) => (
         ))}
       </PostContainer>
     </div>
-    <Resume />
   </Layout>
 );
 
