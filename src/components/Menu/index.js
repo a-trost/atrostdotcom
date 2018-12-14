@@ -76,14 +76,14 @@ export default class Menu extends Component {
       <Nav>
         <ul className={listClass}>
           <li className="mobile-toggle">
-            <a href="" onClick={this.props.handleClick}>
+            <div onClick={this.props.handleClick} style={{ cursor: "pointer" }}>
               <img
                 width="25px"
                 height="25px"
                 src={menuText}
                 alt="Mobile navigation toggle"
               />
-            </a>
+            </div>
           </li>
           <li onClick={this.props.handleClick}>
             <Link to="/">Home</Link>
