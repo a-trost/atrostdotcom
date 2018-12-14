@@ -118,8 +118,8 @@ export default class Resume extends Component {
             <CategoryItems>
               <ResumeItem>
                 <ItemInfo>
-                  <Organization>GoNation</Organization>
-                  <Title>Junior Front-End Web Developer</Title>
+                  <Organization>Green Check Verified</Organization>
+                  <Title>Software Engineer</Title>
                   {/* <Description>
                     <ul>
                       <li>
@@ -128,7 +128,21 @@ export default class Resume extends Component {
                     </ul>
                   </Description> */}
                 </ItemInfo>
-                <Dates>Aug 2018-Present</Dates>
+                <Dates>Dec 2018-Present</Dates>
+              </ResumeItem>
+              <ResumeItem>
+                <ItemInfo>
+                  <Organization>GoNation</Organization>
+                  <Title>Junior Front-End Web Developer</Title>
+                  <Description>
+                    <ul>
+                      <li>
+                        Created website features used across 240+ websites
+                      </li>
+                    </ul>
+                  </Description>
+                </ItemInfo>
+                <Dates>Aug-Dec 2018</Dates>
               </ResumeItem>
               <ResumeItem>
                 <ItemInfo>
