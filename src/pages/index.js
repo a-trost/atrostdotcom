@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import PostListing from "../components/Posts/PostListing";
-import Resume from "../components/Resume";
 import Layout from "../components/Layout";
 
 const PostContainer = styled.div`

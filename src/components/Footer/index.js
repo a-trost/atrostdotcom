@@ -84,12 +84,12 @@ export default class Footer extends Component {
   render() {
     return (
       <FooterContainer>
-        <div class="logo">
+        <div className="logo">
           <Link to="/">
             <img src={logo} />
           </Link>
         </div>
-        <div class="site-map">
+        <div className="site-map">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -105,7 +105,7 @@ export default class Footer extends Component {
             </li>
           </ul>
         </div>
-        <div class="social-links">
+        <div className="social-links">
           <ul>
             <li>
               <a href="https://www.linkedin.com/in/mrtrost/">
@@ -124,7 +124,7 @@ export default class Footer extends Component {
             </li>
           </ul>
         </div>
-        <div class="copyright">© 2018 Alex Trost</div>
+        <div className="copyright">© 2018 Alex Trost</div>
       </FooterContainer>
     );
   }

@@ -55,12 +55,14 @@ const Nav = styled.div`
         left: -99999em;
       }
       &.open {
-        div {
+        div,
+        a {
           position: static;
         }
       }
       .mobile-toggle {
-        div {
+        div,
+        a {
           position: static;
         }
       }
