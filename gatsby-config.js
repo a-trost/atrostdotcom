@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
-    // "gatsby-plugin-netlify-cms",
+    "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -73,9 +73,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+        trackingId: "UA-117091035-1",
+        head: false,
+        respectDNT: true,
       },
-    },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
