@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Alex Trost <alexrtrost@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "1.5.0",
     "gatsby": "^2.0.38",
     "gatsby-image": "^2.0.19",
     "gatsby-link": "^2.0.6",
@@ -35,7 +36,8 @@
     "slate": "^0.33.8",
     "styled-components": "^4.0.3",
     "typography": "^0.16.17",
-    "typography-theme-funston": "^0.15.10"
+    "typography-theme-funston": "^0.15.10",
+    "webpack": "^4.27.1"
   },
   "keywords": [
     "gatsby"
