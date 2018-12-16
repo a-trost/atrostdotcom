@@ -76,7 +76,7 @@ module.exports = {
         trackingId: "UA-117091035-1",
         head: false,
         respectDNT: true,
-      },
+      },}
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
