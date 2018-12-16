@@ -13,7 +13,7 @@ Luckily, I was introduced to Kati of <a href="http://codesmashlab.com/" target="
 
 I’ve worked with Scratch as part of the <a href="https://cs50.yale.edu/" target="_blank">CS50</a> course I took online, but quickly moved past it to languages more useful for me.  Still, I saw the potential in the language and loved seeing the creative output of the Scratch community. 
 
-CodeSmash is all about combining coding with concepts like emotional intelligence and [growth mindset](/growth-mindset/). I've taught those concepts for a few years now, so for this trial lesson I wasn't going to focus on them as heavily. I just wanted to get the kinks out of the coding instruction, which was completely new to me.
+CodeSmash is all about combining coding with concepts like emotional intelligence and growth mindset. I've taught those concepts for a few years now, so for this trial lesson I wasn't going to focus on them as heavily. I just wanted to get the kinks out of the coding instruction, which was completely new to me.
 
 ## Preparation
 If you're looking to teach scratch, you definitely don’t want to try and just wing it. There’s a decent amount of setup you’ll want to see to beforehand. 
