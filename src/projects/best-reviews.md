@@ -8,5 +8,6 @@ repo: https://github.com/a-trost/bestreviews
 demo: https://bestreviews.atrost.com
 color: "#F07A36"
 blurb: Google Maps progressive web app with the best reviews and ridiculous rhymes.
+desc: "Description of a web app created with React and Redux. Google Maps progressive web app with the best reviews and ridiculous rhymes."
 ---
 

@@ -25,7 +25,14 @@ export default class ProjectPage extends Component {
     const siteTitle = "Alex Trost - Frontend Web Developer";
     if (!data) return null;
     return (
-      <Layout location={location} history={history}>
+      <Layout
+        location={location}
+        history={history}
+        pageData={{
+          title: data.markdownRemark.frontmatter.title,
+          desc: data.markdownRemark.frontmatter.desc,
+        }}
+      >
         <ProjectHeader>{data.markdownRemark.frontmatter.title}</ProjectHeader>
         <TechIcons
           tech={data.markdownRemark.frontmatter.tech}
