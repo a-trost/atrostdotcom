@@ -4,6 +4,7 @@ category: "Programming"
 image: /assets/put-design-first.png
 date: "2018-12-10"
 type: "blog"
+desc: "Learn why you need to think about the real purpose of the site before you choose a layout, font, color scheme, or anything else."
 ---
 
 Getting a new website can be a lot like getting a new car. So much of it is wrapped up in how new and shiny it is. Is it fun and curvy or sleek and sharp? Is it a nice color or a classy monochrome?
@@ -48,7 +49,7 @@ Once you find out what the goal is, make sure you can find a reliable metric to 
 
 For a restaurant website, you might see if online ordering goes up, and track if people are clicking the call button. Compare those numbers against the number of total visitors and tweak the site to see those numbers rise.
 
-## Style is important
+## Style is still important
 
 Now I’m not advocating for ugly websites. I’m saying you need to use style as a tool to help you achieve your design goals. Is the goal of the website to sell clothing? First make sure it’s dead simple for people to buy, and then craft the appearance to make the brand feel high quality and make the products more alluring.
 

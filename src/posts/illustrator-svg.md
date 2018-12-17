@@ -4,6 +4,7 @@ category: "Design"
 image: /assets/illustrator-svg-cover.png
 date: "2018-11-04"
 type: "blog"
+desc: "Speed up your vector workflow by learning how to easily copy and paste SVG between Illustrator and your favorite code editor."
 ---
 
 My coworker stumbled on a pretty neat trick that allows for quickly getting any vector in Adobe Illustrator into an SVG code output, and vice versa. It's dead simple, so I'll just give you the TLDR:

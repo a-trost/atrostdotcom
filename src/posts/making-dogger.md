@@ -4,6 +4,7 @@ category: "Programming"
 image: /assets/making-dogger-cover.png
 date: "2018-04-21"
 type: "blog"
+desc: "A case study on a Javascript arcade game I made for my Udacity Nanodegree. I go through how I approached the project and what I learned."
 ---
 ![game-screenshots](/assets/making-dogger-game-screenshots.png)
 

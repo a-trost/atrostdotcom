@@ -4,6 +4,7 @@ category: "Productivity"
 image: /assets/start-already.png
 date: "2018-11-27"
 type: "blog"
+desc: "You've been planning that project for far too long. Today is the day you need to start! Learn why stepping forward is always the right thing to do."
 ---
 
 I’ve always had ideas about how to make the next big thing. Some huge idea that would take months and months of work to achieve, and in my mind would be the absolute best of its kind. I, like everyone else, come up with these ideas all the time, and I used to actually go after them when I was younger.
