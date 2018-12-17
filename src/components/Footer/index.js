@@ -109,17 +109,35 @@ export default class Footer extends Component {
           <ul>
             <li>
               <a href="https://www.linkedin.com/in/mrtrost/">
-                <SocialIcon height="40" width="40" src={linkedInLogo} />
+                <SocialIcon
+                  height="40"
+                  width="40"
+                  src={linkedInLogo}
+                  alt="Alex Trost's LinkedIn"
+                  title="Alex Trost's LinkedIn"
+                />
               </a>
             </li>
             <li>
               <a href="https://www.github.com/a-trost">
-                <SocialIcon height="40" width="40" src={githubLogo} />
+                <SocialIcon
+                  height="40"
+                  width="40"
+                  src={githubLogo}
+                  alt="Alex Trost's Github"
+                  title="Alex Trost's Github"
+                />
               </a>
             </li>
             <li>
               <a href="https://twitter.com/MisterTrost">
-                <SocialIcon height="40" width="40" src={twitterLogo} />
+                <SocialIcon
+                  height="40"
+                  width="40"
+                  src={twitterLogo}
+                  alt="Alex Trost's Twitter"
+                  title="Alex Trost's Twitter"
+                />
               </a>
             </li>
           </ul>
