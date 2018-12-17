@@ -1,9 +1,14 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Resume from "../components/Resume";
 
-const About = ({ data, location, history, match }) => (
-  <Layout location={location} history={history} match={match}>
+const About = ({ data, location, history }) => (
+  <Layout
+    location={location}
+    history={history}
+    pageData={{ title: "About", desc: "" }}
+  >
     <div>
       <h1>About</h1>
       <p>

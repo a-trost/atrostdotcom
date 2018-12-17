@@ -2,13 +2,24 @@ module.exports = {
   siteMetadata: {
     title: "Alex Trost - Frontend Web Developer",
     desc:
-      "Personal site and blog for Alex Trost, Javascript and Python Web Developer",
+      "Alex Trost is a Frontend Web Developer living in New Haven, Connecticut. He writes about Javascript, React, Gatsby, the web, productivity and more.",
     siteUrl: `https://atrost.com`,
+    image: "",
+    social: {
+      twitter: "@mistertrost",
+      linkedin: "mrtrost",
+      github: "a-trost",
+    },
   },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: ["/contact-thanks/"],
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {

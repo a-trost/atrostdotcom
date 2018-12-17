@@ -30,7 +30,7 @@ const ChildWrapper = styled.div`
   padding-top: 0;
 `;
 
-const Layout = ({ children, location, match }) => (
+const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
@@ -38,72 +38,83 @@ const Layout = ({ children, location, match }) => (
           siteMetadata {
             title
             desc
+            siteUrl
+            image
+            social {
+              twitter
+              linkedin
+              github
+            }
           }
         }
         file(relativePath: { regex: "/herobg/" }) {
           childImageSharp {
-            fluid(maxWidth: 1000) {
+            fluid(maxWidth: 1100) {
               ...GatsbyImageSharpFluid
             }
           }
         }
       }
     `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            {
-              name: "description",
-              content:
-                "Alex Trost - Front-End Web Developer and Graphic Designer",
-            },
-            {
-              name: "keywords",
-              content:
-                "frontend, developer, front, end, javascript, graphic design, graphic, react, python, web",
-            },
-          ]}
-          link={[
-            {
-              rel: "icon",
-              type: "image/png",
-              sizes: "16x16",
-              href: `${favicon16}`,
-            },
-            {
-              rel: "icon",
-              type: "image/png",
-              sizes: "32x32",
-              href: `${favicon32}`,
-            },
-            { rel: "shortcut icon", type: "image/png", href: `${favicon64}` },
-          ]}
-        />
-        <Container>
-          <Header
-            data={data}
-            siteTitle={data.site.siteMetadata.title}
-            location={location}
-          >
-            <Img
-              style={{
-                position: "absolute",
-                height: "100%",
-                width: "100%",
-                left: 0,
-                top: 0,
-                zIndex: -1,
-              }}
-              fluid={data.file.childImageSharp.fluid}
-            />
-          </Header>
-          <ChildWrapper>{children}</ChildWrapper>
-          <Footer />
-        </Container>
-      </>
-    )}
+    render={data => {
+      const seo = data.site.siteMetadata;
+      const title = pageData.title
+        ? pageData.title.length <= 30
+          ? `${pageData.title} | ${seo.title}`
+          : `${pageData.title} | Alex Trost`
+        : seo.title;
+      const desc = pageData.desc || seo.desc;
+      return (
+        <>
+          <Helmet
+            title={title}
+            meta={[
+              {
+                name: "description",
+                content: desc,
+              },
+              {
+                name: "keywords",
+                content:
+                  "frontend, developer, gatsby, react, web development, javascript, graphic design, freelance",
+              },
+            ]}
+            link={[
+              {
+                rel: "icon",
+                type: "image/png",
+                sizes: "16x16",
+                href: `${favicon16}`,
+              },
+              {
+                rel: "icon",
+                type: "image/png",
+                sizes: "32x32",
+                href: `${favicon32}`,
+              },
+              { rel: "shortcut icon", type: "image/png", href: `${favicon64}` },
+            ]}
+          />
+          <Container>
+            <Header data={data} siteTitle={seo.title} location={location}>
+              <Img
+                style={{
+                  position: "absolute",
+                  height: "100%",
+                  width: "100%",
+                  left: 0,
+                  top: 0,
+                  zIndex: -1,
+                }}
+                fluid={data.file.childImageSharp.fluid}
+              />
+            </Header>
+            <ChildWrapper>{children}</ChildWrapper>
+            <Footer />
+          </Container>
+        </>
+      );
+    }}
   />
 );
 

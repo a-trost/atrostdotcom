@@ -47,7 +47,11 @@ const PostListing = ({ post }) => {
     <Card>
       <Link to={post.fields.slug}>
         <ImageContainer>
-          <CoverImage src={post.frontmatter.image} />
+          <CoverImage
+            src={post.frontmatter.image}
+            alt={post.frontmatter.title}
+            title={post.frontmatter.title}
+          />
         </ImageContainer>
       </Link>
       <TextContainer>

@@ -17,8 +17,9 @@ const PostContainer = styled.div`
   }
 `;
 
-const IndexPage = ({ data, location, history, match }) => (
-  <Layout location={location} history={history} match={match}>
+const IndexPage = ({ data, location, history }) => (
+  <Layout location={location} history={history}>
+    <div />
     <div>
       <h2>Recent Articles</h2>
       <PostContainer>

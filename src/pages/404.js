@@ -1,9 +1,13 @@
 import React from "react";
 import Layout from "../components/Layout";
 
-const NotFoundPage = ({ data, location, history, match }) => (
-  <Layout location={location} history={history} match={match}>
-    <h2>404, File not found</h2>
+const NotFoundPage = ({ data, location, history }) => (
+  <Layout
+    location={location}
+    history={history}
+    pageData={{ title: "404", desc: "This page was not found" }}
+  >
+    <h1>404, File not found</h1>
     <p>
       Sorry, that file has either moved or never existed. That's the worst, huh?
     </p>

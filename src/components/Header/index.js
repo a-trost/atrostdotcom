@@ -107,12 +107,14 @@ const IntroText = styled.div`
   display: block;
   grid-area: intro-text;
   animation: fadeAndScale 2s ease-in;
-  font-size: 4rem;
-  line-height: 4rem;
   color: white;
   font-family: "Rubik", sans-serif;
-  font-weight: 500;
   place-self: center;
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 500;
+  }
   .rwd-line {
     display: block;
   }
@@ -124,8 +126,11 @@ const IntroText = styled.div`
 
   /* Medium screens */
   @media all and (min-width: 600px) {
-    font-size: 6rem;
-    line-height: 5rem;
+    h1 {
+      font-size: 6rem;
+      line-height: 5rem;
+    }
+
     .subheader {
       font-size: 3.5rem;
       line-height: 3.3rem;
@@ -134,8 +139,10 @@ const IntroText = styled.div`
 
   /* Large screens */
   @media all and (min-width: 800px) {
-    font-size: 7rem;
-    line-height: 6rem;
+    h1 {
+      font-size: 7rem;
+      line-height: 6rem;
+    }
     .rwd-line {
       display: inline;
     }
@@ -209,8 +216,8 @@ export default class Header extends Component {
               </HeaderPortrait>
               <HeaderName>
                 <Link to="/">
-                  <p className="name">Alex Trost</p>
-                  <p className="title">Front-End Web Developer</p>
+                  <h3 className="name">Alex Trost</h3>
+                  <h4 className="title">Front-End Web Developer</h4>
                 </Link>
               </HeaderName>
             </NamePictureContainer>
@@ -220,10 +227,10 @@ export default class Header extends Component {
             />
             {isHome && (
               <IntroText>
-                <p>
+                <h1>
                   Hey, <span className="rwd-line">I'm Alex.</span>
-                </p>
-                <p className="subheader">Developer, Designer, Teacher.</p>
+                </h1>
+                <h2 className="subheader">Developer, Designer, Teacher.</h2>
               </IntroText>
             )}
             {children}

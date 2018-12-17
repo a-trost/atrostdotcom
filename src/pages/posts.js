@@ -17,8 +17,16 @@ const PostContainer = styled.div`
   }
 `;
 
-const IndexPage = ({ data, location, history, match }) => (
-  <Layout location={location} history={history} match={match}>
+const IndexPage = ({ data, location, history }) => (
+  <Layout
+    location={location}
+    history={history}
+    pageData={{
+      title: "Recent Articles",
+      desc:
+        "Articles by Alex Trost on web design, programming, React, Gatsby, and more.",
+    }}
+  >
     <div>
       <h1>Recent Articles</h1>
       <PostContainer>
@@ -55,6 +63,7 @@ export const query = graphql`
             title
             date
             image
+            desc
           }
           html
           excerpt(pruneLength: 280)

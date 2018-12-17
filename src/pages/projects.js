@@ -18,7 +18,15 @@ const ProjectContainer = styled.div`
 `;
 
 const Projects = ({ data, location, history, match }) => (
-  <Layout location={location} history={history} match={match}>
+  <Layout
+    location={location}
+    history={history}
+    pageData={{
+      title: "Projects",
+      desc:
+        "Past projects I've done for schools, companies, freelance, or myself. Most use Javascript or Python.",
+    }}
+  >
     <h1>Projects</h1>
     <ProjectContainer>
       {data.allMarkdownRemark

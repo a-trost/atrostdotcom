@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import Helmet from "react-helmet";
 import Layout from "../components/Layout";
 
 const BlogHeader = styled.h1`
@@ -38,18 +37,20 @@ const BlogWrapper = styled.div`
 
 export default class PostPage extends Component {
   render() {
-    const { data, location, history, match } = this.props;
-    const siteTitle = "Alex Trost - Frontend Web Developer";
+    const { data, location, history } = this.props;
     if (!data) return null;
     return (
-      <Layout location={location} history={history} match={match}>
-        <Helmet
-          title={`${data.markdownRemark.frontmatter.title} | ${siteTitle}`}
-        />
+      <Layout
+        location={location}
+        history={history}
+        pageData={data.markdownRemark.frontmatter}
+      >
         <BlogHeader>{data.markdownRemark.frontmatter.title}</BlogHeader>
         <BlogDate>{data.markdownRemark.frontmatter.date}</BlogDate>
-
-        <BlogCoverImage src={data.markdownRemark.frontmatter.image} />
+        <BlogCoverImage
+          src={data.markdownRemark.frontmatter.image}
+          alt={data.markdownRemark.frontmatter.title}
+        />
         <BlogWrapper
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
@@ -60,12 +61,19 @@ export default class PostPage extends Component {
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        desc
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
         date(formatString: "MMMM DD YYYY")
         image
+        desc
       }
     }
   }
