@@ -7,7 +7,11 @@ const About = ({ data, location, history }) => (
   <Layout
     location={location}
     history={history}
-    pageData={{ title: "About", desc: "" }}
+    pageData={{
+      title: "About",
+      desc:
+        "Bio and Resume for New Haven based web developer, Alex Trost. He writes about Javascript, React, Gatsby, the web, productivity and more.",
+    }}
   >
     <div>
       <h1>About</h1>
