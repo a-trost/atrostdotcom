@@ -86,7 +86,7 @@ export default class Footer extends Component {
       <FooterContainer>
         <div className="logo">
           <Link to="/">
-            <img src={logo} />
+            <img src={logo} alt="Alex Trost Logo" />
           </Link>
         </div>
         <div className="site-map">
