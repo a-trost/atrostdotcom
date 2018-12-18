@@ -22,7 +22,6 @@ const ProjectCoverImage = styled.img`
 export default class ProjectPage extends Component {
   render(props) {
     const { data, location, history } = this.props;
-    const siteTitle = "Alex Trost - Frontend Web Developer";
     if (!data) return null;
     return (
       <Layout
