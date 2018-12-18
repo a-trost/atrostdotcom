@@ -94,7 +94,9 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
               },
               { rel: "shortcut icon", type: "image/png", href: `${favicon64}` },
             ]}
-          />
+          >
+            <html lang="en" />
+          </Helmet>
           <Container>
             <Header data={data} siteTitle={seo.title} location={location}>
               <Img
