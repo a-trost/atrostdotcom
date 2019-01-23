@@ -142,7 +142,7 @@ export default class Footer extends Component {
             </li>
           </ul>
         </div>
-        <div className="copyright">© 2018 Alex Trost</div>
+        <div className="copyright">© 2018-2019 Alex Trost</div>
       </FooterContainer>
     );
   }
