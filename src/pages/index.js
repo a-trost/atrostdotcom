@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import PostListing from "../components/Posts/PostListing";
 import Layout from "../components/Layout";
+import Intro from "../components/Intro";
 
 const PostContainer = styled.div`
   display: grid;
@@ -19,7 +20,7 @@ const PostContainer = styled.div`
 
 const IndexPage = ({ data, location, history }) => (
   <Layout location={location} history={history}>
-    <div />
+    <Intro />
     <div>
       <h2>Recent Articles</h2>
       <PostContainer>
