@@ -8,7 +8,7 @@ import linkedInLogo from "../../images/Linkedin.svg";
 
 const FooterContainer = styled.footer`
   background: #eee;
-  box-shadow: 0px -3px 5px rgb(0,0,0,20%);
+  border-top: 2px solid #dedede;
 	padding: 40px 20px;
 	font-family: Rubik;
 	font-size: 1.1rem;
