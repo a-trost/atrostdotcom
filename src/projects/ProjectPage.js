@@ -17,6 +17,8 @@ const ProjectHeader = styled.h1`
 
 const ProjectCoverImage = styled.img`
   border-radius: 10px;
+  height: auto;
+  width: 100%;
 `;
 
 export default class ProjectPage extends Component {
