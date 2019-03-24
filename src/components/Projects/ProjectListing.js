@@ -114,6 +114,17 @@ const ProjectListing = ({ project }) => (
             </a>
           </ButtonContainer>
         )}
+        {project.frontmatter.site && (
+          <ButtonContainer>
+            <a
+              href={project.frontmatter.site}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button color={project.frontmatter.color}>Site</Button>
+            </a>
+          </ButtonContainer>
+        )}
       </ButtonList>
     </Container>
   </Card>

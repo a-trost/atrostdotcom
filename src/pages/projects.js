@@ -66,6 +66,7 @@ export const query = graphql`
             tech
             demo
             repo
+            site
             color
             blurb
           }
