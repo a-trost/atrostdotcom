@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "gatsby";
 
 export default class intro extends Component {
   render() {
@@ -9,10 +10,23 @@ export default class intro extends Component {
           and awesome websites and apps.
         </p>
         <p>
-          I've been a 2nd grade teacher and graphic designer in past careers. As
-          a web developer I specialize in Javascript libraries like React, and
-          static site generators like Gatsby. I work at a great startup and am
-          available for freelance projects on the side.
+          In past careers I've been a teacher and graphic designer. As a web
+          developer I specialize in Javascript libraries like React, and static
+          site generators like Gatsby.
+        </p>
+        <p>
+          I work at a great startup in New Haven and co-host{" "}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.overlappodcast.com"
+          >
+            The Overlap
+          </a>
+          , a podcast about Design and Web Development.
+        </p>
+        <p>
+          Interested in talking? <Link to="/contact">Reach out</Link>.
         </p>
       </>
     );
