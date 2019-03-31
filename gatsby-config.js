@@ -42,13 +42,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "img",
-        path: `${__dirname}/static/assets`,
-      },
-    },
-    {
       resolve: "gatsby-transformer-remark",
       options: {
         excerpt_separator: `<!-- end -->`,
