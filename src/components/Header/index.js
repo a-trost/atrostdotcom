@@ -56,12 +56,18 @@ const HeaderPortrait = styled.div`
     border-radius: 50%;
     display: none;
   }
+
+  display: none;
   @media all and (min-width: 500px) {
     img {
       height: 50px;
       width: 50px;
       display: flex;
     }
+    picture {
+      display: flex;
+    }
+    display: inline-block;
   }
   @media all and (min-width: 700px) {
     img {
