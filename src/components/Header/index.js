@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import Menu from "../Menu";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 
 import portrait from "../../images/AlexPortrait.jpg";
 
@@ -211,7 +212,9 @@ export default class Header extends Component {
             <NamePictureContainer>
               <HeaderPortrait>
                 <Link to="/">
-                  <img src={portrait} alt="Alex Trost Portrait" />
+                  <Img
+                    fixed={this.props.data.alexpicture.childImageSharp.fixed}
+                  />
                 </Link>
               </HeaderPortrait>
               <HeaderName>

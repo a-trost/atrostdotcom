@@ -47,7 +47,6 @@ module.exports = {
         path: `${__dirname}/static/assets`,
       },
     },
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -68,6 +67,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-remark-copy-linked-files",
     "gatsby-remark-smartypants",
     {

@@ -34,7 +34,7 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
-        site {
+        site: site {
           siteMetadata {
             title
             desc
@@ -47,10 +47,17 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
             }
           }
         }
-        file(relativePath: { regex: "/herobg/" }) {
+        bgimage: file(relativePath: { regex: "/herobg/" }) {
           childImageSharp {
             fluid(maxWidth: 1100) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        alexpicture: file(relativePath: { eq: "images/AlexPortrait.jpg" }) {
+          childImageSharp {
+            fixed(width: 85, height: 85) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -108,7 +115,7 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
                   top: 0,
                   zIndex: -1,
                 }}
-                fluid={data.file.childImageSharp.fluid}
+                fluid={data.bgimage.childImageSharp.fluid}
               />
             </Header>
             <ChildWrapper>{children}</ChildWrapper>
