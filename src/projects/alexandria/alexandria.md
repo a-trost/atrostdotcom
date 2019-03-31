@@ -2,7 +2,7 @@
 title: Alexandria
 type: "project"
 date: "2018-03-31"
-image: /assets/alexandria-project-cover.png
+image: "./alexandria-project-cover.png"
 tech: [React, Javascript]
 repo: https://github.com/a-trost/alexandria
 demo: https://alexandria.atrost.com

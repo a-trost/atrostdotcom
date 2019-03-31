@@ -2,7 +2,7 @@
 title: The Overlap
 type: "project"
 date: "2019-03-24"
-image: /assets/overlap-project-cover.png
+image: "./overlap-project-cover.png"
 tech: [Gatsby, React, GraphQl]
 site: https://www.overlappodcast.com
 color: "#FEBF12"

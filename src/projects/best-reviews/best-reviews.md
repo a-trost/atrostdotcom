@@ -2,7 +2,7 @@
 title: Best Reviews
 type: "project"
 date: "2018-06-31"
-image: /assets/best-reviews-screenshot.png
+image: "./best-reviews-screenshot.png"
 tech: [React, Redux]
 repo: https://github.com/a-trost/bestreviews
 demo: https://bestreviews.atrost.com

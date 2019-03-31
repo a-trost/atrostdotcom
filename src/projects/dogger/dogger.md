@@ -2,7 +2,7 @@
 title: Dogger
 type: "project"
 date: "2018-03-11"
-image: /assets/dogger-project-cover.png
+image: "./dogger-project-cover.png"
 tech: [Javascript, Photoshop]
 repo: https://github.com/a-trost/dogger
 demo: https://dogger.atrost.com
