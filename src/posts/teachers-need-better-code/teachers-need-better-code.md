@@ -1,7 +1,7 @@
 ---
 title: Two Ways to Make Teaching Better With Code
 category: "EdTech"
-image: /assets/teachers-need-better-code-cover.jpg
+image: "./teachers-need-better-code-cover.jpg"
 date: "2018-03-31"
 type: "blog"
 desc: "Teaching is a tough job, but computers could make it so much more efficient. Here are a couple ways code could make teaching better."
@@ -50,7 +50,7 @@ This kind of deep dive is tough and time consuming to be done by hand for each s
 
 Computer practice adds a great layer of immediate feedback over the pencil and paper work that has been the standard for decades. However, we've had immediate feedback since the days of Number Munchers, and modern math apps should be doing so much more.
 
-![Number Munchers Screenshot](/assets/teachers-need-better-code-number-munchers.gif)
+![Number Munchers Screenshot](./teachers-need-better-code-number-munchers.gif)
 
 ### Misconception Correction
 

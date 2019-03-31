@@ -1,7 +1,7 @@
 ---
 title: Put Design First
 category: "Programming"
-image: /assets/put-design-first.png
+image: "./put-design-first.png"
 date: "2018-12-10"
 type: "blog"
 desc: "Learn why you need to think about the real purpose of the site before you choose a layout, font, color scheme, or anything else."

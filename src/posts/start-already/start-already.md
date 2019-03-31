@@ -1,7 +1,7 @@
 ---
 title: Just Start Already
 category: "Productivity"
-image: /assets/start-already.png
+image: "./start-already.png"
 date: "2018-11-27"
 type: "blog"
 desc: "You've been planning that project for far too long. Today is the day you need to start! Learn why stepping forward is always the right thing to do."

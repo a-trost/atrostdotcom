@@ -1,7 +1,7 @@
 ---
 title: Why Header Tags are Essential
 category: "Programming"
-image: /assets/header-tags.png
+image: "./header-tags.png"
 date: "2019-01-21"
 type: "blog"
 desc: "If you aren't using header tags, or if you'd like to know why they're great, here's why they're a must-have on any website."
@@ -32,7 +32,7 @@ Don’t skip from h1 to h3, it throws the hierarchy for users and screen readers
 You want to have your headers stand out from the rest of your page. Your H1 should be the first thing visitors see on your page. Why?
 
 Well if on Google they clicked “10 Ways to Make your Website Faster”, they’re going to expect to see the same message as soon as they land on your site.
-![Matching cuts down on confusion](/assets/title-and-h1-min.png)
+![Matching cuts down on confusion](./title-and-h1-min.png)
 
 The link they click on Google is the text between your `<title>` tag. What they see on your site is what’s between your `<h1>`
 

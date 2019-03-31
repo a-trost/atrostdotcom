@@ -1,7 +1,7 @@
 ---
 title: Focus for Programmers
 category: "Meta Skills"
-image: /assets/focus-for-programmers.png
+image: "./focus-for-programmers.png"
 date: "2018-12-03"
 type: "blog"
 desc: "Learn how to take your focus to the next level with a few skills like batching and the pomodoro technique. "

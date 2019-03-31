@@ -1,7 +1,7 @@
 ---
 title: Copy and paste SVG code with Adobe Illustrator
 category: "Design"
-image: /assets/illustrator-svg-cover.png
+image: "./illustrator-svg-cover.png"
 date: "2018-11-04"
 type: "blog"
 desc: "Speed up your vector workflow by learning how to easily copy and paste SVG between Illustrator and your favorite code editor."
@@ -21,31 +21,31 @@ We can clean up this workflow substantially and leave my downloads folder nice a
 
 ### Get your SVG
 
-For this example, I'll be getting a logo from this fantastic [SVG Logo repo](https://github.com/gilbarbara/logos). I'll be grabbing the Treehouse logo partly because it's simple and has little SVG code to it. [Find it here](https://github.com/gilbarbara/logos/blob/master/logos/treehouse.svg) and click *Raw* to see [just the code](https://raw.githubusercontent.com/gilbarbara/logos/master/logos/treehouse.svg).
+For this example, I'll be getting a logo from this fantastic [SVG Logo repo](https://github.com/gilbarbara/logos). I'll be grabbing the Treehouse logo partly because it's simple and has little SVG code to it. [Find it here](https://github.com/gilbarbara/logos/blob/master/logos/treehouse.svg) and click _Raw_ to see [just the code](https://raw.githubusercontent.com/gilbarbara/logos/master/logos/treehouse.svg).
 
 ### Paste into Illustrator
 
 Select all => Copy => Paste into your Illustrator document and you've quickly got a vector object to work with.
 
-![Vector Logo in Illustrator](/assets/illustrator-svg-1.png "Vector Logo in Illustrator")
+![Vector Logo in Illustrator](illustrator-svg-1.png "Vector Logo in Illustrator")
 
 Just for fun, I'll put the logo inside a circle and subtract the logo from the circle.
 
 First draw the circle a bit bigger than the logo and make sure it's got a fill color. I'm using `#2670bd`.
 
-![Vector Logo in Illustrator](/assets/illustrator-svg-2.png "Vector Logo in Illustrator")
+![Vector Logo in Illustrator](illustrator-svg-2.png "Vector Logo in Illustrator")
 
-Then select both the logo and circle and click the Align panel. Choose `Horizontal Align Center` and `Vertical Align Center`. 
+Then select both the logo and circle and click the Align panel. Choose `Horizontal Align Center` and `Vertical Align Center`.
 
-![Vector Logo in Illustrator](/assets/illustrator-svg-3.png "Vector Logo in Illustrator")
+![Vector Logo in Illustrator](illustrator-svg-3.png "Vector Logo in Illustrator")
 
-Then bring up the Pathfinder window (Window => Pathfinder) and choose "Exclude" to cut out the logo from the circle. 
+Then bring up the Pathfinder window (Window => Pathfinder) and choose "Exclude" to cut out the logo from the circle.
 
-![Vector Logo in Illustrator](/assets/illustrator-svg-4.png "Vector Logo in Illustrator")
+![Vector Logo in Illustrator](illustrator-svg-4.png "Vector Logo in Illustrator")
 
 Now you should have this inner-gear looking creation. It's worse than the original, but hey, we're just having fun, right?
 
-![Vector Logo in Illustrator](/assets/illustrator-svg-5.png "Vector Logo in Illustrator")
+![Vector Logo in Illustrator](illustrator-svg-5.png "Vector Logo in Illustrator")
 
 Select your new logo, and here's what I get when I copy and paste mine from Illustrator:
 
@@ -79,8 +79,7 @@ Now I could go ahead and paste that inline into a site, or in my code editor cre
 
 And yeah, we can copy-paste.
 
-![Vector Logo in Illustrator](/assets/illustrator-svg-6.png "Vector Logo in Illustrator")
-
+![Vector Logo in Illustrator](illustrator-svg-6.png "Vector Logo in Illustrator")
 
 When you open [SVGOMG](https://jakearchibald.github.io/svgomg/) you'll see the option to "Paste markup". Go ahead and copy what you've got from Illustrator, click "Paste markup" and paste it right into the textbox that appears. Instantly your SVG shows up in the browser.
 
@@ -88,8 +87,7 @@ SVGOMG optimizes your images by removing extra vector points and taking out extr
 
 I generally find a "Precision" of 1 or 2 to be indistinguishable from the original and usually reduces the size of the file to around 70% of the original.
 
-![Vector Logo in Illustrator](/assets/illustrator-svg-7.png "Vector Logo in Illustrator")
-
+![Vector Logo in Illustrator](illustrator-svg-7.png "Vector Logo in Illustrator")
 
 I've chosen the default Precision of 1 and clicking "MARKUP" at the top gives me access to my cleaned code. Now I can copy and paste it anywhere I want.
 
@@ -101,7 +99,7 @@ I've chosen the default Precision of 1 and clicking "MARKUP" at the top gives me
 
 SVGs are just markup. That's it. It's nice knowing that programs like Illustrator have embraced easy ways for importing and exporting them to make your work flow silky smooth. If you haven't been using SVGs already, hopefully this gave you a reason to give them a shot in your next project.
 
-Also, you don't need to start with an SVG file for this to work. Any vector shape in Illustrator can be copied and pasted as an SVG, so any AI or EPS file that has vector elements is yours to quickly SVG-ize. If you want type, just select it, then in the menu choose Type => Create Outlines. Copy your vectorized type and paste it anywhere. 
+Also, you don't need to start with an SVG file for this to work. Any vector shape in Illustrator can be copied and pasted as an SVG, so any AI or EPS file that has vector elements is yours to quickly SVG-ize. If you want type, just select it, then in the menu choose Type => Create Outlines. Copy your vectorized type and paste it anywhere.
 
 Have fun!
 

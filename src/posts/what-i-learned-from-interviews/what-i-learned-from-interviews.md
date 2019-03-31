@@ -1,6 +1,6 @@
 ---
 title: What I Learned from Developer Interviews
-image: /assets/developer-interviews.png
+image: "./developer-interviews.png"
 date: "2018-11-19"
 type: "blog"
 desc: "I want to share what I learned on my frontend web developer interviews so you can perform better and get the job."

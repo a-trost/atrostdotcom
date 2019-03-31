@@ -1,16 +1,16 @@
 ---
 title: Teaching Kids Coding for the First Time
-image: /assets/teaching-kids-coding-cover.jpg
 date: "2018-04-06"
+image: "./teaching-kids-coding-cover.jpg"
 type: "blog"
 desc: "A look back at my first time teaching kids coding with Scratch. Lessons learned and what I'd do next time."
 ---
 
 Filling students with the excitement of coding has been a dream of mine ever since I began to learn coding myself. I've been looking for opportunities to bring my enthusiasm to the students at my school, but wasn't quite sure just how to do it.
 
-<img src="/assets/teaching-kids-coding-codesmash-logo.png" width="400px" alt="CodeSmash Logo" />
+<img src="./teaching-kids-coding-codesmash-logo.png" width="400px" alt="CodeSmash Logo" />
 
-Luckily, I was introduced to Kati of <a href="http://codesmashlab.com/" target="_blank">CodeSmash</a>, a new startup bringing afterschool coding programs to the New Haven area. They already had so much planned and just needed the lesson plan fine tuned. I saw an excellent opportunity to create curriculum and teach students coding in <a href="https://scratch.mit.edu/" target="_blank">Scratch</a>.
+Luckily, I was introduced to Kati of <a href="http://www.codesmashlab.com" target="_blank">CodeSmash</a>, a new startup bringing afterschool coding programs to the New Haven area. They already had so much planned and just needed the lesson plan fine tuned. I saw an excellent opportunity to create curriculum and teach students coding in <a href="https://scratch.mit.edu/" target="_blank">Scratch</a>.
 
 I’ve worked with Scratch as part of the <a href="https://cs50.yale.edu/" target="_blank">CS50</a> course I took online, but quickly moved past it to languages more useful for me. Still, I saw the potential in the language and loved seeing the creative output of the Scratch community.
 
@@ -24,7 +24,7 @@ I checked the computers ahead of time to make sure they were free to run Flash a
 
 I signed up for a Scratch <a href="https://scratch.mit.edu/educators/" target="_blank">Educator Account</a> and made a class. It took about a day for the Scratch people to approve me, so once again, do the prep work ahead of time.
 
-<img src="/assets/teaching-kids-coding-signup.png" style="max-width:800px;" alt="Student Sign Up Link Button" />
+<img src="./teaching-kids-coding-signup.png" style="max-width:800px;" alt="Student Sign Up Link Button" />
 
 I grabbed my “Student Sign-up Link” which was a huge string of letters and numbers, not something you’d have anyone type in. I made a tiny.cc short URL so that my kids could easily sign up for their account in my classroom. It makes it super simple, taking a link from something like:
 
@@ -69,7 +69,7 @@ I didn’t probe their existing knowledge enough at the beginning of the lesson,
 
 ### Make a Menu of Common Requests
 
-I got a lot of questions of “How do I get it to do ****\_**** ?” and it would have been great if I had a handout or web-based reference for small recipes that would help get them started with the most common use cases. Most of the kids wanted to make their sprite move, so I think they could benefit from a sheet that gives them the recipe for making an object:
+I got a lot of questions of “How do I get it to do \***\*\_\*\*** ?” and it would have been great if I had a handout or web-based reference for small recipes that would help get them started with the most common use cases. Most of the kids wanted to make their sprite move, so I think they could benefit from a sheet that gives them the recipe for making an object:
 
 - slide to the right
 - move to a specific spot
