@@ -57,7 +57,13 @@ export const query = graphql`
           frontmatter {
             title
             date
-            image
+            image {
+              childImageSharp {
+                sizes(maxWidth: 600) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
           html
           excerpt(pruneLength: 280)

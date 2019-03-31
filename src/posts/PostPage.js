@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import Img from "gatsby-image";
 
 const BlogHeader = styled.h1`
   margin:20px 5px;
@@ -17,7 +18,7 @@ const BlogHeader = styled.h1`
   }
 `;
 
-const BlogCoverImage = styled.img`
+const BlogCoverImage = styled(Img)`
   border-radius: 10px;
 `;
 
@@ -48,7 +49,7 @@ export default class PostPage extends Component {
         <BlogHeader>{data.markdownRemark.frontmatter.title}</BlogHeader>
         <BlogDate>{data.markdownRemark.frontmatter.date}</BlogDate>
         <BlogCoverImage
-          src={data.markdownRemark.frontmatter.image}
+          sizes={data.markdownRemark.frontmatter.image.childImageSharp.sizes}
           alt={data.markdownRemark.frontmatter.title}
         />
         <BlogWrapper
@@ -72,7 +73,13 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD YYYY")
-        image
+        image {
+          childImageSharp {
+            sizes(maxWidth: 1024) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         desc
       }
     }

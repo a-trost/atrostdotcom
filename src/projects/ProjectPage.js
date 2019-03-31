@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import TechIcons from "../components/TechIcons";
+import Img from "gatsby-image";
 
 const ProjectHeader = styled.h1`
   margin:20px;
@@ -15,7 +16,7 @@ const ProjectHeader = styled.h1`
   text-align:center;
 `;
 
-const ProjectCoverImage = styled.img`
+const ProjectCoverImage = styled(Img)`
   border-radius: 10px;
   height: auto;
   width: 100%;
@@ -40,7 +41,7 @@ export default class ProjectPage extends Component {
           color={data.markdownRemark.frontmatter.color}
         />
         <ProjectCoverImage
-          src={data.markdownRemark.frontmatter.image}
+          sizes={data.markdownRemark.frontmatter.image.childImageSharp.sizes}
           alt={data.markdownRemark.frontmatter.title}
         />
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
@@ -56,7 +57,13 @@ export const query = graphql`
       frontmatter {
         title
         tech
-        image
+        image {
+          childImageSharp {
+            sizes(maxWidth: 630) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         repo
         demo
         color

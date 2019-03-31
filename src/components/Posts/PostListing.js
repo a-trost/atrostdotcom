@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import Img from "gatsby-image";
 
 const ImageContainer = styled.div`
   display: block;
@@ -9,13 +10,13 @@ const ImageContainer = styled.div`
   display: block;
 `;
 
-const CoverImage = styled.img`
-  position: relative;
-  height: auto;
-  width: auto;
-  border-radius: 0.5rem 0.5rem 0 0;
-  margin-bottom: 0;
-`;
+// const CoverImage = styled.img`
+//   position: relative;
+//   height: auto;
+//   width: auto;
+//   border-radius: 0.5rem 0.5rem 0 0;
+//   margin-bottom: 0;
+// `;
 
 const Card = styled.article`
   display: flex;
@@ -47,11 +48,12 @@ const PostListing = ({ post }) => {
     <Card>
       <Link to={post.fields.slug}>
         <ImageContainer>
-          <CoverImage
+          {/* <CoverImage
             src={post.frontmatter.image}
             alt={post.frontmatter.title}
             title={post.frontmatter.title}
-          />
+          /> */}
+          <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
         </ImageContainer>
       </Link>
       <TextContainer>

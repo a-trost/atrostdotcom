@@ -14,6 +14,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
@@ -58,7 +59,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 600,
-              showCaptions: true,
+              showCaptions: false,
               withWebp: true,
               wrapperStyle: "div",
             },
@@ -67,7 +68,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     "gatsby-remark-copy-linked-files",
     "gatsby-remark-smartypants",
     {
