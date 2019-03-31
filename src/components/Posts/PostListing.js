@@ -10,13 +10,13 @@ const ImageContainer = styled.div`
   display: block;
 `;
 
-// const CoverImage = styled.img`
-//   position: relative;
-//   height: auto;
-//   width: auto;
-//   border-radius: 0.5rem 0.5rem 0 0;
-//   margin-bottom: 0;
-// `;
+const CoverImage = styled(Img)`
+  position: relative;
+  height: auto;
+  width: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
+  margin-bottom: 0;
+`;
 
 const Card = styled.article`
   display: flex;
@@ -48,12 +48,11 @@ const PostListing = ({ post }) => {
     <Card>
       <Link to={post.fields.slug}>
         <ImageContainer>
-          {/* <CoverImage
-            src={post.frontmatter.image}
+          <CoverImage
+            sizes={post.frontmatter.image.childImageSharp.sizes}
             alt={post.frontmatter.title}
             title={post.frontmatter.title}
-          /> */}
-          <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
+          />
         </ImageContainer>
       </Link>
       <TextContainer>
