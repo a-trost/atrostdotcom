@@ -155,7 +155,8 @@ export default class Contact extends React.Component {
             <FormHalf>
               <p>
                 <label>
-                  Name:<br />
+                  Name:
+                  <br />
                   <Input
                     type="text"
                     name="name"
@@ -166,7 +167,8 @@ export default class Contact extends React.Component {
               </p>
               <p>
                 <label>
-                  Email:<br />
+                  Email:
+                  <br />
                   <Input
                     type="email"
                     name="email"
@@ -179,7 +181,8 @@ export default class Contact extends React.Component {
             <FormHalf>
               <p>
                 <label>
-                  Message:<br />
+                  Message:
+                  <br />
                   <TextArea name="message" onChange={this.handleChange} />
                 </label>
               </p>
