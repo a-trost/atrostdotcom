@@ -55,6 +55,7 @@ module.exports = {
               showCaptions: false,
               withWebp: true,
               wrapperStyle: "div",
+              quality: 90,
             },
           },
         ],
