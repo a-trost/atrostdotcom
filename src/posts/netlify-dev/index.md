@@ -7,8 +7,6 @@ type: "blog"
 desc: "Netlify's new Dev feature gives you the power of Netlify on your desktop. The Live feature allows for site streaming across the internet. Let's check it out!"
 ---
 
-# Your New Localhost - Netlify Dev
-
 Netlify has long since been my favorite way to deploy sites, ever since I first pushed a react project and watched it go live in seconds.
 
 It now hosts my personal site, my podcast’s site, and 20 other client sites or small pet projects that I wanted to put up on the web.
