@@ -10,6 +10,7 @@ import Footer from "../Footer";
 import favicon16 from "../../images/favicon16.png";
 import favicon32 from "../../images/favicon32.png";
 import favicon64 from "../../images/favicon64.png";
+import bgimage from "../../images/hero-background.svg";
 import "prismjs/themes/prism-coy.css";
 import "./index.css";
 
@@ -30,6 +31,15 @@ const ChildWrapper = styled.div`
   padding-top: 0;
 `;
 
+const BgImage = styled.img`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+`;
+
 const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
   <StaticQuery
     query={graphql`
@@ -47,16 +57,10 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
             }
           }
         }
-        bgimage: file(relativePath: { regex: "/herobg/" }) {
-          childImageSharp {
-            fluid(maxWidth: 1100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+
         alexpicture: file(relativePath: { eq: "images/AlexPortrait.jpg" }) {
           childImageSharp {
-            fixed(width: 85, height: 85) {
+            fixed(width: 85, height: 85, quality: 90) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -106,17 +110,7 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
           </Helmet>
           <Container>
             <Header data={data} siteTitle={seo.title} location={location}>
-              <Img
-                style={{
-                  position: "absolute",
-                  height: "100%",
-                  width: "100%",
-                  left: 0,
-                  top: 0,
-                  zIndex: -1,
-                }}
-                fluid={data.bgimage.childImageSharp.fluid}
-              />
+              <BgImage src={bgimage} />
             </Header>
             <ChildWrapper>{children}</ChildWrapper>
             <Footer />
