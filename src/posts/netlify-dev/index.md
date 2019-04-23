@@ -7,8 +7,6 @@ type: "blog"
 desc: "Netlify's new Dev feature gives you the power of Netlify on your desktop. The Live feature allows for site streaming across the internet. Let's check it out!"
 ---
 
-# Your New Localhost - Netlify Dev
-
 Netlify has long since been my favorite way to deploy sites, ever since I first pushed a react project and watched it go live in seconds.
 
 It now hosts my personal site, my podcast’s site, and 20 other client sites or small pet projects that I wanted to put up on the web.
@@ -25,7 +23,7 @@ Things like Netlify contact forms, environment variables, forwarding/routing and
 
 Netlify just addressed these issues and more with [Netlify Dev](https://www.netlify.com/products/dev/#how-it-works).
 
-Announcing it at the [JAMStack Conference in NYC](https://jamstackconf.com/nyc/), Netlify CEO Matt Biilmann quite a few “Whoa”s from the crowd as he live-demoed it. 
+Announcing it at the [JAMStack Conference in NYC](https://jamstackconf.com/nyc/), Netlify CEO Matt Biilmann drew quite a few “whoa”s from the crowd as he live-demoed it. 
 
 [Phil Hawksworth’s Blog Post](https://www.netlify.com/blog/2019/04/09/netlify-dev--our-entire-platform-right-on-your-laptop/) does a great job of going into the team’s thought process and reasons for creating the new feature.
 
