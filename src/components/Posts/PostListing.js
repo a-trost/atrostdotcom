@@ -36,7 +36,7 @@ const Card = styled.article`
 
 const TextContainer = styled.div`
   padding: 1.2rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
 `;
 
 const PostTitle = styled.h2`
@@ -57,7 +57,7 @@ const PostListing = ({ post }) => {
       </Link>
       <TextContainer>
         <Link to={post.fields.slug}>
-          <PostTitle>{post.frontmatter.title}</PostTitle>
+          {/* <PostTitle>{post.frontmatter.title}</PostTitle> */}
         </Link>
         <p>
           {post.excerpt} <Link to={post.fields.slug} />
