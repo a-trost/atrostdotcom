@@ -1,14 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import TechIcons from "../TechIcons";
-
-// const CoverImage = styled.img`
-//   position: relative;
-//   height: auto;
-//   width: auto;
-//   border-radius: 0.5rem 0.5rem 0 0;
-// `;
 
 const Card = styled.div`
   border-top: 5px solid ${props => props.color};
