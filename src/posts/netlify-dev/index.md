@@ -7,11 +7,11 @@ type: "blog"
 desc: "Netlify's new Dev feature gives you the power of Netlify on your desktop. The Live feature allows for site streaming across the internet. Let's check it out!"
 ---
 
-Netlify has long since been my favorite way to deploy sites, ever since I first pushed a react project and watched it go live in seconds.
+Netlify has been my favorite way to deploy sites ever since I pushed a React project and watched it go live in seconds.
 
 It now hosts my personal site, my podcast’s site, and 20 other client sites or small pet projects that I wanted to put up on the web.
 
-While it’s truly the simplest experience I’ve ever had, and the performance is second to none, I have found myself with some slowdowns in my work flow.
+While it’s truly the simplest experience I’ve ever had, and the performance is second to none, I have found myself with small slowdowns in my work flow.
 
 Basically I’d build my site or app on localhost by running Gatsby’s or Create React App’s development server. This gives you a great idea of how it looks, acts and behaves, but this is often where programmers say “Well it works on my machine.”
 
