@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Rubik:400,500');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans,Rubik:400,500'); */
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
@@ -203,7 +203,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em 'Roboto', sans-serif;
+  /* font: 112.5%/1.45em 'Rubik', sans-serif; */
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -218,7 +218,6 @@ html {
 }
 body {
   color: hsl(0, 0%, 20%);
-  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -249,8 +248,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family:'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  
   text-rendering: optimizeLegibility;
   font-weight: 400;
   font-size: 2.25rem;
@@ -266,8 +264,6 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family:'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -283,8 +279,6 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family:'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -300,8 +294,6 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family:'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -317,8 +309,6 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family:'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -334,8 +324,6 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family:'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -404,6 +392,7 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+
 }
 figure {
   margin-left: 0;
@@ -620,6 +609,7 @@ code {
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
+  font-size: 20px;
 }
 pre code {
   background: none;
@@ -630,13 +620,13 @@ code:after,
 tt:before,
 tt:after {
   letter-spacing: -0.2em;
-  content: " ";
+  content: "";
 }
 pre code:before,
 pre code:after,
 pre tt:before,
 pre tt:after {
-  content: "";
+  content: " ";
 }
 @media only screen and (max-width: 480px) {
   html {
