@@ -1,20 +1,35 @@
 import Typography from "typography";
+import noriegaTheme from "typography-theme-noriega";
 
-const typography = new Typography({
-  baseFontSize: "18px",
-  baseLineHeight: 1.666,
-  headerFontFamily: [
-    "Rubik",
-    "Helvetica Neue",
-    "Segoe UI",
-    "Helvetica",
-    "Arial",
-    "sans-serif",
-  ],
-  bodyFontFamily: ["Roboto", "sans-serif"],
-  // See below for the full list of options.
-});
+noriegaTheme.googleFonts = [
+  {
+    name: "Rubik",
+    styles: ["500", "700"],
+  },
+  {
+    name: "Open Sans",
+    styles: ["400", "400i", "700", "700i"],
+  },
+];
 
-typography.injectStyles();
+noriegaTheme.headerFontFamily = [
+  "Rubik",
+  "Helvetica Neue",
+  "Segoe UI",
+  "Helvetica",
+  "Arial",
+  "sans-serif",
+];
+
+noriegaTheme.bodyFontFamily = [
+  "Open Sans",
+  "Helvetica Neue",
+  "Segoe UI",
+  "Helvetica",
+  "Arial",
+  "sans-serif",
+];
+
+const typography = new Typography(noriegaTheme);
 
 export default typography;
