@@ -9,7 +9,7 @@ const Nav = styled.div`
   grid-area: nav;
   justify-self: end;
   font-family: "Rubik", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 400;
   a {
     color: white;
@@ -27,7 +27,7 @@ const Nav = styled.div`
     a {
       display: flex;
       color: white;
-      padding: 8px 15px;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       transition: all 0.4s ease;
       :hover {
@@ -99,7 +99,6 @@ export default class Menu extends Component {
           <li onClick={this.props.handleClick}>
             <Link to="/about">About</Link>
           </li>
-
           <li onClick={this.props.handleClick}>
             <Link to="/contact">Contact</Link>
           </li>
