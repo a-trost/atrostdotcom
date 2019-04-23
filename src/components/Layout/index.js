@@ -38,6 +38,12 @@ const BgImage = styled.img`
   right: 0;
   bottom: 0;
   z-index: -1;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 `;
 
 const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
