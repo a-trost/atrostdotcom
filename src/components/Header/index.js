@@ -5,8 +5,6 @@ import Menu from "../Menu";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
-import portrait from "../../images/AlexPortrait.jpg";
-
 const HeaderWrapper = styled.header`
   background: gray;
   margin-bottom: 1.45rem;
