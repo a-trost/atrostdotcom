@@ -31,21 +31,6 @@ const ChildWrapper = styled.div`
   padding-top: 0;
 `;
 
-const BgImage = styled.img`
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-`;
-
 const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
   <StaticQuery
     query={graphql`
@@ -115,9 +100,7 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
             <html lang="en" />
           </Helmet>
           <Container>
-            <Header data={data} siteTitle={seo.title} location={location}>
-              <BgImage src={bgimage} />
-            </Header>
+            <Header data={data} siteTitle={seo.title} location={location} />
             <ChildWrapper>{children}</ChildWrapper>
             <Footer />
           </Container>
