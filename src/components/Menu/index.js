@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import menuClose from "../../images/x.svg";
-import menuOpen from "../../images/burger.svg";
+import menuCloseIcon from "../../images/x.svg";
+import menuOpenIcon from "../../images/burger.svg";
 
 const Nav = styled.div`
   padding-top: 8px;
@@ -70,40 +70,132 @@ const Nav = styled.div`
   }
 `;
 
+const MobileNav = styled.div`
+  display: none;
+  @media (max-width: 850px) {
+    margin: 0;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    z-index: 20;
+    width: 100vw;
+    height: 100vh;
+    background: #2d4fa6;
+    font-family: "Rubik", sans-serif;
+    overflow: hidden;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: column nowrap;
+      width: 100%;
+      li {
+        margin: 0;
+        flex: 1;
+        font-size: 10vw;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        a,
+        .inner-toggle {
+          width: 100%;
+          height: 100%;
+          color: white;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.2s ease-in-out;
+          :hover {
+            background: #133a9e;
+          }
+        }
+      }
+    }
+  }
+`;
+
 export default class Menu extends Component {
   render() {
-    let listClass = this.props.menuOpen ? "open" : "";
-    let menuText = this.props.menuOpen ? menuClose : menuOpen;
+    const { menuOpen, handleClick } = this.props;
+    let listClass = menuOpen ? "open" : "";
+    let menuToggle = menuOpen ? menuCloseIcon : menuOpenIcon;
     return (
-      <Nav>
-        <ul className={listClass}>
-          <li className="mobile-toggle">
-            <div onClick={this.props.handleClick} style={{ cursor: "pointer" }}>
-              <img
-                width="25px"
-                height="25px"
-                src={menuText}
-                alt="Mobile navigation toggle"
-              />
-            </div>
-          </li>
-          <li onClick={this.props.handleClick}>
-            <Link to="/">Home</Link>
-          </li>
-          <li onClick={this.props.handleClick}>
-            <Link to="/posts">Blog</Link>
-          </li>
-          <li onClick={this.props.handleClick}>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li onClick={this.props.handleClick}>
-            <Link to="/about">About</Link>
-          </li>
-          <li onClick={this.props.handleClick}>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </Nav>
+      <>
+        <Nav>
+          <ul className={listClass}>
+            <li onClick={handleClick} className="mobile-toggle">
+              <div style={{ cursor: "pointer" }}>
+                <img
+                  width="25px"
+                  height="25px"
+                  src={menuToggle}
+                  alt="Mobile navigation toggle"
+                />
+              </div>
+            </li>
+            <li onClick={handleClick}>
+              <Link to="/">Home</Link>
+            </li>
+            <li onClick={handleClick}>
+              <Link to="/posts">Blog</Link>
+            </li>
+            <li onClick={handleClick}>
+              <Link to="/projects">Projects</Link>
+            </li>
+            <li onClick={handleClick}>
+              <Link to="/about">About</Link>
+            </li>
+            <li onClick={handleClick}>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </Nav>
+        {menuOpen && (
+          <MobileNav>
+            <ul className={listClass}>
+              <li className="mobile-toggle">
+                <div
+                  className="inner-toggle"
+                  onClick={handleClick}
+                  style={{ cursor: "pointer" }}
+                >
+                  <img
+                    width="25px"
+                    height="25px"
+                    src={menuToggle}
+                    alt="Mobile navigation toggle"
+                  />
+                </div>
+              </li>
+              <li onClick={handleClick}>
+                <Link to="/">Home</Link>
+              </li>
+              <li onClick={handleClick}>
+                <Link to="/posts">Blog</Link>
+              </li>
+              <li onClick={handleClick}>
+                <Link to="/projects">Projects</Link>
+              </li>
+              <li onClick={handleClick}>
+                <Link to="/about">About</Link>
+              </li>
+              <li onClick={handleClick}>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </MobileNav>
+        )}
+      </>
     );
   }
 }
