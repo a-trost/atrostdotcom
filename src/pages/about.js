@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Resume from "../components/Resume";
+import Pomodoro from "../components/Pomodoro";
 
 const About = ({ data, location, history }) => (
   <Layout
@@ -33,12 +34,18 @@ const About = ({ data, location, history }) => (
       <p>
         I tossed a lot of problems at my web app and wanted to take my learning
         further, so I got a Google Developer Challenge Scholarship to help me
-        learn front end languages like JavaScript and frameworks like React.
-        I've graduated with my{" "}
-        <a href="https://confirm.udacity.com/XLDCHTKA">Udacity Nanodegree</a>{" "}
-        and now I work at GoNation as a Front-End Web Developer.
+        learn JavaScript and frameworks like React. I've worked at GoNation as a
+        Front-End Developer and now work at Green Check Verified as a Software
+        Engineer.
       </p>
     </div>
+
+    <h2>Daily Pomodoros</h2>
+    <p>
+      In my attempt to keep a public journal for my use of the pomodoro
+      technique, I record my logs here to hold myself accountable.{" "}
+    </p>
+    <Pomodoro />
     <Resume />
   </Layout>
 );
