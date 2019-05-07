@@ -1,8 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "Alex Trost - Frontend Web Developer",
     desc:
-      "Alex Trost is a Frontend Web Developer living in New Haven, Connecticut. He writes about Javascript, React, Gatsby, the web, productivity and more.",
+      "Alex Trost is a Frontend Web Developer living in New Haven, Connecticut. He writes about Javascript, React, Gatsby, and general productivity.",
     siteUrl: `https://atrost.com`,
     image: "",
     social: {
@@ -15,6 +19,13 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-prismic",
+      options: {
+        repositoryName: "atrost",
+        accessToken: process.env.PRISMIC_SECRET_KEY,
+      },
+    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
