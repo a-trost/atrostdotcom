@@ -1,8 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Resume from "../components/Resume";
-import Pomodoro from "../components/Pomodoro";
+import Layout from "../../components/Layout";
+import Resume from "../../components/Resume";
+import Pomodoro from "../../components/Pomodoro";
+import LinkCard from "../../components/LinkCard";
+import styled from "styled-components";
+
+const LinkCardContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  button:first-child {
+    margin-right: 1rem;
+  }
+`;
 
 const About = ({ data, location, history }) => (
   <Layout
@@ -39,14 +50,10 @@ const About = ({ data, location, history }) => (
         Engineer.
       </p>
     </div>
-
-    <h2>Daily Pomodoros</h2>
-    <p>
-      In my attempt to keep a public journal for my use of the pomodoro
-      technique, I record my logs here to hold myself accountable.{" "}
-    </p>
-    <Pomodoro />
-    <Resume />
+    <LinkCardContainer>
+      <LinkCard heading="Resume" path="/about/resume" />
+      <LinkCard heading="Habit Tracking" path="/about/tracker" />
+    </LinkCardContainer>
   </Layout>
 );
 

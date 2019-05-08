@@ -29,7 +29,6 @@ export default () => (
               data {
                 date
                 completed
-                abandoned
               }
             }
           }
@@ -39,11 +38,9 @@ export default () => (
     render={data => {
       const labels = last7Days();
       const completed = {};
-      const abandoned = {};
 
       data.allPrismicPomodoro.edges.forEach(edge => {
         completed[edge.node.data.date] = edge.node.data.completed;
-        abandoned[edge.node.data.date] = edge.node.data.abandoned;
       });
       const lineGraphData = {
         labels: labels,
@@ -67,26 +64,6 @@ export default () => (
             pointRadius: 1,
             pointHitRadius: 10,
             data: labels.map(date => (completed[date] ? completed[date] : 0)),
-          },
-          {
-            label: "Abandoned",
-            fill: true,
-            lineTension: 0.3,
-            backgroundColor: "rgba(192,192,192,0.4)",
-            borderColor: "rgba(192,192,192,1)",
-            borderCapStyle: "butt",
-            borderDashOffset: 0.0,
-            borderJoinStyle: "miter",
-            pointBorderColor: "rgba(192,192,192,1)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(192,192,192,1)",
-            pointHoverBorderColor: "rgba(220,220,220,1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: labels.map(date => (abandoned[date] ? abandoned[date] : 0)),
           },
         ],
       };

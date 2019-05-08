@@ -109,7 +109,6 @@ export default class Resume extends Component {
   render() {
     return (
       <React.Fragment>
-        <h2>Resume</h2>
         <Container>
           <CategoryContainer>
             <CategoryName>
