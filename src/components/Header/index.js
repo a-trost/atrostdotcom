@@ -142,14 +142,17 @@ const IntroText = styled.div`
     font-size: 4rem;
     line-height: 4rem;
     font-weight: 500;
+    color: white;
   }
   .rwd-line {
     display: block;
+    color: white;
   }
   .subheader {
     font-size: 2rem;
     font-weight: 300;
     line-height: 2rem;
+    color: white;
   }
 
   /* Medium screens */
