@@ -18,17 +18,17 @@ overflow: hidden;
 
   flex-flow: column nowrap;
   background-image: linear-gradient(to top, #fafafa 0, #fdfdfd 20%, #fff 60%);
-  -moz-box-shadow:  5px 5px 25px 0 rgba(46, 61, 73, 0.2);
-  -webkit-box-shadow:  5px 5px 25px 0 rgba(46, 61, 73, 0.2);
-  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.2);
+  -moz-box-shadow:  5px 5px 10px 0 rgba(46, 61, 73, 0.15);
+  -webkit-box-shadow:  5px 5px 10px 0 rgba(46, 61, 73, 0.15);
+  box-shadow: 5px 5px 10px 0 rgba(46, 61, 73, 0.15);
   border-radius: 0.5rem;
   transition: all 0.4s ease;
   
 }
 :hover {
-    -moz-box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.1);
-    -webkit-box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.1);
-    box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.1);
+    -moz-box-shadow: 1px 1px 10px 0 rgba(46, 61, 73, 0.1);
+    -webkit-box-shadow: 1px 1px 10px 0 rgba(46, 61, 73, 0.1);
+    box-shadow: 1px 1px 10px 0 rgba(46, 61, 73, 0.1);
   }
   :after {
     content: "";
@@ -46,9 +46,10 @@ overflow: hidden;
     font-family: Rubik;
     text-transform: uppercase;
     font-weight: 300;
-    letter-spacing: 5px;
+    letter-spacing: 6px;
+    line-height: 1.1;
     font-size: 18px;
-    color: #555;
+    color: #999;
   }
 
   .heading {
