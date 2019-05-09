@@ -7,9 +7,6 @@ import Img from "gatsby-image";
 
 import Header from "../Header";
 import Footer from "../Footer";
-import favicon16 from "../../images/favicon16.png";
-import favicon32 from "../../images/favicon32.png";
-import favicon64 from "../../images/favicon64.png";
 import bgimage from "../../images/hero-background.svg";
 import "prismjs/themes/prism-coy.css";
 import "./index.css";
@@ -48,14 +45,6 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
             }
           }
         }
-
-        alexpicture: file(relativePath: { eq: "images/AlexPortrait.jpg" }) {
-          childImageSharp {
-            fixed(width: 85, height: 85, quality: 90) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
       }
     `}
     render={data => {
@@ -80,21 +69,6 @@ const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
                 content:
                   "frontend, developer, gatsby, react, web development, javascript, graphic design, freelance",
               },
-            ]}
-            link={[
-              {
-                rel: "icon",
-                type: "image/png",
-                sizes: "16x16",
-                href: `${favicon16}`,
-              },
-              {
-                rel: "icon",
-                type: "image/png",
-                sizes: "32x32",
-                href: `${favicon32}`,
-              },
-              { rel: "shortcut icon", type: "image/png", href: `${favicon64}` },
             ]}
           >
             <html lang="en" />
