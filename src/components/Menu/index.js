@@ -8,6 +8,7 @@ const Nav = styled.div`
   padding-top: 8px;
   grid-area: nav;
   justify-self: end;
+  align-self: end;
   font-family: "Rubik", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -18,6 +19,7 @@ const Nav = styled.div`
   ul,
   li {
     list-style: none;
+    margin: 0;
   }
   ul {
     display: flex;
@@ -26,8 +28,9 @@ const Nav = styled.div`
     justify-content: center;
     a {
       display: flex;
+      line-height: 1;
       color: white;
-      padding: 0.25rem 0.75rem;
+      padding: 0.5rem 0.75rem;
       border-radius: 6px;
       transition: all 0.4s ease;
       :hover {
