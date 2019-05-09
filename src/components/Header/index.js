@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Menu from "../Menu";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
+import logomark from "../../images/logomark.svg";
 
 const HeaderWrapper = styled.header`
   background: gray;
@@ -11,10 +12,10 @@ const HeaderWrapper = styled.header`
   overflow: hidden;
   position: relative;
   height: ${({ isHome, menuOpen }) =>
-    isHome ? "100vh" : menuOpen ? "80vh" : "20vh"};
+    isHome ? "100vh" : menuOpen ? "80vh" : "100px"};
   @media all and (min-width: 800px) {
     height: ${({ isHome, menuOpen }) =>
-      isHome ? "80vh" : menuOpen ? "80vh" : "20vh"};
+      isHome ? "80vh" : menuOpen ? "80vh" : "150px"};
   }
 `;
 
@@ -27,9 +28,9 @@ const HeaderContainer = styled.div`
   position: relative;
   display: grid;
 
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 75px 4fr;
   grid-template-areas:
     "site-name nav"
     "intro-text intro-text";
@@ -37,28 +38,31 @@ const HeaderContainer = styled.div`
   @media all and (min-width: 800px) {
     grid-template-columns: 2fr 1fr;
     grid-gap: 10px;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 75px 4fr;
   }
 `;
 
 const NamePictureContainer = styled.div`
   flex-flow: row nowrap;
   display: flex;
+  align-items: flex-end;
   grid-area: site-name;
+  margin-bottom: 0.5rem;
 `;
 
-const HeaderPortrait = styled.div`
+const HeaderLogo = styled.div`
   img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    height: auto;
+    width: 40px;
+
     display: none;
+    margin: 0;
   }
 
   display: none;
   @media all and (min-width: 500px) {
     img {
-      height: 50px;
+      height: auto;
       width: 50px;
       display: flex;
     }
@@ -69,8 +73,8 @@ const HeaderPortrait = styled.div`
   }
   @media all and (min-width: 700px) {
     img {
-      height: 80px;
-      width: 80px;
+      height: auto;
+      width: 60px;
     }
   }
 `;
@@ -240,13 +244,11 @@ export default class Header extends Component {
         >
           <HeaderContainer>
             <NamePictureContainer>
-              <HeaderPortrait>
+              <HeaderLogo>
                 <Link to="/">
-                  <Img
-                    fixed={this.props.data.alexpicture.childImageSharp.fixed}
-                  />
+                  <img src={logomark} alt="Alex Trost Logo" />
                 </Link>
-              </HeaderPortrait>
+              </HeaderLogo>
               <HeaderName>
                 <Link to="/">
                   <h3 className="name">Alex Trost</h3>
