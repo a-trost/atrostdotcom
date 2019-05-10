@@ -135,9 +135,7 @@ export default class Resume extends Component {
                   <Title>Junior Front-End Web Developer</Title>
                   <Description>
                     <ul>
-                      <li>
-                        Created website features used across 240+ websites
-                      </li>
+                      <li>Created features used across 240+ websites</li>
                     </ul>
                   </Description>
                 </ItemInfo>
