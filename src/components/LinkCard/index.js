@@ -3,10 +3,9 @@ import { Link, navigate } from "gatsby";
 import styled from "styled-components";
 
 const Card = styled.button`
-cursor: pointer;
-display: flex;
-flex: 1 40%;
-overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  overflow: hidden;
   flex-flow: column nowrap;
   justify-content: center;
   padding: 1rem;
@@ -14,7 +13,7 @@ overflow: hidden;
   box-sizing: border-box;
   position: relative;
   border: 1px solid lightgrey;
-  border-radius: 12px;
+  border-radius: .75rem;
 
   flex-flow: column nowrap;
   background-image: linear-gradient(to top, #fafafa 0, #fdfdfd 20%, #fff 60%);
@@ -58,6 +57,20 @@ overflow: hidden;
     font-weight: 500;
     color: #219fed;
     font-size: 45px;
+    text-align: left;
+    line-height: 1;
+  }
+
+  @media all and (max-width: 700px){
+  height: 125px;
+    .subheading {
+    letter-spacing: 4px;
+    line-height: 1.1;
+    font-size: 15px;
+  }
+    .heading {
+    font-size: 33px;
+  }
   }
 `;
 
