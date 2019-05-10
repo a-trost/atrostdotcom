@@ -4,6 +4,7 @@ import Layout from "../../components/Layout";
 import Resume from "../../components/Resume";
 import Pomodoro from "../../components/Pomodoro";
 import LinkCard from "../../components/LinkCard";
+import LinkCardContainer from "../../components/LinkCardContainer";
 import styled from "styled-components";
 
 const LinkCardContainer = styled.div`

@@ -3,16 +3,8 @@ import { graphql } from "gatsby";
 import Layout from "../../components/Layout";
 import Resume from "../../components/Resume";
 import LinkCard from "../../components/LinkCard";
+import LinkCardContainer from "../../components/LinkCardContainer";
 import styled from "styled-components";
-
-const LinkCardContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  button:first-child {
-    margin-right: 1rem;
-  }
-`;
 
 const ResumePage = ({ data, location, history }) => (
   <Layout
