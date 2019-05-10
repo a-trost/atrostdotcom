@@ -12,10 +12,10 @@ const HeaderWrapper = styled.header`
   overflow: hidden;
   position: relative;
   height: ${({ isHome, menuOpen }) =>
-    isHome ? "100vh" : menuOpen ? "80vh" : "100px"};
+    isHome ? "100vh" : menuOpen ? "80vh" : "auto"};
   @media all and (min-width: 800px) {
     height: ${({ isHome, menuOpen }) =>
-      isHome ? "80vh" : menuOpen ? "80vh" : "150px"};
+      isHome ? "80vh" : menuOpen ? "80vh" : "auto"};
   }
 `;
 
