@@ -106,7 +106,7 @@ const About = ({ data, location, history }) => (
           fluid={data.alexpicture.childImageSharp.fluid}
           alt="Alex Trost and dog"
         />
-        <span className="caption">Alex and his dog Milo</span>
+        <span className="caption">Me and my dog Milo. I'm on the right.</span>
       </div>
     </AboutLayout>
 
