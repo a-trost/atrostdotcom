@@ -34,7 +34,7 @@ const AboutLayout = styled.div`
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 120px 140px 0 0;
+      border-width: 70px 70px 0 0;
       border-color: transparent #219fed transparent transparent;
       right: 0;
       bottom: 0;
