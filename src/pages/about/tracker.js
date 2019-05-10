@@ -16,7 +16,7 @@ const Tracker = ({ data, location, history }) => (
         "Habit tracker for New Haven based web developer, Alex Trost. He writes about Javascript, React, Gatsby, the web, productivity and more.",
     }}
   >
-    <h1>Pomodoro Tracker</h1>
+    <h1>Habit Tracker</h1>
     <p>
       In my attempt to keep a public journal for my use of the pomodoro
       technique, I record my logs here to hold myself accountable.{" "}

@@ -1,6 +1,11 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { Line } from "react-chartjs-2";
+import styled from "styled-components";
+
+const Container = styled.div`
+  margin-bottom: 2rem;
+`;
 
 function last7Days() {
   return [0, 1, 2, 3, 4, 5, 6, 7]
@@ -69,9 +74,9 @@ export default () => (
       };
 
       return (
-        <div>
+        <Container>
           <Line data={lineGraphData} />
-        </div>
+        </Container>
       );
     }}
   />
