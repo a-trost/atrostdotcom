@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import Menu from "../Menu";
+import { useSpring, animated } from "react-spring";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import logomark from "../../images/logomark.svg";
@@ -197,81 +198,72 @@ const IntroText = styled.div`
   }
 `;
 
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { menuOpen: false };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const Header = ({ location, children }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navAnimation = useSpring({
+    transform: menuOpen ? `translate3d(0, 0, 0)` : `translate3d(100%, 0, 0)`,
+  });
+  // useEffect((prevProps, prevState) => {
+  //   // componentDidUpdate = (prevProps, prevState) => {
+  //   if (location.pathname !== prevProps.location.pathname) {
+  //     if (location.pathname === "/") {
+  //       this.wrapper.animate([{ height: "20vh" }, { height: "80vh" }], {
+  //         duration: 600,
+  //         fill: "forwards",
+  //         easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+  //         iterations: 1,
+  //       });
+  //     } else {
+  //       this.wrapper.animate([{ height: "80vh" }, { height: "20vh" }], {
+  //         duration: 600,
+  //         fill: "forwards",
+  //         easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+  //         iterations: 1,
+  //       });
+  //     }
+  //   }
+  // });
 
-  handleClick() {
-    const menuOpen = !this.state.menuOpen;
-    this.setState({ menuOpen });
-  }
+  const isHome = location.pathname === "/";
+  return (
+    <HeaderWrapper
+      isHome={isHome}
+      menuOpen={menuOpen}
+      ref={wrapper => {
+        wrapper = ReactDOM.findDOMNode(wrapper);
+      }}
+    >
+      <HeaderContainer>
+        <NamePictureContainer>
+          <HeaderLogo>
+            <Link to="/">
+              <img src={logomark} alt="Alex Trost Logo" />
+            </Link>
+          </HeaderLogo>
+          <HeaderName>
+            <Link to="/">
+              <h3 className="name">Alex Trost</h3>
+              <h4 className="title">Front-End Web Developer</h4>
+            </Link>
+          </HeaderName>
+        </NamePictureContainer>
+        <Menu
+          style={navAnimation}
+          handleClick={() => setMenuOpen(!menuOpen)}
+          menuOpen={menuOpen}
+        />
+        {isHome && (
+          <IntroText>
+            <h1>
+              Hey, <span className="rwd-line">I'm Alex.</span>
+            </h1>
+            <h2 className="subheader">Developer, Designer, Teacher.</h2>
+          </IntroText>
+        )}
+        <BgImage />
+      </HeaderContainer>
+    </HeaderWrapper>
+  );
+};
 
-  componentDidUpdate = (prevProps, prevState) => {
-    const { location } = this.props;
-    if (location.pathname !== prevProps.location.pathname) {
-      if (this.props.location.pathname === "/") {
-        this.wrapper.animate([{ height: "20vh" }, { height: "80vh" }], {
-          duration: 600,
-          fill: "forwards",
-          easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-          iterations: 1,
-        });
-      } else {
-        this.wrapper.animate([{ height: "80vh" }, { height: "20vh" }], {
-          duration: 600,
-          fill: "forwards",
-          easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-          iterations: 1,
-        });
-      }
-    }
-  };
-
-  render(props) {
-    const { location, children } = this.props;
-    const isHome = location.pathname === "/";
-    return (
-      <>
-        <HeaderWrapper
-          isHome={isHome}
-          menuOpen={this.state.menuOpen}
-          ref={wrapper => {
-            this.wrapper = ReactDOM.findDOMNode(wrapper);
-          }}
-        >
-          <HeaderContainer>
-            <NamePictureContainer>
-              <HeaderLogo>
-                <Link to="/">
-                  <img src={logomark} alt="Alex Trost Logo" />
-                </Link>
-              </HeaderLogo>
-              <HeaderName>
-                <Link to="/">
-                  <h3 className="name">Alex Trost</h3>
-                  <h4 className="title">Front-End Web Developer</h4>
-                </Link>
-              </HeaderName>
-            </NamePictureContainer>
-            <Menu
-              handleClick={this.handleClick}
-              menuOpen={this.state.menuOpen}
-            />
-            {isHome && (
-              <IntroText>
-                <h1>
-                  Hey, <span className="rwd-line">I'm Alex.</span>
-                </h1>
-                <h2 className="subheader">Developer, Designer, Teacher.</h2>
-              </IntroText>
-            )}
-            <BgImage />
-          </HeaderContainer>
-        </HeaderWrapper>
-      </>
-    );
-  }
-}
+export default Header;

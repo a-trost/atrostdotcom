@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import menuCloseIcon from "../../images/x.svg";
 import menuOpenIcon from "../../images/burger.svg";
+import { useSpring, animated } from "react-spring";
 
 const Nav = styled.div`
   padding-top: 8px;
@@ -26,6 +27,7 @@ const Nav = styled.div`
     align-items: center;
     flex-direction: row;
     justify-content: center;
+
     a {
       display: flex;
       line-height: 1;
@@ -33,10 +35,28 @@ const Nav = styled.div`
       padding: 0.5rem 0.75rem;
       border-radius: 6px;
       transition: all 0.4s ease;
-      :hover {
-        background: #ffffff33;
-      }
+      position: relative;
+      z-index: 1;
     }
+    li a::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -0.25em;
+  right: -0.25em;
+  background-color: orange;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: center left;
+}
+    }
+
     .mobile-toggle div {
       justify-self: start;
       position: absolute;
@@ -87,7 +107,7 @@ const MobileNav = styled.div`
     z-index: 20;
     width: 100vw;
     height: 100vh;
-    background: #2d4fa6;
+    background: #3192d3;
     font-family: "Rubik", sans-serif;
     overflow: hidden;
     ul {
@@ -99,7 +119,6 @@ const MobileNav = styled.div`
       width: 100%;
       li {
         margin: 0;
-        flex: 1;
         font-size: 10vw;
         text-align: center;
         width: 100%;
@@ -114,12 +133,13 @@ const MobileNav = styled.div`
           height: 100%;
           color: white;
           display: flex;
+          padding: 2rem;
           flex-flow: row nowrap;
           justify-content: center;
           align-items: center;
           transition: all 0.2s ease-in-out;
           :hover {
-            background: #133a9e;
+            background: #3db3ea;
           }
         }
       }
@@ -127,17 +147,52 @@ const MobileNav = styled.div`
   }
 `;
 
-export default class Menu extends Component {
-  render() {
-    const { menuOpen, handleClick } = this.props;
-    let listClass = menuOpen ? "open" : "";
-    let menuToggle = menuOpen ? menuCloseIcon : menuOpenIcon;
-    return (
-      <>
-        <Nav>
+const AnimatedMobileNav = animated(MobileNav);
+
+const RenderListItems = handleClick => (
+  <>
+    <li className="home" onClick={handleClick}>
+      <Link to="/">Home</Link>
+    </li>
+    <li className="blog" onClick={handleClick}>
+      <Link to="/posts">Blog</Link>
+    </li>
+    <li className="projects" onClick={handleClick}>
+      <Link to="/projects">Projects</Link>
+    </li>
+    <li className="about" onClick={handleClick}>
+      <Link to="/about">About</Link>
+    </li>
+    <li className="contact" onClick={handleClick}>
+      <Link to="/contact">Contact</Link>
+    </li>
+  </>
+);
+
+const Menu = ({ menuOpen, handleClick, style }) => {
+  let listClass = menuOpen ? "open" : "";
+  let menuToggle = menuOpen ? menuCloseIcon : menuOpenIcon;
+  return (
+    <>
+      <Nav>
+        <ul>
+          <li onClick={handleClick} className="mobile-toggle">
+            <div style={{ cursor: "pointer" }}>
+              <img width="25px" height="25px" src={menuToggle} alt="Menu" />
+            </div>
+          </li>
+          {RenderListItems(handleClick)}
+        </ul>
+      </Nav>
+      <AnimatedMobileNav style={style}>
+        <MobileNav>
           <ul className={listClass}>
-            <li onClick={handleClick} className="mobile-toggle">
-              <div style={{ cursor: "pointer" }}>
+            <li className="mobile-toggle">
+              <div
+                className="inner-toggle"
+                onClick={handleClick}
+                style={{ cursor: "pointer" }}
+              >
                 <img
                   width="25px"
                   height="25px"
@@ -146,59 +201,12 @@ export default class Menu extends Component {
                 />
               </div>
             </li>
-            <li onClick={handleClick}>
-              <Link to="/">Home</Link>
-            </li>
-            <li onClick={handleClick}>
-              <Link to="/posts">Blog</Link>
-            </li>
-            <li onClick={handleClick}>
-              <Link to="/projects">Projects</Link>
-            </li>
-            <li onClick={handleClick}>
-              <Link to="/about">About</Link>
-            </li>
-            <li onClick={handleClick}>
-              <Link to="/contact">Contact</Link>
-            </li>
+            {RenderListItems(handleClick)}
           </ul>
-        </Nav>
-        {menuOpen && (
-          <MobileNav>
-            <ul className={listClass}>
-              <li className="mobile-toggle">
-                <div
-                  className="inner-toggle"
-                  onClick={handleClick}
-                  style={{ cursor: "pointer" }}
-                >
-                  <img
-                    width="25px"
-                    height="25px"
-                    src={menuToggle}
-                    alt="Mobile navigation toggle"
-                  />
-                </div>
-              </li>
-              <li onClick={handleClick}>
-                <Link to="/">Home</Link>
-              </li>
-              <li onClick={handleClick}>
-                <Link to="/posts">Blog</Link>
-              </li>
-              <li onClick={handleClick}>
-                <Link to="/projects">Projects</Link>
-              </li>
-              <li onClick={handleClick}>
-                <Link to="/about">About</Link>
-              </li>
-              <li onClick={handleClick}>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </MobileNav>
-        )}
-      </>
-    );
-  }
-}
+        </MobileNav>
+      </AnimatedMobileNav>
+    </>
+  );
+};
+
+export default Menu;
