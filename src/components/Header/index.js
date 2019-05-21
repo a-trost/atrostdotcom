@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import Menu from "../Menu";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import logomark from "../../images/logomark.svg";
@@ -202,6 +202,7 @@ const Header = ({ location, children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navAnimation = useSpring({
     transform: menuOpen ? `translate3d(0, 0, 0)` : `translate3d(100%, 0, 0)`,
+    config: config.gentle,
   });
   // useEffect((prevProps, prevState) => {
   //   // componentDidUpdate = (prevProps, prevState) => {
