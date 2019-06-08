@@ -49,9 +49,9 @@ Let’s start with an empty HTML file. There’s a lot that goes into a standard
 ```
 
 In your code editor, you’ll notice that a few parts of the code are highlighted, with your cursor starting on `device-width`. Emmet knows that some of these are sometimes changed, while the rest is pretty standard. Here’s how mine looks:
-![VSCode with basic html elements and certain parts highlighted](./emmet1.png)
+![VSCode with basic HTML elements and certain parts highlighted](./emmet1.png)
 
-I suggest tabbing until you get between the `<title>` tags, and changing that.
+I suggest tabbing until you get between the `<title>` tags and changing that.
 
 Let’s insert a quick CSS link with `link:css`:
 
@@ -127,7 +127,7 @@ Using `$` lets you put that number in as class names, IDs or even text inside th
 
 ### Set the Text
 
-Emmet can even set text inside your elements if you use curly brackets `{}`.
+Emmet can even set the text inside your elements if you use curly brackets `{}`.
 This is especially handy when combined with the `$`.
 
 `div*3>h2{Header $}+p{Body text $}`
@@ -168,7 +168,7 @@ To add multiple classes string them together without a space: `.container.dark.s
 
 #### Div by Default
 
-By default Emmet will assume you’re trying to create a div, so just type the class name as a short hand.
+By default, Emmet will assume you’re trying to create a div, so just type the class name as a shorthand.
 Typing `.container` outputs a div with that class
 
 ```html
@@ -197,7 +197,7 @@ Creating an item inside a paragraph tag defaults to a span.
 
 ### Lorem Ipsum
 
-For the longest time I’d go to google, search for `lorem ipsum` and pull up one of the generators just to get the standard dummy text. Emmet takes the command `lorem`and saves you the trouble.
+For the longest time, I’d go to google, search for `lorem ipsum` and pull up one of the generators just to get the standard dummy text. Emmet takes the command `lorem` and saves you the trouble.
 `p>lorem`
 
 ```html
@@ -253,4 +253,4 @@ When using editors like VSCode they will often show you options as you start to 
 
 ### Now Go Practice
 
-Hopefully some of these Emmet commands are new to you. You might not know them at first, but practice with them so that you begin to commit them to memory. A bit of struggle in the beginning is going to pay dividends over your career.
+Hopefully, some of these Emmet commands are new to you. You might not know them at first but practice with them so that you begin to commit them to memory. A bit of struggle in the beginning is going to pay dividends over your career.
