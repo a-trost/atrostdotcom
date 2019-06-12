@@ -54,7 +54,7 @@ const PostListing = ({ post }) => {
     opacity: on ? 1 : 0,
   });
   return (
-    <AnimatedCard style={animation}>
+    <Card>
       <Waypoint
         onEnter={() => {
           if (!on) toggle(true);
@@ -77,7 +77,7 @@ const PostListing = ({ post }) => {
           {post.excerpt} <Link to={post.fields.slug} />
         </p>
       </TextContainer>
-    </AnimatedCard>
+    </Card>
   );
 };
 
