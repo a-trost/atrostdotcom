@@ -2,7 +2,6 @@
 title: ATrost.com
 type: "project"
 date: "2018-08-05"
-image: "./alexandria-project-cover.png"
 tech: [Gatsby, React, GraphQL]
 repo: https://github.com/a-trost/atrostdotcom
 site: https://www.atrost.com
