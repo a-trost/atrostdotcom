@@ -38,16 +38,41 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allContentfulTil {
+          edges {
+            node {
+              title
+            }
+          }
+        }
       }
     `).then(result => {
+      console.log(result);
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve(pagePaths[node.frontmatter.type]),
-          context: {
-            slug: node.fields.slug,
-          },
-        });
+        try {
+          createPage({
+            path: node.fields.slug,
+            component: path.resolve(pagePaths[node.frontmatter.type]),
+            context: {
+              slug: node.fields.slug,
+            },
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      });
+      result.data.allContentfulTil.edges.forEach(({ node }) => {
+        try {
+          createPage({
+            path: `til/${node.title.replace(/\s+\#/g, "").toLowerCase()}`,
+            component: path.resolve("./src/til/TilPage.js"),
+            context: {
+              title: node.title,
+            },
+          });
+        } catch (error) {
+          console.log(error);
+        }
       });
       resolve();
     });
