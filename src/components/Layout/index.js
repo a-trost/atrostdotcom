@@ -8,7 +8,7 @@ import Img from "gatsby-image";
 import Header from "../Header";
 import Footer from "../Footer";
 import bgimage from "../../images/hero-background.svg";
-import "prismjs/themes/prism-coy.css";
+import "prismjs/themes/prism.css";
 import "./index.css";
 
 const Container = styled.div`
