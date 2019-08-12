@@ -63,13 +63,15 @@ exports.createPages = ({ graphql, actions }) => {
       });
       result.data.allContentfulTil.edges.forEach(({ node }) => {
         try {
-          createPage({
-            path: `til/${node.title.replace(/\s+\#/g, "").toLowerCase()}`,
-            component: path.resolve("./src/til/TilPage.js"),
-            context: {
-              title: node.title,
-            },
-          });
+          if (node && node.title) {
+            createPage({
+              path: `til/${node.title.replace(/\s+\#/g, "").toLowerCase()}`,
+              component: path.resolve("./src/til/TilPage.js"),
+              context: {
+                title: node.title,
+              },
+            });
+          }
         } catch (error) {
           console.log(error);
         }
