@@ -6,7 +6,6 @@ import Layout from "../components/Layout";
 
 const PostContainer = styled.div`
   display: grid;
-  height: 100%;
   grid-template-columns: 1fr;
   grid-gap: 35px;
   justify-items: stretch;
