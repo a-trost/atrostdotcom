@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import { Waypoint } from "react-waypoint";
-import { animated, useSpring, config } from "react-spring";
 
 const ImageContainer = styled.div`
   display: block;
@@ -45,21 +43,9 @@ const PostTitle = styled.h2`
   margin-bottom: 0.5rem;
 `;
 
-const AnimatedCard = animated(Card);
-
 const PostListing = ({ post }) => {
-  const [on, toggle] = useState(false);
-  const animation = useSpring({
-    transform: on ? `translate3d(0,0,0)` : `translate3d(50%, 0, 0)`,
-    opacity: on ? 1 : 0,
-  });
   return (
     <Card>
-      <Waypoint
-        onEnter={() => {
-          if (!on) toggle(true);
-        }}
-      />
       <Link to={post.fields.slug}>
         <ImageContainer>
           <CoverImage
