@@ -225,7 +225,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-  line-height: 2rem;
+  line-height: 1.6rem;
 }
 img {
   max-width: 100%;
