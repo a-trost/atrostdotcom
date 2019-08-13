@@ -3,7 +3,10 @@ const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === "MarkdownRemark") {
+  if (
+    node.internal.type === "MarkdownRemark" &&
+    node.frontmatter.title !== ""
+  ) {
     const slug = createFilePath({
       node,
       getNode,
@@ -26,7 +29,9 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/atrostdotcom/" } }
+        ) {
           edges {
             node {
               fields {
@@ -42,30 +47,32 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               title
+              number
             }
           }
         }
       }
     `).then(result => {
-      console.log(result);
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         try {
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve(pagePaths[node.frontmatter.type]),
-            context: {
-              slug: node.fields.slug,
-            },
-          });
+          if (node && node.frontmatter && node.frontmatter.type) {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(pagePaths[node.frontmatter.type]),
+              context: {
+                slug: node.fields.slug,
+              },
+            });
+          }
         } catch (error) {
           console.log(error);
         }
       });
       result.data.allContentfulTil.edges.forEach(({ node }) => {
         try {
-          if (node && node.title) {
+          if (node && node.title && node.number) {
             createPage({
-              path: `til/${node.title.replace(/\s+\#/g, "").toLowerCase()}`,
+              path: `til/${node.number}`,
               component: path.resolve("./src/til/TilPage.js"),
               context: {
                 title: node.title,
