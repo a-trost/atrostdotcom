@@ -39,10 +39,6 @@ const TextContainer = styled.div`
   line-height: 1.5rem;
 `;
 
-const PostTitle = styled.h2`
-  margin-bottom: 0.5rem;
-`;
-
 const PostListing = ({ post }) => {
   return (
     <Card>

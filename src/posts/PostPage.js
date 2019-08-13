@@ -5,20 +5,6 @@ import Layout from "../components/Layout";
 import Img from "gatsby-image";
 // import TableOfContents from "../components/TableOfContents";
 
-const BlogHeader = styled.h1`
-  margin:20px 5px;
-  padding:0;
-  color: #444;
-  border:0;
-  font-size: 3rem;
-  line-height: 1
-  text-rendering: optimizeLegibility;
-  text-align:center;
-  @media all and (max-width:500px){
-    font-size: 2.4rem;
-  }
-`;
-
 const BlogCoverImage = styled(Img)`
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -77,7 +63,6 @@ export default class PostPage extends Component {
         history={history}
         pageData={data.markdownRemark.frontmatter}
       >
-        {/* <BlogHeader>{data.markdownRemark.frontmatter.title}</BlogHeader> */}
         <BlogCoverImage
           sizes={data.markdownRemark.frontmatter.image.childImageSharp.sizes}
           alt={data.markdownRemark.frontmatter.title}

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import menuCloseIcon from "../../images/x.svg";
 import menuOpenIcon from "../../images/burger.svg";
-import { useSpring, animated } from "react-spring";
+import { animated } from "react-spring";
 
 const Nav = styled.div`
   padding-top: 8px;

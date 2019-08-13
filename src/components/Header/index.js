@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import Menu from "../Menu";
-import { useSpring, animated, config } from "react-spring";
+import { useSpring, config } from "react-spring";
 import { Link } from "gatsby";
-import Img from "gatsby-image";
 import logomark from "../../images/logomark.svg";
 
 const HeaderWrapper = styled.header`

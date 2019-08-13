@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { Link, navigate } from "gatsby";
+import React from "react";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`

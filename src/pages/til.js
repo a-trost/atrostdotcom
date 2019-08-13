@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import PostListing from "../components/Posts/PostListing";
 import Layout from "../components/Layout";
 
 const TilContainer = styled.div`

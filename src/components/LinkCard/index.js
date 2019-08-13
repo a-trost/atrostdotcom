@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, navigate } from "gatsby";
+import { navigate } from "gatsby";
 import styled from "styled-components";
 
 const Card = styled.button`

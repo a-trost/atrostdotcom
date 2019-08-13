@@ -3,11 +3,9 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 
 import Header from "../Header";
 import Footer from "../Footer";
-import bgimage from "../../images/hero-background.svg";
 import "prismjs/themes/prism.css";
 import "./index.css";
 

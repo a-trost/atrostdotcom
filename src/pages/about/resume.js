@@ -1,10 +1,8 @@
 import React from "react";
-import { graphql } from "gatsby";
 import Layout from "../../components/Layout";
 import Resume from "../../components/Resume";
 import LinkCard from "../../components/LinkCard";
 import LinkCardContainer from "../../components/LinkCardContainer";
-import styled from "styled-components";
 
 const ResumePage = ({ data, location, history }) => (
   <Layout

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import Img from "gatsby-image";
-// import TableOfContents from "../components/TableOfContents";
 
 const TilHeader = styled.h1`
   margin: 5px;
