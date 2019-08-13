@@ -40,10 +40,12 @@ export default class ProjectPage extends Component {
           tech={data.markdownRemark.frontmatter.tech}
           color={data.markdownRemark.frontmatter.color}
         />
-        <ProjectCoverImage
-          sizes={data.markdownRemark.frontmatter.image.childImageSharp.sizes}
-          alt={data.markdownRemark.frontmatter.title}
-        />
+        {data.markdownRemark.frontmatter.image && (
+          <ProjectCoverImage
+            sizes={data.markdownRemark.frontmatter.image.childImageSharp.sizes}
+            alt={data.markdownRemark.frontmatter.title}
+          />
+        )}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Layout>
     );
