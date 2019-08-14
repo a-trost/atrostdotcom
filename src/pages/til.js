@@ -28,8 +28,11 @@ const IndexPage = ({ data, location, history }) => (
         posts. Maybe not.
       </p>
       <TilContainer>
-        {data.allContentfulTil.edges.map(
-          ({ node: { title, date, tags, content, number } }) => (
+        {data.allContentfulTil.edges
+          .sort((a, b) => {
+            return b.node.number - a.node.number;
+          })
+          .map(({ node: { title, date, tags, content, number } }) => (
             <TILCard
               title={title}
               date={date}
@@ -37,8 +40,7 @@ const IndexPage = ({ data, location, history }) => (
               content={content}
               number={number}
             />
-          )
-        )}
+          ))}
       </TilContainer>
     </div>
   </Layout>

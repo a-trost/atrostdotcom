@@ -1,6 +1,58 @@
 import React from "react";
 import styled from "styled-components";
 
+const Container = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 140px auto;
+  align-items: center;
+  @media all and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const Sidebar = styled.div`
+  align-self: center;
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: hsl(0, 0%, 80%);
+  text-align: center;
+  border-right: 1px solid hsla(0, 0%, 0%, 0.2);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media all and (max-width: 700px) {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
+    border-right: 1px solid hsla(0, 0%, 0%, 0);
+  }
+`;
+
+const Card = styled.article`
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2rem;
+  padding-top: 4rem;
+  h2 {
+    margin-bottom: 0;
+  }
+  .date {
+    font-size: 13px;
+    color: #888;
+    margin: 0.5rem 1rem;
+  }
+  .content {
+    margin-top: 2rem;
+  }
+  @media all and (max-width: 700px) {
+    padding-top: 2rem;
+  }
+`;
+
 const Tags = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -21,45 +73,6 @@ const Tags = styled.div`
   }
 `;
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 120px auto;
-  align-items: center;
-`;
-
-const Sidebar = styled.div`
-  align-self: center;
-  flex: 1 130px;
-  font-family: Raleway;
-  font-weight: 700;
-  font-size: 2.4rem;
-  color: hsl(0, 0%, 80%);
-  text-align: center;
-`;
-
-const Card = styled.article`
-  box-sizing: border-box;
-  border-top: 1px solid #bbb;
-
-  overflow: hidden;
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 2rem;
-  padding-top: 4rem;
-  h2 {
-    margin-bottom: 0;
-  }
-  .date {
-    font-size: 13px;
-    color: #888;
-    margin: 0.5rem 1rem;
-  }
-`;
-
-const Content = styled.article`
-  margin-top: 2rem;
-`;
-
 export default function TILCard(props) {
   const { content, title, date, tags, number } = props;
   return (
@@ -74,7 +87,8 @@ export default function TILCard(props) {
             <span className="tag">{tag}</span>
           ))}
         </Tags>
-        <Content
+        <article
+          className="content"
           dangerouslySetInnerHTML={{
             __html: content.childMarkdownRemark.html,
           }}
