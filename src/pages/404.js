@@ -8,9 +8,7 @@ const NotFoundPage = ({ data, location, history }) => (
     pageData={{ title: "404", desc: "This page was not found" }}
   >
     <h1>404, File not found</h1>
-    <p>
-      Sorry, that file has either moved or never existed. That's the worst, huh?
-    </p>
+    <p>Sorry, that file has either moved or never existed.</p>
   </Layout>
 );
 
