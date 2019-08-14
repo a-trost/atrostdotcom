@@ -57,7 +57,7 @@ export const query = graphql`
       }
     }
 
-    allContentfulTil {
+    allContentfulTil(sort: { fields: number }) {
       edges {
         node {
           title
