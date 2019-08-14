@@ -49,7 +49,7 @@ const Card = styled.article`
     margin-top: 2rem;
   }
   @media all and (max-width: 700px) {
-    padding-top: 2rem;
+    padding: 2rem 0;
   }
 `;
 
@@ -69,7 +69,7 @@ const Tags = styled.div`
     margin: 0;
     color: #666;
     margin-left: 0.5rem;
-    padding: 0.25rem 0.5rem;
+    padding: 8px 15px;
   }
 `;
 
