@@ -157,6 +157,9 @@ const RenderListItems = handleClick => (
     <li className="blog" onClick={handleClick}>
       <Link to="/posts">Blog</Link>
     </li>
+    <li className="til" onClick={handleClick}>
+      <Link to="/til">TIL</Link>
+    </li>
     <li className="projects" onClick={handleClick}>
       <Link to="/projects">Projects</Link>
     </li>
