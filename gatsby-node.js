@@ -29,9 +29,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/atrostdotcom/" } }
-        ) {
+        allMarkdownRemark(filter: { fileAbsolutePath: { ne: null } }) {
           edges {
             node {
               fields {
