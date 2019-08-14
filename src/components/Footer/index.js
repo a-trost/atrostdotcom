@@ -117,6 +117,9 @@ export default class Footer extends Component {
                 <Link to="/posts">Blog</Link>
               </li>
               <li>
+                <Link to="/til">TIL</Link>
+              </li>
+              <li>
                 <Link to="/projects">Projects</Link>
               </li>
               <li>
