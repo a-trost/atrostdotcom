@@ -16,7 +16,7 @@ margin-top:1rem;
   margin:1rem;
   border-top: 2px solid #dedede;
 	padding: 40px 20px;
-	font-family: Rubik;
+	font-family: Raleway;
 	font-size: 1.1rem;
   font-weight: 300;
   display: grid;
@@ -39,8 +39,10 @@ margin-top:1rem;
     li {
       text-align:center;
       padding: 1px 5px;
-      font-size: 16px;
+      font-size: 17px;
       margin: 0;
+      font-family:Raleway;
+      letter-spacing:.6px;
   }
   }
 	.logo{

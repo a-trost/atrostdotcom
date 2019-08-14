@@ -3,8 +3,8 @@ import noriegaTheme from "typography-theme-noriega";
 
 noriegaTheme.googleFonts = [
   {
-    name: "Rubik",
-    styles: ["500", "700"],
+    name: "Raleway",
+    styles: ["300", "700"],
   },
   {
     name: "Open Sans",
@@ -13,7 +13,7 @@ noriegaTheme.googleFonts = [
 ];
 
 noriegaTheme.headerFontFamily = [
-  "Rubik",
+  "Raleway",
   "Helvetica Neue",
   "Segoe UI",
   "Helvetica",

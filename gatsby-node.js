@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        allContentfulTil {
+        allContentfulTil(sort: { fields: number }) {
           edges {
             node {
               title

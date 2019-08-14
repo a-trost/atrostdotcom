@@ -1,7 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css?family=Open+Sans,Rubik:400,500'); */
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans,Raleway:400,500'); */
 
 html {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Raleway', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
@@ -84,7 +84,7 @@ h1 {
 }
 mark {
   background-color: #ff0;
-  color: #000;
+  color: #333;
 }
 small {
   font-size: 80%;
@@ -203,7 +203,7 @@ textarea {
   font: inherit;
 }
 html {
-  /* font: 112.5%/1.45em 'Rubik', sans-serif; */
+  /* font: 112.5%/1.45em 'Raleway', sans-serif; */
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -238,6 +238,8 @@ img {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
+
+
 h1 {
   margin-left: 0;
   margin-right: 0;
@@ -246,9 +248,7 @@ h1 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: #2699FB;
-  
+  margin-bottom: 1.45rem;  
   text-rendering: optimizeLegibility;
   font-weight: 400;
   font-size: 2.25rem;
@@ -263,7 +263,6 @@ h2 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: #2699FB;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -278,7 +277,6 @@ h3 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: #2699FB;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -293,7 +291,6 @@ h4 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: #2699FB;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -308,7 +305,6 @@ h5 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: #2699FB;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -323,11 +319,14 @@ h6 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: #2699FB;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
   line-height: 1.1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: hsl(219, 41%, 30%);
 }
 hgroup {
   margin-left: 0;

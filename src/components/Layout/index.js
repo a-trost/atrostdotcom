@@ -22,8 +22,7 @@ const ChildWrapper = styled.div`
   flex-flow: column nowrap;
   width: 95vw;
   max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0;
+  padding: 1rem 1.0875rem 1.45rem;
 `;
 
 const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (

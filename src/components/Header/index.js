@@ -84,9 +84,9 @@ const HeaderName = styled.div`
   .name {
     display: flex;
     color: white;
-    font-family: "Rubik", sans-serif;
+    font-family: "Raleway", sans-serif;
     padding-left: 13px;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.7rem;
     line-height: 1.7rem;
     margin: 0;
@@ -102,7 +102,7 @@ const HeaderName = styled.div`
     .title {
       display: flex;
       color: #eee;
-      font-family: "Rubik", sans-serif;
+      font-family: "Raleway", sans-serif;
       padding-left: 13px;
       font-weight: 400;
       font-size: 1rem;
@@ -140,12 +140,12 @@ const IntroText = styled.div`
   grid-area: intro-text;
   animation: fadeAndScale 2s ease-in;
   color: white;
-  font-family: "Rubik", sans-serif;
+  font-family: "Raleway", sans-serif;
   place-self: center;
   h1 {
     font-size: 4rem;
     line-height: 4rem;
-    font-weight: 500;
+    font-weight: 700;
     color: white;
   }
   .rwd-line {
@@ -257,7 +257,7 @@ const Header = ({ location, children }) => {
             <h1>
               Hey, <span className="rwd-line">I'm Alex.</span>
             </h1>
-            <h2 className="subheader">Developer, Designer, Teacher.</h2>
+            <h2 className="subheader">Developer. Designer. Teacher.</h2>
           </IntroText>
         )}
         <BgImage />

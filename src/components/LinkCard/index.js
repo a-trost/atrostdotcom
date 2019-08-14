@@ -42,7 +42,7 @@ const Card = styled.button`
   }
 
   .subheading {
-    font-family: Rubik;
+    font-family: Raleway;
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: 6px;
@@ -52,9 +52,9 @@ const Card = styled.button`
   }
 
   .heading {
-    font-family: Rubik;
+    font-family: Raleway;
     text-transform: capitalize;
-    font-weight: 500;
+    font-weight: 700;
     color: #219fed;
     font-size: 45px;
     text-align: left;

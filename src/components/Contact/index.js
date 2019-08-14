@@ -24,7 +24,7 @@ const FormHalf = styled.div`
 `;
 
 const Input = styled.input`
-  font-family: Rubik, sans-serif;
+  font-family: Raleway, sans-serif;
   font-size: 1.1rem;
   color: #333;
   width: 100%;
@@ -44,7 +44,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  font-family: Rubik, sans-serif;
+  font-family: Raleway, sans-serif;
   font-size: 1.1rem;
   color: #333;
   display: block;
@@ -68,7 +68,7 @@ const TextArea = styled.textarea`
 const Button = styled.button`
   font-size: 1.2rem;
   color: #fff;
-  font-family: Rubik, sans-serif;
+  font-family: Raleway, sans-serif;
   font-weight: 200;
   letter-spacing: 2pt;
   cursor: pointer;
