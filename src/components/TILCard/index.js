@@ -80,9 +80,14 @@ export default function TILCard(props) {
     <Container className="til-card">
       {number && <Sidebar>#{number}</Sidebar>}
       <Card>
-        <h2>
-          {link ? <Link to={`/til/${number}`}> {title}</Link> : <>{title}</>}
-        </h2>
+        {link ? (
+          <h2>
+            <Link to={`/til/${number}`}> {title}</Link>
+          </h2>
+        ) : (
+          <h1>{title}</h1>
+        )}
+
         <p class="date">{date}</p>
         <Tags>
           <span className="label">TAGS: </span>
