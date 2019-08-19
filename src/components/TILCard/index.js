@@ -22,8 +22,14 @@ const Sidebar = styled.div`
   border-right: 1px solid hsla(0, 0%, 0%, 0.2);
   height: 100%;
   display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  .til-label {
+    font-size: 1.4rem;
+    letter-spacing: 5px;
+    line-height: 1.5;
+  }
   @media all and (max-width: 700px) {
     padding-bottom: 3rem;
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
@@ -78,7 +84,12 @@ export default function TILCard(props) {
   const { content, title, date, tags, number, link } = props;
   return (
     <Container className="til-card">
-      {number && <Sidebar>#{number}</Sidebar>}
+      {number && (
+        <Sidebar>
+          <div className="til-label">TIL</div>
+          <div>#{number}</div>
+        </Sidebar>
+      )}
       <Card>
         {link ? (
           <h2>
