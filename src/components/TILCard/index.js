@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 const Container = styled.div`
   display: grid;
@@ -74,12 +75,14 @@ const Tags = styled.div`
 `;
 
 export default function TILCard(props) {
-  const { content, title, date, tags, number } = props;
+  const { content, title, date, tags, number, link } = props;
   return (
     <Container className="til-card">
-      <Sidebar>#{number}</Sidebar>
+      {number && <Sidebar>#{number}</Sidebar>}
       <Card>
-        <h2>{title}</h2>
+        <h2>
+          {link ? <Link to={`/til/${number}`}> {title}</Link> : <>{title}</>}
+        </h2>
         <p class="date">{date}</p>
         <Tags>
           <span className="label">TAGS: </span>

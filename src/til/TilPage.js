@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import TILCard from "../components/TILCard";
 
 const TilHeader = styled.h1`
   margin: 5px;
@@ -63,17 +64,16 @@ export default class PostPage extends Component {
   render() {
     const { data, location, history } = this.props;
     if (!data) return null;
+    const { title, date, content, number, tags } = data.contentfulTil;
     return (
       <Layout location={location} history={history}>
-        <TilHeader>{data.contentfulTil.title}</TilHeader>
-        <TilDate>{data.contentfulTil.date}</TilDate>
-        <TilWrapper>
-          <TilContent
-            dangerouslySetInnerHTML={{
-              __html: data.contentfulTil.content.childMarkdownRemark.html,
-            }}
-          />
-        </TilWrapper>
+        <TILCard
+          title={title}
+          date={date}
+          tags={tags}
+          content={content}
+          number={number}
+        />
       </Layout>
     );
   }
@@ -91,6 +91,7 @@ export const query = graphql`
       title
       tags
       date
+      number
       content {
         childMarkdownRemark {
           html

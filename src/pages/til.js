@@ -24,8 +24,8 @@ const IndexPage = ({ data, location, history }) => (
     <div>
       <h1>Today I Learned</h1>
       <p>
-        Small clippings of things I’ve learned. Maybe shrapnel for future blog
-        posts. Maybe not.
+        Small clippings of things I’ve learned. Not always learned on the day
+        posted.
       </p>
       <TilContainer>
         {data.allContentfulTil.edges
@@ -39,6 +39,7 @@ const IndexPage = ({ data, location, history }) => (
               tags={tags}
               content={content}
               number={number}
+              link
             />
           ))}
       </TilContainer>
