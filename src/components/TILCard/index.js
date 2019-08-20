@@ -27,10 +27,6 @@ const Sidebar = styled.div`
   align-items: center;
   justify-content: center;
   line-height: 1;
-  .til-label {
-    font-size: 1.4rem;
-    letter-spacing: 5px;
-  }
   @media all and (max-width: 700px) {
     padding-bottom: 3rem;
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
@@ -89,7 +85,6 @@ export default function TILCard(props) {
     <Container className="til-card">
       {number && (
         <Sidebar>
-          <div className="til-label">TIL</div>
           <div>#{number}</div>
         </Sidebar>
       )}
