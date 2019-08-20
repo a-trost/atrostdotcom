@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import slugify from "slugify";
 
 const Container = styled.div`
   display: grid;
@@ -81,6 +82,9 @@ const Tags = styled.div`
 
 export default function TILCard(props) {
   const { content, title, date, tags, number, link } = props;
+  const slug = slugify(title, {
+    lower: true,
+  });
   return (
     <Container className="til-card">
       {number && (
@@ -92,7 +96,7 @@ export default function TILCard(props) {
       <Card>
         {link ? (
           <h2>
-            <Link to={`/til/${number}`}> {title}</Link>
+            <Link to={`/til/${number}-${slug}`}> {title}</Link>
           </h2>
         ) : (
           <h1>{title}</h1>

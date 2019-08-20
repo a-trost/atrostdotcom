@@ -1,4 +1,5 @@
 const path = require("path");
+const slugify = require("slugify");
 const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -69,8 +70,11 @@ exports.createPages = ({ graphql, actions }) => {
       result.data.allContentfulTil.edges.forEach(({ node }) => {
         try {
           if (node && node.title && node.number) {
+            const slug = slugify(node.title, {
+              lower: true,
+            });
             createPage({
-              path: `til/${node.number}`,
+              path: `til/${node.number}-${slug}`,
               component: path.resolve("./src/til/TilPage.js"),
               context: {
                 title: node.title,
