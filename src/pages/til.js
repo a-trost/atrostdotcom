@@ -8,7 +8,7 @@ const TilContainer = styled.div`
   margin-bottom: 2rem;
   margin-top: 4rem;
   .til-card + .til-card {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 `;
 

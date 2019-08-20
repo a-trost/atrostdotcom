@@ -19,16 +19,16 @@ const Sidebar = styled.div`
   font-size: 2.4rem;
   color: hsl(0, 0%, 80%);
   text-align: center;
-  border-right: 1px solid hsla(0, 0%, 0%, 0.2);
+  border-right: 1px solid hsl(0, 0%, 80%);
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  line-height: 1;
   .til-label {
     font-size: 1.4rem;
     letter-spacing: 5px;
-    line-height: 1.5;
   }
   @media all and (max-width: 700px) {
     padding-bottom: 3rem;
@@ -42,15 +42,14 @@ const Card = styled.article`
   overflow: hidden;
   display: flex;
   flex-flow: column nowrap;
-  padding: 2rem;
-  padding-top: 4rem;
+  padding: 0 2rem;
   h2 {
     margin-bottom: 0;
   }
   .date {
     font-size: 13px;
     color: #888;
-    margin: 0.5rem 1rem;
+    margin: 0 0 0.5rem 0;
   }
   .content {
     margin-top: 2rem;
