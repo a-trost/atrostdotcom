@@ -25,7 +25,11 @@ const ChildWrapper = styled.div`
   padding: 1rem 1.0875rem 1.45rem;
 `;
 
-const Layout = ({ children, location, pageData = { title: "", desc: "" } }) => (
+const Layout = ({
+  children,
+  location = "",
+  pageData = { title: "", desc: "" },
+}) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
