@@ -30,7 +30,12 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark(filter: { fileAbsolutePath: { ne: null } }) {
+        allMarkdownRemark(
+          filter: {
+            fileAbsolutePath: { ne: null }
+            frontmatter: { date: { ne: null } }
+          }
+        ) {
           edges {
             node {
               fields {
