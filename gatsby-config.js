@@ -16,6 +16,15 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-theme-notes`,
+      options: {
+        basePath: `/notes`,
+        contentPath: "src/notes",
+        homeText: "Home",
+        breadcrumbSeparator: ">",
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
