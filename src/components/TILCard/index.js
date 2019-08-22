@@ -97,7 +97,7 @@ export default function TILCard(props) {
           <h1>{title}</h1>
         )}
 
-        <p class="date">{date}</p>
+        <p className="date">{date}</p>
         <Tags>
           <span className="label">TAGS: </span>
           {tags.map(tag => (
