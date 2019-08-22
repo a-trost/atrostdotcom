@@ -1,26 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import PostListing from "../components/Posts/PostListing";
 import Layout from "../components/Layout";
 import FeatureSection from "../components/FeatureSection";
-import Img from "gatsby-image";
 import videoImage from "../images/netlifyDevVideo.jpg";
 import courseImage from "../images/courseImage.jpg";
 import talkImage from "../images/talkImage.jpg";
 import Link from "../components/Link";
-
-const PostContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 35px;
-  justify-items: stretch;
-  margin-bottom: 40px;
-
-  @media all and (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
-  }
-`;
 
 const IntroText = styled.p`
   font-size: 1.2rem;
