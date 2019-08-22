@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import logo from "../../images/TrostLogo.png";
@@ -100,80 +100,76 @@ const SocialIcon = styled.img`
   }
 `;
 
-export default class Footer extends Component {
-  render() {
-    return (
-      <FooterContainer>
-        <div className="inner">
-          <div className="logo">
-            <Link to="/">
-              <img src={logo} alt="Alex Trost Logo" />
-            </Link>
-          </div>
-          <div className="site-map">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/posts">Blog</Link>
-              </li>
-              <li>
-                <Link to="/til">TIL</Link>
-              </li>
-              <li>
-                <Link to="/projects">Projects</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="social-links">
-            <ul>
-              <li>
-                <a href="https://www.linkedin.com/in/mrtrost/">
-                  <SocialIcon
-                    height="40"
-                    width="40"
-                    src={linkedInLogo}
-                    alt="Alex Trost's LinkedIn"
-                    title="Alex Trost's LinkedIn"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.github.com/a-trost">
-                  <SocialIcon
-                    height="40"
-                    width="40"
-                    src={githubLogo}
-                    alt="Alex Trost's Github"
-                    title="Alex Trost's Github"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/MisterTrost">
-                  <SocialIcon
-                    height="40"
-                    width="40"
-                    src={twitterLogo}
-                    alt="Alex Trost's Twitter"
-                    title="Alex Trost's Twitter"
-                  />
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="copyright">
-            <span>© 2018-2019 Alex Trost</span>
-          </div>
-        </div>
-      </FooterContainer>
-    );
-  }
-}
+export default () => (
+  <FooterContainer>
+    <div className="inner">
+      <div className="logo">
+        <Link to="/">
+          <img src={logo} alt="Alex Trost Logo" />
+        </Link>
+      </div>
+      <div className="site-map">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/posts">Blog</Link>
+          </li>
+          <li>
+            <Link to="/til">TIL</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="social-links">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/mrtrost/">
+              <SocialIcon
+                height="40"
+                width="40"
+                src={linkedInLogo}
+                alt="Alex Trost's LinkedIn"
+                title="Alex Trost's LinkedIn"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/a-trost">
+              <SocialIcon
+                height="40"
+                width="40"
+                src={githubLogo}
+                alt="Alex Trost's Github"
+                title="Alex Trost's Github"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/MisterTrost">
+              <SocialIcon
+                height="40"
+                width="40"
+                src={twitterLogo}
+                alt="Alex Trost's Twitter"
+                title="Alex Trost's Twitter"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="copyright">
+        <span>© 2018-2019 Alex Trost</span>
+      </div>
+    </div>
+  </FooterContainer>
+);
