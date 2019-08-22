@@ -18,7 +18,7 @@ const ResumePage = ({ data, location, history }) => (
     <Resume />
     <LinkCardContainer>
       <LinkCard heading="About Page" path="/about" />
-      {/* <LinkCard heading="Habit Tracking" path="/about/tracker" /> */}
+      <LinkCard heading="Habit Tracking" path="/about/tracker" />
     </LinkCardContainer>
   </Layout>
 );
