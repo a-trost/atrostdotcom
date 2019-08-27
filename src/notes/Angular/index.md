@@ -1,5 +1,5 @@
 ---
-tags: ['angular', 'javascript']
+tags: ["angular", "javascript"]
 ---
 
 # Angular Notes
@@ -8,37 +8,39 @@ tags: ['angular', 'javascript']
 
 ### Event Binding
 
-```
-<button  (click)="handleButton($event)">
+```html
+<button (click)="handleButton($event)"></button>
 ```
 
 ### String interpolation
 
-```
+```html
 {{ variableName }}
 ```
 
 ### Property Binding
 
-```
-<button [disabled]="!isDisabled">
+```html
+<button [disabled]="!isDisabled"></button>
 ```
 
 ### Two way data binding
 
-```
-<input type="text" [(ngModel)]="variableName">
+```html
+<input type="text" [(ngModel)]="variableName" />
 ```
 
 ## Directives
 
 Directives are instructions in the DOM. This is like the `card-body` that we use for the `app-card`.
 
-`<p appTurnGreen>Receives a green bg</p>`
-
+```html
+<p appTurnGreen>Receives a green bg</p>
 ```
+
+```typescript
 @Directive({
-	selector: '[appTurnGreen]'
+    selector: '[appTurnGreen]'
 })
 export class TurnGreenDirective {
 ...
@@ -55,7 +57,7 @@ export class TurnGreenDirective {
 
 ### NgStyle
 
-`<p [ngStyle]=“{backgroundColor: getColor()}”>This paragraph</p>
+`<p [ngStyle]=“{backgroundColor: getColor()}”>This paragraph</p>`
 
 ## Event Emitters
 
@@ -69,8 +71,11 @@ Don’t forget to put parentheses at the end of the event emitter to call it.
 
 Then when you want to emit, you do this:
 
-```
- this.serverCreated.emit({serverName: this.newServerName, serverContent: this.newServerContent})
+```typescript
+this.serverCreated.emit({
+  serverName: this.newServerName,
+  serverContent: this.newServerContent,
+});
 ```
 
 ## Using local references in Templates
@@ -113,7 +118,7 @@ You can’t have more than 1 structural directive on the same element
 
 ## Attribute Directives
 
-```
+```typescript
 import { Directive , OnInit, Renderer2, ElementRef} from '@angular/core';
 
 @Directive({
@@ -128,7 +133,7 @@ export class BetterHighlightDirective implements OnInit{
 }
 ```
 
-Better because you don’t need to access the DOM
+Better because you don’t need to access the DOM.
 
 ## Services
 
@@ -254,8 +259,6 @@ Hot always are creating values whether subscribed or not.
 The operator `shareReplay` will cache the last value so any observer can see and use it.
 
 Instead of making cold observables hot and using `shareReplay` we would just use a subject.
-
-## Subjects
 
 You can push new values to the observable with `next()`
 
