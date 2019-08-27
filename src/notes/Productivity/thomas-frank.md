@@ -1,3 +1,7 @@
+---
+tags:['productivity']
+---
+
 # Thomas Frank's Productivity Masterclass
 
 Notes taken from watching his class here: https://skl.sh/2Xqb2Fy

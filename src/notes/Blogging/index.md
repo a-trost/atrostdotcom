@@ -1,3 +1,6 @@
+---
+tags: ['writing']
+---
 # Content Marketing: Blogging for Growth
 These notes were taken during the [Skillshare Course *Content Marketing: Blogging for Growth*](https://skl.sh/2YUcNLR)
 

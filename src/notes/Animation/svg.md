@@ -1,3 +1,6 @@
+---
+tags: ['svg', 'animation', 'greensock' ]
+---
 # SVG Animation
 
 These notes were mostly created when reading SVG Animation by Sarah Drasner.

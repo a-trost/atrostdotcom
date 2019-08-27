@@ -1,3 +1,7 @@
+---
+tags: ['writing']
+---
+
 # Copywriting
 
 These notes were taken during the [Skillshare Course *Copywriting For Beginners: How To Write Web Copy That Sells Without Being Cheesy*](https://skl.sh/2YUcNLR)
