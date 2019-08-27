@@ -203,26 +203,6 @@ const Header = ({ location, children }) => {
     transform: menuOpen ? `translate3d(0, 0, 0)` : `translate3d(100%, 0, 0)`,
     config: config.gentle,
   });
-  // useEffect((prevProps, prevState) => {
-  //   // componentDidUpdate = (prevProps, prevState) => {
-  //   if (location.pathname !== prevProps.location.pathname) {
-  //     if (location.pathname === "/") {
-  //       this.wrapper.animate([{ height: "20vh" }, { height: "80vh" }], {
-  //         duration: 600,
-  //         fill: "forwards",
-  //         easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-  //         iterations: 1,
-  //       });
-  //     } else {
-  //       this.wrapper.animate([{ height: "80vh" }, { height: "20vh" }], {
-  //         duration: 600,
-  //         fill: "forwards",
-  //         easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-  //         iterations: 1,
-  //       });
-  //     }
-  //   }
-  // });
 
   const isHome = location.pathname === "/";
   return (
