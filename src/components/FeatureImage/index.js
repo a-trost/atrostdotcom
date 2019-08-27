@@ -1,6 +1,6 @@
+import Img from "gatsby-image";
 import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
 
 const trianglePathData = {
   1: "M104.7 14.7a59.2 59.2 0 0 0-31.6 50.4l-28.4 716a59.9 59.9 0 0 0 88.1 55.2l640-342.6a60 60 0 0 0 3-104L164.2 16.4a59 59 0 0 0-59.5-1.7",
@@ -31,12 +31,18 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
+  :hover .triangle,
+  :hover .triangle-cover {
+    transform: rotate(10deg) scale(1.1);
+    transform-origin: center center;
+  }
 
   .triangle,
   .triangle-cover {
     position: absolute;
     left: ${({ styleNumber }) => positionPercent[styleNumber].left}%;
     top: ${({ styleNumber }) => positionPercent[styleNumber].top}%;
+    transition: transform 0.5s ease-in-out;
   }
 
   .triangle {
@@ -65,7 +71,7 @@ const Container = styled.section`
     margin: 0;
   }
 
-  @media all and (max-width: 700) {
+  @media all and (max-width: 700px) {
     margin-bottom: 1rem;
   }
 `;
