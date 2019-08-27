@@ -120,9 +120,6 @@ export default () => (
             <Link to="/til">TIL</Link>
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
             <Link to="/about">About</Link>
           </li>
           <li>
