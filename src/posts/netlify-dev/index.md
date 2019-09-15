@@ -139,4 +139,4 @@ This is just scraping the surface of the features Netlify offers through Dev. [C
 
 I see myself developing almost solely in Netlify Dev for all the added benefits it brings our way.
 
-In my experience with small changes the live site updates in about 1 second or less. Try it out and let me know if you have any trouble on Twitter [@mistertrost](https://twitter.com/MisterTrost).
+In my experience with small changes the live site updates in about 1 second or less. Try it out and let me know if you have any trouble on Twitter [@TrostCodes](https://twitter.com/TrostCodes).

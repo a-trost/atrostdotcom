@@ -10,7 +10,7 @@ module.exports = {
     siteUrl: `https://atrost.com`,
     image: "",
     social: {
-      twitter: "@mistertrost",
+      twitter: "@TrostCodes",
       linkedin: "mrtrost",
       github: "a-trost",
     },

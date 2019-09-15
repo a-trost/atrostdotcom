@@ -152,7 +152,7 @@ With the playground up, open your browser's Dev Tools (CMD-Option-I in Chrome), 
 
 I go through the playground a bit more in the second half of the [video](https://www.youtube.com/watch?v=hnQcDtXZC6g).
 
-So just to wrap it up, the Virtual DOM is how React quickly figures out what has changed and keeps your app running quick for cheap. Hope this helped, if you have any questions, hit me up on [Twitter](https://twitter.com/MisterTrost). Thanks!
+So just to wrap it up, the Virtual DOM is how React quickly figures out what has changed and keeps your app running quick for cheap. Hope this helped, if you have any questions, hit me up on [Twitter](https://twitter.com/TrostCodes). Thanks!
 
 ### Further Reading
 

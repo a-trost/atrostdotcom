@@ -152,7 +152,7 @@ export default () => (
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/MisterTrost">
+            <a href="https://twitter.com/TrostCodes">
               <SocialIcon
                 height="40"
                 width="40"
