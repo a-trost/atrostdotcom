@@ -77,34 +77,16 @@ const About = ({ data, location, history }) => (
       <div className="content">
         <p>
           Hey, I’m Alex Trost, a Front-end Developer from Philadelphia, now
-          living in New Haven. I like solving problems and eliminating
-          repetitive tasks with code. I learned Python and JavaScript to help
-          teachers focus on the kids and let computers stress about the rest.
-        </p>
-
-        <p>
-          I worked in a data-intense school and realized I wasn’t nearly as good
-          at parsing the hundreds of data points as a computer would be. So my
-          first summer vacation, I taught myself Python so I could make a Django
-          webapp. My little school of 300 kids and teachers use it to make
-          learning just a bit easier.
-        </p>
-
-        <p>
-          I tossed a lot of problems at my web app and wanted to take my
-          learning further, so I got a Google Developer Challenge Scholarship to
-          help me learn JavaScript and frameworks like React. I've worked at
-          GoNation as a Front-End Developer and now work at Green Check Verified
-          as a Software Engineer.
+          living in New Haven. I've been a designer and elementary school
+          teacher, now working for Digital Surgeons as an engineer.
         </p>
       </div>
       <div className="pictureContainer">
         <Img
           className="picture"
           fluid={data.alexpicture.childImageSharp.fluid}
-          alt="Alex Trost and dog"
+          alt="Alex Trost"
         />
-        <span className="caption">Me and my dog Milo. I'm on the right.</span>
       </div>
     </AboutLayout>
 
@@ -117,7 +99,7 @@ const About = ({ data, location, history }) => (
 
 export const query = graphql`
   query AboutQuery {
-    alexpicture: file(relativePath: { eq: "images/AlexMilo.jpg" }) {
+    alexpicture: file(relativePath: { eq: "images/alexheadshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 900) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
