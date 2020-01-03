@@ -20,6 +20,7 @@ const AboutLayout = styled.div`
   }
   .pictureContainer {
     grid-area: picture;
+    margin-bottom: 2rem;
   }
   .content {
     grid-area: content;
@@ -78,7 +79,7 @@ const About = ({ data, location, history }) => (
         <p>
           Hey, I’m Alex Trost, a Front-end Developer from Philadelphia, now
           living in New Haven. I've been a designer and elementary school
-          teacher, now working for Digital Surgeons as an engineer.
+          teacher, now an engineer at Digital Surgeons.
         </p>
       </div>
       <div className="pictureContainer">
