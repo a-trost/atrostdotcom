@@ -100,9 +100,7 @@ export default function TILCard(props) {
         <p className="date">{date}</p>
         <Tags>
           <span className="label">TAGS: </span>
-          {tags.map(tag => (
-            <span className="tag">{tag}</span>
-          ))}
+          {tags && tags.map(tag => <span className="tag">{tag}</span>)}
         </Tags>
         <article
           className="content"
