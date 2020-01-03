@@ -17,6 +17,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
       resolve: `gatsby-theme-notes`,
       options: {
         basePath: `/notes`,
@@ -53,13 +60,6 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
         omitGoogleFont: true,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "src",
-        path: `${__dirname}/src/`,
       },
     },
     {
