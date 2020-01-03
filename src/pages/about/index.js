@@ -103,7 +103,7 @@ export const query = graphql`
     alexpicture: file(relativePath: { eq: "images/alexheadshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid
         }
       }
     }
