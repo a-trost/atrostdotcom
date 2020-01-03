@@ -7,7 +7,7 @@ export default props => {
   }
 
   return (
-    <a {...props} href={props.to} target="_blank">
+    <a {...props} href={props.to} target="_blank" rel="noopener noreferrer">
       {props.children}
     </a>
   );
