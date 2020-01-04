@@ -45,7 +45,7 @@ const PostListing = ({ post }) => {
       <Link to={post.fields.slug}>
         <ImageContainer>
           <CoverImage
-            sizes={post.frontmatter.image.childImageSharp.sizes}
+            fluid={post.frontmatter.image.childImageSharp.fluid}
             alt={post.frontmatter.title}
             title={post.frontmatter.title}
           />

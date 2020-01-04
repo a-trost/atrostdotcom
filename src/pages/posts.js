@@ -63,8 +63,8 @@ export const query = graphql`
             date
             image {
               childImageSharp {
-                sizes(maxWidth: 600) {
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 800, traceSVG: { color: "rgb(43, 129, 200)" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }

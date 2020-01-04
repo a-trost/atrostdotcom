@@ -102,7 +102,7 @@ export const query = graphql`
   query AboutQuery {
     alexpicture: file(relativePath: { eq: "images/alexheadshot.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 900) {
+        fluid(maxWidth: 900, traceSVG: { color: "rgb(43, 129, 200)" }) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
