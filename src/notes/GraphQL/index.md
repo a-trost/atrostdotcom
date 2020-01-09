@@ -268,4 +268,54 @@ Everything inbetween should be handled by the GraphQL server.
 
 ---
 
-Well that's it for the standard tutorial. At this point it lets you go to advanced topics or jump to the hands-on tutorial. I'm going to do the React + urql tutorial and come back to the advanced topics when I'm done with this and understand it a bit better.
+Well that's it for the standard tutorial. At this point it lets you go to advanced topics or jump to the hands-on tutorial. I'm going to do the React + Apollo tutorial and come back to the advanced topics when I'm done with this and understand it a bit better.
+
+## React + Apollo
+
+Just set up my first actual working query with Apollo and it's pretty nice. We use a HOC for querying.
+
+`<Query>` takes a `query` prop which is a GQL query just like with Gatsby. We specify it with a graphql tag:
+
+```javascript
+const FEED_QUERY = gql`
+  {
+    feed {
+      links {
+        id
+        createdAt
+        url
+        description
+      }
+    }
+  }
+`;
+```
+
+Then my simple list rendering component looks like this:
+
+```javascript
+return (
+  <Query query={FEED_QUERY}>
+    {({ loading, error, data }) => {
+      if (loading) return <div>Fetching</div>;
+      if (error) return <div>Error</div>;
+
+      const linksToRender = data.feed.links;
+
+      return (
+        <div>
+          {linksToRender.map(link => (
+            <Link key={link.id} link={link} />
+          ))}
+        </div>
+      );
+    }}
+  </Query>
+);
+```
+
+Not much going on here. I like that we get the `loading` and `error` props built in. `loading` is a boolean while `error` will contain info about what happened.
+
+The `data` object is what we expect thanks to the declarative nature of GQL.
+
+So far Apollo is pretty slick. I think getting a full project going with this would be a good idea for this month's learning.
