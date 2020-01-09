@@ -1,0 +1,42 @@
+# My Productivity Tools
+
+This is a current itinerary of the tools I'm using and for what purposes.
+
+## General Productivity Apps
+
+### Bear - Notes
+
+This is one of my favorite apps and at a certain level it can do it all. It handles To Do lists and even collects them in a space for easy reference. But mainly I use it for frictionless note taking. 
+
+My daily writing habit revolves around Bear. I wish it had an integration with Grammarly, but besides that and table support I don't want for much. Fast sync across all my devices, Markdown writing, fast search. Highly recommended. 
+
+### Spark - Email Client
+
+I really like Spark because of how seamlessly it handles multiple email addresses and works across every platform I have. The swipe functionality is great for setting up your work flow. If I swipe long to the right I send the email directly to my Things Inbox.
+
+### Things 3 - Task Managment App
+
+### Evernote - Filing Cabinet
+
+This is a remnant of an old GTD setup I had years ago. I never really found a great Filing Cabinet since then. I've tried Microsoft's OneNote and a couple others, but still looking. Might try Google Keep sometime.
+
+## Development Apps
+
+### VS Code - Code Editor
+
+### Sequel Pro - SQL DB
+
+## Physical Tools
+
+### Clear Habits Journal
+
+My daily journal. I write about a page in this each day, hitting a few journaling prompts. I also fill out a line in the front for how I "Worked towards a better future" today. I get to put big X's in the back in the habit tracker.
+
+### eBags Professional Slim Laptop Backpack
+
+Love this backpack. The waterbottle holder is big enough to hold my Nalgene. It's got cushions in the right places and is adaptable for what I'm carrying.
+
+[Not an affiliate link](https://www.ebags.com/product/ebags/tls-professional-slim-laptop-backpack/249582?productid=10230513).
+
+### MacBook Pro (Home) / MacBook Air (Work)
+
