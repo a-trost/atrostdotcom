@@ -31,3 +31,22 @@ This author writes with pretty dense paragraphs, but none of them were all that 
 ### Web Dev Learnings
 
 In the comments I found the Vox Media Accessiblity guidelines, which were helpful. It also gave me a reminder to check for the silent failures like performance and a11y, not just waiting for the lawsuits to roll in.
+
+https://www.smashingmagazine.com/2020/01/html5-article-section/
+
+### Web Dev Learnings
+
+Wow, this was a super enlightening read. Apparently `<section>` isn't good for all that much and I should be using `<article>` instead for anything like blog posts, even when it's a list of blog post titles and descriptions. Even a user comment on a blog post should be an article. I just finished up making a PDF generate a big ol' `<section>` so that's timely news.
+
+
+## 01/09/2020
+
+https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/
+
+Simple and to the point article. The facts aren't too complex and the author did a job of cutting to the point. 
+
+### Web Dev Learnings
+I've known for a while that you don't want to leave `target="_blank"` without a `rel="noopener noreferrer"` alongside, but I never really knew what the vulnerability was. 
+
+Apparently the new window gets access to the old window and can change the site that they're on, which opens your users up to phishing attacks. Good to know.
+
