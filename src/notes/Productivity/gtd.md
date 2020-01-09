@@ -11,6 +11,7 @@ I'm reading the GTD book in order to keep it all fresh in my brain, and I plan o
 Let's get into how to use GTD and Todoist.
 
 ## GTD x Todoist
+(I've already moved away from Todoist but haven't had a chance to update this. I've moved over to Things 3 because it seems to be more tailored to GTD.)
 
 ### Setup Todoist
 
