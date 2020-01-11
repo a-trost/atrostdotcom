@@ -50,3 +50,15 @@ I've known for a while that you don't want to leave `target="_blank"` without a 
 
 Apparently the new window gets access to the old window and can change the site that they're on, which opens your users up to phishing attacks. Good to know.
 
+## 01/10/2020
+
+https://dev.to/duomly/git-cheatsheet-for-beginners-5apl
+
+Git Cheatsheet for beginners. This has been done a bunch before so I'm curious how the author will differentiate it. They start off by explaining why Git is important and why the reader should learn it. 
+
+She has the terms bolded and then gives a brief explanation of each. For many of these commands she only provides one paragraph of explanation. Something like `git commit` only gets 2 sentences. This feels kind of light, but maybe readers find it easier to understand?
+
+For things like `git log` I personally would like to see an example of what is logged. Images or code snippets would be great. 
+
+She doesn't mention that these commands need to be entered into a user's terminal. The GUI list feels sparse and doesn't mention that VSCode and all of the JetBrains apps have these Git GUIs built in. I'd be interested in seeing how much this helped beginners. 
+
