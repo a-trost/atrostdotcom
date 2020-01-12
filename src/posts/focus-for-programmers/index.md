@@ -65,7 +65,7 @@ Pomodoro steps:
 
 The Pomodoro Technique is wonderful for giving yourself specific focus blocks throughout the day. There are plenty of articles and books about it, so I won’t get deep into it here.
 
-The key to Pomodoro, and any focus practice, is _rest_. You /must/ take breaks. There is no way to power through without diminishing your output.
+The key to Pomodoro, and any focus practice, is _rest_. You _must_ take breaks. There is no way to power through without diminishing your output.
 
 The brain is like a muscle. At the gym you take a rest between sets of exercise. Do the same for your mental work and you’ll come back reenergized.
 
