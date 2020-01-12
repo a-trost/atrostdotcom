@@ -72,3 +72,111 @@ The `<Mutation>` component gives its `render prop function` a `postMutation` fun
 
 ## Routing
 
+Going to use React Router with Apollo to add routing with data fetching, I assume.
+
+The beginning is just setting up a header to contain links and our `App.js` to have a React Router `<Switch>` component.
+
+Well I was incorrect, this really was just pure Routing. No React Router + Apollo integration, at least not in this section. I think the main point was to show you how to wrap your React app with two HOCs.
+
+```jsx
+<BrowserRouter>
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+</BrowserRouter>
+```
+
+The other bit we learn is that we're given access to some functions depending on how the mutation goes:
+
+```jsx
+<Mutation
+mutation={POST_MUTATION}
+variables={{ description, url }}
+onCompleted={() => this.props.history.push('/')}>
+```
+
+Checking out the Docs for Apollo and they have a bunch of hooks now, which looks great. There it's `useMutation`. Here's their doc example:
+
+```jsx
+const ADD_TODO = gql`
+  mutation AddTodo($type: String!) {
+    addTodo(type: $type) {
+      id
+      type
+    }
+  }
+`;
+
+function AddTodo() {
+  let input;
+  const [addTodo, { data }] = useMutation(ADD_TODO);
+
+  return (
+    <div>
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          addTodo({ variables: { type: input.value } });
+          input.value = "";
+        }}
+      >
+        <input
+          ref={node => {
+            input = node;
+          }}
+        />
+        <button type="submit">Add Todo</button>
+      </form>
+    </div>
+  );
+}
+```
+
+So we've got a great hook that returns a function to trigger the mutation, and the data. The `useMutation` function takes a GraphQL Mutation and it also takes an options object. In the example we're passing `variables` but it also accepts helpful things like `onCompleted` and `onError`.
+
+## Authentication
+
+Awesome, this should bring us back to Apollo rather than React Router. I don't have a ton of experience with Auth so I'm excited to see how this works. I'm assuming they take care of most things, provide sensible defaults, and just expose Auth components to use.
+
+We're creating a Login component that doubles as a Signup component. Nice solution here. We're storing our JWTs in `localStorage` though, so this isn't a true blue auth tutorial. That's alright, I can get a sense of it from this.
+
+I'm a little surprised that we log in with a mutation, but now that I think about it, that's the only option. It's essentially a POST, so that makes sense. Here's that Login mutation:
+
+```javascript
+const LOGIN_MUTATION = gql`
+  mutation LoginMutation($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+    }
+  }
+`;
+```
+
+Nothing unusual. We get the token back from the server, and in this example we put that token in local storage. Normally that's not what we'd do, but this works for now. The signup mutation is the same except we also provide a name on signup.
+
+So we set this up and it works pretty well! Now we just need to make sure we send the user's token along with each request. Apollo gives us some middleware for this in [Apollo Link](https://github.com/apollographql/apollo-link).
+
+We use `setContext` from Apollo Link to put our token in the header on every request.
+
+```javascript
+import { setContext } from "apollo-link-context";
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem(AUTH_TOKEN);
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "", // Check for token, otherwise don't send auth
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink), // We concat it onto the existing httpLink we define
+  cache: new InMemoryCache(),
+});
+```
+
+## Questions I have
+
+Just realized I don't know how InMemoryCache works, or what it's handling exactly. It's a property that gets passed to `ApolloClient` when we instantiate it.
