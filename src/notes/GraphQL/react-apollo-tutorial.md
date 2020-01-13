@@ -177,6 +177,69 @@ const client = new ApolloClient({
 });
 ```
 
-## Questions I have
+### Questions I have
 
 Just realized I don't know how InMemoryCache works, or what it's handling exactly. It's a property that gets passed to `ApolloClient` when we instantiate it.
+
+
+## More Mutations and Updating the Store
+
+We're implementing the upvote/downvote feature now. 
+
+For the upvote code we have this: 
+
+```graphql
+ mutation VoteMutation($linkId: ID!) {
+    vote(linkId: $linkId) {
+      id
+      link {
+       id
+        votes {
+          id
+          user {
+            id
+          }
+        }
+      }
+      user {
+        id
+      }
+    }
+  }
+```
+
+And
+
+```jsx
+ <Mutation mutation={VOTE_MUTATION} variables={{ linkId: this.props.link.id }}>
+      {voteMutation => (
+        <div className="ml1 gray f11" onClick={voteMutation}>
+          ▲
+        </div>
+      )}
+    </Mutation>
+```
+
+Once again using a mutation. We pass `VOTE_MUTATION` the mutation that we define, as well as the variables we need to send along. `linkId` is all that's needed so we send that.
+
+The Mutation HOC provides a function that we can call whatever we want. We call it `voteMutation` here and call it on click. 
+
+### Updating the Cache
+
+Apollo lets us manually control the cache. We're going to use it so the UI updates the votes immediately after we click the button. Bit of optimistic updating. 
+
+We actually add a callback to our `<Mutation>` component for `update`
+
+```jsx
+<Mutation
+  mutation={VOTE_MUTATION}
+  variables={{ linkId: this.props.link.id }}
+  update={(store, { data: { vote } }) =>
+    this.props.updateStoreAfterVote(store, vote, this.props.link.id)
+  }
+>
+```
+
+I really didn't think we'd be doing this kind of stuff with Apollo, but I guess we get into stores and cache with this afterall. I'd love it if I didn't have to worry about this stuff. It always feels like this is where new bugs get introduced in big projects.
+
+It's nice to update the UI instantly, but for some reason this isn't working on mine. I'll check it out tomorrow. Does this wait for the call to get back? I'll look at the docs.
