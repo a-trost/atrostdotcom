@@ -243,3 +243,93 @@ We actually add a callback to our `<Mutation>` component for `update`
 I really didn't think we'd be doing this kind of stuff with Apollo, but I guess we get into stores and cache with this afterall. I'd love it if I didn't have to worry about this stuff. It always feels like this is where new bugs get introduced in big projects.
 
 It's nice to update the UI instantly, but for some reason this isn't working on mine. I'll check it out tomorrow. Does this wait for the call to get back? I'll look at the docs.
+
+## Filtering: Searching the List of Links
+
+Going to dive into the filtering aspects of GQL. I'm a bit familiar with this from Gatsby, but this is something I can get a lot stronger with. I didn't fully understand the syntax, so that's something I'll be looking out for. 
+
+So this one was pretty easy and short overall. Here's the beginning of the query where we take in `$filter` and then pass it as an argument. 
+
+```graphql
+  query FeedSearchQuery($filter: String!) {
+    feed(filter: $filter) {
+      ...
+```
+
+Then we put this `executeSearch` function at the bottom that uses ApolloClient's `client.query()`
+
+```javascript
+_executeSearch = async () => {
+  const { filter } = this.state
+  const result = await this.props.client.query({
+    query: FEED_SEARCH_QUERY,
+    variables: { filter },
+  })
+  const links = result.data.feed.links
+  this.setState({ links })
+}
+```
+
+## Realtime Updates with GraphQL Subscriptions
+
+Super excited for real time updates! I wonder if I'll learn just how fast this is. Is it good for something like a Chat app? Once CraftCMS opens up Subscriptions we can do some pretty awesome things. 
+
+Remember, they're triggered based on an event. The client asks a server to send it some specified data whenever X event happens. It's the third type of request in GQL along with `query`, `mutation`, and `subscription`.
+
+We need to configure `ApolloClient` to know about the subscriptions endpoint. We add `WebSocketLink` to our Apollo middleware chain. We need to add the `apollo-link-ws` and `subscriptions-transport-ws` libraries to our dependencies.
+
+We import this into `index.js` where we have our `<ApolloProvider>`:
+
+```javascript
+import { split } from 'apollo-link'
+import { WebSocketLink } from 'apollo-link-ws'
+import { getMainDefinition } from 'apollo-utilities'
+```
+
+Interesting! for the websocket connection there are a few differences from the http request. Here's the http one:
+
+```javascript
+const httpLink = createHttpLink({
+  uri: "http://localhost:4000"
+});
+```
+
+The uri for the http request will start with `http://` or `https://`, but for websockets, here's our link:
+
+```javascript
+const wsLink = new WebSocketLink({
+  uri: `ws://localhost:4000`,
+  options: {
+    reconnect: true,
+    connectionParams: {
+      authToken: localStorage.getItem(AUTH_TOKEN),
+    }
+  }
+})
+```
+
+So not only do we need to pass some extra options like `reconnect` and `connectionParams` with our auth token, but even the uri is different. `ws://localhost:4000`. Pretty cool, I didn't know that. 
+
+We're also rewriting the `link` param that we pass to `ApolloClient`. 
+
+```javascript
+const link = split(
+  ({ query }) => { // Test function to see if operation is a subscription
+    const { kind, operation } = getMainDefinition(query);
+    return kind === "OperationDefinition" && operation === "subscription";
+  },
+  wsLink, // If the test returns true - use websockets
+  authLink.concat(httpLink) // If the test returns false - use http
+);
+```
+
+We're using that `split` function that we got from `apollo-link`.
+
+![Apollo Link Setup with Hybrid Link](./apollo-link.png "Apollo Link Setup with Hybrid Link")
+
+
+When using Prisma there are 3 types of events we can subscribe to.
+
+* a new Link is created
+* an existing Link is updated
+* an existing Link is deleted
