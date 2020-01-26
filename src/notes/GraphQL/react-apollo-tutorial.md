@@ -328,8 +328,21 @@ We're using that `split` function that we got from `apollo-link`.
 ![Apollo Link Setup with Hybrid Link](./apollo-link.png "Apollo Link Setup with Hybrid Link")
 
 
-When using Prisma there are 3 types of events we can subscribe to.
+We need to subscribe to events happening on the `Link` type. When using Prisma there are 3 types of events we can subscribe to.
 
 * a new Link is created
 * an existing Link is updated
 * an existing Link is deleted
+
+
+
+## Pagination
+
+Never really did much pagination in GQL. I think Gatsby handled all that for me previously. 
+
+We're adding some arguments to our original `FEED_QUERY`. 
+
+`($first: Int, $skip: Int, $orderBy: LinkOrderByInput)`
+
+`first` is how many elements we want it to return. `skip` is the offset for where the query starts. 
+
