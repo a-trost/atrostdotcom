@@ -20,6 +20,10 @@ I really like Spark because of how seamlessly it handles multiple email addresse
 
 This is a remnant of an old GTD setup I had years ago. I never really found a great Filing Cabinet since then. I've tried Microsoft's OneNote and a couple others, but still looking. Might try Google Keep sometime.
 
+## Other Apps
+
+### Calm - Meditation
+
 ## Development Apps
 
 ### VS Code - Code Editor
