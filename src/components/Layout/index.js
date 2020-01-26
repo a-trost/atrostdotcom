@@ -1,12 +1,10 @@
-import React from "react";
-// import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import styled from "styled-components";
-import { StaticQuery, graphql } from "gatsby";
-
-import Header from "../Header";
-import Footer from "../Footer";
+import { graphql, StaticQuery } from "gatsby";
 import "prismjs/themes/prism.css";
+import React from "react";
+import styled from "styled-components";
+import Footer from "../Footer";
+import Header from "../Header";
+import SEO from "../SEO";
 import "./index.css";
 
 const Container = styled.div`
@@ -50,30 +48,9 @@ const Layout = ({
     `}
     render={data => {
       const seo = data.site.siteMetadata;
-      const title = pageData.title
-        ? pageData.title.length <= 30
-          ? `${pageData.title} | ${seo.title}`
-          : `${pageData.title} | Alex Trost`
-        : seo.title;
-      const desc = pageData.desc || seo.desc;
       return (
         <>
-          <Helmet
-            title={title}
-            meta={[
-              {
-                name: "description",
-                content: desc,
-              },
-              {
-                name: "keywords",
-                content:
-                  "frontend, developer, gatsby, react, web development, javascript, graphic design, freelance",
-              },
-            ]}
-          >
-            <html lang="en" />
-          </Helmet>
+          <SEO />
           <Container>
             <Header data={data} siteTitle={seo.title} location={location} />
             <ChildWrapper>{children}</ChildWrapper>
