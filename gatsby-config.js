@@ -90,7 +90,7 @@ module.exports = {
               maxWidth: 600,
               showCaptions: false,
               withWebp: true,
-              wrapperStyle: "div",
+              wrapperStyle: "width: auto;",
               quality: 90,
             },
           },

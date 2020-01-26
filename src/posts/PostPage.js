@@ -19,7 +19,7 @@ const BlogDate = styled.p`
   margin-bottom: 2rem;
 `;
 
-const BlogWrapper = styled.div`
+const BlogWrapper = styled.article`
   display: flex;
   width: 100%;
   flex-flow: column nowrap;
@@ -43,9 +43,21 @@ const BlogContent = styled.div`
     max-width: 680px;
     width: 100%;
   }
-  .gatsby-resp-image-link {
-    box-shadow: 5px 5px 20px 0 rgba(46, 61, 73, 0.15);
+
+  blockquote {
+    border-left: 3px solid #3db3ea;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    margin-left: 0;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 46rem;
+    font-size: 22px;
+    font-style: italic;
+    color: #666;
   }
+
   .gatsby-highlight {
     align-self: flex-start;
     justify-self: flex-start;
