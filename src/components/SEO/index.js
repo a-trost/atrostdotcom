@@ -29,12 +29,16 @@ export default ({ postNode, postPath, postSEO, aboutSEO }) => {
       new Date()
     );
     datePublished = datePublishedObject.toISOString();
+    image = urljoin(
+      config.siteUrl,
+      postNode.frontmatter.image.childImageSharp.sizes.src
+    );
   } else {
     title = config.siteTitle;
     description = config.siteDescription;
+    image = urljoin(config.siteUrl, image);
   }
 
-  image = urljoin(config.siteUrl, image);
   const blogURL = config.siteUrl;
   const schemaOrgJSONLD = [
     {
