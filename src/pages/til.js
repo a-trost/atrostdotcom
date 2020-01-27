@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import TILCard from "../components/TILCard";
+import SEO from "../components/SEO";
 
 const TilContainer = styled.div`
   margin-bottom: 2rem;
@@ -21,6 +22,7 @@ const IndexPage = ({ data, location, history }) => (
       desc: "Little snippets of things I've learned for future reference.",
     }}
   >
+    <SEO />
     <div>
       <h1>Today I Learned</h1>
       <p>

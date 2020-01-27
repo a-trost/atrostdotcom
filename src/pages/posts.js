@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import PostListing from "../components/Posts/PostListing";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 const PostContainer = styled.div`
   display: grid;
@@ -26,6 +27,7 @@ const IndexPage = ({ data, location, history }) => (
         "Articles by Alex Trost on web design, programming, React, Gatsby, and more.",
     }}
   >
+    <SEO />
     <div>
       <h1>Recent Articles</h1>
       <PostContainer>

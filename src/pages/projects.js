@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import ProjectsListing from "../components/Projects/ProjectListing";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 const ProjectContainer = styled.div`
   display: grid;
@@ -27,6 +28,7 @@ const Projects = ({ data, location, history, match }) => (
         "Past projects I've done for schools, companies, freelance, or myself. Most use Javascript or Python.",
     }}
   >
+    <SEO />
     <h1>Projects</h1>
     <ProjectContainer>
       {data.allMarkdownRemark

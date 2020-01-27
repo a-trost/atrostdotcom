@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import ContactThanks from "../components/Contact/thanks";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 export default ({ data, location, history }) => (
   <Layout
@@ -13,6 +14,7 @@ export default ({ data, location, history }) => (
         "Just a thank you page for after a contact form has been submitted.",
     }}
   >
+    <SEO />
     <ContactThanks />
   </Layout>
 );
