@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import Img from "gatsby-image";
-// import TableOfContents from "../components/TableOfContents";
+import SEO from "../components/SEO";
 
 const BlogCoverImage = styled(Img)`
   border-radius: 10px;
@@ -67,19 +67,19 @@ const BlogContent = styled.div`
 
 export default class PostPage extends Component {
   render() {
-    const { data, location, history } = this.props;
+    const { data, location, history, pageContext } = this.props;
+    const { slug } = pageContext;
+    const postNode = data.markdownRemark;
+    const post = postNode.frontmatter;
     if (!data) return null;
     return (
-      <Layout
-        location={location}
-        history={history}
-        pageData={data.markdownRemark.frontmatter}
-      >
+      <Layout location={location} history={history} pageData={post}>
+        <SEO postPath={slug} postNode={postNode} postSEO />
         <BlogCoverImage
-          sizes={data.markdownRemark.frontmatter.image.childImageSharp.sizes}
-          alt={data.markdownRemark.frontmatter.title}
+          sizes={post.image.childImageSharp.sizes}
+          alt={post.title}
         />
-        <BlogDate>{data.markdownRemark.frontmatter.date}</BlogDate>
+        <BlogDate>{post.date}</BlogDate>
         {/* <TableOfContents
           tableOfContents={data.markdownRemark.tableOfContents}
         /> */}

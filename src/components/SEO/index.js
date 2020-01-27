@@ -5,27 +5,37 @@ import config from "../../../data/SiteConfig";
 import favicon16 from "../../../src/images/favicon16.png";
 import favicon32 from "../../../src/images/favicon32.png";
 import favicon64 from "../../../src/images/favicon64.png";
-import overlapLogo from "../../../src/images/logo-2048.png";
+import atrostLogo from "../../../src/images/logo-2048.png";
+import alexHeadshot from "../../../src/images/alexheadshot.jpg";
+import parse from "date-fns/parse";
 
-export default ({ postNode, postPath, postSEO }) => {
+export default ({ postNode, postPath, postSEO, aboutSEO }) => {
   let title;
   let description;
-  let image = overlapLogo;
+  let datePublished;
+  let image = atrostLogo;
   let postURL;
+  const headshotImage = urljoin(config.siteUrl, alexHeadshot);
   if (postSEO) {
     const postMeta = postNode.frontmatter;
     ({ title } = postMeta);
     description = postMeta.description
       ? postMeta.description
       : postNode.excerpt;
-    postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
+    postURL = urljoin(config.siteUrl, postPath);
+    const datePublishedObject = parse(
+      postNode.frontmatter.date,
+      "MMMM do, yyyy",
+      new Date()
+    );
+    datePublished = datePublishedObject.toISOString();
   } else {
     title = config.siteTitle;
     description = config.siteDescription;
   }
 
-  image = urljoin(config.siteUrl, config.pathPrefix, image);
-  const blogURL = urljoin(config.siteUrl, config.pathPrefix);
+  image = urljoin(config.siteUrl, image);
+  const blogURL = config.siteUrl;
   const schemaOrgJSONLD = [
     {
       "@context": "http://schema.org",
@@ -56,7 +66,31 @@ export default ({ postNode, postPath, postSEO }) => {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         url: blogURL,
+        author: {
+          "@type": "Person",
+          name: config.userName,
+          url: config.siteUrl,
+        },
+        creator: {
+          "@type": "Person",
+          name: config.userName,
+          url: config.siteUrl,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: config.userName,
+          url: config.siteUrl,
+          logo: {
+            "@type": "ImageObject",
+            url: atrostLogo,
+            width: "400",
+            height: "400",
+          },
+        },
+        datePublished,
+        dateModified: datePublished,
         name: title,
+        mainEntityOfPage: "True",
         alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
         headline: title,
         image: {
@@ -66,6 +100,46 @@ export default ({ postNode, postPath, postSEO }) => {
         description,
       }
     );
+  }
+  if (aboutSEO) {
+    schemaOrgJSONLD.push({
+      "@context": "http://www.schema.org",
+      "@type": "person",
+      name: config.userName,
+      disambiguatingDescription: "Web Developer, Teacher, Designer",
+      description: "Front-End Web Developer",
+      jobTitle: "Engineer",
+      height: "75 inches",
+      gender: "male",
+      image: headshotImage,
+      url: config.siteUrl,
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "CT",
+        addressCountry: "United States",
+      },
+      email: config.userEmail,
+      birthDate: "1987-06-20",
+      alumniOf: [
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Temple University",
+          sameAs: "https://www.temple.edu",
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Udacity",
+        },
+      ],
+      birthPlace: "Philadelphia",
+      sameAs: [
+        "https://codepen.io/a-trost/",
+        "https://twitter.com/trostcodes",
+        "https://instagram.com/alextrost",
+        "https://www.linkedin.com/in/trostcodes/",
+        "https://github.com/a-trost",
+      ],
+    });
   }
   return (
     <Helmet

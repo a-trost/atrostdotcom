@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
 import LinkCard from "../../components/LinkCard";
+import SEO from "../../components/SEO";
 import LinkCardContainer from "../../components/LinkCardContainer";
 import styled from "styled-components";
 
@@ -73,6 +74,7 @@ const About = ({ data, location, history }) => (
         "Bio and Resume for New Haven based web developer, Alex Trost. He writes about Javascript, React, Gatsby, the web, productivity and more.",
     }}
   >
+    <SEO aboutSEO />
     <AboutLayout>
       <h1 className="header">About</h1>
       <div className="content">

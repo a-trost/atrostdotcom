@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import Footer from "../Footer";
 import Header from "../Header";
-import SEO from "../SEO";
+
 import "./index.css";
 
 const Container = styled.div`
@@ -50,7 +50,6 @@ const Layout = ({
       const seo = data.site.siteMetadata;
       return (
         <>
-          <SEO />
           <Container>
             <Header data={data} siteTitle={seo.title} location={location} />
             <ChildWrapper>{children}</ChildWrapper>

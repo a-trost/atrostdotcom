@@ -14,7 +14,7 @@ const config = {
   postDefaultCategoryID: "Programming",
   dateFromFormat: "YYYY-MM-DD",
   dateFormat: "DD/MM/YYYY",
-  userName: "Alex",
+  userName: "Alex Trost",
   userEmail: "alexrtrost@gmail.com",
   userTwitter: "@trostcodes",
   userLocation: "New Haven, CT",

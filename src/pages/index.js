@@ -7,6 +7,7 @@ import videoImage from "../images/netlifyDevVideo.jpg";
 import courseImage from "../images/courseImage.jpg";
 import talkImage from "../images/talkImage.jpg";
 import Link from "../components/Link";
+import SEO from "../components/SEO";
 
 const IntroText = styled.p`
   font-size: 1.2rem;
@@ -21,6 +22,7 @@ export default ({
   const blogpost = allMarkdownRemark.edges[0].node;
   return (
     <Layout location={location} history={history}>
+      <SEO />
       <IntroText>
         I'm a Front-End Engineer in New Haven, Connecticut making fast and
         awesome websites and apps.
