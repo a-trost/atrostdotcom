@@ -108,7 +108,7 @@ const About = ({ data, location, history }) => (
 
     <LinkCardContainer>
       <LinkCard heading="Resume" path="/about/resume" />
-      <LinkCard heading="Habit Tracking" path="/about/tracker" />
+      {/* <LinkCard heading="Habit Tracking" path="/about/tracker" /> */}
     </LinkCardContainer>
   </Layout>
 );
