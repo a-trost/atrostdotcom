@@ -79,9 +79,22 @@ const About = ({ data, location, history }) => (
       <h1 className="header">About</h1>
       <div className="content">
         <p>
-          Hey, I’m Alex Trost, a Front-end Developer from Philadelphia, now
-          living in New Haven. I've been a designer and elementary school
-          teacher, now an engineer at Digital Surgeons.
+          Alex Trost is a web developer and designer living in New Haven. He
+          loves bringing code and creativity together, and tries to merge the
+          two whenever possible.
+        </p>
+
+        <p>
+          Since he had access to the internet (Hey, AOL!) he’s been making his
+          own websites, learning as much as he could. Back then it was making
+          sites about Nintendo 64. These days he works for Digital Surgeons, an
+          agency that brings creative solutions to brands around the world.
+        </p>
+
+        <p>
+          Over the years he’s been a designer, a 2nd grade teacher, and a web
+          developer. Although he doesn’t focus on video games as much, he likes
+          to think that kid would still approve.
         </p>
       </div>
       <div className="pictureContainer">
