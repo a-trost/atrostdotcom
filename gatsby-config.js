@@ -17,13 +17,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "src",
-        path: `${__dirname}/src/`,
-      },
-    },
-    {
       resolve: `gatsby-theme-notes`,
       options: {
         basePath: `/notes`,
@@ -32,6 +25,14 @@ module.exports = {
         breadcrumbSeparator: ">",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`,
+      },
+    },
+
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
