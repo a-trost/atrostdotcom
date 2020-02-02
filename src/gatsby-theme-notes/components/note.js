@@ -1,9 +1,11 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import Breadcrumbs from "./breadcrumbs";
 
 import Layout from "./layout";
 
-const WikiPage = ({
+export default ({
+  breadcrumbs = [],
   data: {
     note: { body },
     site: {
@@ -13,8 +15,7 @@ const WikiPage = ({
   ...props
 }) => (
   <Layout {...props} title={title}>
+    {breadcrumbs.length ? <Breadcrumbs links={breadcrumbs} /> : null}
     <MDXRenderer>{body}</MDXRenderer>
   </Layout>
 );
-
-export default WikiPage;

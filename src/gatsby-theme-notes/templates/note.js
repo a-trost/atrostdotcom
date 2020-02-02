@@ -1,8 +1,11 @@
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 
-import Note from "../components/note"
+import Note from "../components/note";
 
-export default Note
+export default ({ pageContext: { breadcrumbs }, ...props }) => (
+  <Note breadcrumbs={breadcrumbs} {...props} />
+);
 
 export const pageQuery = graphql`
   query($id: String!, $title: String) {
@@ -19,4 +22,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
