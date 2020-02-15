@@ -2,9 +2,13 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Note from "../components/note";
+import SEO from "../../components/SEO";
 
 export default ({ pageContext: { breadcrumbs }, ...props }) => (
+  <>
+    <SEO />
   <Note breadcrumbs={breadcrumbs} {...props} />
+  </>
 );
 
 export const pageQuery = graphql`
