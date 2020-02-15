@@ -71,13 +71,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-rss-feed`,
-      options: {
-        url: `https://feeds.buzzsprout.com/255972.rss`, // Overlap
-        name: `OverlapPodcast`,
-      },
-    },
-    {
       resolve: "gatsby-transformer-remark",
       options: {
         excerpt_separator: `<!-- end -->`,

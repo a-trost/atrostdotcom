@@ -63,7 +63,7 @@ export default ({
       </FeatureSection>
       <FeatureSection
         sectionTitle="Podcast"
-        imageUrl={allFeedOverlapPodcast.edges[0].node.itunes.image}
+        imageUrl="https://storage.buzzsprout.com/variants/frKj2VG7WAwbT4pKyN3vSrvq/8d66eb17bb7d02ca4856ab443a78f2148cafbb129f58a3c81282007c6fe24ff2?.jpg"
         ctaText="Go to The Overlap"
         ctaLink="https://www.overlappodcast.com"
         styleNumber={2}
@@ -76,7 +76,7 @@ export default ({
 
         <p>
           Subscribe in your podcast player and listen to our latest episode,{" "}
-          <b>{allFeedOverlapPodcast.edges[0].node.title}</b>.
+          <b>CSS Grid</b>.
         </p>
       </FeatureSection>
 
@@ -125,16 +125,6 @@ export const query = graphql`
       siteMetadata {
         title
         desc
-      }
-    }
-    allFeedOverlapPodcast(sort: { fields: isoDate, order: DESC }, limit: 1) {
-      edges {
-        node {
-          itunes {
-            image
-          }
-          title
-        }
       }
     }
     allMarkdownRemark(
