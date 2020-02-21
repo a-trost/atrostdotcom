@@ -54,7 +54,7 @@ export default ({
       >
         <p>
           I occasionally write articles about programming, teaching, design,
-          soft skills, etc.
+          productivity, etc.
         </p>
         <p>
           Check out my latest post,{" "}
