@@ -1,0 +1,133 @@
+---
+title: Solving Problems with CSS Custom Properties
+category: "Programming"
+image: "./css-custom-properties.png"
+date: "2020-02-21"
+type: "blog"
+desc: "A look at problems I recently faced by using CSS Custom Properties in different ways."
+---
+
+# Solving Problems with CSS Custom Properties
+
+When I first learned of CSS custom properties, I immediately understood how handy they would be for defining colors and max-widths. We already had Sass variables for a while, and it was great only to declare colors in one place.
+
+Lately, I'm discovering they're useful for so many more things. I'll run into a problem, only to find that CSS custom properties can provide a clean, concise solution.
+
+Here are a couple of problems I recently faced. I'll show the potential solutions I thought through, then the CSS custom property solution I landed on.
+
+## Spacing Components
+
+For a website build, all of our components had equal spacing between them on a page. However, on some pages, the spacing between those same components was different.
+
+### Potential Solutions
+
+We could pass something to each component to tell them to change, either in the templating language or as a CSS class. But that would require adding code to every component so that they would prepare for the change.
+
+Plus, the spacing size changes as the screen width shrinks, so that solution gets messy.
+
+You could put a special class like `class= "small-spacing"` on the `<body>` or `<main>` element on the page, but again, each component would need to listen for it.
+
+### CSS Custom Property Solution
+
+Instead, if I set the spacing value to a CSS custom property, we're able to change it out on a per-page basis.
+
+```css
+:root {
+  --large-component-spacing: 6rem;
+  —small-component-spacing: 4rem;
+
+  @media all {
+    --large-component-spacing: 8rem;
+    —small-component-spacing: 5rem;
+  }
+  @media all {
+    --large-component-spacing: 12rem;
+    —small-component-spacing: 6.25rem;
+  }
+
+  --component-spacing: var(--large-component-spacing);
+}
+```
+
+On pages where we want to use the smaller size, we add a small style tag.
+
+```html
+<style>
+  --component-spacing: var(--small-component-spacing);
+</style>
+```
+
+This takes priority in the cascade, and this entire page is now spaced appropriately with one essentially one line.
+
+## Changing Colors
+
+Most of the site I'm working on has a white background, but then we added a page with a dark background. Suddenly components with black text and black lines needed a second state.
+
+### Potential Solutions
+
+The classic way would be something like this. (I'm still using CSS Custom Properties for the colors themselves here. I'm not a monster.)
+
+```css
+/* Declare the default colors */
+.profile-card {
+  padding: 2rem;
+}
+
+.profile-card__name {
+  color: var(--gray);
+}
+
+.profile-card__tags {
+  color: var(--gray);
+  border: 1px solid var(--gray);
+}
+
+.profile-card__icon {
+  fill: var(--gray);
+}
+
+.profile-card.white > .profile-card__name,
+.profile-card.white > .profile-card__tags,
+.profile-card.white > .profile-card__icon {
+  color: var(--white);
+  fill: var(--white);
+  border-color: var(--white);
+}
+```
+
+There's also the `inherit` keyword, which tells the browser to take the color from its parent element. It's an excellent method so you're not redeclaring your colors over and over. I really like it for making reusable SVGs, because you don't need to get specific with your CSS to change strokes and fills.
+
+The issue with the `inherit` method is you need to be very aware of the element hierarchy, and if you rearrange the DOM, or declare a color in the middle of a cascade, this falls apart. It also takes more detective work to track down bugs.
+
+### CSS Custom Property Solution
+
+I think this solution is the most concise and clear to read and doesn't suffer the pitfalls of `inherit`.
+
+```css
+.profile-card {
+  --main-color: var(--gray);
+}
+
+.profile-card.white {
+  --main-color: var(--white);
+}
+
+.profile-card__name {
+  color: var(--main-color);
+}
+
+.profile-card__tags {
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.profile-card__icon {
+  fill: var(--main-color);
+}
+```
+
+## Feedback
+
+If you know of even cleaner solutions to these problems, I'd love to hear them! Reach out to me on Twitter or through the contact form here.
+
+We aren't using CSS in JS on this site; otherwise, passing props would have been the solution to both of these issues.
