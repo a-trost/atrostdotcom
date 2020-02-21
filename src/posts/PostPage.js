@@ -61,8 +61,10 @@ const BlogContent = styled.div`
   .gatsby-highlight {
     align-self: flex-start;
     justify-self: flex-start;
-    max-width: 100%;
     margin:auto;
+    width: 100%;
+    max-width: 680px;
+    margin-bottom:2rem;
   }
 `;
 
