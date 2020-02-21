@@ -2,6 +2,12 @@
 
 ## Modeling
 
+### Adding Edge Loops
+
+We add edge loops with `Control-R`. Then we can control the way that edge loop responds to other edges by hitting `E` or `F`.
+
+### Mirror Modifier
+
 The Mirror modifier makes it so that you can easily create symmetry without having to worry about both sides of your mesh.
 
 You want 4 vertices for every face of your mesh. Anything else causes trouble.
@@ -24,8 +30,37 @@ If you double tap `G` when selecting verts, you'll do an edge slide.
 
 ## Removing Doubles
 
-Select everything and hit `W` and select "Remove Doubles". That removes any overlapping verts.
+Select everything and Mesh -> Clean Up -> Merge By Distance. That removes any overlapping verts.
 
 ### Merging Vertices
 
 Select the verts and hit `Alt-M`
+
+### Quick Extrude
+
+Select a face and hit `control - Right Click` and it'll extrude a new face to the position of your mouse.
+
+
+## Texturing
+
+### Repeating a texture
+
+Texture Coordinate (UV)-> (Vector) Mapping (Vector) -> (Vector) Image Texture (Color) -> (Color) BSDF
+
+## Sculpting
+
+
+## Rendering
+
+
+
+## Plugins
+
+### Turnaround Camera
+
+Select the camera. `N` for properties tab, select the object you want the camera to turn around, hit the button, then watch it rotate.
+
+### Lily's Surface Scraper
+
+Go to a texture site, get a material's URL, paste it into the plugin, it'll set everything up for you.
+
