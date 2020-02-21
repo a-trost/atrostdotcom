@@ -62,6 +62,7 @@ const BlogContent = styled.div`
     align-self: flex-start;
     justify-self: flex-start;
     max-width: 100%;
+    margin:auto;
   }
 `;
 
