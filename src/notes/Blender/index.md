@@ -40,6 +40,23 @@ Select the verts and hit `Alt-M`
 
 Select a face and hit `control - Right Click` and it'll extrude a new face to the position of your mouse.
 
+### Deselect Vertices/Edges/Faces
+
+`C + Middle Mouse Button`
+
+### Making New Pieces from Existing Objects
+
+If you're breaking geometry off of an existing object to create a new one, select the parts, hit `Shift-D` then `P` and Separate it by `Selection`.
+
+### Moving Points Along A Face
+
+Click the magnet icon at the top of the window, then click the arrow next to it, choosing "Snap To" -> "Face".
+
+### Mirroring Objects
+
+If you're mirroring one object you can hit `Ctrl + M`, or use the Mirror Modifier.
+
+If you're mirroring a collection of objects it's better to select all and scale by `-1` on all axis.
 
 ## Texturing
 
@@ -49,10 +66,19 @@ Texture Coordinate (UV)-> (Vector) Mapping (Vector) -> (Vector) Image Texture (C
 
 ## Sculpting
 
-
 ## Rendering
 
+Use Cycles for photo realism, where Eevee is a realtime rendering engine, closer to what's used in video games.
 
+## Misc
+
+### Using Photo References
+
+Add it to the scene:
+`Shift-A` -> `Image` -> `Reference`
+
+Then go into Object Data Properties and choose `Side` -> `Front` so it only shows one one side.
+Then uncheck "Display Perspective" so it only shows up in Orthographic views.
 
 ## Plugins
 
@@ -63,4 +89,3 @@ Select the camera. `N` for properties tab, select the object you want the camera
 ### Lily's Surface Scraper
 
 Go to a texture site, get a material's URL, paste it into the plugin, it'll set everything up for you.
-
