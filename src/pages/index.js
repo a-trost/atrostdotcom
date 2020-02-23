@@ -84,22 +84,23 @@ export default ({
         reverse
         sectionTitle="Courses"
         imageUrl={courseImage}
-        ctaText="Go to Skillshare"
-        ctaLink="https://www.skillshare.com"
+        ctaText="Check out the Course"
+        ctaLink="https://skl.sh/2SgBfAR"
         styleNumber={3}
       >
         <p>
           I've created a course for Skillshare that teaches all about animating
           an SVG scene with GreenSock! We cover the basics of SVG, how to set up
           the scene, and how to use GreenSock to make seamless animations.{" "}
-          <b>Coming Soon!</b>
+          <b>Out now!</b>
         </p>
       </FeatureSection>
       <FeatureSection sectionTitle="Talks" imageUrl={talkImage} styleNumber={4}>
         <b>Upcoming Talks</b>
         <ul>
           <li>
-            <a href="https://devfestnh.com">Google Devfest New Haven 2019</a>
+            {/* <a href="https://devfestnh.com">Google Devfest New Haven 2019</a> */}
+            <a href="https://www.eventbrite.com/e/codefwd-animation-tickets-93111491979">Code:fwd - Animation</a>
           </li>
         </ul>
       </FeatureSection>
