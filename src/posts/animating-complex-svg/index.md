@@ -81,7 +81,7 @@ I'm going to group and name the camera first. Click and drag to draw a selection
 
 Keep grouping and naming items until every shape has a home.
 
-![](./figma-all-grouped.gif)
+![](./figma-all-grouped.png)
 
 Much better! 
 
