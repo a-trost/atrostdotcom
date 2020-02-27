@@ -58,6 +58,12 @@ If you're mirroring one object you can hit `Ctrl + M`, or use the Mirror Modifie
 
 If you're mirroring a collection of objects it's better to select all and scale by `-1` on all axis.
 
+### Working with Type
+
+Blender doesn't use the same font system as the OS, so you need to click the folder and select the font file manually.
+
+Once you type out text, you can right click and choose "Convert to curves" to get Bezier curves like Illustrator. In the settings for the curve, you can give them depth to get 3d text without going to polys just yet.
+
 ## Texturing
 
 ### Repeating a texture
