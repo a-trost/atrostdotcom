@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import Img from "gatsby-image";
 import SEO from "../components/SEO";
+import NewsletterSignup from "../components/NewsletterSignup";
 
 const BlogCoverImage = styled(Img)`
   border-radius: 10px;
@@ -61,10 +62,10 @@ const BlogContent = styled.div`
   .gatsby-highlight {
     align-self: flex-start;
     justify-self: flex-start;
-    margin:auto;
+    margin: auto;
     width: 100%;
     max-width: 680px;
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -91,6 +92,7 @@ export default class PostPage extends Component {
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
           />
         </BlogWrapper>
+        <NewsletterSignup/>
       </Layout>
     );
   }
