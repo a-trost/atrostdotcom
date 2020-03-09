@@ -95,3 +95,17 @@ Select the camera. `N` for properties tab, select the object you want the camera
 ### Lily's Surface Scraper
 
 Go to a texture site, get a material's URL, paste it into the plugin, it'll set everything up for you.
+
+## Exporting
+
+When exporting for use with React-Three-Fiber, we want to export in the GLTF or GLB format.
+One issue I ran into was the color grading when exporting a project with Filmic tone mapping. Paul Henshel kindly provided a quick fix.
+
+On the Canvas object in your scene:
+
+```jsx
+<Canvas onCreated={({ gl }) => {
+      gl.toneMapping = THREE.ACESFilmicToneMapping
+      gl.outputEncoding = THREE.sRGBEncoding}}
+      >
+```
