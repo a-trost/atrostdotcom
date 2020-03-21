@@ -1,5 +1,9 @@
 # Blender Notes
 
+## General Blender Tips
+
+`control-spacebar` will maximize any area or work panel. 
+
 ## Modeling
 
 ### Adding Edge Loops
@@ -69,6 +73,8 @@ Once you type out text, you can right click and choose "Convert to curves" to ge
 ### Repeating a texture
 
 Texture Coordinate (UV)-> (Vector) Mapping (Vector) -> (Vector) Image Texture (Color) -> (Color) BSDF
+
+Or you can get all of that above by just pressing control T on an image texture!
 
 ## Sculpting
 
