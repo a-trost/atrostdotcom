@@ -59,6 +59,23 @@ A lot of these examples are using the library [Lerp](https://github.com/mattdesl
 
 This seems to mean that given two points it finds the middle point.
 
+
+## Shaders
+
+Shaders are essentially small programs using the language GLSL (Shader Language). Bit more like C than JS.
+
+```GLSL
+// Default floating point precision
+precision highp float; // We always have this
+
+// Inputs - vec2 is a type. Also will use vec2, vec3, vec4
+varying vec2 vUv
+```
+
+`varying` means the color is not the same across the surface. Not solid blue, but changing.
+
+`vUv` is a UV coordinate
+
 ## Resources
 
 [Recipes](https://github.com/react-spring/react-three-fiber/blob/master/recipes.md)
