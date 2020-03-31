@@ -118,6 +118,8 @@ This seems to be a good alternative to `useMemo` and works in conjunction with a
 
 > `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`.
 
+I get this now. The difference is useMemo will call the function you give it if the dependencies changed. `useCallback` gives you a new function that *you* can call. It gives you the function not the result.
+
 ## useMemo
 
 `useMemo` is great for preventing something from rerendering unnecessarily. Some functions should only fire if their dependent state changes. You pass `useMemo` the function you want to call, and then the arguments that it should watch for changes.
@@ -129,6 +131,8 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 In this example, this will only get called if `a` or `b` change.
 
 React warns that this isn't a semantic guarantee and in the future this function might run even if the values weren't changed. It's better to write the code so it still works then optimize with useMemo.
+
+
 
 ## useLayoutEffect
 
