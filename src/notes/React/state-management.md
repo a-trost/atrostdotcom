@@ -183,3 +183,65 @@ You still wrap your components with a Provider, but the way the consumer works i
 ## Data Fetching
 
 `useEffect` is what you'll use for this.
+
+In the example in the course we broke out an entire `useFetch` custom hook:
+
+```js
+const useFetch = url => {
+ const [response, setResponse] = useState(null)
+ const [loading, setLoading] = useState(true);
+ const [error, setError] = useState(null);
+
+ React.useEffect(() => {
+   setLoading(true);
+   setResponse([]);
+   setError(null);
+
+   fetch(url)
+     .then(response => response.json())
+     .then(response => {
+     setResponse(response)
+     setLoading(false)})
+     .catch(error => {
+     setLoading(false);
+     });
+ }, [url]);
+
+ return [response, loading, error]
+}
+```
+It's a really clean way to abstract out the call and keep it out of your component.
+
+We then go on to see how we'd implement this with async
+
+```js
+const useFetch = () => {
+  const [response, setResponse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  React.useEffect(() => {
+    setLoading(true);
+    setResponse([]);
+    setError(null);
+
+    const fetchUrl = async () => {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setResponse(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUrl();
+  }, []);
+
+  return [response, loading, error];
+};
+```
+
+Everything stays the same, but you declare an async function instead of the fetch chaining.
