@@ -7,11 +7,15 @@ type: "blog"
 desc: "I'll show you how to name and group stock SVGs so they're much easier to animate."
 ---
 
-There's a big trend right now to have a colorful illustration on your homepage showing what you or your product does. There's a 'flat' style that's ubiquitous on the web, thanks to sites like [UnDraw](https://www.undraw.co). 
+<iframe width="540" height="315" src="https://www.youtube-nocookie.com/embed/_i5w8XR-EXc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+There's a big trend right now to have a colorful illustration on your homepage showing what you or your product does. There's a 'flat' style that's ubiquitous on the web, thanks to sites like [UnDraw](https://www.undraw.co).
 
 ![](./undraw-image.png)
 
-It's a great style with clean shapes, but when everyone is using the same illustrations, how can you stand out? With a touch of animation! 
+It's a great style with clean shapes, but when everyone is using the same illustrations, how can you stand out? With a touch of animation!
 
 Animations can help communicate your message and add delight to an otherwise dull experience. However, animating these illustrations with CSS, GreenSock, or other animation libraries, can get tricky.
 
@@ -22,12 +26,13 @@ If you open one of these SVGs with many shapes, you'll quickly see a problem. It
 Can you tell which `<path>` creates her shoe? I can't. There are almost 40 elements in this illustration, and many graphics are even more complicated. With a few techniques, we can make animating these illustrations much easier.
 
 ## Getting a Vector Image
+
 First, let's choose a vector image from a resource site. Here are a few sites you can explore.
 
-* [UnDraw](https://undraw.co/illustrations) (Free, no attribution required)
-* [Humaaans](https://www.humaaans.com/) (Free, attribution required)
-* [Vecteezy](https://www.vecteezy.com/) (Free, attribution required)
-* [Vexels](https://www.vexels.com/) (Paid service, no attribution required)
+- [UnDraw](https://undraw.co/illustrations) (Free, no attribution required)
+- [Humaaans](https://www.humaaans.com/) (Free, attribution required)
+- [Vecteezy](https://www.vecteezy.com/) (Free, attribution required)
+- [Vexels](https://www.vexels.com/) (Paid service, no attribution required)
 
 Pick one, grab something that catches your eye. For the sake of this tutorial, I suggest UnDraw. The one I'm using is called "Moments."
 
@@ -38,9 +43,10 @@ Note: click at the top right, and you can change the accent color to match your 
 Then click "Download SVG for your projects."
 
 ## Take a Look in CodePen
+
 Head over to [Codepen](https://codepen.io) and start a new pen.
 
-Fun tip! You can drag and drop the file right into CodePen's HTML editor, and it inserts the code for you. 
+Fun tip! You can drag and drop the file right into CodePen's HTML editor, and it inserts the code for you.
 
 ![](./drag-and-drop.gif)
 
@@ -49,6 +55,7 @@ Now take a look at the code. There's a lot there, and without IDs to provide nam
 Luckily, we can use a tool that's great for working with SVGs: [Figma](https://www.figma.com).
 
 ## Using a Vector Program
+
 "But Alex, I'm not a designer! I don't know how to use these apps!"
 
 I promise we're only going to select some items and rename them. No design chops required!
@@ -56,24 +63,26 @@ I promise we're only going to select some items and rename them. No design chops
 We need a vector program so we can name elements and create groups visually, rather than through the code. Once organized, working with the code is much more accessible.
 
 Many different apps can handle vectors well. We're using Figma because:
-1. It's *free*
+
+1. It's _free_
 2. No download required
 3. It's cross-platform
 
-Sign up for a Figma account and create a new file. You'll see a workspace divided into three columns. 
+Sign up for a Figma account and create a new file. You'll see a workspace divided into three columns.
 
 ![](./figma-default.png)
 
-
 ### Importing
-Now select *all* the SVG code you just pasted into CodePen and paste it into Figma. Figma automatically creates vector shapes!
+
+Now select _all_ the SVG code you just pasted into CodePen and paste it into Figma. Figma automatically creates vector shapes!
 
 ![](./paste-to-figma.gif)
 
-*Note*: I recommend this copy-and-paste method over importing SVG files, as it doesn't give you extra Figma frames to deal with.
+_Note_: I recommend this copy-and-paste method over importing SVG files, as it doesn't give you extra Figma frames to deal with.
 
 ### Grouping and Naming
-Your vector image is now in the center workspace. On the left, you'll see a list of all the elements in your scene, and a tiny version of their shape. 
+
+Your vector image is now in the center workspace. On the left, you'll see a list of all the elements in your scene, and a tiny version of their shape.
 
 I'm going to group and name the camera first. Click and drag to draw a selection box around items you want to group.
 
@@ -83,15 +92,16 @@ Keep grouping and naming items until every shape has a home.
 
 ![](./figma-all-grouped.png)
 
-Much better! 
+Much better!
 
-For my scene, I want to animate the pictures together and separately, so I'm going to give them all a group called `picture-group`. 
+For my scene, I want to animate the pictures together and separately, so I'm going to give them all a group called `picture-group`.
 
 ![](./grouping-2.gif)
 
 I now have a group of groups.
 
 ### Exporting
+
 Now that we grouped and labeled our illustration how we want it, it's time to export. Click "Frame" on the left sidebar to select everything in your scene. On the right sidebar, click "Export" at the very bottom. Choose SVG and click the `...` and select `Include "id" Attribute`. If you don't, Figma won't include the names we added.
 
 ![](./export-settings.png)
@@ -104,17 +114,27 @@ Head back to CodePen and delete the code we dropped earlier. Then drag and drop 
 
 If you see all your groups, great! If not, double-check your export settings.
 
-## Animating with CSS 
+## Animating with CSS
+
 We've made our code a bit more readable and manageable, so we're ready to animate!
 
-At this point, you can reach for any animation method you want. [GreenSock](https://greensock.com/) and [React Spring](https://www.react-spring.io/) are two of my favorites, but we'll use CSS animations to finish out this tutorial. 
+At this point, you can reach for any animation method you want. [GreenSock](https://greensock.com/) and [React Spring](https://www.react-spring.io/) are two of my favorites, but we'll use CSS animations to finish out this tutorial.
 
-It's good to have a concept for your animation. For mine,  the pictures will slide out from behind the camera in a stack, and then spread out to form the final image. We need to animate the pictures together and individually, which explains our grouping. The camera won't move, so we didn't/have/ to group and name it, but it's helpful to have everything organized.
+It's good to have a concept for your animation. For mine, the pictures will slide out from behind the camera in a stack, and then spread out to form the final image. We need to animate the pictures together and individually, which explains our grouping. The camera won't move, so we didn't/have/ to group and name it, but it's helpful to have everything organized.
 
 First I want to give our SVG some styles to keep it centered within the viewport. I’ll add an `id` to the SVG and target it with CSS.
+
 ```html
-<svg id="camera-illustration" width="757" height="772" viewBox="0 0 757 772" fill="none" xmlns="http://www.w3.org/2000/svg">
-...
+<svg
+  id="camera-illustration"
+  width="757"
+  height="772"
+  viewBox="0 0 757 772"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  ...
+</svg>
 ```
 
 ```css
@@ -126,36 +146,38 @@ First I want to give our SVG some styles to keep it centered within the viewport
 }
 ```
 
-Next, we want to animate the photo of the trees in the center. We'll be using CSS keyframes to control the timing of our animations. Here's a quick overview if you're not familiar. 
+Next, we want to animate the photo of the trees in the center. We'll be using CSS keyframes to control the timing of our animations. Here's a quick overview if you're not familiar.
 
 ### Keyframe Overview
+
 With keyframes, we declare what happens throughout the sequence of an animation. We add keyframes to HTML elements with the `animation-name` property.
 
 This animation transitions an element from invisible to visible.
-```css 
+
+```css
 @keyframes fade-in {
-from {
+  from {
     opacity: 0;
-} 
-to {
-    opacity:1;
-} 
+  }
+  to {
+    opacity: 1;
+  }
 }
 ```
 
 We can also write our keyframes using percentages, which allows us to declare properties throughout the animation.
 
-```css 
+```css
 @keyframes color-change {
-0% {
-    background-color:red;
-} 
-50% {
+  0% {
+    background-color: red;
+  }
+  50% {
     background-color: purple;
-} 
-100% {
+  }
+  100% {
     background-color: blue;
-} 
+  }
 }
 ```
 
@@ -164,6 +186,7 @@ This animation changes the background color from red to purple halfway through t
 One important detail we'll use for animating these images: If you don't declare a starting or endpoint, the browser uses the existing property values. That means when we move objects to start the animation, the browser resets them to their original properties.
 
 ### Creating our Keyframes
+
 Let's add a keyframe animation called `trees` to our CSS file.
 
 ```css
@@ -207,11 +230,11 @@ When rotating individual items, we need to be aware of the `transform-origin`. T
 ![](./svg-percentage-grid.png)
 
 ```css
- #mountain-picture {
+#mountain-picture {
   transform-origin: 75% 15%;
   animation-name: mountains;
   animation-duration: 3s;
-  animation-iteration-count:  infinite;
+  animation-iteration-count: infinite;
 }
 
 @keyframes mountains {
@@ -225,7 +248,8 @@ When rotating individual items, we need to be aware of the `transform-origin`. T
 ```
 
 We've also created the keyframes for this photo. I'll point out a couple of things:
-1. They have two steps, `from` and '50 %`. This gives the animation a start, middle, and end. 
+
+1. They have two steps, `from` and '50 %`. This gives the animation a start, middle, and end.
 2. They use `translate` AND `rotate`. To do more than one transform at a time, you just separate them with a space. `30deg` stands for 30 degrees, and it levels out the photo.
 
 We do the same thing for the car photo, but our `translate` value for the Y-axis is negative, as it finishes below the camera.
@@ -235,7 +259,7 @@ We do the same thing for the car photo, but our `translate` value for the Y-axis
   transform-origin: 70% 80%;
   animation-name: car;
   animation-duration: 3s;
-  animation-iteration-count:  infinite;
+  animation-iteration-count: infinite;
 }
 
 @keyframes car {
@@ -248,10 +272,9 @@ We do the same thing for the car photo, but our `translate` value for the Y-axis
 }
 ```
 
-Great! Now the last touch is to animate the `picture-group` we made. 
+Great! Now the last touch is to animate the `picture-group` we made.
 
 We're going to use `scale` to shrink the photos at the beginning of the animation. For that, we need to be aware of the `transform-origin`. Looking at the grid, we see the center of the camera is at '25 % 50%`. That's where we want to scale from.
-
 
 ```css
 #picture-group {
@@ -284,6 +307,7 @@ And that's it! You've now learned how to animate your organized SVG.
 Now you can set the `animation-iteration-count` to 1 to not annoy your visitors. But what if the animation is halfway down the page? They'll miss it by the time they scroll down. That's when we can use the [intersection observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
 
 ## Using Intersection Observers for Timely Animations
+
 The intersection observer API tells us when an element is /intersecting/ with the viewport. In other words, the user can see it.
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Undraw Animation - Intersection Observer" src="https://codepen.io/a-trost/embed/preview/4140942a16322638c64d0db721a63d38?height=465&theme-id=light&default-tab=result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
@@ -309,10 +333,10 @@ observer = new IntersectionObserver(entries => {
 images.forEach(image => {
   observer.observe(image);
 });
-
 ```
 
 We can now add the class `illustration-to-animate` to multiple items on our page, and they'll trigger as you scroll into view!
 
 ## Wrap Up
+
 If you made it this far, well done! You're more than prepared to make stock SVGs your own with custom animations! I'd love to see what you come up with, so feel free to reach out.
