@@ -112,18 +112,6 @@ const Dates = styled.div`
   line-height: 1rem;
 `;
 
-const SectionDivider = styled.hr`
-  margin: 20px 0;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0)
-  );
-`;
-
 export default class Resume extends Component {
   render() {
     return (
