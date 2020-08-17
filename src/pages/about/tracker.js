@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import Pomodoro from "../../components/Pomodoro";
 import LinkCard from "../../components/LinkCard";
 import LinkCardContainer from "../../components/LinkCardContainer";
 
@@ -19,7 +18,7 @@ const Tracker = ({ data, location, history }) => (
       In my attempt to keep a public journal for my use of the pomodoro
       technique, I record my logs here to hold myself accountable.{" "}
     </p>
-    <Pomodoro />
+
     <LinkCardContainer>
       <LinkCard heading="About Page" path="/about" />
       <LinkCard heading="Resume" path="/about/resume" />
