@@ -186,8 +186,9 @@ const Menu = ({ menuOpen, handleClick, style }) => {
     <>
       <Nav>
         <ul>
-          <li onClick={handleClick} className="mobile-toggle">
+          <li className="mobile-toggle">
             <button
+              onClick={handleClick}
               type="button"
               style={{
                 cursor: "pointer",

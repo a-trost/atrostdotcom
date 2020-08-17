@@ -154,24 +154,26 @@ export default class Contact extends React.Component {
             </p>
             <FormHalf>
               <p>
-                <label>
+                <label for="name">
                   Name:
                   <br />
                   <Input
                     type="text"
                     name="name"
+                    id="name"
                     onChange={this.handleChange}
                     required
                   />
                 </label>
               </p>
               <p>
-                <label>
+                <label for="email">
                   Email:
                   <br />
                   <Input
                     type="email"
                     name="email"
+                    id="email"
                     onChange={this.handleChange}
                     required
                   />
@@ -180,10 +182,14 @@ export default class Contact extends React.Component {
             </FormHalf>
             <FormHalf>
               <p>
-                <label>
+                <label for="message">
                   Message:
                   <br />
-                  <TextArea name="message" onChange={this.handleChange} />
+                  <TextArea
+                    name="message"
+                    id="message"
+                    onChange={this.handleChange}
+                  />
                 </label>
               </p>
             </FormHalf>
