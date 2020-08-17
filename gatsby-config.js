@@ -23,8 +23,10 @@ module.exports = {
         contentPath: "src/notes",
         homeText: "Home",
         breadcrumbSeparator: ">",
+        mdx: true
       },
     },
+    `gatsby-plugin-mdx`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -36,13 +38,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-prismic",
-      options: {
-        repositoryName: "atrost",
-        accessToken: process.env.PRISMIC_SECRET_KEY,
-      },
-    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
