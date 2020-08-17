@@ -58,7 +58,7 @@ li a:hover::before {
 }
     }
 
-    .mobile-toggle div {
+    .mobile-toggle button {
       justify-self: start;
       position: absolute;
       left: -99999em;
@@ -85,7 +85,7 @@ li a:hover::before {
         }
       }
       .mobile-toggle {
-        div,
+        button,
         a {
           position: static;
         }
