@@ -24,60 +24,60 @@ function last7Days() {
     .reverse();
 }
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query HeadingQuery {
-        allPrismicPomodoro {
-          edges {
-            node {
-              data {
-                date
-                completed
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const labels = last7Days();
-      const completed = {};
+// export default () => (
+//   <StaticQuery
+//     query={graphql`
+//       query HeadingQuery {
+//         allPrismicPomodoro {
+//           edges {
+//             node {
+//               data {
+//                 date
+//                 completed
+//               }
+//             }
+//           }
+//         }
+//       }
+//     `}
+//     render={data => {
+//       const labels = last7Days();
+//       const completed = {};
 
-      data.allPrismicPomodoro.edges.forEach(edge => {
-        completed[edge.node.data.date] = edge.node.data.completed;
-      });
-      const lineGraphData = {
-        labels: labels,
-        datasets: [
-          {
-            label: "Completed",
-            fill: true,
-            lineTension: 0.3,
-            backgroundColor: "rgba(64, 127, 194, .5)",
-            borderColor: "rgba(59, 111, 183,1)",
-            borderCapStyle: "butt",
-            borderDashOffset: 0.0,
-            borderJoinStyle: "miter",
-            pointBorderColor: "rgba(59, 111, 183,1)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(59, 111, 183,1)",
-            pointHoverBorderColor: "rgba(220,220,220,1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: labels.map(date => (completed[date] ? completed[date] : 0)),
-          },
-        ],
-      };
+//       data.allPrismicPomodoro.edges.forEach(edge => {
+//         completed[edge.node.data.date] = edge.node.data.completed;
+//       });
+//       const lineGraphData = {
+//         labels: labels,
+//         datasets: [
+//           {
+//             label: "Completed",
+//             fill: true,
+//             lineTension: 0.3,
+//             backgroundColor: "rgba(64, 127, 194, .5)",
+//             borderColor: "rgba(59, 111, 183,1)",
+//             borderCapStyle: "butt",
+//             borderDashOffset: 0.0,
+//             borderJoinStyle: "miter",
+//             pointBorderColor: "rgba(59, 111, 183,1)",
+//             pointBackgroundColor: "#fff",
+//             pointBorderWidth: 1,
+//             pointHoverRadius: 5,
+//             pointHoverBackgroundColor: "rgba(59, 111, 183,1)",
+//             pointHoverBorderColor: "rgba(220,220,220,1)",
+//             pointHoverBorderWidth: 2,
+//             pointRadius: 1,
+//             pointHitRadius: 10,
+//             data: labels.map(date => (completed[date] ? completed[date] : 0)),
+//           },
+//         ],
+//       };
 
-      return (
-        <Container>
-          <Line data={lineGraphData} />
-        </Container>
-      );
-    }}
-  />
-);
+//       return (
+//         <Container>
+//           <Line data={lineGraphData} />
+//         </Container>
+//       );
+//     }}
+//   />
+// );
