@@ -152,35 +152,52 @@ const AnimatedMobileNav = animated(MobileNav);
 
 const RenderListItems = handleClick => (
   <>
-    <li className="home" onClick={handleClick}>
-      <Link to="/">Home</Link>
+    <li className="home">
+      <Link onClick={handleClick} to="/">
+        Home
+      </Link>
     </li>
-    <li className="blog" onClick={handleClick}>
-      <Link to="/posts">Blog</Link>
+    <li className="blog">
+      <Link onClick={handleClick} to="/posts">
+        Blog
+      </Link>
     </li>
-    <li className="til" onClick={handleClick}>
-      <Link to="/til">TIL</Link>
+    <li className="til">
+      <Link onClick={handleClick} to="/til">
+        TIL
+      </Link>
     </li>
-    <li className="notes" onClick={handleClick}>
-      <Link to="/notes">Notes</Link>
+    <li className="notes">
+      <Link onClick={handleClick} to="/notes">
+        Notes
+      </Link>
     </li>
-    <li className="about" onClick={handleClick}>
-      <Link to="/about">About</Link>
+    <li className="about">
+      <Link onClick={handleClick} to="/about">
+        About
+      </Link>
     </li>
   </>
 );
 
 const Menu = ({ menuOpen, handleClick, style }) => {
   let listClass = menuOpen ? "open" : "";
-  let menuToggle = menuOpen ? menuCloseIcon : menuOpenIcon;
   return (
     <>
       <Nav>
         <ul>
           <li onClick={handleClick} className="mobile-toggle">
-            <div style={{ cursor: "pointer" }}>
-              <img width="25px" height="25px" src={menuToggle} alt="Menu" />
-            </div>
+            <button
+              type="button"
+              style={{
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                padding: "8px",
+              }}
+            >
+              <img width="25px" height="25px" src={menuOpenIcon} alt="Menu" />
+            </button>
           </li>
           {RenderListItems(handleClick)}
         </ul>
@@ -189,18 +206,23 @@ const Menu = ({ menuOpen, handleClick, style }) => {
         <MobileNav>
           <ul className={listClass}>
             <li className="mobile-toggle">
-              <div
+              <button
                 className="inner-toggle"
                 onClick={handleClick}
-                style={{ cursor: "pointer" }}
+                type="button"
+                style={{
+                  cursor: "pointer",
+                  border: "none",
+                  background: "none",
+                }}
               >
                 <img
                   width="25px"
                   height="25px"
-                  src={menuToggle}
+                  src={menuCloseIcon}
                   alt="Mobile navigation toggle"
                 />
-              </div>
+              </button>
             </li>
             {RenderListItems(handleClick)}
           </ul>
