@@ -2,7 +2,7 @@
 
 ## General Blender Tips
 
-`control-spacebar` will maximize any area or work panel. 
+`control-spacebar` will maximize any area or work panel.
 
 ## Modeling
 
@@ -68,6 +68,18 @@ Blender doesn't use the same font system as the OS, so you need to click the fol
 
 Once you type out text, you can right click and choose "Convert to curves" to get Bezier curves like Illustrator. In the settings for the curve, you can give them depth to get 3d text without going to polys just yet.
 
+## Metaballs
+
+You can make lumpy shapes like clouds if you use metaballs. As they get close to each other they join together like the goo effect in a lava lamp.
+
+## Curves to Mesh
+
+You can also turn curves into mesh shapes
+
+1. Add a bezier curve to the scene
+2. Go to the curve's settings and adjust Geometry -> Bevel -> Depth
+3. When finished, go to Edit -> Menu Search -> 3D Viewport: Object ▶ Convert to ▶ Mesh from Curve/Meta/Surf/Text
+
 ## Texturing
 
 ### Repeating a texture
@@ -75,8 +87,6 @@ Once you type out text, you can right click and choose "Convert to curves" to ge
 Texture Coordinate (UV)-> (Vector) Mapping (Vector) -> (Vector) Image Texture (Color) -> (Color) BSDF
 
 Or you can get all of that above by just pressing control T on an image texture!
-
-## Sculpting
 
 ## Rendering
 
