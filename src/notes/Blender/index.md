@@ -6,6 +6,10 @@
 
 ## Modeling
 
+### Creating rounded shapes
+
+You can start with a sphere, but if you start with a cube and do a subdivision surface modifier, you get a sphere that is more consistent across all sides.
+
 ### Adding Edge Loops
 
 We add edge loops with `Control-R`. Then we can control the way that edge loop responds to other edges by hitting `E` or `F`.
