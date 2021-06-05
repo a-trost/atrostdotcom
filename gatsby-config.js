@@ -35,12 +35,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: ["/contact-thanks/"],
-      },
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -51,7 +46,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-remark-copy-linked-files",
     "gatsby-remark-smartypants",
-
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -120,6 +114,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    // `gatsby-plugin-offline`,
   ],
 };

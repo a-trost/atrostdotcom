@@ -47,6 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
       result.data.allMdx.edges.forEach(({ node }) => {
         try {
           if (node && node.frontmatter && node.frontmatter.type) {
+            if (node.frontmatter.type === "project") return;
             createPage({
               path: node.slug,
               component: path.resolve(pagePaths[node.frontmatter.type]),

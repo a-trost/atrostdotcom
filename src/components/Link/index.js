@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
 
-export default (props) => {
-  if (props.to.startsWith("http")) {
+export default ({ to, children, ...props }) => {
+  console.log({ to });
+  if (to && to.startsWith("http")) {
     return (
-      <a {...props} href={props.to} target="_blank" rel="noopener noreferrer">
-        {props.children}
+      <a {...props} href={to} target="_blank" rel="noopener noreferrer">
+        {children}
       </a>
     );
   }
-  return <Link {...props}>{props.children}</Link>;
+  return <Link {...props}>{children}</Link>;
 };

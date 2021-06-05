@@ -76,7 +76,12 @@ const Container = styled.section`
   }
 `;
 
-export default ({ imageUrl, gatsbyImage, itemTitle, styleNumber = 1 }) => (
+const FeatureImage = ({
+  imageUrl,
+  gatsbyImage,
+  itemTitle,
+  styleNumber = 1,
+}) => (
   <Container styleNumber={styleNumber}>
     <svg
       className="triangle"
@@ -103,7 +108,8 @@ export default ({ imageUrl, gatsbyImage, itemTitle, styleNumber = 1 }) => (
           image={gatsbyImage.gatsbyImageData}
           className="image"
           alt={itemTitle}
-          title={itemTitle} />
+          title={itemTitle}
+        />
       </div>
     )}
     {imageUrl && (
@@ -120,3 +126,5 @@ export default ({ imageUrl, gatsbyImage, itemTitle, styleNumber = 1 }) => (
     </svg>
   </Container>
 );
+
+export default FeatureImage;

@@ -29,7 +29,7 @@ export default ({ sectionTitle, reverse, ctaText, ctaLink, children }) => (
     <h2>{sectionTitle}</h2>
     {children}
     <div className="link-container">
-      {ctaText && (
+      {ctaText && ctaLink && (
         <Link to={ctaLink} className="link">
           {ctaText}{" "}
           <svg
