@@ -92,7 +92,7 @@ export default class PostPage extends Component {
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
           />
         </BlogWrapper>
-        <NewsletterSignup/>
+        <NewsletterSignup />
       </Layout>
     );
   }
@@ -115,9 +115,7 @@ export const query = graphql`
         date(formatString: "MMMM Do, YYYY")
         image {
           childImageSharp {
-            sizes(maxWidth: 1024) {
-              ...GatsbyImageSharpSizes
-            }
+            gatsbyImageData(width: 1024)
           }
         }
         desc

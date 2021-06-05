@@ -100,7 +100,9 @@ export default ({
         <ul>
           <li>
             {/* <a href="https://devfestnh.com">Google Devfest New Haven 2019</a> */}
-            <a href="https://www.eventbrite.com/e/codefwd-animation-tickets-93111491979">Code:fwd - Animation</a>
+            <a href="https://www.eventbrite.com/e/codefwd-animation-tickets-93111491979">
+              Code:fwd - Animation
+            </a>
           </li>
         </ul>
       </FeatureSection>
@@ -120,42 +122,43 @@ export default ({
   );
 };
 
-export const query = graphql`query SiteMeta {
-  site {
-    siteMetadata {
-      title
-      desc
+export const query = graphql`
+  query SiteMeta {
+    site {
+      siteMetadata {
+        title
+        desc
+      }
     }
-  }
-  allMarkdownRemark(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {frontmatter: {type: {eq: "blog"}}}
-    limit: 1
-  ) {
-    edges {
-      node {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          date
-          image {
-            childImageSharp {
-              gatsbyImageData(
-                width: 800
-                traceSVG: {color: "rgb(43, 129, 200)"}
-                placeholder: TRACED_SVG
-                layout: CONSTRAINED
-              )
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { type: { eq: "blog" } } }
+      limit: 1
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 800
+                  tracedSVGOptions: { color: "rgb(43, 129, 200)" }
+                  placeholder: TRACED_SVG
+                  layout: CONSTRAINED
+                )
+              }
             }
           }
+          html
+          excerpt(pruneLength: 180)
         }
-        html
-        excerpt(pruneLength: 180)
       }
     }
   }
-}
 `;

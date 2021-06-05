@@ -24,8 +24,7 @@ const Projects = ({ data, location, history, match }) => (
     history={history}
     pageData={{
       title: "Projects",
-      desc:
-        "Past projects I've done for schools, companies, freelance, or myself. Most use Javascript or Python.",
+      desc: "Past projects I've done for schools, companies, freelance, or myself. Most use Javascript or Python.",
     }}
   >
     <SEO />
@@ -66,9 +65,7 @@ export const query = graphql`
             date
             image {
               childImageSharp {
-                sizes(maxWidth: 1000) {
-                  ...GatsbyImageSharpSizes
-                }
+                gatsbyImageData(width: 1000)
               }
             }
             tech

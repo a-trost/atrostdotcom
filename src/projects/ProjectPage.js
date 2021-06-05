@@ -61,9 +61,7 @@ export const query = graphql`
         tech
         image {
           childImageSharp {
-            sizes(maxWidth: 630) {
-              ...GatsbyImageSharpSizes
-            }
+            gatsbyImageData(width: 630)
           }
         }
         repo

@@ -70,8 +70,7 @@ const About = ({ data, location, history }) => (
     history={history}
     pageData={{
       title: "About",
-      desc:
-        "Bio and Resume for New Haven based web developer, Alex Trost. He writes about Javascript, React, Gatsby, the web, productivity and more.",
+      desc: "Bio and Resume for New Haven based web developer, Alex Trost. He writes about Javascript, React, Gatsby, the web, productivity and more.",
     }}
   >
     <SEO aboutSEO />
@@ -101,7 +100,8 @@ const About = ({ data, location, history }) => (
         <GatsbyImage
           image={data.alexpicture.childImageSharp.gatsbyImageData}
           className="picture"
-          alt="Alex Trost" />
+          alt="Alex Trost"
+        />
       </div>
     </AboutLayout>
 
@@ -112,18 +112,19 @@ const About = ({ data, location, history }) => (
   </Layout>
 );
 
-export const query = graphql`query AboutQuery {
-  alexpicture: file(relativePath: {eq: "images/alexheadshot.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(
-        width: 900
-        traceSVG: {color: "rgb(43, 129, 200)"}
-        placeholder: TRACED_SVG
-        layout: CONSTRAINED
-      )
+export const query = graphql`
+  query AboutQuery {
+    alexpicture: file(relativePath: { eq: "images/alexheadshot.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 900
+          tracedSVGOptions: { color: "rgb(43, 129, 200)" }
+          placeholder: TRACED_SVG
+          layout: CONSTRAINED
+        )
+      }
     }
   }
-}
 `;
 
 export default About;

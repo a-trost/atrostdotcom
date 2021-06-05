@@ -23,8 +23,7 @@ const IndexPage = ({ data, location, history }) => (
     history={history}
     pageData={{
       title: "Recent Articles",
-      desc:
-        "Articles by Alex Trost on web design, programming, React, Gatsby, and more.",
+      desc: "Articles by Alex Trost on web design, programming, React, Gatsby, and more.",
     }}
   >
     <SEO />
@@ -41,42 +40,43 @@ const IndexPage = ({ data, location, history }) => (
 
 export default IndexPage;
 
-export const query = graphql`query BlogData {
-  site {
-    siteMetadata {
-      title
-      desc
+export const query = graphql`
+  query BlogData {
+    site {
+      siteMetadata {
+        title
+        desc
+      }
     }
-  }
-  allMarkdownRemark(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {frontmatter: {type: {eq: "blog"}}}
-  ) {
-    edges {
-      node {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          date
-          image {
-            childImageSharp {
-              gatsbyImageData(
-                width: 800
-                traceSVG: {color: "rgb(43, 129, 200)"}
-                placeholder: TRACED_SVG
-                layout: CONSTRAINED
-              )
-            }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { type: { eq: "blog" } } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
           }
-          desc
+          frontmatter {
+            title
+            date
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 800
+                  tracedSVGOptions: { color: "rgb(43, 129, 200)" }
+                  placeholder: TRACED_SVG
+                  layout: CONSTRAINED
+                )
+              }
+            }
+            desc
+          }
+          html
+          excerpt(pruneLength: 280)
         }
-        html
-        excerpt(pruneLength: 280)
       }
     }
   }
-}
 `;
