@@ -150,7 +150,7 @@ const MobileNav = styled.div`
 
 const AnimatedMobileNav = animated(MobileNav);
 
-const RenderListItems = handleClick => (
+const RenderListItems = (handleClick) => (
   <>
     <li className="home">
       <Link onClick={handleClick} to="/">
@@ -167,11 +167,7 @@ const RenderListItems = handleClick => (
         TIL
       </Link>
     </li>
-    <li className="notes">
-      <Link onClick={handleClick} to="/notes">
-        Notes
-      </Link>
-    </li>
+
     <li className="about">
       <Link onClick={handleClick} to="/about">
         About
