@@ -47,14 +47,6 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        allContentfulTil(sort: { fields: number }) {
-          edges {
-            node {
-              title
-              number
-            }
-          }
-        }
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -65,24 +57,6 @@ exports.createPages = ({ graphql, actions }) => {
               component: path.resolve(pagePaths[node.frontmatter.type]),
               context: {
                 slug: node.fields.slug,
-              },
-            });
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      });
-      result.data.allContentfulTil.edges.forEach(({ node }) => {
-        try {
-          if (node && node.title && node.number) {
-            const slug = slugify(node.title, {
-              lower: true,
-            });
-            createPage({
-              path: `til/${node.number}-${slug}`,
-              component: path.resolve("./src/til/TilPage.js"),
-              context: {
-                title: node.title,
               },
             });
           }

@@ -5,8 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Alex Trost - Frontend Web Developer",
-    desc:
-      "Alex Trost is a Frontend Web Developer living in New Haven, Connecticut. He writes about Javascript, React, Gatsby, and general productivity.",
+    desc: "Alex Trost is a Frontend Web Developer living in New Haven, Connecticut. He writes about Javascript, React, Gatsby, and general productivity.",
     siteUrl: `https://atrost.com`,
     image: "",
     social: {
@@ -16,16 +15,6 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-theme-notes`,
-      options: {
-        basePath: `/notes`,
-        contentPath: "src/notes",
-        homeText: "Home",
-        breadcrumbSeparator: ">",
-        mdx: true
-      },
-    },
     `gatsby-plugin-mdx`,
     {
       resolve: "gatsby-source-filesystem",
@@ -37,14 +26,9 @@ module.exports = {
 
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
-    "gatsby-transformer-sharp",
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `ulvxp23ybtje`,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
@@ -73,20 +57,9 @@ module.exports = {
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 600,
-              showCaptions: false,
-              withWebp: true,
-              wrapperStyle: "width: auto;",
-              quality: 90,
-            },
-          },
         ],
       },
     },
-    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-remark-copy-linked-files",
     "gatsby-remark-smartypants",
