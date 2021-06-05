@@ -162,12 +162,6 @@ const RenderListItems = (handleClick) => (
         Blog
       </Link>
     </li>
-    <li className="til">
-      <Link onClick={handleClick} to="/til">
-        TIL
-      </Link>
-    </li>
-
     <li className="about">
       <Link onClick={handleClick} to="/about">
         About
