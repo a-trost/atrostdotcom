@@ -38,27 +38,28 @@ const NewsletterSignup = styled.article`
     padding: 0.5rem;
     width: 100%;
     max-width: 14rem;
-    border-bottom-left-radius: .75rem;
-    border-top-left-radius: .75rem;
+    border-bottom-left-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
     border-right: none;
   }
 
-  .submit-button{
+  .submit-button {
     display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #15B3EA;
-  color: white;
-  padding: .5rem 1rem;
-  letter-spacing:1px;
-  font-weight: 600;
-  cursor:pointer;
-  transition: .3s all ease;
-  :hover {
-    background: #2993CA;
-  }
-    border-bottom-right-radius: .75rem;
-    border-top-right-radius: .75rem;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    background: #15b3ea;
+    color: white;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    :hover {
+      background: #2993ca;
+    }
+    border-bottom-right-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
   }
 
   /* Styled triangle */
@@ -75,15 +76,14 @@ const NewsletterSignup = styled.article`
   }
 
   @media all and (max-width: 600px) {
-  padding: 3rem 2rem;
+    padding: 3rem 2rem;
 
-  h2 {
-    font-size: 1.75rem;
-
-  }
+    h2 {
+      font-size: 1.75rem;
+    }
 
     ::after {
-    border-width: 50px 50px 0 0;
+      border-width: 50px 50px 0 0;
     }
   }
 `;
@@ -109,7 +109,12 @@ export default () => (
         </label>
         <input class="email-input" type="email" name="email" id="tlemail" />
         <input type="hidden" defaultValue={1} name="embed" />
-        <input class="submit-button" type="submit" defaultValue="Subscribe" value="Subscribe" />
+        <input
+          class="submit-button"
+          type="submit"
+          defaultValue="Subscribe"
+          value="Subscribe"
+        />
       </div>
     </form>
   </NewsletterSignup>

@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import TechIcons from "../TechIcons";
 
 const Card = styled.div`
-  border-top: 5px solid ${props => props.color};
+  border-top: 5px solid ${(props) => props.color};
   background-image: linear-gradient(to top, #fafafa 0, #fdfdfd 20%, #fff 60%);
   -moz-box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
   -webkit-box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
@@ -26,7 +26,7 @@ const Container = styled.div`
 
 const ProjectTitle = styled.h2`
   margin: 0.5rem 0 1rem;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   a {
   }
 `;
@@ -49,13 +49,13 @@ const Button = styled.button`
   width: 90%;
   border-radius: 3px;
   background-color: white;
-  border: 1px solid ${props => props.color};
+  border: 1px solid ${(props) => props.color};
   padding: 0.5rem 0.8rem;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   transition: all 0.4s ease;
   :hover {
     color: white;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
   }
   :active {
     outline: none;
@@ -69,7 +69,7 @@ const Button = styled.button`
 const ProjectListing = ({ project }) => (
   <Card color={project.frontmatter.color}>
     <Container>
-      <Link to={project.fields.slug}>
+      <Link to={project.slug}>
         <ProjectTitle color={project.frontmatter.color}>
           {project.frontmatter.title}
         </ProjectTitle>
@@ -81,7 +81,7 @@ const ProjectListing = ({ project }) => (
       />
       <ButtonList>
         <ButtonContainer>
-          <Link to={project.fields.slug}>
+          <Link to={project.slug}>
             <Button color={project.frontmatter.color}>Read</Button>
           </Link>
         </ButtonContainer>

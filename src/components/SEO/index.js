@@ -9,7 +9,7 @@ import atrostLogo from "../../../src/images/logo-2048.png";
 import alexHeadshot from "../../../src/images/alexheadshot.jpg";
 import parse from "date-fns/parse";
 
-export default ({ postNode, postPath, postSEO, aboutSEO }) => {
+const SEO = ({ postNode, postPath, postSEO, aboutSEO }) => {
   let title;
   let description;
   let datePublished;
@@ -31,7 +31,8 @@ export default ({ postNode, postPath, postSEO, aboutSEO }) => {
     datePublished = datePublishedObject.toISOString();
     image = urljoin(
       config.siteUrl,
-      postNode.frontmatter.image.childImageSharp.sizes.src
+      postNode.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback
+        .src
     );
   } else {
     title = config.siteTitle;
@@ -209,3 +210,5 @@ export default ({ postNode, postPath, postSEO, aboutSEO }) => {
     </Helmet>
   );
 };
+
+export default SEO;

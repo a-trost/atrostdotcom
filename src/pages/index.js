@@ -14,12 +14,8 @@ const IntroText = styled.p`
   line-height: 1.5;
 `;
 
-export default ({
-  data: { allMarkdownRemark, allFeedOverlapPodcast },
-  location,
-  history,
-}) => {
-  const blogpost = allMarkdownRemark.edges[0].node;
+const Page = ({ data: { allMdx }, location, history }) => {
+  const blogpost = allMdx.edges[0].node;
   return (
     <Layout location={location} history={history}>
       <SEO />
@@ -58,7 +54,7 @@ export default ({
         </p>
         <p>
           Check out my latest post,{" "}
-          <Link to={blogpost.fields.slug}>{blogpost.frontmatter.title}</Link>
+          <Link to={blogpost.slug}>{blogpost.frontmatter.title}</Link>
         </p>
       </FeatureSection>
       <FeatureSection
@@ -130,7 +126,7 @@ export const query = graphql`
         desc
       }
     }
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { type: { eq: "blog" } } }
       limit: 1
@@ -138,27 +134,24 @@ export const query = graphql`
       edges {
         node {
           id
-          fields {
-            slug
-          }
           frontmatter {
-            title
             date
+            title
             image {
               childImageSharp {
                 gatsbyImageData(
                   width: 800
                   tracedSVGOptions: { color: "rgb(43, 129, 200)" }
                   placeholder: TRACED_SVG
-                  layout: CONSTRAINED
                 )
               }
             }
           }
-          html
           excerpt(pruneLength: 180)
         }
       }
     }
   }
 `;
+
+export default Page;

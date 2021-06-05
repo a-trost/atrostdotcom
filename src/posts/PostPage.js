@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import SEO from "../components/SEO";
 import NewsletterSignup from "../components/NewsletterSignup";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const BlogCoverImage = styled(GatsbyImage)`
   border-radius: 10px;
@@ -32,9 +33,11 @@ const BlogContent = styled.div`
   display: flex;
   width: 100%;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   p,
+  ul,
+  ol,
   h1,
   h2,
   h3,
@@ -43,8 +46,16 @@ const BlogContent = styled.div`
   h6 {
     max-width: 680px;
     width: 100%;
+    fill: transparent;
   }
 
+  h2:hover,
+  h3:hover,
+  h4:hover,
+  h5:hover,
+  h6:hover {
+    fill: #444;
+  }
   blockquote {
     border-left: 3px solid #3db3ea;
     padding-top: 1rem;
@@ -67,36 +78,45 @@ const BlogContent = styled.div`
     max-width: 680px;
     margin-bottom: 2rem;
   }
+
+  a.anchor.before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-100%) translateY(-55%) scale(1.4) rotate(-35deg);
+    transition: all 0.2s ease-in-out;
+    padding: 0.5rem;
+    width: 36px;
+  }
+
+  .anchor.before:hover {
+    fill: #2670bd;
+  }
 `;
 
-export default class PostPage extends Component {
-  render() {
-    const { data, location, history, pageContext } = this.props;
-    const { slug } = pageContext;
-    const postNode = data.markdownRemark;
-    const post = postNode.frontmatter;
-    if (!data) return null;
-    return (
-      <Layout location={location} history={history} pageData={post}>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <BlogCoverImage
-          sizes={post.image.childImageSharp.sizes}
-          alt={post.title}
-        />
-        <BlogDate>{post.date}</BlogDate>
-        {/* <TableOfContents
-          tableOfContents={data.markdownRemark.tableOfContents}
+const PostPage = ({ data, location, history, pageContext }) => {
+  const { slug } = pageContext;
+  const postNode = data.mdx;
+  const post = postNode.frontmatter;
+  const headerImage = getImage(post.image);
+  if (!data) return null;
+  return (
+    <Layout location={location} history={history} pageData={post}>
+      <SEO postPath={slug} postNode={postNode} postSEO />
+      <BlogCoverImage image={headerImage} alt={post.title} />
+      <BlogDate>{post.date}</BlogDate>
+      {/* <TableOfContents
+          tableOfContents={data.mdx.tableOfContents}
         /> */}
-        <BlogWrapper>
-          <BlogContent
-            dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-          />
-        </BlogWrapper>
-        <NewsletterSignup />
-      </Layout>
-    );
-  }
-}
+      <BlogWrapper>
+        <BlogContent>
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        </BlogContent>
+      </BlogWrapper>
+      <NewsletterSignup />
+    </Layout>
+  );
+};
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -106,8 +126,8 @@ export const query = graphql`
         desc
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(slug: { eq: $slug }) {
+      body
       timeToRead
       tableOfContents
       frontmatter {
@@ -115,7 +135,7 @@ export const query = graphql`
         date(formatString: "MMMM Do, YYYY")
         image {
           childImageSharp {
-            gatsbyImageData(width: 1024)
+            gatsbyImageData(quality: 90, width: 1024)
           }
         }
         desc
@@ -123,3 +143,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default PostPage;

@@ -30,8 +30,8 @@ const Projects = ({ data, location, history, match }) => (
     <SEO />
     <h1>Projects</h1>
     <ProjectContainer>
-      {data.allMarkdownRemark
-        ? data.allMarkdownRemark.edges.map(({ node }) => (
+      {data.allMdx
+        ? data.allMdx.edges.map(({ node }) => (
             <ProjectsListing key={node.id} project={node} />
           ))
         : "Couldn't find any Projects."}
@@ -50,7 +50,7 @@ export const query = graphql`
       }
     }
 
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { type: { eq: "project" } } }
     ) {
@@ -75,7 +75,7 @@ export const query = graphql`
             color
             blurb
           }
-          html
+
           excerpt(pruneLength: 280)
         }
       }

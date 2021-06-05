@@ -100,14 +100,11 @@ export default function TILCard(props) {
         <p className="date">{date}</p>
         <Tags>
           <span className="label">TAGS: </span>
-          {tags && tags.map(tag => <span className="tag">{tag}</span>)}
+          {tags && tags.map((tag) => <span className="tag">{tag}</span>)}
         </Tags>
-        <article
-          className="content"
-          dangerouslySetInnerHTML={{
-            __html: content.childMarkdownRemark.html,
-          }}
-        />
+        <article className="content">
+          <MDXRenderer>{content.mdx.body}</MDXRenderer>
+        </article>
       </Card>
     </Container>
   );

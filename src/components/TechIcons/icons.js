@@ -1,6 +1,6 @@
 import React from "react";
 
-export default props => {
+const Icon = (props) => {
   return (
     <svg
       aria-labelledby={`simpleicons-${props.string}-icon`}
@@ -9,7 +9,7 @@ export default props => {
       width={props.width ? props.width : "50px"}
       height={props.height ? props.height : "50px"}
     >
-      {iconData[props.string.toLowerCase()].map(d => (
+      {iconData[props.string.toLowerCase()].map((d) => (
         <path fill={props.fill || "#0063c6"} d={d} />
       ))}
       <title>{props.string}</title>
@@ -57,3 +57,5 @@ const iconData = {
     "M3.89 15.67L6.25.47A.54.54 0 0 1 7.28.28l2.54 4.77L3.9 15.67zm16.8 3.7l-2.26-14a.54.54 0 0 0-.91-.3l-14.2 14.3 7.85 4.42a1.62 1.62 0 0 0 1.59 0l7.93-4.43zM14.3 7.14l-1.82-3.48a.54.54 0 0 0-.96 0L3.53 17.98 14.3 7.15z",
   ],
 };
+
+export default Icon;

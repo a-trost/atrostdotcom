@@ -4,14 +4,13 @@ import ContactThanks from "../components/Contact/thanks";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-export default ({ data, location, history }) => (
+const Page = ({ data, location, history }) => (
   <Layout
     location={location}
     history={history}
     pageData={{
       title: "Thanks for reaching out!",
-      desc:
-        "Just a thank you page for after a contact form has been submitted.",
+      desc: "Just a thank you page for after a contact form has been submitted.",
     }}
   >
     <SEO />
@@ -29,3 +28,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default Page;

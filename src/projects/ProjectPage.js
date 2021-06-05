@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import TechIcons from "../components/TechIcons";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const ProjectHeader = styled.h1`
   margin:20px;
@@ -31,22 +32,22 @@ export default class ProjectPage extends Component {
         location={location}
         history={history}
         pageData={{
-          title: data.markdownRemark.frontmatter.title,
-          desc: data.markdownRemark.frontmatter.desc,
+          title: data.mdx.frontmatter.title,
+          desc: data.mdx.frontmatter.desc,
         }}
       >
-        <ProjectHeader>{data.markdownRemark.frontmatter.title}</ProjectHeader>
+        <ProjectHeader>{data.mdx.frontmatter.title}</ProjectHeader>
         <TechIcons
-          tech={data.markdownRemark.frontmatter.tech}
-          color={data.markdownRemark.frontmatter.color}
+          tech={data.mdx.frontmatter.tech}
+          color={data.mdx.frontmatter.color}
         />
-        {data.markdownRemark.frontmatter.image && (
+        {data.mdx.frontmatter.image && (
           <ProjectCoverImage
-            sizes={data.markdownRemark.frontmatter.image.childImageSharp.sizes}
-            alt={data.markdownRemark.frontmatter.title}
+            sizes={data.mdx.frontmatter.image.childImageSharp.sizes}
+            alt={data.mdx.frontmatter.title}
           />
         )}
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </Layout>
     );
   }
@@ -54,8 +55,8 @@ export default class ProjectPage extends Component {
 
 export const query = graphql`
   query ProjectQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         tech

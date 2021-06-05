@@ -1,4 +1,5 @@
 import { graphql, StaticQuery } from "gatsby";
+import { MDXProvider } from "@mdx-js/react";
 import "prismjs/themes/prism.css";
 import React from "react";
 import styled from "styled-components";
@@ -46,15 +47,17 @@ const Layout = ({
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const seo = data.site.siteMetadata;
       return (
         <>
-          <Container>
-            <Header data={data} siteTitle={seo.title} location={location} />
-            <ChildWrapper>{children}</ChildWrapper>
-            <Footer />
-          </Container>
+          <MDXProvider>
+            <Container>
+              <Header data={data} siteTitle={seo.title} location={location} />
+              <ChildWrapper>{children}</ChildWrapper>
+              <Footer />
+            </Container>
+          </MDXProvider>
         </>
       );
     }}

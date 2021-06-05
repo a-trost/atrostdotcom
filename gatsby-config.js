@@ -48,18 +48,6 @@ module.exports = {
         omitGoogleFont: true,
       },
     },
-
-    // {
-    //   resolve: "gatsby-transformer-remark",
-    //   options: {
-    //     excerpt_separator: `<!-- end -->`,
-    //     plugins: [
-    //       `gatsby-remark-autolink-headers`,
-    //       `gatsby-remark-prismjs`,
-    //       `gatsby-remark-copy-linked-files`,
-    //     ],
-    //   },
-    // },
     "gatsby-transformer-sharp",
     "gatsby-remark-copy-linked-files",
     "gatsby-remark-smartypants",
@@ -68,6 +56,23 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+            },
+          },
+          `gatsby-remark-autolink-headers`,
           "gatsby-remark-smartypants",
           "gatsby-remark-copy-linked-files",
           {
