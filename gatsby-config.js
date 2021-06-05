@@ -15,12 +15,18 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-mdx`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "src",
         path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "img",
+        path: `${__dirname}/src/images`,
       },
     },
 
@@ -42,27 +48,37 @@ module.exports = {
         omitGoogleFont: true,
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "img",
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        excerpt_separator: `<!-- end -->`,
-        plugins: [
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-        ],
-      },
-    },
+
+    // {
+    //   resolve: "gatsby-transformer-remark",
+    //   options: {
+    //     excerpt_separator: `<!-- end -->`,
+    //     plugins: [
+    //       `gatsby-remark-autolink-headers`,
+    //       `gatsby-remark-prismjs`,
+    //       `gatsby-remark-copy-linked-files`,
+    //     ],
+    //   },
+    // },
     "gatsby-transformer-sharp",
     "gatsby-remark-copy-linked-files",
     "gatsby-remark-smartypants",
+
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-smartypants",
+          "gatsby-remark-copy-linked-files",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -99,6 +115,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
   ],
 };

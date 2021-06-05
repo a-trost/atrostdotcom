@@ -35,7 +35,6 @@
     "gatsby-remark-smartypants": "^4.3.0",
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-source-rss-feed": "^1.2.2",
-    "gatsby-transformer-remark": "^4.3.0",
     "gatsby-transformer-sharp": "^3.6.0",
     "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",
