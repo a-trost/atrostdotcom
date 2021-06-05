@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import TechIcons from "../components/TechIcons";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const ProjectHeader = styled.h1`
   margin:20px;
@@ -16,7 +16,7 @@ const ProjectHeader = styled.h1`
   text-align:center;
 `;
 
-const ProjectCoverImage = styled(Img)`
+const ProjectCoverImage = styled(GatsbyImage)`
   border-radius: 10px;
   height: auto;
   width: 100%;

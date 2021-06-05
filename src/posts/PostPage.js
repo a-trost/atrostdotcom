@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import SEO from "../components/SEO";
 import NewsletterSignup from "../components/NewsletterSignup";
 
-const BlogCoverImage = styled(Img)`
+const BlogCoverImage = styled(GatsbyImage)`
   border-radius: 10px;
   margin-bottom: 1rem;
 `;

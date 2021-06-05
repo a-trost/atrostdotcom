@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const ImageContainer = styled.div`
   display: block;
@@ -10,7 +10,7 @@ const ImageContainer = styled.div`
   display: block;
 `;
 
-const CoverImage = styled(Img)`
+const CoverImage = styled(GatsbyImage)`
   position: relative;
   height: auto;
   width: auto;
@@ -45,7 +45,7 @@ const PostListing = ({ post }) => {
       <Link to={post.fields.slug}>
         <ImageContainer>
           <CoverImage
-            fluid={post.frontmatter.image.childImageSharp.fluid}
+            fluid={post.frontmatter.image.childImageSharp.gatsbyImageData}
             alt={post.frontmatter.title}
             title={post.frontmatter.title}
           />

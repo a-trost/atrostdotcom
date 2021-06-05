@@ -1,4 +1,4 @@
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
 
@@ -99,12 +99,11 @@ export default ({ imageUrl, gatsbyImage, itemTitle, styleNumber = 1 }) => (
     </svg>
     {gatsbyImage && (
       <div className="image-border">
-        <Img
+        <GatsbyImage
+          image={gatsbyImage.gatsbyImageData}
           className="image"
-          fluid={gatsbyImage.fluid}
           alt={itemTitle}
-          title={itemTitle}
-        />
+          title={itemTitle} />
       </div>
     )}
     {imageUrl && (

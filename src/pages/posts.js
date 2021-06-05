@@ -41,41 +41,42 @@ const IndexPage = ({ data, location, history }) => (
 
 export default IndexPage;
 
-export const query = graphql`
-  query BlogData {
-    site {
-      siteMetadata {
-        title
-        desc
-      }
+export const query = graphql`query BlogData {
+  site {
+    siteMetadata {
+      title
+      desc
     }
-
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { type: { eq: "blog" } } }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date
-            image {
-              childImageSharp {
-                fluid(maxWidth: 800, traceSVG: { color: "rgb(43, 129, 200)" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-            desc
-          }
-          html
-          excerpt(pruneLength: 280)
+  }
+  allMarkdownRemark(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {frontmatter: {type: {eq: "blog"}}}
+  ) {
+    edges {
+      node {
+        id
+        fields {
+          slug
         }
+        frontmatter {
+          title
+          date
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                width: 800
+                traceSVG: {color: "rgb(43, 129, 200)"}
+                placeholder: TRACED_SVG
+                layout: CONSTRAINED
+              )
+            }
+          }
+          desc
+        }
+        html
+        excerpt(pruneLength: 280)
       }
     }
   }
+}
 `;

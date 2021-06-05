@@ -120,40 +120,42 @@ export default ({
   );
 };
 
-export const query = graphql`
-  query SiteMeta {
-    site {
-      siteMetadata {
-        title
-        desc
-      }
+export const query = graphql`query SiteMeta {
+  site {
+    siteMetadata {
+      title
+      desc
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { type: { eq: "blog" } } }
-      limit: 1
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date
-            image {
-              childImageSharp {
-                fluid(maxWidth: 800, traceSVG: { color: "rgb(43, 129, 200)" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
+  }
+  allMarkdownRemark(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {frontmatter: {type: {eq: "blog"}}}
+    limit: 1
+  ) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                width: 800
+                traceSVG: {color: "rgb(43, 129, 200)"}
+                placeholder: TRACED_SVG
+                layout: CONSTRAINED
+              )
             }
           }
-          html
-          excerpt(pruneLength: 180)
         }
+        html
+        excerpt(pruneLength: 180)
       }
     }
   }
+}
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../../components/Layout";
 import LinkCard from "../../components/LinkCard";
 import SEO from "../../components/SEO";
@@ -98,11 +98,10 @@ const About = ({ data, location, history }) => (
         </p>
       </div>
       <div className="pictureContainer">
-        <Img
+        <GatsbyImage
+          image={data.alexpicture.childImageSharp.gatsbyImageData}
           className="picture"
-          fluid={data.alexpicture.childImageSharp.fluid}
-          alt="Alex Trost"
-        />
+          alt="Alex Trost" />
       </div>
     </AboutLayout>
 
@@ -113,16 +112,18 @@ const About = ({ data, location, history }) => (
   </Layout>
 );
 
-export const query = graphql`
-  query AboutQuery {
-    alexpicture: file(relativePath: { eq: "images/alexheadshot.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 900, traceSVG: { color: "rgb(43, 129, 200)" }) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
+export const query = graphql`query AboutQuery {
+  alexpicture: file(relativePath: {eq: "images/alexheadshot.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 900
+        traceSVG: {color: "rgb(43, 129, 200)"}
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
     }
   }
+}
 `;
 
 export default About;
