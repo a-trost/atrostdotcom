@@ -16,4 +16,5 @@ export default ({ to, children, ...props }) => {
         {children}
       </Link>
     );
+  return <div {...props}>{children}</div>;
 };
