@@ -29,11 +29,15 @@ const SEO = ({ postNode, postPath, postSEO, aboutSEO }) => {
       new Date()
     );
     datePublished = datePublishedObject.toISOString();
-    image = urljoin(
-      config.siteUrl,
-      postNode.frontmatter.image.childImageSharp.gatsbyImageData.images.fallback
-        .src
-    );
+    if (postNode.frontmatter.image) {
+      image = urljoin(
+        config.siteUrl,
+        postNode.frontmatter.image?.childImageSharp.gatsbyImageData.images
+          .fallback.src
+      );
+    } else {
+      image = urljoin(config.siteUrl, image);
+    }
   } else {
     title = config.siteTitle;
     description = config.siteDescription;

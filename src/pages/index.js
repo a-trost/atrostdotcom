@@ -43,7 +43,7 @@ const Page = ({ data: { allMdx }, location, history }) => {
       <FeatureSection
         reverse
         sectionTitle="Blog"
-        gatsbyImage={blogpost.frontmatter.image.childImageSharp}
+        gatsbyImage={blogpost.frontmatter.image?.childImageSharp}
         ctaText="Go to Blog"
         ctaLink="/posts"
         styleNumber={1}
