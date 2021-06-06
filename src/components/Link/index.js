@@ -10,5 +10,10 @@ export default ({ to, children, ...props }) => {
       </a>
     );
   }
-  return <Link {...props}>{children}</Link>;
+  if (to)
+    return (
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    );
 };
