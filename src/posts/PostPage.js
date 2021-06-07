@@ -162,7 +162,7 @@ const PostPage = ({ data, location, history, pageContext }) => {
               {post.date}
             </p>
           )}
-          {post.tags.length && (
+          {post.tags?.length && (
             <div className="blog-tags-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
