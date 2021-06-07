@@ -106,13 +106,6 @@ module.exports = {
         respectDNT: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        color: `#15B3EA`,
-        showSpinner: false,
-      },
-    },
     `gatsby-plugin-netlify`,
   ],
 };
