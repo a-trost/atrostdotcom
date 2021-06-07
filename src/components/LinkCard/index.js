@@ -13,18 +13,17 @@ const Card = styled.button`
   box-sizing: border-box;
   position: relative;
   border: 1px solid lightgrey;
-  border-radius: .75rem;
+  border-radius: 0.75rem;
 
   flex-flow: column nowrap;
   background-image: linear-gradient(to top, #fafafa 0, #fdfdfd 20%, #fff 60%);
-  -moz-box-shadow:  5px 5px 10px 0 rgba(46, 61, 73, 0.15);
-  -webkit-box-shadow:  5px 5px 10px 0 rgba(46, 61, 73, 0.15);
+  -moz-box-shadow: 5px 5px 10px 0 rgba(46, 61, 73, 0.15);
+  -webkit-box-shadow: 5px 5px 10px 0 rgba(46, 61, 73, 0.15);
   box-shadow: 5px 5px 10px 0 rgba(46, 61, 73, 0.15);
   border-radius: 0.5rem;
   transition: all 0.4s ease;
-  
-}
-:hover {
+
+  :hover {
     -moz-box-shadow: 1px 1px 10px 0 rgba(46, 61, 73, 0.1);
     -webkit-box-shadow: 1px 1px 10px 0 rgba(46, 61, 73, 0.1);
     box-shadow: 1px 1px 10px 0 rgba(46, 61, 73, 0.1);
@@ -61,20 +60,20 @@ const Card = styled.button`
     line-height: 1;
   }
 
-  @media all and (max-width: 700px){
-  height: 125px;
+  @media all and (max-width: 700px) {
+    height: 125px;
     .subheading {
-    letter-spacing: 4px;
-    line-height: 1.1;
-    font-size: 15px;
-  }
+      letter-spacing: 4px;
+      line-height: 1.1;
+      font-size: 15px;
+    }
     .heading {
-    font-size: 33px;
-  }
+      font-size: 33px;
+    }
   }
 `;
 
-const handleClick = path => {
+const handleClick = (path) => {
   navigate(path);
 };
 
