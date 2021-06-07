@@ -7,18 +7,52 @@ import SEO from "../components/SEO";
 import NewsletterSignup from "../components/NewsletterSignup";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-const BlogCoverImage = styled(GatsbyImage)`
-  border-radius: 10px;
-  margin-bottom: 1rem;
-`;
+const HeaderSection = styled.div`
+  margin-bottom: 3rem;
+  @media all and (min-width: 600px) {
+    margin-bottom: 5rem;
+  }
+  .blog-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.75rem;
+    @media all and (min-width: 600px) {
+      font-size: 3.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+  .stat-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .blog-date {
+    line-height: 0.9rem;
+    color: #2c7096;
+    font-size: 0.9rem;
+    max-width: unset;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+  .blog-tags-container {
+    display: flex;
+    align-items: center;
 
-const BlogDate = styled.p`
-  line-height: 0.9rem;
-  color: #aaa;
-  font-size: 0.9rem;
-  text-align: center;
-  max-width: unset;
-  margin-bottom: 2rem;
+    span {
+      font-size: 14px;
+      color: #2c7096;
+      font-weight: 700;
+      background-color: #e6f6ff;
+      padding: 6px 12px;
+      line-height: 1;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+  }
+
+  .info-icon {
+    margin-right: 0.5rem;
+  }
 `;
 
 const BlogWrapper = styled.article`
@@ -103,8 +137,56 @@ const PostPage = ({ data, location, history, pageContext }) => {
   return (
     <Layout location={location} history={history} pageData={post}>
       <SEO postPath={slug} postNode={postNode} postSEO />
-      <BlogCoverImage image={headerImage} alt={post.title} />
-      <BlogDate>{post.date}</BlogDate>
+
+      <HeaderSection>
+        <h1 className="blog-title">{post.title}</h1>
+        <div className="stat-container">
+          {post.date && (
+            <p className="blog-date">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="info-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                height="20"
+                width="20"
+                stroke="#368ab9"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>{" "}
+              {post.date}
+            </p>
+          )}
+          {post.tags.length && (
+            <div className="blog-tags-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="20"
+                width="20"
+                viewBox="0 0 24 24"
+                stroke="#368ab9"
+                fill="none"
+                className="info-icon"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                />
+              </svg>
+              {post.tags.map((tag) => (
+                <span>{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      </HeaderSection>
       {/* <TableOfContents
           tableOfContents={data.mdx.tableOfContents}
         /> */}
@@ -132,6 +214,7 @@ export const query = graphql`
       tableOfContents
       frontmatter {
         title
+        tags
         date(formatString: "MMMM Do, YYYY")
         image {
           childImageSharp {
