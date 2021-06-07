@@ -1,13 +1,23 @@
 ---
 title: Animating Complex Stock SVGs
-category: "Programming"
+tags:
+  - svg
+  - animation
+  - css
 image: header.png
 date: "2020-02-25"
 type: "blog"
 desc: "I'll show you how to name and group stock SVGs so they're much easier to animate."
 ---
 
-<iframe width="540" height="315" src="https://www.youtube-nocookie.com/embed/_i5w8XR-EXc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width="540"
+  height="315"
+  src="https://www.youtube-nocookie.com/embed/_i5w8XR-EXc"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 ---
 
@@ -297,9 +307,22 @@ We're going to use `scale` to shrink the photos at the beginning of the animatio
 
 `scale(0.6)` makes the group 60% of its original size. We take opacity from 0 to 1 for a nice quick fade in.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Animate Undraw Demo" src="https://codepen.io/a-trost/embed/preview/57319e224a801ffb380e23f0ba1d829e?height=387&theme-id=light&default-tab=css,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/a-trost/pen/57319e224a801ffb380e23f0ba1d829e'>Animate Undraw Demo</a> by Alex Trost
-  (<a href='https://codepen.io/a-trost'>@a-trost</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe
+  height="500"
+  style="width: 100%;"
+  scrolling="no"
+  title="Animate Undraw Demo"
+  src="https://codepen.io/a-trost/embed/preview/57319e224a801ffb380e23f0ba1d829e?height=387&theme-id=light&default-tab=css,result&editable=true"
+  frameborder="no"
+  allowtransparency="true"
+  allowfullscreen="true"
+>
+  See the Pen{" "}
+  <a href="https://codepen.io/a-trost/pen/57319e224a801ffb380e23f0ba1d829e">
+    Animate Undraw Demo
+  </a>{" "}
+  by Alex Trost (<a href="https://codepen.io/a-trost">@a-trost</a>) on{" "}
+  <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
 And that's it! You've now learned how to animate your organized SVG.
@@ -310,9 +333,22 @@ Now you can set the `animation-iteration-count` to 1 to not annoy your visitors.
 
 The intersection observer API tells us when an element is /intersecting/ with the viewport. In other words, the user can see it.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Undraw Animation - Intersection Observer" src="https://codepen.io/a-trost/embed/preview/4140942a16322638c64d0db721a63d38?height=465&theme-id=light&default-tab=result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/a-trost/pen/4140942a16322638c64d0db721a63d38'>Undraw Animation - Intersection Observer</a> by Alex Trost
-  (<a href='https://codepen.io/a-trost'>@a-trost</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe
+  height="500"
+  style="width: 100%;"
+  scrolling="no"
+  title="Undraw Animation - Intersection Observer"
+  src="https://codepen.io/a-trost/embed/preview/4140942a16322638c64d0db721a63d38?height=465&theme-id=light&default-tab=result&editable=true"
+  frameborder="no"
+  allowtransparency="true"
+  allowfullscreen="true"
+>
+  See the Pen{" "}
+  <a href="https://codepen.io/a-trost/pen/4140942a16322638c64d0db721a63d38">
+    Undraw Animation - Intersection Observer
+  </a>{" "}
+  by Alex Trost (<a href="https://codepen.io/a-trost">@a-trost</a>) on{" "}
+  <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
 It’s just a bit of boilerplate JavaScript:
@@ -320,8 +356,8 @@ It’s just a bit of boilerplate JavaScript:
 ```js
 const images = document.querySelectorAll(".illustration-to-animate");
 
-observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.intersectionRatio > 0) {
       entry.target.classList.add("animate");
     } else {
@@ -330,7 +366,7 @@ observer = new IntersectionObserver(entries => {
   });
 });
 
-images.forEach(image => {
+images.forEach((image) => {
   observer.observe(image);
 });
 ```
