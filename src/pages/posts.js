@@ -5,10 +5,11 @@ import PostListing from "../components/Posts/PostListing";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-const PostContainer = styled.div`
+const PostContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 35px;
+  margin-top: 40px;
   justify-items: stretch;
   margin-bottom: 40px;
 
@@ -74,7 +75,7 @@ export const query = graphql`
             }
             desc
           }
-          excerpt(pruneLength: 280)
+          excerpt(pruneLength: 220)
         }
       }
     }
