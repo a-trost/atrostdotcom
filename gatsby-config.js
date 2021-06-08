@@ -106,6 +106,7 @@ module.exports = {
         respectDNT: true,
       },
     },
+    `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-netlify`,
   ],
 };
