@@ -2,22 +2,24 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import SEO from "../components/SEO";
 import NewsletterSignup from "../components/NewsletterSignup";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const HeaderSection = styled.div`
+  max-width: 680px;
+  margin: auto;
   margin-bottom: 3rem;
   @media all and (min-width: 600px) {
     margin-bottom: 5rem;
   }
   .blog-title {
     font-size: 2.5rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
     @media all and (min-width: 600px) {
       font-size: 3.5rem;
-      margin-bottom: 3rem;
+      margin-bottom: 1.75rem;
     }
   }
   .stat-container {
@@ -28,7 +30,7 @@ const HeaderSection = styled.div`
   .blog-date {
     line-height: 0.9rem;
     color: #2c7096;
-    font-size: 0.9rem;
+    font-size: 14px;
     max-width: unset;
     margin-bottom: 0;
     display: flex;
