@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="social-links">
           <ul>
             <li>
-              <a href="https://www.linkedin.com/in/mrtrost/">
+              <a href="https://www.linkedin.com/in/trostcodes/">
                 <SocialIcon
                   height="40"
                   width="40"
