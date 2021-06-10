@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import { Switch } from "@headlessui/react";
 import PostListing from "../components/Posts/PostListing";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
@@ -18,8 +19,68 @@ const PostContainer = styled.section`
   }
 `;
 
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .switch-group {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .switch-label {
+    margin-right: 0.8em;
+    font-size: 0.9em;
+    color: #666;
+    cursor: pointer;
+  }
+
+  .switch {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    height: 1.5em;
+    border-radius: 16px;
+    width: 2.75em;
+    transition: background-color 300ms, box-shadow 300ms;
+    border: none;
+    cursor: pointer;
+    background-color: #ccc;
+    &.on {
+      background-color: #1384b8;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #18baffcc;
+    }
+  }
+
+  .thumb {
+    display: inline-block;
+    margin: 0;
+    width: 1em;
+    height: 1em;
+    background: white;
+    border-radius: 50%;
+    transition: transform 300ms;
+    &.on {
+      transform: translateX(1.5em);
+    }
+    &.off {
+      transform: translateX(0.25em);
+    }
+  }
+`;
+
 const IndexPage = ({ data, location, history }) => {
-  console.log({ data });
+  const [showAllPosts, setShowAllPosts] = useState(false);
+  const allPosts = data.allMdx.edges;
   return (
     <Layout
       location={location}
@@ -31,11 +92,27 @@ const IndexPage = ({ data, location, history }) => {
     >
       <SEO />
       <div>
-        <h1>Recent Articles</h1>
+        <HeaderContainer>
+          <h1>Articles</h1>
+          <Switch.Group>
+            <div className="switch-group">
+              <Switch.Label className="switch-label">Show drafts</Switch.Label>
+              <Switch
+                checked={showAllPosts}
+                onChange={setShowAllPosts}
+                className={`${showAllPosts ? "on" : "off"} switch`}
+              >
+                <span className={`${showAllPosts ? "on" : "off"} thumb`} />
+              </Switch>
+            </div>
+          </Switch.Group>
+        </HeaderContainer>
         <PostContainer>
-          {data.allMdx.edges.map(({ node }) => (
-            <PostListing key={node.id} post={node} />
-          ))}
+          {allPosts
+            .filter(({ node }) => showAllPosts || node.frontmatter.published)
+            .map(({ node }) => (
+              <PostListing key={node.id} post={node} />
+            ))}
         </PostContainer>
       </div>
     </Layout>
@@ -54,13 +131,14 @@ export const query = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { type: { eq: "blog" }, published: { eq: true } } }
+      filter: { frontmatter: { type: { eq: "blog" } } }
     ) {
       edges {
         node {
           id
           slug
           frontmatter {
+            published
             title
             date
             image {

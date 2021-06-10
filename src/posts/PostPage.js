@@ -12,6 +12,8 @@ const HeaderSection = styled.div`
   margin: auto;
   width: 100%;
   margin-bottom: 3rem;
+  position: relative;
+
   @media all and (min-width: 600px) {
     margin-bottom: 5rem;
   }
@@ -57,6 +59,21 @@ const HeaderSection = styled.div`
 
   .info-icon {
     margin-right: 0.5rem;
+  }
+
+  .draft {
+    position: absolute;
+    top: -2px;
+    left: -8px;
+    transform: rotate(-13deg);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #ffc700;
+    color: #444;
+    padding: 8px 10px;
+    line-height: 1;
+    border-radius: 4px;
   }
 `;
 
@@ -144,6 +161,7 @@ const PostPage = ({ data, location, history, pageContext }) => {
       <SEO postPath={slug} postNode={postNode} postSEO />
 
       <HeaderSection>
+        {!post.published && <p className="draft">Draft</p>}
         <h1 className="blog-title">{post.title}</h1>
         <div className="stat-container">
           {post.date && (
@@ -218,6 +236,7 @@ export const query = graphql`
       timeToRead
       tableOfContents
       frontmatter {
+        published
         title
         tags
         date(formatString: "MMMM Do, YYYY")

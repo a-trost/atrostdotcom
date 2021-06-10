@@ -16,6 +16,7 @@ const Card = styled.article`
   box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
   border-radius: 0.5rem;
   transition: all 0.4s ease;
+  position: relative;
   :hover {
     -moz-box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.2);
     -webkit-box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.2);
@@ -55,6 +56,20 @@ const Card = styled.article`
       width: 20px;
     }
   }
+
+  .draft {
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    transform: rotate(-13deg);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #ffc700;
+    color: #444;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
 `;
 
 const PostListing = ({ post }) => {
@@ -73,6 +88,7 @@ const PostListing = ({ post }) => {
       <Link to={slug}>
         <h3>{post.frontmatter.title}</h3>
       </Link>
+      {!post.frontmatter.published && <p className="draft">Draft</p>}
       <p>{post.excerpt}</p>
 
       <p className="read-on">
