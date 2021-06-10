@@ -5,6 +5,7 @@ import React from "react";
 import styled from "styled-components";
 import Footer from "../Footer";
 import Header from "../Header";
+import components from "../mdx";
 
 import "./index.css";
 
@@ -51,7 +52,7 @@ const Layout = ({
       const seo = data.site.siteMetadata;
       return (
         <>
-          <MDXProvider>
+          <MDXProvider components={components}>
             <Container>
               <Header data={data} siteTitle={seo.title} location={location} />
               <ChildWrapper>{children}</ChildWrapper>
