@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Alex Trost <alexrtrost@gmail.com>",
   "dependencies": {
+    "@headlessui/react": "^1.2.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@mdx-js/tag": "^0.20.3",
