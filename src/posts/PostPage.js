@@ -10,12 +10,14 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 const HeaderSection = styled.div`
   max-width: 680px;
   margin: auto;
+  width: 100%;
   margin-bottom: 3rem;
   @media all and (min-width: 600px) {
     margin-bottom: 5rem;
   }
   .blog-title {
     font-size: 2.5rem;
+    width: 100%;
     margin-bottom: 1.25rem;
     @media all and (min-width: 600px) {
       font-size: 3.5rem;
@@ -24,6 +26,7 @@ const HeaderSection = styled.div`
   }
   .stat-container {
     display: flex;
+    width: 100%;
     gap: 2rem;
     align-items: center;
   }
