@@ -25,18 +25,6 @@ const hues = {
     800: "#92400E",
     900: "#78350F",
   },
-  gray: {
-    50: "#F8FAFC",
-    100: "#F1F5F9",
-    200: "#E2E8F0",
-    300: "#CBD5E1",
-    400: "#94A3B8",
-    500: "#64748B",
-    600: "#475569",
-    700: "#334155",
-    800: "#1E293B",
-    900: "#0F172A",
-  },
   green: {
     50: "#F7FEE7",
     100: "#ECFCCB",
@@ -73,6 +61,19 @@ const hues = {
     800: "#86198F",
     900: "#701A75",
   },
+  gray: {
+    50: "#F8FAFC",
+    100: "#F1F5F9",
+    200: "#E2E8F0",
+    300: "#CBD5E1",
+    400: "#94A3B8",
+    500: "#64748B",
+    600: "#475569",
+    700: "#334155",
+    800: "#1E293B",
+    900: "#0F172A",
+    1000: "#060a12",
+  },
 };
 
 const primary = "#1391C6";
@@ -84,6 +85,15 @@ const assignments = {
   primary: hues.blue[450],
   secondary: hues.yellow[650],
   tertiary: hues.green[400],
+  decorative: hues.fuschia[400],
+  muted: hues.blue[100],
+  info: hues.blue[300],
+  error: hues.red[400],
+  errorBackground: hues.red[100],
+  success: hues.green[400],
+  successBackground: hues.green[100],
+  warning: hues.yellow[400],
+  warningBackground: hues.yellow[100],
 };
 
 export default { ...assignments, ...hues };
