@@ -64,3 +64,14 @@ exports.createPages = ({ graphql, actions }) => {
     });
   });
 };
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src/components"),
+        "@constants": path.resolve(__dirname, "src/constants"),
+      },
+    },
+  });
+};

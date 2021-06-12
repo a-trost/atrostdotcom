@@ -1,9 +1,13 @@
 import Typography from "typography";
 import noriegaTheme from "typography-theme-noriega";
 
-noriegaTheme.headerFontFamily = ["Raleway", "Helvetica Neue", "sans-serif"];
+noriegaTheme.headerFontFamily = [
+  "InterVariable",
+  "Helvetica Neue",
+  "sans-serif",
+];
 
-noriegaTheme.bodyFontFamily = ["Open Sans", "Helvetica Neue", "sans-serif"];
+noriegaTheme.bodyFontFamily = ["InterVariable", "Helvetica Neue", "sans-serif"];
 
 noriegaTheme.headerWeight = "300";
 noriegaTheme.headerGray = "80";

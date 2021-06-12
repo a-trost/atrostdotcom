@@ -15,8 +15,8 @@ const Container = styled.div`
 
 const Sidebar = styled.div`
   align-self: center;
-  font-family: Raleway;
-  font-weight: 700;
+  font-family: InterVariable;
+  font-variation-settings: var(--font-bold);
   font-size: 2.4rem;
   color: hsl(0, 0%, 80%);
   text-align: center;

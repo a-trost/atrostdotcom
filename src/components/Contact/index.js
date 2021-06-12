@@ -24,7 +24,7 @@ const FormHalf = styled.div`
 `;
 
 const Input = styled.input`
-  font-family: Raleway, sans-serif;
+  font-family: InterVariable, sans-serif;
   font-size: 1.1rem;
   color: #333;
   width: 100%;
@@ -44,7 +44,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  font-family: Raleway, sans-serif;
+  font-family: InterVariable, sans-serif;
   font-size: 1.1rem;
   color: #333;
   display: block;
@@ -68,8 +68,9 @@ const TextArea = styled.textarea`
 const Button = styled.button`
   font-size: 1.2rem;
   color: #fff;
-  font-family: Raleway, sans-serif;
-  font-weight: 200;
+  font-family: InterVariable, sans-serif;
+  font-variation-settings: var(--font-light);
+
   letter-spacing: 2pt;
   cursor: pointer;
   width: 100%;
@@ -98,7 +99,7 @@ const Button = styled.button`
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
 }
 
@@ -108,11 +109,11 @@ export default class Contact extends React.Component {
     this.state = {};
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     fetch("/", {
@@ -124,7 +125,7 @@ export default class Contact extends React.Component {
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
-      .catch(error => alert(error));
+      .catch((error) => alert(error));
   };
 
   render() {

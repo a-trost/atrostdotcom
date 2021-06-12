@@ -48,7 +48,7 @@ const HeaderSection = styled.div`
     span {
       font-size: 14px;
       color: #2c7096;
-      font-weight: 700;
+      font-variation-settings: var(--font-bold);
       background-color: #e6f6ff;
       padding: 6px 12px;
       line-height: 1;
@@ -68,7 +68,7 @@ const HeaderSection = styled.div`
     transform: rotate(-13deg);
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: 700;
+    font-variation-settings: var(--font-bold);
     background-color: #ffc700;
     color: #444;
     padding: 8px 10px;

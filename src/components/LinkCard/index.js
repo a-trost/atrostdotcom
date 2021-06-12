@@ -41,9 +41,9 @@ const Card = styled.button`
   }
 
   .subheading {
-    font-family: Raleway;
+    font-family: InterVariable;
     text-transform: uppercase;
-    font-weight: 300;
+    font-variation-settings: var(--font-light);
     letter-spacing: 6px;
     line-height: 1.1;
     font-size: 18px;
@@ -51,9 +51,9 @@ const Card = styled.button`
   }
 
   .heading {
-    font-family: Raleway;
+    font-family: InterVariable;
     text-transform: capitalize;
-    font-weight: 700;
+    font-variation-settings: var(--font-bold);
     color: #219fed;
     font-size: 45px;
     text-align: left;

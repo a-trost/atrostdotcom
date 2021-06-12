@@ -25,9 +25,9 @@ const Footer = () => {
       margin: 1rem;
       border-top: 2px solid #dedede;
       padding: 40px 20px;
-      font-family: "Raleway";
+      font-family: "InterVariable";
       font-size: 1.1rem;
-      font-weight: 300;
+      font-variation-settings: var(--font-light);
       display: grid;
       grid-template-columns: auto;
       grid-template-rows: auto auto auto auto;
@@ -50,7 +50,7 @@ const Footer = () => {
           padding: 1px 5px;
           font-size: 17px;
           margin: 0;
-          font-family: "Raleway";
+          font-family: "InterVariable";
           letter-spacing: 0.6px;
         }
       }
@@ -82,8 +82,7 @@ const Footer = () => {
       grid-area: copyright;
       font-size: 0.8rem;
       line-height: 0.8rem;
-      font-weight: 400;
-      font-family: "Open Sans";
+      font-variation-settings: var(--font-medium);
       color: #777;
     }
     @media all and (min-width: 700px) {
@@ -166,7 +165,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="copyright">
-          <span>© 2018-2019 Alex Trost</span>
+          <span>© 2018-2021 Alex Trost</span>
         </div>
       </div>
     </FooterContainer>

@@ -6,8 +6,7 @@ import styled from "styled-components";
 import Footer from "../Footer";
 import Header from "../Header";
 import components from "../mdx";
-
-import "./index.css";
+import GlobalStyles from "../GlobalStyles";
 
 const Container = styled.div`
   min-height: 100%;
@@ -57,6 +56,7 @@ const Layout = ({
               <Header data={data} siteTitle={seo.title} location={location} />
               <ChildWrapper>{children}</ChildWrapper>
               <Footer />
+              <GlobalStyles />
             </Container>
           </MDXProvider>
         </>

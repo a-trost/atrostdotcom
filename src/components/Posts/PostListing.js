@@ -17,6 +17,7 @@ const Card = styled.article`
   border-radius: 0.5rem;
   transition: all 0.4s ease;
   position: relative;
+  transform: rotate(calc(1deg * var(--card-rotation)));
   :hover {
     -moz-box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.2);
     -webkit-box-shadow: 2px 2px 25px 0 rgba(46, 61, 73, 0.2);
@@ -26,20 +27,20 @@ const Card = styled.article`
   h3 {
     margin-top: 0;
     font-size: 24px;
-    font-weight: 600;
+    font-variation-settings: var(--font-semibold);
     line-height: 1.3;
     margin-bottom: 2rem;
   }
   p {
     font-size: 16px;
     line-height: 1.5;
-    color: #555;
+    color: var(--color-text);
   }
 
   .read-on {
     font-size: 18px;
-    font-weight: 600;
-    color: #2281c8;
+    font-variation-settings: var(--font-semibold);
+    color: var(--color-primary);
     display: flex;
     justify-content: start;
     align-items: center;
@@ -64,9 +65,9 @@ const Card = styled.article`
     transform: rotate(-13deg);
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: 700;
+    font-variation-settings: var(--font-bold);
     background-color: #ffc700;
-    color: #444;
+    color: var(--color-gray-700);
     padding: 4px 10px;
     border-radius: 4px;
   }
@@ -84,6 +85,7 @@ const PostListing = ({ post }) => {
       onClick={() => {
         navigateTo(slug);
       }}
+      style={{ "--card-rotation": post.frontmatter.published ? 0 : "-3" }}
     >
       <Link to={slug}>
         <h3>{post.frontmatter.title}</h3>

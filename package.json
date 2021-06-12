@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Alex Trost <alexrtrost@gmail.com>",
   "dependencies": {
+    "@fontsource/inter": "^4.4.5",
     "@headlessui/react": "^1.2.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
@@ -67,6 +68,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "prettier": "^2.3.0"
   },
   "repository": {

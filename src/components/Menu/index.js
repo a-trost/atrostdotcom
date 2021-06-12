@@ -10,10 +10,10 @@ const Nav = styled.div`
   grid-area: nav;
   justify-self: end;
   align-self: end;
-  font-family: "Raleway", sans-serif;
+  font-family: "InterVariable", sans-serif;
   font-size: 1rem;
-  font-weight: 700;
-  letter-spacing:.5px;
+   font-variation-settings: var(--font-bold);
+  letter-spacing:0px;
   a {
     color: white;
     text-decoration: none;
@@ -109,7 +109,7 @@ const MobileNav = styled.div`
     width: 100vw;
     height: 100vh;
     background: #3192d3;
-    font-family: "Raleway", sans-serif;
+    font-family: "InterVariable", sans-serif;
     overflow: hidden;
     ul {
       list-style: none;

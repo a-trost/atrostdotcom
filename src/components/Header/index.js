@@ -84,9 +84,9 @@ const HeaderName = styled.div`
   .name {
     display: flex;
     color: white;
-    font-family: "Raleway", sans-serif;
+    font-family: "InterVariable", sans-serif;
     padding-left: 13px;
-    font-weight: 700;
+    font-variation-settings: var(--font-bold);
     font-size: 1.7rem;
     line-height: 1.7rem;
     margin: 0;
@@ -102,9 +102,9 @@ const HeaderName = styled.div`
     .title {
       display: flex;
       color: #eee;
-      font-family: "Raleway", sans-serif;
+      font-family: "InterVariable", sans-serif;
       padding-left: 13px;
-      font-weight: 400;
+      font-variation-settings: var(--font-regular);
       font-size: 1rem;
       line-height: 1rem;
       margin: 0;
@@ -136,17 +136,20 @@ const BgImage = styled.div`
 `;
 
 const IntroText = styled.div`
-  display: block;
+  display: grid;
   grid-area: intro-text;
-  animation: fadeAndScale 2s ease-in;
+  width: 100%;
+  grid-template-columns: 1fr minmax(300px, 850px) 1fr;
   color: white;
-  font-family: "Raleway", sans-serif;
+  font-family: "InterVariable", sans-serif;
   place-self: center;
-  h1 {
+  .intro {
+    grid-column: 2/3;
     font-size: 4rem;
     line-height: 4rem;
-    font-weight: 700;
+    font-variation-settings: "wght" var(--header-weight, 700), "slnt" 10;
     color: white;
+    animation: fadeIn 2s ease-in, addWeight 3s linear;
   }
   .rwd-line {
     display: block;
@@ -154,14 +157,16 @@ const IntroText = styled.div`
   }
   .subheader {
     font-size: 2rem;
-    font-weight: 300;
+    font-variation-settings: var(--font-light);
     line-height: 2rem;
     color: white;
+    animation: fadeIn 2s ease-in;
+    grid-column: 2/3;
   }
 
   /* Medium screens */
   @media all and (min-width: 600px) {
-    h1 {
+    .intro {
       font-size: 6rem;
       line-height: 5rem;
     }
@@ -174,7 +179,7 @@ const IntroText = styled.div`
 
   /* Large screens */
   @media all and (min-width: 800px) {
-    h1 {
+    .intro {
       font-size: 7rem;
       line-height: 6rem;
     }
@@ -187,12 +192,32 @@ const IntroText = styled.div`
     }
   }
 
-  @keyframes fadeAndScale {
+  @keyframes fadeIn {
     from {
       opacity: 0;
+      --header-weight: 100;
     }
     to {
       opacity: 1;
+      --header-weight: 700;
+    }
+  }
+
+  @keyframes addWeight {
+    0% {
+      font-variation-settings: "wght" 100, "slnt" 0;
+    }
+    70% {
+      font-variation-settings: "wght" 100, "slnt" 0;
+    }
+    80% {
+      font-variation-settings: "wght" 700, "slnt" 7;
+    }
+    90% {
+      font-variation-settings: "wght" 950, "slnt" 3;
+    }
+    100% {
+      font-variation-settings: "wght" 700, "slnt" 10;
     }
   }
 `;
@@ -216,12 +241,12 @@ const Header = ({ location, children }) => {
       <HeaderContainer>
         <NamePictureContainer>
           <HeaderLogo>
-            <Link to="/">
+            <Link to="/" className="header-link">
               <img src={logomark} alt="Alex Trost Logo" />
             </Link>
           </HeaderLogo>
           <HeaderName>
-            <Link to="/">
+            <Link to="/" className="header-link">
               <h3 className="name">Alex Trost</h3>
               <h4 className="title">Front-End Web Developer</h4>
             </Link>
@@ -234,7 +259,7 @@ const Header = ({ location, children }) => {
         />
         {isHome && (
           <IntroText>
-            <h1>
+            <h1 className="intro">
               Hey, <span className="rwd-line">I'm Alex.</span>
             </h1>
             <h2 className="subheader">Developer & Teacher.</h2>

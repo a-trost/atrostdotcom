@@ -39,7 +39,7 @@ const CategoryName = styled.div`
 
   h3 {
     font-size: 1rem;
-    font-weight: 300;
+    font-variation-settings: var(--font-light);
     color: #555;
     text-transform: uppercase;
     margin-top: 0;
@@ -71,7 +71,7 @@ const ItemInfo = styled.div`
 
 const Organization = styled.h4`
   color: navy;
-  font-weight: 500;
+  font-variation-settings: var(--font-medium);
   font-size: 1.3rem;
   flex: 1 100%;
   margin-bottom: 0.4rem;
@@ -90,7 +90,7 @@ const Description = styled.div`
   line-height: 1.3rem;
   margin-left: 0.8rem;
   span {
-    font-weight: bold;
+    font-variation-settings: var(--font-bold);
   }
   ul {
     margin: 0;
@@ -106,7 +106,7 @@ const Dates = styled.div`
   flex-grow: 1;
   min-width: 150px;
   font-size: 0.8rem;
-  font-weight: 300;
+  font-variation-settings: var(--font-light);
   color: #888;
   text-transform: uppercase;
   line-height: 1rem;

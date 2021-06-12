@@ -13,7 +13,7 @@ const NewsletterSignup = styled.article`
   margin-top: 4rem;
 
   h2 {
-    font-weight: 600;
+    font-variation-settings: var(--font-semibold);
     font-size: 2.25rem;
     margin-top: 0;
   }
@@ -52,7 +52,7 @@ const NewsletterSignup = styled.article`
     color: white;
     padding: 0.5rem 1rem;
     letter-spacing: 1px;
-    font-weight: 600;
+    font-variation-settings: var(--font-semibold);
     cursor: pointer;
     transition: 0.3s all ease;
     :hover {

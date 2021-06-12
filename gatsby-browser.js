@@ -1,2 +1,1 @@
-require("typeface-raleway");
-require("typeface-open-sans");
+require("@fontsource/inter");
