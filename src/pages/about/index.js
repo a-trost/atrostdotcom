@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import Layout from "../../components/Layout";
-import LinkCard from "../../components/LinkCard";
-import SEO from "../../components/SEO";
-import LinkCardContainer from "../../components/LinkCardContainer";
+import Layout from "@components/Layout";
+import LinkCard from "@components/LinkCard";
+import SEO from "@components/SEO";
+import LinkCardContainer from "@components/LinkCardContainer";
 import styled from "styled-components";
 
 const AboutLayout = styled.div`

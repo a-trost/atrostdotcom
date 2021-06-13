@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import ContactForm from "../components/Contact";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import ContactForm from "@components/Contact";
+import Layout from "@components/Layout";
+import SEO from "@components/SEO";
 
 const Contact = ({ data, location, history }) => (
   <Layout
@@ -10,8 +10,7 @@ const Contact = ({ data, location, history }) => (
     history={history}
     pageData={{
       title: "Contact Me",
-      desc:
-        "Feel free to reach out if you need a website, app, or just have a question. Happy to take on new clients or answer any questions.",
+      desc: "Feel free to reach out if you need a website, app, or just have a question. Happy to take on new clients or answer any questions.",
     }}
   >
     <SEO />

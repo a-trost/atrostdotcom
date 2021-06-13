@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import Layout from "../components/Layout";
+import Layout from "@components/Layout";
 
-import SEO from "../components/SEO";
+import SEO from "@components/SEO";
 
 const IntroText = styled.p`
   font-size: 1.2rem;

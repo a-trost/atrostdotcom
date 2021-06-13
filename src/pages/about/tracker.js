@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../../components/Layout";
-import LinkCard from "../../components/LinkCard";
-import LinkCardContainer from "../../components/LinkCardContainer";
+import Layout from "@components/Layout";
+import LinkCard from "@components/LinkCard";
+import LinkCardContainer from "@components/LinkCardContainer";
 
 const Tracker = ({ data, location, history }) => (
   <Layout
@@ -9,8 +9,7 @@ const Tracker = ({ data, location, history }) => (
     history={history}
     pageData={{
       title: "Pomodoro Tracker",
-      desc:
-        "Habit tracker for New Haven based web developer, Alex Trost. He writes about Javascript, React, Gatsby, the web, productivity and more.",
+      desc: "Habit tracker for New Haven based web developer, Alex Trost. He writes about Javascript, React, Gatsby, the web, productivity and more.",
     }}
   >
     <h1>Habit Tracker</h1>

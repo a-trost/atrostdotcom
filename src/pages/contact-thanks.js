@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import ContactThanks from "../components/Contact/thanks";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import ContactThanks from "@components/Contact/thanks";
+import Layout from "@components/Layout";
+import SEO from "@components/SEO";
 
 const Page = ({ data, location, history }) => (
   <Layout
