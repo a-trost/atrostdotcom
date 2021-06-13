@@ -1,4 +1,9 @@
-# Context
+---
+title: React Context
+tags: ["react"]
+---
+
+# React Context
 
 _Notes taken mostly on [React's Context Docs](https://reactjs.org/docs/context.html)._
 
@@ -45,6 +50,7 @@ If you're just using it to avoid passing props through many levels, the docs rec
 ## API
 
 First we create the context object.
+
 ```js
 const MyContext = React.createContext(defaultValue);
 ```
@@ -62,8 +68,6 @@ Then we can either use the context in a class based component with `MyClass.cont
   {value => /* render something based on the context value */}
 </MyContext.Consumer>
 ```
-
-
 
 ## Updating Context State
 

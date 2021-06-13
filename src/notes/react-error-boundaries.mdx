@@ -1,8 +1,13 @@
-# Error Boundaries
+---
+title: React Error Boundaries
+tags: ["react"]
+---
+
+# React Error Boundaries
 
 _Notes taken mostly on [React's Context Docs](https://reactjs.org/docs/error-boundaries.html)._
 
-Error boundaries are components that catch JS errors anywhere in their child component tree, log those errors, and display a fallback UI. 
+Error boundaries are components that catch JS errors anywhere in their child component tree, log those errors, and display a fallback UI.
 
 They **can't** catch errors for SSR, event handlers, or async code.
 
@@ -33,7 +38,7 @@ class ErrorBoundary extends React.Component {
       return <h1>Something went wrong.</h1>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 ```
@@ -41,4 +46,3 @@ class ErrorBoundary extends React.Component {
 Generally we'll just define one of these and use it throughout the application.
 
 You can wrap your entire app or individual components in error boundaries. For Facebook messenger they wrap the sidebar, info panel, conversation log, and message input in different error boundaries. If one crashes the others are still interactive.
-

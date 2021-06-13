@@ -1,4 +1,9 @@
-# State Management
+---
+title: React State Management
+tags: ["react"]
+---
+
+# React State Management
 
 _Notes on the FrontEnd Masters course "State Management in Pure React, v2_
 
@@ -50,13 +55,13 @@ Also, this will only increment the `count` by 1, because after reconciliation is
 ### Passing functions to this.setState
 
 ```js
-this.setState(state => {
+this.setState((state) => {
   return { count: state.count + 1 };
 });
-this.setState(state => {
+this.setState((state) => {
   return { count: state.count + 1 };
 });
-this.setState(state => {
+this.setState((state) => {
   return { count: state.count + 1 };
 });
 ```
@@ -165,7 +170,7 @@ SuperCoolContext.Consumer;
 
 ```js
 <CountContext.Provider value={0}>
-  <CountContext.Consumer>{value => <p>{value}</p>}</CountContext.Consumer>
+  <CountContext.Consumer>{(value) => <p>{value}</p>}</CountContext.Consumer>
 </CountContext.Provider>
 ```
 
@@ -176,8 +181,9 @@ You wrap this with state management. You'd have the state just above the Provide
 ### Hooks Based
 
 You still wrap your components with a Provider, but the way the consumer works is different. Instead of wrapping in a consumer component you use the `useContext` hook.
+
 ```js
-  const { resetCount, count } = React.useContext(CountContext)
+const { resetCount, count } = React.useContext(CountContext);
 ```
 
 ## Data Fetching
@@ -187,29 +193,31 @@ You still wrap your components with a Provider, but the way the consumer works i
 In the example in the course we broke out an entire `useFetch` custom hook:
 
 ```js
-const useFetch = url => {
- const [response, setResponse] = useState(null)
- const [loading, setLoading] = useState(true);
- const [error, setError] = useState(null);
+const useFetch = (url) => {
+  const [response, setResponse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
- React.useEffect(() => {
-   setLoading(true);
-   setResponse([]);
-   setError(null);
+  React.useEffect(() => {
+    setLoading(true);
+    setResponse([]);
+    setError(null);
 
-   fetch(url)
-     .then(response => response.json())
-     .then(response => {
-     setResponse(response)
-     setLoading(false)})
-     .catch(error => {
-     setLoading(false);
-     });
- }, [url]);
+    fetch(url)
+      .then((response) => response.json())
+      .then((response) => {
+        setResponse(response);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+      });
+  }, [url]);
 
- return [response, loading, error]
-}
+  return [response, loading, error];
+};
 ```
+
 It's a really clean way to abstract out the call and keep it out of your component.
 
 We then go on to see how we'd implement this with async
