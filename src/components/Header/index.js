@@ -5,6 +5,7 @@ import Menu from "../Menu";
 import { useSpring, config } from "react-spring";
 import { Link } from "gatsby";
 import logomark from "../../images/logomark.svg";
+import COLORS from "@constants/colors";
 
 const HeaderWrapper = styled.header`
   background: gray;
@@ -23,14 +24,14 @@ const HeaderContainer = styled.div`
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  padding: 1.45rem 1.0875rem;
+  padding: 1rem;
   z-index: 2;
   position: relative;
   display: grid;
 
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-  grid-template-rows: 75px 4fr;
+  grid-template-rows: 50px 4fr;
   grid-template-areas:
     "site-name nav"
     "intro-text intro-text";
@@ -38,7 +39,6 @@ const HeaderContainer = styled.div`
   @media all and (min-width: 800px) {
     grid-template-columns: 2fr 1fr;
     grid-gap: 10px;
-    grid-template-rows: 75px 4fr;
   }
 `;
 
@@ -53,8 +53,7 @@ const NamePictureContainer = styled.div`
 const HeaderLogo = styled.div`
   img {
     height: auto;
-    width: 40px;
-
+    width: 30px;
     display: none;
     margin: 0;
   }
@@ -62,8 +61,7 @@ const HeaderLogo = styled.div`
   display: none;
   @media all and (min-width: 500px) {
     img {
-      height: auto;
-      width: 50px;
+      width: 40px;
       display: flex;
     }
     picture {
@@ -73,42 +71,34 @@ const HeaderLogo = styled.div`
   }
   @media all and (min-width: 700px) {
     img {
-      height: auto;
-      width: 60px;
+      width: 40px;
     }
   }
 `;
 
-const HeaderName = styled.div`
-  padding-top: 8px;
-  .name {
-    display: flex;
-    color: white;
-    font-family: "InterVariable", sans-serif;
-    padding-left: 13px;
-    font-variation-settings: var(--font-bold);
-    font-size: 1.7rem;
-    line-height: 1.7rem;
-    margin: 0;
-  }
-  .title {
-    display: none;
-  }
+const HeaderName = styled(Link)`
+  display: flex;
+  color: ${COLORS.white};
+  font-family: "InterVariable", sans-serif;
+  padding-left: 13px;
+  font-variation-settings: var(--font-light);
+  font-size: 1.5rem;
+  line-height: 1rem;
+  margin: 0;
+  transition: color 300ms ease-in-out;
+
   @media all and (min-width: 600px) {
-    .name {
-      font-size: 2rem;
-      line-height: 2rem;
-    }
-    .title {
-      display: flex;
-      color: #eee;
-      font-family: "InterVariable", sans-serif;
-      padding-left: 13px;
-      font-variation-settings: var(--font-regular);
-      font-size: 1rem;
-      line-height: 1rem;
-      margin: 0;
-    }
+    font-size: 1.75rem;
+    line-height: 1.4rem;
+  }
+
+  .last-name {
+    font-variation-settings: var(--font-semibold);
+    /* margin-left: 0.2ch; */
+  }
+
+  &:hover {
+    color: ${COLORS.secondary};
   }
 `;
 
@@ -245,11 +235,9 @@ const Header = ({ location, children }) => {
               <img src={logomark} alt="Alex Trost Logo" />
             </Link>
           </HeaderLogo>
-          <HeaderName>
-            <Link to="/" className="header-link">
-              <h3 className="name">Alex Trost</h3>
-              <h4 className="title">Front-End Web Developer</h4>
-            </Link>
+          <HeaderName to="/" className="header-link">
+            {`Alex `}
+            <span className="last-name">{` Trost`}</span>
           </HeaderName>
         </NamePictureContainer>
         <Menu
