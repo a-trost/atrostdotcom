@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Switch } from "@headlessui/react";
+import { Switch, Transition } from "@headlessui/react";
 import ContentCard from "../ContentCard";
 
 const PostContainer = styled.section`
@@ -96,11 +96,19 @@ const ContentList = ({ content, pageTitle }) => {
         </Switch.Group>
       </HeaderContainer>
       <PostContainer>
-        {content
-          .filter(({ node }) => showAllContent || !node.frontmatter.draft)
-          .map(({ node }) => (
-            <ContentCard key={node.id} post={node} />
-          ))}
+        {content.map(({ node }) => (
+          <Transition
+            show={showAllContent || !node.frontmatter.draft}
+            enter="transition-opacity duration-700"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="transition-opacity duration-500"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <ContentCard key={node.id} post={node} />{" "}
+          </Transition>
+        ))}
       </PostContainer>
     </>
   );

@@ -58,7 +58,6 @@ exports.createPages = ({ graphql, actions }) => {
     `).then((result) => {
       result.data.allMdx.edges.forEach(({ node }) => {
         const docType = node.slug.split("/")[0];
-        console.log("Type is ", docType);
         try {
           if (node && node.frontmatter && docType) {
             if (docType === "project" || docType === "notes") return;

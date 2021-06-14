@@ -3,6 +3,7 @@ import COLORS from "@constants/colors";
 import "@fontsource/inter/variable-full.css";
 
 const GlobalStyles = createGlobalStyle`
+
 /* Box sizing rules */
 *,
 *::before,
