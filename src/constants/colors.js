@@ -74,6 +74,7 @@ const hues = {
     900: "#0F172A",
     1000: "#060a12",
   },
+  white: "#ffffff",
 };
 
 const primary = "#1391C6";

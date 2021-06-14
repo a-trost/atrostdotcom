@@ -1,5 +1,5 @@
 const path = require("path");
-const slugify = require("slugify");
+const _ = require("lodash");
 const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -21,9 +21,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   const pagePaths = {
-    blog: "./src/posts/PostPage.js",
-    project: "./src/projects/ProjectPage.js",
+    posts: "./src/templates/postPage.js",
+    tag: "./src/templates/tags.js",
   };
+
+  const templatePaths = {
+    blogPostTemplate: path.resolve(pagePaths.posts),
+    tagTemplate: path.resolve(pagePaths.tag),
+  };
+
   return new Promise((resolve, reject) => {
     graphql(`
       {
@@ -42,15 +48,23 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        tagsGroup: allMdx {
+          group(field: frontmatter___tags) {
+            totalCount
+            fieldValue
+          }
+        }
       }
     `).then((result) => {
       result.data.allMdx.edges.forEach(({ node }) => {
+        const docType = node.slug.split("/")[0];
+        console.log("Type is ", docType);
         try {
-          if (node && node.frontmatter && node.frontmatter.type) {
-            if (node.frontmatter.type === "project") return;
+          if (node && node.frontmatter && docType) {
+            if (docType === "project" || docType === "notes") return;
             createPage({
               path: node.slug,
-              component: path.resolve(pagePaths[node.frontmatter.type]),
+              component: path.resolve(pagePaths[docType]),
               context: {
                 slug: node.slug,
               },
@@ -60,6 +74,20 @@ exports.createPages = ({ graphql, actions }) => {
           console.log(error);
         }
       });
+
+      // Extract tag data from query
+      const tags = result.data.tagsGroup.group;
+      // Make tag pages
+      tags.forEach((tag) => {
+        createPage({
+          path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+          component: templatePaths.tagTemplate,
+          context: {
+            tag: tag.fieldValue,
+          },
+        });
+      });
+
       resolve();
     });
   });

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import { Switch } from "@headlessui/react";
-import PostListing from "../components/Posts/PostListing";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Layout from "@components/Layout";
+import SEO from "@components/SEO";
+import ContentList from "@components/ContentList";
 
 const PostContainer = styled.section`
   display: grid;
@@ -79,42 +78,24 @@ const HeaderContainer = styled.div`
 `;
 
 const IndexPage = ({ data, location, history }) => {
-  const [showAllPosts, setShowAllPosts] = useState(false);
   const allPosts = data.allMdx.edges;
+
   return (
     <Layout
       location={location}
       history={history}
       pageData={{
-        title: "Recent Articles",
+        title: "Articles",
         desc: "Articles by Alex Trost on web design, programming, React, Gatsby, and more.",
       }}
     >
-      <SEO />
-      <div>
-        <HeaderContainer>
-          <h1>Articles</h1>
-          <Switch.Group>
-            <div className="switch-group">
-              <Switch.Label className="switch-label">Show drafts</Switch.Label>
-              <Switch
-                checked={showAllPosts}
-                onChange={setShowAllPosts}
-                className={`${showAllPosts ? "on" : "off"} switch`}
-              >
-                <span className={`${showAllPosts ? "on" : "off"} thumb`} />
-              </Switch>
-            </div>
-          </Switch.Group>
-        </HeaderContainer>
-        <PostContainer>
-          {allPosts
-            .filter(({ node }) => showAllPosts || node.frontmatter.published)
-            .map(({ node }) => (
-              <PostListing key={node.id} post={node} />
-            ))}
-        </PostContainer>
-      </div>
+      <SEO
+        pageData={{
+          title: "Articles",
+          desc: "Articles by Alex Trost on web design, programming, React, Gatsby, and more.",
+        }}
+      />
+      <ContentList content={allPosts} pageTitle="Articles" />
     </Layout>
   );
 };
@@ -138,7 +119,7 @@ export const query = graphql`
           id
           slug
           frontmatter {
-            published
+            draft
             title
             date
             image {

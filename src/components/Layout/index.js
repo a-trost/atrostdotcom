@@ -53,7 +53,14 @@ const Layout = ({
         <>
           <MDXProvider components={components}>
             <Container>
-              <Header data={data} siteTitle={seo.title} location={location} />
+              <Header
+                data={data}
+                siteTitle={
+                  pageData.title ? pageData.title + " " + seo.title : seo.title
+                }
+                location={location}
+              />
+
               <ChildWrapper>{children}</ChildWrapper>
               <Footer />
               <GlobalStyles />

@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import Layout from "../components/Layout";
+import Layout from "@components/Layout";
 import { getImage } from "gatsby-plugin-image";
-import SEO from "../components/SEO";
-import NewsletterSignup from "../components/NewsletterSignup";
+import SEO from "@components/SEO";
+import NewsletterSignup from "@components/NewsletterSignup";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const HeaderSection = styled.div`
@@ -161,7 +161,7 @@ const PostPage = ({ data, location, history, pageContext }) => {
       <SEO postPath={slug} postNode={postNode} postSEO />
 
       <HeaderSection>
-        {!post.published && <p className="draft">Draft</p>}
+        {post.draft && <p className="draft">Draft</p>}
         <h1 className="blog-title">{post.title}</h1>
         <div className="stat-container">
           {post.date && (
@@ -236,7 +236,7 @@ export const query = graphql`
       timeToRead
       tableOfContents
       frontmatter {
-        published
+        draft
         title
         tags
         date(formatString: "MMMM Do, YYYY")

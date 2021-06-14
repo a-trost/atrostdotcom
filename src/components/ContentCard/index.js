@@ -85,12 +85,12 @@ const PostListing = ({ post }) => {
       onClick={() => {
         navigateTo(slug);
       }}
-      style={{ "--card-rotation": post.frontmatter.published ? 0 : "-3" }}
+      style={{ "--card-rotation": post.frontmatter.draft ? "-2" : 0 }}
     >
       <Link to={slug}>
         <h3>{post.frontmatter.title}</h3>
       </Link>
-      {!post.frontmatter.published && <p className="draft">Draft</p>}
+      {post.frontmatter.draft && <p className="draft">Draft</p>}
       <p>{post.excerpt}</p>
 
       <p className="read-on">
