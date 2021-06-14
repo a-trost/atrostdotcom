@@ -90,6 +90,7 @@ module.exports = {
         icon: "src/images/base-icon.png",
       },
     },
+    `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
