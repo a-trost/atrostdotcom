@@ -159,7 +159,7 @@ strong {
 
   --font-family: "InterVariable", Futura, -apple-system, sans-serif;
   --font-family-mono: 'Source Code Pro', 'Fira Mono', monospace;
-  --font-family-handwriting: "Patrick Hand", script;
+  --font-family-handwriting: "Patrick Hand", sans-serif, script;
 
   --elevation-high: 100;
 

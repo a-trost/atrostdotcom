@@ -1,4 +1,4 @@
 import CenterContent from "./centerContent";
-import Outline from "./outline";
+import DraftContent from "./draftContent";
 
-export default { CenterContent, Outline };
+export default { CenterContent, DraftContent };

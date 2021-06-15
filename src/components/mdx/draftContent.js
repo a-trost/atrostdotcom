@@ -25,7 +25,7 @@ const OutlineButton = styled(Disclosure.Button)`
   font-family: var(--font-family-handwriting);
 `;
 
-export default function Outline({ heading = "Article Outline", children }) {
+export default function DraftContent({ heading = "Draft Notes", children }) {
   return (
     <Wrapper>
       <Disclosure>
