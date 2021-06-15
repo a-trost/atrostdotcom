@@ -201,13 +201,13 @@ const IntroText = styled.div`
       font-variation-settings: "wght" 100, "slnt" 0;
     }
     80% {
-      font-variation-settings: "wght" 700, "slnt" 7;
+      font-variation-settings: "wght" 700, "slnt" -4;
     }
     90% {
-      font-variation-settings: "wght" 950, "slnt" 3;
+      font-variation-settings: "wght" 950, "slnt" -9;
     }
     100% {
-      font-variation-settings: "wght" 700, "slnt" 10;
+      font-variation-settings: "wght" 700, "slnt" 0;
     }
   }
 `;

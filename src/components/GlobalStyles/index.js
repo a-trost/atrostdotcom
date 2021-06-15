@@ -27,7 +27,6 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   letter-spacing: -.3px;
-  ${"" /* line-height: 1.5; */}
 }
 
 a{
@@ -78,7 +77,7 @@ a:focus {
 
 body, input, button, select, option {
   font-family: var(--font-family);
-  font-variation-settings: "wght" var(--font-weight-light), "slnt" 0;
+  font-variation-settings: "wght" var(--font-weight-regular), "slnt" 0;
   font-weight: var(--font-weight-light);
 }
 
@@ -137,8 +136,8 @@ strong {
   --font-weight-bold: 700;
   --font-weight-black: 900;
 
-  --font-italic-full: 10;
-  --font-italic-half: 5;
+  --font-italic-full: -10;
+  --font-italic-half:-5;
   --font-italic-none:0;
 
   --font-thin: "wght" var(--font-weight-thin), "slnt" var(--font-italic-none);

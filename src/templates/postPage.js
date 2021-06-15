@@ -91,6 +91,7 @@ const BlogContent = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  font-variation-settings: var(--font-regular);
   p,
   ul,
   ol,
@@ -147,6 +148,10 @@ const BlogContent = styled.div`
 
   .anchor.before:hover {
     fill: #2670bd;
+  }
+
+  em {
+    font-variation-settings: var(--font-medium-italic);
   }
 `;
 
