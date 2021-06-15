@@ -91,6 +91,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {

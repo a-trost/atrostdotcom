@@ -5,6 +5,7 @@
   "author": "Alex Trost <alexrtrost@gmail.com>",
   "dependencies": {
     "@fontsource/inter": "^4.4.5",
+    "@fontsource/patrick-hand": "^4.4.5",
     "@headlessui/react": "^1.2.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
@@ -42,6 +43,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
     "react-spring": "^9.2.1",
     "react-typography": "^0.16.20",
     "react-waypoint": "^10.1.0",
