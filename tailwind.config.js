@@ -1,11 +1,17 @@
 module.exports = {
   mode: "jit",
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  purge: [
+    "./src/**/*.{js,jsx,ts,tsx,mdx}",
+    "./src/posts/**/*.{js,jsx,ts,tsx,mdx}",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       body: ["InterVariable", "sans-serif"],
       handwriting: ["Patrick Hand", "script"],
+    },
+    fontStyle: {
+      "var-italic": "font-variation-settings: var(--font-regular-italic);",
     },
     extend: {
       fontSize: {

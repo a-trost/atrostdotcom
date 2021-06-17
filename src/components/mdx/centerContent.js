@@ -6,7 +6,7 @@ export default function CenterContent({
   ...props
 }) {
   return (
-    <div style={{ maxWidth: maxWidth, margin: "auto" }} {...props}>
+    <div style={{ maxWidth: maxWidth, margin: "1rem auto" }} {...props}>
       {children}
     </div>
   );
