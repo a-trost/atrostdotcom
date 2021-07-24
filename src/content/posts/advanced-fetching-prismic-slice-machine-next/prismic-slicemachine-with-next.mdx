@@ -1,0 +1,126 @@
+---
+title: Advanced Querying with Prismic Slice Machine & Next.js
+tags: ["react", "prismic", "nextjs"]
+date: "2021-07-24"
+type: "blog"
+desc: "Fetching additional data with Prismic Slice Machine can be tricky. Here are some solutions."
+---
+
+With the current implementation of Slice Machine and Next.js there are a few things that become trickier than normal. Here are some current solutions to those issues.
+
+## Calling for Dynamic Data
+
+With Next.js, the way you call for data on a page is within `getStaticProps` or `getServerSideProps`.
+
+If you export an async function with either of those names, Next will pre-render the page using the props that this function returns. Here's an example of `getStaticProps`.
+
+```js
+export async function getStaticProps(context) {
+  return {
+    props: {}, // will be passed to the page component as props
+  };
+}
+```
+
+With Slice Machine we have abstracted away some of the complexity that users would encounter with fetching data for their slices.
+
+```js
+export const getStaticProps = useGetStaticProps({
+  client: Client(),
+  type: "page",
+  queryType: "repeat",
+  apiParams: {
+    uid: "home",
+  },
+});
+```
+
+This is all you need to get all the slices that are on the page with a uid of `home`. It works great when this is all you need, but problems start to pop up if you want to stray from this.
+
+For example, if one of your slices should query for the latest blog post or an upcoming event, it becomes difficult with this structure.
+
+Instead we need to move Prismic's `useGetStaticProps` function inside of a larger function for `getStaticProps`.
+
+```js
+export const getStaticProps = async (...args) => {
+  // Same useGetStaticProps call
+  const homepage = await useGetStaticProps({
+    client: Client(),
+    type: "page",
+    queryType: "repeat",
+    apiParams: {
+      uid: "home",
+    },
+  })(...args);
+
+  // Query for additional Prismic data
+  const episodes = await Client().query(
+    Prismic.Predicates.at("document.type", "episode")
+  );
+
+  return {
+    props: {
+      homepage: homepage.props,
+      episodes,
+    },
+  };
+};
+```
+
+This allows us to keep the benefits of `useGetStaticProps` but also fetch additional data to pass to dynamic components.
+
+## Fetching from Multiple Prismic Repositories
+
+Sometimes you need to get data from different Prismic repositories for the same page. This requires creating two instances of the Prismic client to fetch from the different locations. Expanding on the snippets above, we can get data from multiple repos alongside our Slice Machine slices.
+
+For this example we'll set up a `ShopClient`and a `BlogClient` to handle those two different sources. In our project we create two files: `prismic-shop.js` and `prismic-blog.js`, where each is setup like [these files](https://github.com/prismicio-community/slice-library-starter-next/blob/master/prismic-configuration.js). The key is changing the `apiEndpoint` variable for each.
+
+If you're using Slice Machine for one of these repos, you can leave that file like this:
+
+```js
+// prismic-blog.js
+export const apiEndpoint = smConfig.apiEndpoint;
+```
+
+While the other should be changed to the other repo's url. In this case, that's our `ShopClient`.
+
+```js
+// prismic-shop.js
+export const apiEndpoint = "https://example-shop.cdn.prismic.io/api/v2";
+```
+
+```js
+import { Client as ShopClient } from "../prismic-shop";
+import { Client as BlogClient } from "../prismic-blog";
+
+/* 
+
+	...
+
+*/
+
+export const getStaticProps = async (...args) => {
+  const homepage = await useGetStaticProps({
+    client: BlogClient(),
+    type: "page",
+    queryType: "repeat",
+    apiParams: {
+      uid: "homepage",
+    },
+  })(...args);
+
+  const products = await ShopClient().query(
+    Prismic.Predicates.at("document.type", "products")
+  );
+
+  return {
+    props: {
+      homepage: homepage.props,
+    },
+  };
+};
+```
+
+---
+
+Thanks to Angelo Ashmore for crafting these solutions with me. Let me know if there's anything that can be improved or made more clear.
