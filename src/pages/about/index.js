@@ -1,6 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import Layout from "@components/Layout";
 import LinkCard from "@components/LinkCard";
 import SEO from "@components/SEO";
@@ -97,34 +96,18 @@ const About = ({ data, location, history }) => (
         </p>
       </div>
       <div className="pictureContainer">
-        <GatsbyImage
-          image={data.alexpicture.childImageSharp.gatsbyImageData}
+        <StaticImage
+          src="../../images/alexheadshot.jpg"
           className="picture"
-          alt="Alex Trost"
+          alt="Headshot of Alex Trost"
         />
       </div>
     </AboutLayout>
 
     <LinkCardContainer>
       <LinkCard heading="Resume" path="/about/resume" />
-      {/* <LinkCard heading="Habit Tracking" path="/about/tracker" /> */}
     </LinkCardContainer>
   </Layout>
 );
-
-export const query = graphql`
-  query AboutQuery {
-    alexpicture: file(relativePath: { eq: "images/alexheadshot.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(
-          width: 900
-          tracedSVGOptions: { color: "rgb(43, 129, 200)" }
-          placeholder: TRACED_SVG
-          layout: CONSTRAINED
-        )
-      }
-    }
-  }
-`;
 
 export default About;
