@@ -146,6 +146,11 @@ const BlogContent = styled.div`
     width: 36px;
   }
 
+  hr {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+  }
+
   .anchor.before:hover {
     fill: #2670bd;
   }
