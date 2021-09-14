@@ -48,7 +48,7 @@
     "react-typography": "^0.16.20",
     "react-waypoint": "^10.1.0",
     "serialize-javascript": "^5.0.1",
-    "set-value": "^4.0.0",
+    "set-value": "^4.0.1",
     "slate": "^0.63.0",
     "slugify": "^1.5.3",
     "styled-components": "^5.3.0",
