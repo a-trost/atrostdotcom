@@ -57,7 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then((result) => {
       result.data.allMdx.edges.forEach(({ node }) => {
-        console.log({ slug: node.slug });
+        // console.log({ slug: node.slug });
         const docType = node.slug.split("/")[0];
         try {
           if (node && node.frontmatter && docType) {
