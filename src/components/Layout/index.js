@@ -9,19 +9,19 @@ import components from "../mdx";
 import GlobalStyles from "../GlobalStyles";
 
 const Container = styled.div`
-  min-height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr auto auto;
+  place-content: center;
+  grid-template-rows: auto 1fr auto;
 `;
 
 const ChildWrapper = styled.div`
-  margin: 0 auto;
   display: flex;
   flex-flow: column nowrap;
   width: 95vw;
   max-width: 960px;
-  padding: 1rem 1.0875rem 1.45rem;
+  margin: 1rem 1rem 1.45rem;
 `;
 
 const Layout = ({
@@ -63,8 +63,8 @@ const Layout = ({
 
               <ChildWrapper>{children}</ChildWrapper>
               <Footer />
-              <GlobalStyles />
             </Container>
+            <GlobalStyles />
           </MDXProvider>
         </>
       );

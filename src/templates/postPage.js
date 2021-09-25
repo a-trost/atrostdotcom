@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Layout from "@components/Layout";
 import { getImage } from "gatsby-plugin-image";
 import SEO from "@components/SEO";
-import NewsletterSignup from "@components/NewsletterSignup";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const HeaderSection = styled.div`
@@ -228,7 +227,6 @@ const PostPage = ({ data, location, history, pageContext }) => {
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </BlogContent>
       </BlogWrapper>
-      <NewsletterSignup />
     </Layout>
   );
 };

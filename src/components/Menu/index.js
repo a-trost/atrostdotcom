@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import menuCloseIcon from "../../images/x.svg";
-import menuOpenIcon from "../../images/burger.svg";
 import { animated } from "react-spring";
+import COLORS from "@constants/colors";
 
 const Nav = styled.div`
-  padding-top: 8px;
+  padding-top:8px;
   grid-area: nav;
   justify-self: end;
   align-self: end;
@@ -15,7 +14,7 @@ const Nav = styled.div`
    font-variation-settings: var(--font-bold);
   letter-spacing:0px;
   a {
-    color: white;
+    color: ${COLORS.blue[800]};
     text-decoration: none;
   }
   ul,
@@ -32,7 +31,7 @@ const Nav = styled.div`
     a {
       display: flex;
       line-height: 1;
-      color: white;
+      color: ${COLORS.blue[800]};
       padding: 0.5rem 0.75rem;
       border-radius: 6px;
       transition: all 0.4s ease;
@@ -47,7 +46,7 @@ const Nav = styled.div`
   bottom: 0;
   left: -0.25em;
   right: -0.25em;
-  background-color: orange;
+  background-color: ${COLORS.yellow[400]};
   transform-origin: center right;
   transform: scaleX(0);
   transition: transform 0.2s ease-in-out;
@@ -187,7 +186,7 @@ const Menu = ({ menuOpen, handleClick, style }) => {
                 padding: "8px",
               }}
             >
-              <img width="25px" height="25px" src={menuOpenIcon} alt="Menu" />
+              <MenuOpenIcon alt="Menu" width="25px" height="25px" />
             </button>
           </li>
           {RenderListItems(handleClick)}
@@ -207,11 +206,10 @@ const Menu = ({ menuOpen, handleClick, style }) => {
                   background: "none",
                 }}
               >
-                <img
+                <MenuCloseIcon
+                  alt="Mobile navigation toggle"
                   width="25px"
                   height="25px"
-                  src={menuCloseIcon}
-                  alt="Mobile navigation toggle"
                 />
               </button>
             </li>
@@ -224,3 +222,37 @@ const Menu = ({ menuOpen, handleClick, style }) => {
 };
 
 export default Menu;
+
+const MenuOpenIcon = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97.8 81.5" {...props}>
+    <defs></defs>
+    <g id="prefix__Layer_2" data-name="Layer 2">
+      <g id="prefix__Layer_1-2" data-name="Layer 1">
+        <path
+          style={{ fill: "currentcolor" }}
+          d="M8.15 16.3h81.5a8.15 8.15 0 000-16.3H8.15a8.15 8.15 0 000 16.3zM89.65 32.6H8.15a8.15 8.15 0 000 16.3h81.5a8.15 8.15 0 000-16.3zM89.65 65.2H8.15a8.15 8.15 0 000 16.3h81.5a8.15 8.15 0 000-16.3z"
+        />
+      </g>
+    </g>
+  </svg>
+);
+
+const MenuCloseIcon = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.93 73.93" {...props}>
+    <defs>
+      <style>{".prefix__cls-1{fill:#fff}"}</style>
+    </defs>
+    <g id="prefix__Layer_2" data-name="Layer 2">
+      <g id="prefix__Layer_1-2" data-name="Layer 1">
+        <path
+          className="prefix__cls-1"
+          d="M13.91 71.54l57.63-57.63A8.15 8.15 0 0060 2.39L2.39 60a8.15 8.15 0 0011.52 11.54z"
+        />
+        <path
+          className="prefix__cls-1"
+          d="M2.39 13.91L60 71.54A8.15 8.15 0 0071.54 60L13.91 2.39A8.15 8.15 0 002.39 13.91z"
+        />
+      </g>
+    </g>
+  </svg>
+);
