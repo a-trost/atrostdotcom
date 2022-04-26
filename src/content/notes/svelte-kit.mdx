@@ -1,0 +1,52 @@
+---
+title: Svelte Kit
+tags: ["svelte", "svelte-kit"]
+---
+
+## Fetching Data
+
+Components for pages or layouts can export a `load` function that gets called before the component is created. Seems to be akin to Next's `getStaticProps` in that it can be used to fetch data for our component. Interesting to note that `load` gets called _both_ during server-side rendering, _and_ on the client. I'm curious if there's a way to only call in one spot.
+
+Important to note that we're also doing this in a special `<script>` tag, where we have `context="module"` applied. Then in another script tag we would set our variables.
+
+## Pages and Routing
+
+The routing works similiarly to Next.js. Anything in `/routes/` gets turned into a page, including the folder structure. Anything in square brackets gets turned into a dynamic page, and you can even do that with folders. `/routes/[pet]/[breed].svelte` would give you both a pet and breed prop. Pretty nice.
+
+## Layouts
+
+You apply layouts by creating `__layout.svelte` files anywhere you want to apply that layout. If you want a certain layout for nested pages, just put a `__layout.svelte` file in that specific folder. No need to declare it in your page file, it's already applied.
+
+## Error Pages
+
+To add Error pages just add a `__error.svelte` file to your folder and it'll work kinda like the layout file. If there's an error, it'll render that page, so this is kind of like a 404 page. You even get to add a load function that gets the error and status on an object as properties.
+
+```html
+<script context="module">
+  export function load({ error, status }) {
+    return {
+      props: {
+        title: `${status}: ${error.message}`,
+      },
+    };
+  }
+</script>
+```
+
+## Adapters
+
+Adapters seem to make the build work on your desired deploy target (Netlify, Vercel, Cloudflare, etc). `adapter-static` makes it compile down to HTML/CSS/JS so that you can toss it up anywhere.
+
+## Hydration
+
+To make our Svelte Kit app work a lot more like Astro or Eleventy, we can turn off Hydration on specific pages (Or even app-wide!).
+
+For page hydration off:
+
+```html
+<script context="module">
+  export const hydrate = false;
+</script>
+```
+
+I'm not sure the difference between `hydrate = false` and `prerender`.

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import logo from "../../images/TrostLogo.png";
 import twitterLogo from "../../images/Twitter.svg";
 import githubLogo from "../../images/Github.svg";
 import linkedInLogo from "../../images/Linkedin.svg";
+import StyledName from "../StyledName";
 
 const Footer = () => {
   const SocialIcon = styled.img`
@@ -106,9 +106,7 @@ const Footer = () => {
     <FooterContainer>
       <div className="inner">
         <div className="logo">
-          <Link to="/">
-            <img src={logo} alt="Alex Trost Logo" />
-          </Link>
+          <StyledName to="/" />
         </div>
         <div className="site-map">
           <ul>
