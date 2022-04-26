@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://atrost.com/*"
+  to = "https://trost.codes/*"
+  status = 301
+  force = true
