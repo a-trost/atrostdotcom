@@ -57,7 +57,7 @@
     "typography": "^0.16.21",
     "typography-theme-noriega": "^0.16.19",
     "url-join": "^4.0.1",
-    "webpack": "^5.72.0"
+    "webpack": "^5.76.0"
   },
   "keywords": [
     "gatsby"
